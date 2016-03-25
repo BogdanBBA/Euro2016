@@ -113,6 +113,9 @@
     <Compile Include="VisualComponents\GroupView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisualComponents\InfoView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VisualComponents\MatchView.cs">
       <SubType>Component</SubType>
     </Compile>

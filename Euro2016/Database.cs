@@ -220,9 +220,20 @@ namespace Euro2016
                         return group.TableLines[Int32.Parse(refTeam) - 1].Team;
                     return null;
                 }
-                else // third-place group
+                else // third-place group (also, certainly an eight-final)
                 {
-
+                    Group tempGroup = new Group("temp", refTeam, new List<TableLine>());
+                    foreach (string groupID in refTeam.Split('/'))
+                    {
+                        Group group = this.Groups.GetItemByID(groupID);
+                        if (!group.AllMatchesPlayed)
+                            return null;
+                        tempGroup.TableLines.Add(new TableLine(group.TableLines[2]));
+                    }
+                    tempGroup.SortTableLines(true, this.Matches);
+                    for (int index = 0; index < tempGroup.TableLines.Count; index++)
+                        if (this.Matches.GetMatchesBy("KO:8").GetMatchesBy(tempGroup.TableLines[index].Team).Count == 0)
+                            return tempGroup.TableLines[index].Team;
                     return null;
                 }
             }

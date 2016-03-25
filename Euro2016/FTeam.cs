@@ -24,9 +24,6 @@ namespace Euro2016
             InitializeComponent();
             this.mainForm = mainForm;
             this.Owner = mainForm;
-
-            this.countryNameNativeL.ForeColor = MyGUIs.Text.Highlighted.Color;
-            this.countryNameEnglishL.ForeColor = MyGUIs.Text.Highlighted.Color;
         }
 
         private void FTeam_Load(object sender, EventArgs e)
@@ -34,7 +31,8 @@ namespace Euro2016
             string[] teamNames = new string[this.mainForm.Database.Teams.Count];
             for (int index = 0; index < this.mainForm.Database.Teams.Count; index++)
                 teamNames[index] = this.mainForm.Database.Teams[index].Country.Names[this.mainForm.Database.Settings.ShowCountryNamesInNativeLanguage];
-            this.countryButtons = MyEuroBaseControl.CreateControlCollection<CountryView>(teamNames, this.VenueButton_Click, TeamButtonNamePrefix, null);
+            this.countryButtons = MyEuroBaseControl.CreateControlCollection<CountryView>(teamNames, this.VenueButton_Click, TeamButtonNamePrefix,
+                new Tuple<string, object>[] { new Tuple<string, object>("Settings", this.mainForm.Database.Settings) });
             for (int index = 0; index < this.countryButtons.Count; index++)
                 this.countryButtons[index].Team = this.mainForm.Database.Teams[index];
             Utils.SizeAndPositionControlsInPanel(teamButtonP, this.countryButtons, false, 0);
@@ -52,8 +50,8 @@ namespace Euro2016
             Team team = item as Team;
             this.countryButtons.CheckItemAndUncheckAllOthers<CountryView>(this.countryButtons.First(cb => cb.Country.Equals(team.Country)));
             this.flagPB.Image = team.Country.Flag100px;
-            countryNameNativeL.Text = team.Country.Names.Home;
-            countryNameEnglishL.Text = team.Country.Names.Away;
+            teamNameHomeIV.TextText = team.Country.Names.Home;
+            teamNameAwayIV.TextText = team.Country.Names.Away;
             goalsL.Text = goalsAverageL.Text = label6.Text = "n/a";
             this.matchesView.SetMatches(this.mainForm.Database.Matches.GetMatchesBy(team));
         }

@@ -34,14 +34,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.goalsL = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.countryNameEnglishL = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.countryNameNativeL = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.flagPB = new System.Windows.Forms.PictureBox();
             this.matchesP = new Euro2016.VisualComponents.MyPanel();
             this.teamButtonP = new Euro2016.VisualComponents.MyPanel();
             this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
+            this.teamNameHomeIV = new Euro2016.VisualComponents.InfoView();
+            this.teamNameAwayIV = new Euro2016.VisualComponents.InfoView();
             ((System.ComponentModel.ISupportInitialize)(this.flagPB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,54 +113,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Goals in this tournament";
             // 
-            // countryNameEnglishL
-            // 
-            this.countryNameEnglishL.AutoSize = true;
-            this.countryNameEnglishL.BackColor = System.Drawing.Color.Transparent;
-            this.countryNameEnglishL.Font = new System.Drawing.Font("Segoe UI Semibold", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countryNameEnglishL.ForeColor = System.Drawing.Color.White;
-            this.countryNameEnglishL.Location = new System.Drawing.Point(381, 163);
-            this.countryNameEnglishL.Name = "countryNameEnglishL";
-            this.countryNameEnglishL.Size = new System.Drawing.Size(87, 36);
-            this.countryNameEnglishL.TabIndex = 6;
-            this.countryNameEnglishL.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(384, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Country name in English";
-            // 
-            // countryNameNativeL
-            // 
-            this.countryNameNativeL.AutoSize = true;
-            this.countryNameNativeL.BackColor = System.Drawing.Color.Transparent;
-            this.countryNameNativeL.Font = new System.Drawing.Font("Segoe UI Semibold", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countryNameNativeL.ForeColor = System.Drawing.Color.White;
-            this.countryNameNativeL.Location = new System.Drawing.Point(381, 111);
-            this.countryNameNativeL.Name = "countryNameNativeL";
-            this.countryNameNativeL.Size = new System.Drawing.Size(87, 36);
-            this.countryNameNativeL.TabIndex = 4;
-            this.countryNameNativeL.Text = "label2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(384, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Country name in native language(s)";
-            // 
             // flagPB
             // 
             this.flagPB.BackColor = System.Drawing.Color.Transparent;
@@ -193,6 +143,7 @@
             // 
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(218, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -203,20 +154,48 @@
             this.titleLabel1.TextSubtitle = "Euro 2016 participating countries";
             this.titleLabel1.TextTitle = "Teams";
             // 
+            // infoView1
+            // 
+            this.teamNameHomeIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.teamNameHomeIV.BigBar = false;
+            this.teamNameHomeIV.Checked = false;
+            this.teamNameHomeIV.DrawBar = false;
+            this.teamNameHomeIV.Location = new System.Drawing.Point(384, 96);
+            this.teamNameHomeIV.Name = "infoView1";
+            this.teamNameHomeIV.Size = new System.Drawing.Size(314, 50);
+            this.teamNameHomeIV.TabIndex = 14;
+            this.teamNameHomeIV.Text = "infoView1";
+            this.teamNameHomeIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.teamNameHomeIV.TextDescription = "Country name in native language(s)";
+            this.teamNameHomeIV.TextText = "#text";
+            // 
+            // infoView2
+            // 
+            this.teamNameAwayIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.teamNameAwayIV.BigBar = false;
+            this.teamNameAwayIV.Checked = false;
+            this.teamNameAwayIV.DrawBar = false;
+            this.teamNameAwayIV.Location = new System.Drawing.Point(384, 146);
+            this.teamNameAwayIV.Name = "infoView2";
+            this.teamNameAwayIV.Size = new System.Drawing.Size(314, 50);
+            this.teamNameAwayIV.TabIndex = 15;
+            this.teamNameAwayIV.Text = "infoView2";
+            this.teamNameAwayIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.teamNameAwayIV.TextDescription = "Country name in English";
+            this.teamNameAwayIV.TextText = "#text";
+            // 
             // FTeam
             // 
             this.ClientSize = new System.Drawing.Size(710, 780);
+            this.Controls.Add(this.teamNameAwayIV);
+            this.Controls.Add(this.teamNameHomeIV);
             this.Controls.Add(this.titleLabel1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.goalsAverageL);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.goalsL);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.countryNameEnglishL);
-            this.Controls.Add(this.countryNameNativeL);
             this.Controls.Add(this.flagPB);
             this.Controls.Add(this.matchesP);
             this.Controls.Add(this.teamButtonP);
@@ -224,7 +203,6 @@
             this.Load += new System.EventHandler(this.FTeam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flagPB)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -233,10 +211,6 @@
         private VisualComponents.MyPanel teamButtonP;
         private VisualComponents.MyPanel matchesP;
         private System.Windows.Forms.PictureBox flagPB;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label countryNameNativeL;
-        private System.Windows.Forms.Label countryNameEnglishL;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label goalsL;
         private System.Windows.Forms.Label goalsAverageL;
@@ -244,6 +218,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private VisualComponents.TitleLabel titleLabel1;
+        private VisualComponents.InfoView teamNameHomeIV;
+        private VisualComponents.InfoView teamNameAwayIV;
 
     }
 }

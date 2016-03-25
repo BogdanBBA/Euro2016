@@ -38,12 +38,12 @@
             this.myPanel6 = new Euro2016.VisualComponents.MyPanel();
             this.myPanel7 = new Euro2016.VisualComponents.MyPanel();
             this.myPanel8 = new Euro2016.VisualComponents.MyPanel();
-            this.myPanel9 = new Euro2016.VisualComponents.MyPanel();
+            this.myPanel12 = new Euro2016.VisualComponents.MyPanel();
             this.myPanel10 = new Euro2016.VisualComponents.MyPanel();
             this.myPanel11 = new Euro2016.VisualComponents.MyPanel();
-            this.myPanel12 = new Euro2016.VisualComponents.MyPanel();
-            this.myPanel13 = new Euro2016.VisualComponents.MyPanel();
+            this.myPanel9 = new Euro2016.VisualComponents.MyPanel();
             this.myPanel14 = new Euro2016.VisualComponents.MyPanel();
+            this.myPanel13 = new Euro2016.VisualComponents.MyPanel();
             this.myPanel15 = new Euro2016.VisualComponents.MyPanel();
             this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
             ((System.ComponentModel.ISupportInitialize)(this.knockoutPB)).BeginInit();
@@ -123,13 +123,13 @@
             this.myPanel8.Size = new System.Drawing.Size(480, 28);
             this.myPanel8.TabIndex = 8;
             // 
-            // myPanel9
+            // myPanel12
             // 
-            this.myPanel9.DrawPanelAccent = false;
-            this.myPanel9.Location = new System.Drawing.Point(320, 743);
-            this.myPanel9.Name = "myPanel9";
-            this.myPanel9.Size = new System.Drawing.Size(480, 28);
-            this.myPanel9.TabIndex = 12;
+            this.myPanel12.DrawPanelAccent = false;
+            this.myPanel12.Location = new System.Drawing.Point(320, 743);
+            this.myPanel12.Name = "myPanel12";
+            this.myPanel12.Size = new System.Drawing.Size(480, 28);
+            this.myPanel12.TabIndex = 12;
             // 
             // myPanel10
             // 
@@ -147,29 +147,29 @@
             this.myPanel11.Size = new System.Drawing.Size(480, 28);
             this.myPanel11.TabIndex = 10;
             // 
-            // myPanel12
+            // myPanel9
             // 
-            this.myPanel12.DrawPanelAccent = false;
-            this.myPanel12.Location = new System.Drawing.Point(320, 223);
-            this.myPanel12.Name = "myPanel12";
-            this.myPanel12.Size = new System.Drawing.Size(480, 28);
-            this.myPanel12.TabIndex = 9;
-            // 
-            // myPanel13
-            // 
-            this.myPanel13.DrawPanelAccent = false;
-            this.myPanel13.Location = new System.Drawing.Point(587, 656);
-            this.myPanel13.Name = "myPanel13";
-            this.myPanel13.Size = new System.Drawing.Size(480, 28);
-            this.myPanel13.TabIndex = 14;
+            this.myPanel9.DrawPanelAccent = false;
+            this.myPanel9.Location = new System.Drawing.Point(320, 223);
+            this.myPanel9.Name = "myPanel9";
+            this.myPanel9.Size = new System.Drawing.Size(480, 28);
+            this.myPanel9.TabIndex = 9;
             // 
             // myPanel14
             // 
             this.myPanel14.DrawPanelAccent = false;
-            this.myPanel14.Location = new System.Drawing.Point(587, 310);
+            this.myPanel14.Location = new System.Drawing.Point(587, 656);
             this.myPanel14.Name = "myPanel14";
             this.myPanel14.Size = new System.Drawing.Size(480, 28);
-            this.myPanel14.TabIndex = 13;
+            this.myPanel14.TabIndex = 14;
+            // 
+            // myPanel13
+            // 
+            this.myPanel13.DrawPanelAccent = false;
+            this.myPanel13.Location = new System.Drawing.Point(587, 310);
+            this.myPanel13.Name = "myPanel13";
+            this.myPanel13.Size = new System.Drawing.Size(480, 28);
+            this.myPanel13.TabIndex = 13;
             // 
             // myPanel15
             // 
@@ -183,6 +183,7 @@
             // 
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -198,12 +199,12 @@
             this.ClientSize = new System.Drawing.Size(1384, 868);
             this.Controls.Add(this.titleLabel1);
             this.Controls.Add(this.myPanel15);
-            this.Controls.Add(this.myPanel13);
             this.Controls.Add(this.myPanel14);
-            this.Controls.Add(this.myPanel9);
+            this.Controls.Add(this.myPanel13);
+            this.Controls.Add(this.myPanel12);
             this.Controls.Add(this.myPanel10);
             this.Controls.Add(this.myPanel11);
-            this.Controls.Add(this.myPanel12);
+            this.Controls.Add(this.myPanel9);
             this.Controls.Add(this.myPanel8);
             this.Controls.Add(this.myPanel7);
             this.Controls.Add(this.myPanel6);
@@ -231,12 +232,12 @@
         private VisualComponents.MyPanel myPanel6;
         private VisualComponents.MyPanel myPanel7;
         private VisualComponents.MyPanel myPanel8;
-        private VisualComponents.MyPanel myPanel9;
+        private VisualComponents.MyPanel myPanel12;
         private VisualComponents.MyPanel myPanel10;
         private VisualComponents.MyPanel myPanel11;
-        private VisualComponents.MyPanel myPanel12;
-        private VisualComponents.MyPanel myPanel13;
+        private VisualComponents.MyPanel myPanel9;
         private VisualComponents.MyPanel myPanel14;
+        private VisualComponents.MyPanel myPanel13;
         private VisualComponents.MyPanel myPanel15;
         private VisualComponents.TitleLabel titleLabel1;
     }

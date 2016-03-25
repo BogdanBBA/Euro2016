@@ -25,6 +25,11 @@ namespace Euro2016.VisualComponents
         }
 
         private Settings settings;
+        public Settings Settings
+        {
+            get { return this.settings; }
+            set { this.settings = value; this.Invalidate(); }
+        }
 
         public CountryView()
             : base()

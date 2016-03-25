@@ -41,8 +41,8 @@ namespace Euro2016
         {
             Venue venue = item as Venue;
             this.venueButtons.CheckItemAndUncheckAllOthers<MyButton>(this.venueButtons.First(vb => vb.Text.Equals(venue.City)));
-            titleL.Text = venue.Name;
-            subtitleL.Text = venue.City + ", France";
+            venueNameIV.TextText = venue.Name;
+            venueCityIV.TextText = venue.City + ", France";
             locationPB.Load(Paths.StadiumLocationsFolder + venue.ID + ".png");
             cityPB.Load(Paths.CitiesFolder + venue.ID + ".jpg");
             stadiumOutsidePB.Load(Paths.StadiumOutsidesFolder + venue.ID + ".jpg");

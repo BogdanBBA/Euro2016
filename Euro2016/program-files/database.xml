@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Thursday, 24 March 2016, 17:07:59">
+<DATABASE lastSaved="Friday, 25 March 2016, 11:54:29">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -64,10 +64,10 @@
     <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" />
   </TEAMS>
   <GROUPS>
-    <Group ID="A" name="Group A" teams="ROU,SUI,FRA,ALB" />
+    <Group ID="A" name="Group A" teams="FRA,ROU,SUI,ALB" />
     <Group ID="B" name="Group B" teams="SVK,RUS,WLS,ENG" />
     <Group ID="C" name="Group C" teams="UKR,POL,NIR,GER" />
-    <Group ID="D" name="Group D" teams="ESP,HRV,TUR,CZE" />
+    <Group ID="D" name="Group D" teams="TUR,ESP,HRV,CZE" />
     <Group ID="E" name="Group E" teams="SWE,BEL,ITA,IRL" />
     <Group ID="F" name="Group F" teams="AUT,POR,HUN,ISL" />
   </GROUPS>
@@ -126,7 +126,7 @@
   </MATCHES>
   <SETTINGS>
     <FavoriteTeam value="GER" />
-    <ShowCountryNamesInNativeLanguage value="False" />
+    <ShowCountryNamesInNativeLanguage value="True" />
     <ShowKnockoutStageOnStartup value="False" />
   </SETTINGS>
 </DATABASE>
