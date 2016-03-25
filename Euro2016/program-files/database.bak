@@ -1,0 +1,130 @@
+<DATABASE lastSaved="Wednesday, 23 March 2016, 12:49:21">
+  <VENUES>
+    <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
+    <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
+    <Venue ID="MAR" name="Stade Vélodrome" city="Marseille" location="43.26972,5.395833" year="1937" capacity="67394" />
+    <Venue ID="LYO" name="Parc Olympique" city="Lyon" location="45.76556,4.981111" year="2016" capacity="59286" />
+    <Venue ID="LIL" name="Stade Pierre-Mauroy" city="Lille" location="50.61194,3.130556" year="2012" capacity="50186" />
+    <Venue ID="BOR" name="Nouveau Stade" city="Bordeaux" location="44.89722,-0.561944" year="2015" capacity="42115" />
+    <Venue ID="TOU" name="Stadium Municipal" city="Toulouse" location="43.58306,1.434167" year="1937" capacity="33300" />
+    <Venue ID="LEN" name="Stade Bollaert-Delelis" city="Lens" location="50.43285,2.814853" year="1933" capacity="38223" />
+    <Venue ID="NIC" name="Allianz Riviera" city="Nice" location="43.70694,7.194444" year="2013" capacity="35624" />
+    <Venue ID="STE" name="Stade Geoffroy-Guichard" city="Saint-Étienne" location="45.46083,4.39" year="1931" capacity="41965" />
+  </VENUES>
+  <COUNTRIES>
+    <Country ID="FRA" names="France|France" />
+    <Country ID="ROU" names="România|Romania" />
+    <Country ID="ALB" names="Shqipëria|Albania" />
+    <Country ID="SUI" names="Schweiz/Suisse|Switzerland" />
+    <Country ID="ENG" names="England|England" />
+    <Country ID="RUS" names="Россия|Russia" />
+    <Country ID="WLS" names="Cymru|Wales" />
+    <Country ID="SVK" names="Slovensko|Slovakia" />
+    <Country ID="GER" names="Deutschland|Germany" />
+    <Country ID="UKR" names="Україна|Ukraine" />
+    <Country ID="POL" names="Polska|Poland" />
+    <Country ID="NIR" names="Tuaisceart Éireann|Northern Ireland" />
+    <Country ID="ESP" names="España|Spain" />
+    <Country ID="CZE" names="Česká Republika|Czech Republic" />
+    <Country ID="TUR" names="Türkiye|Turkey" />
+    <Country ID="HRV" names="Hrvatska|Croatia" />
+    <Country ID="BEL" names="België/Belgique|Belgium" />
+    <Country ID="ITA" names="Italia|Italy" />
+    <Country ID="IRL" names="Éire|Ireland" />
+    <Country ID="SWE" names="Sverige|Sweden" />
+    <Country ID="POR" names="Portugal|Portugal" />
+    <Country ID="ISL" names="Ísland|Iceland" />
+    <Country ID="AUT" names="Österreich|Austria" />
+    <Country ID="HUN" names="Magyarország|Hungary" />
+  </COUNTRIES>
+  <TEAMS>
+    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" />
+    <Team countryID="ROU" nicknames="Tricolorii" />
+    <Team countryID="ALB" nicknames="Kuq e Zinjtë (Red and Blacks);Shqiponjat (Eagles)" />
+    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" />
+    <Team countryID="ENG" nicknames="The Three Lions" />
+    <Team countryID="RUS" nicknames="Национа́льная Сбо́рная (National Team)" />
+    <Team countryID="WLS" nicknames="Y Dreigiau (Dragons)" />
+    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" />
+    <Team countryID="GER" nicknames="Die Mannschaft (Team);Nationalelf (National Eleven);DFB-Elf (DFV Eleven)" />
+    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" />
+    <Team countryID="POL" nicknames="Biało-czerwoni (White and Reds);Białe Orły (White Eagles)" />
+    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" />
+    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" />
+    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" />
+    <Team countryID="TUR" nicknames="Ay Yıldızlılar (Crescent-Stars)" />
+    <Team countryID="HRV" nicknames="Vatreni (Blazers)" />
+    <Team countryID="BEL" nicknames="De Rode Duivels (Red Devils);Les Diables Rouges (Red Devils);Die Roten Teufel (Red Devils)" />
+    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" />
+    <Team countryID="IRL" nicknames="The Boys in Green;The Green Army" />
+    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" />
+    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" />
+    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" />
+    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" />
+    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" />
+  </TEAMS>
+  <GROUPS>
+    <Group ID="A" name="Group A" teams="ROU,SUI,ALB,FRA" />
+    <Group ID="B" name="Group B" teams="SVK,ENG,WLS,RUS" />
+    <Group ID="C" name="Group C" teams="NIR,GER,UKR,POL" />
+    <Group ID="D" name="Group D" teams="HRV,ESP,CZE,TUR" />
+    <Group ID="E" name="Group E" teams="ITA,BEL,IRL,SWE" />
+    <Group ID="F" name="Group F" teams="ISL,POR,AUT,HUN" />
+  </GROUPS>
+  <MATCHES>
+    <Match ID="1" category="G:A" who="FRA,ROU" when="10/6@21" where="STD" scoreboard="" />
+    <Match ID="2" category="G:A" who="ALB,SUI" when="11/6@15" where="LEN" scoreboard="" />
+    <Match ID="3" category="G:B" who="WLS,SVK" when="11/6@18" where="BOR" scoreboard="" />
+    <Match ID="4" category="G:B" who="ENG,RUS" when="11/6@21" where="MAR" scoreboard="" />
+    <Match ID="5" category="G:D" who="TUR,HRV" when="12/6@15" where="PAR" scoreboard="" />
+    <Match ID="6" category="G:C" who="POL,NIR" when="12/6@18" where="NIC" scoreboard="" />
+    <Match ID="7" category="G:C" who="GER,UKR" when="12/6@21" where="LIL" scoreboard="" />
+    <Match ID="8" category="G:D" who="ESP,CZE" when="13/6@15" where="TOU" scoreboard="" />
+    <Match ID="9" category="G:E" who="IRL,SWE" when="13/6@18" where="STD" scoreboard="" />
+    <Match ID="10" category="G:E" who="BEL,ITA" when="13/6@21" where="LYO" scoreboard="" />
+    <Match ID="11" category="G:F" who="AUT,HUN" when="14/6@18" where="BOR" scoreboard="" />
+    <Match ID="12" category="G:F" who="POR,ISL" when="14/6@21" where="STE" scoreboard="" />
+    <Match ID="13" category="G:B" who="RUS,SVK" when="15/6@15" where="LIL" scoreboard="" />
+    <Match ID="14" category="G:A" who="ROU,SUI" when="15/6@18" where="PAR" scoreboard="" />
+    <Match ID="15" category="G:A" who="FRA,ALB" when="15/6@21" where="MAR" scoreboard="" />
+    <Match ID="16" category="G:B" who="ENG,WLS" when="16/6@15" where="LEN" scoreboard="" />
+    <Match ID="17" category="G:C" who="UKR,NIR" when="16/6@18" where="LYO" scoreboard="" />
+    <Match ID="18" category="G:C" who="GER,POL" when="16/6@21" where="STD" scoreboard="" />
+    <Match ID="19" category="G:E" who="ITA,SWE" when="17/6@15" where="TOU" scoreboard="" />
+    <Match ID="20" category="G:D" who="CZE,HRV" when="17/6@18" where="STE" scoreboard="" />
+    <Match ID="21" category="G:D" who="ESP,TUR" when="17/6@21" where="NIC" scoreboard="" />
+    <Match ID="22" category="G:E" who="BEL,IRL" when="18/6@15" where="BOR" scoreboard="" />
+    <Match ID="23" category="G:F" who="ISL,HUN" when="18/6@18" where="MAR" scoreboard="" />
+    <Match ID="24" category="G:F" who="POR,AUT" when="18/6@21" where="PAR" scoreboard="" />
+    <Match ID="26" category="G:A" who="SUI,FRA" when="19/6@21" where="LIL" scoreboard="" />
+    <Match ID="25" category="G:A" who="ROU,ALB" when="19/6@21" where="LYO" scoreboard="" />
+    <Match ID="28" category="G:B" who="SVK,ENG" when="20/6@21" where="STE" scoreboard="" />
+    <Match ID="27" category="G:B" who="RUS,WLS" when="20/6@21" where="TOU" scoreboard="" />
+    <Match ID="30" category="G:C" who="NIR,GER" when="21/6@18" where="PAR" scoreboard="" />
+    <Match ID="29" category="G:C" who="UKR,POL" when="21/6@18" where="MAR" scoreboard="" />
+    <Match ID="32" category="G:D" who="HRV,ESP" when="21/6@21" where="BOR" scoreboard="" />
+    <Match ID="31" category="G:D" who="CZE,TUR" when="21/6@21" where="LEN" scoreboard="" />
+    <Match ID="33" category="G:F" who="ISL,AUT" when="22/6@18" where="STD" scoreboard="" />
+    <Match ID="34" category="G:F" who="HUN,POR" when="22/6@18" where="LYO" scoreboard="" />
+    <Match ID="36" category="G:E" who="SWE,BEL" when="22/6@21" where="NIC" scoreboard="" />
+    <Match ID="35" category="G:E" who="ITA,IRL" when="22/6@21" where="LIL" scoreboard="" />
+    <Match ID="37" category="KO:8" who="A:2,C:2" when="25/6@15" where="STE" scoreboard="" />
+    <Match ID="38" category="KO:8" who="B:1,T:A/C/D" when="25/6@18" where="PAR" scoreboard="" />
+    <Match ID="39" category="KO:8" who="D:1,T:B/E/F" when="25/6@21" where="LEN" scoreboard="" />
+    <Match ID="40" category="KO:8" who="A:1,T:C/D/E" when="26/6@15" where="LYO" scoreboard="" />
+    <Match ID="41" category="KO:8" who="C:1,T:A/B/F" when="26/6@18" where="LIL" scoreboard="" />
+    <Match ID="42" category="KO:8" who="F:1,E:2" when="26/6@21" where="TOU" scoreboard="" />
+    <Match ID="43" category="KO:8" who="E:1,D:2" when="27/6@18" where="STD" scoreboard="" />
+    <Match ID="44" category="KO:8" who="B:2,F:2" when="27/6@21" where="NIC" scoreboard="" />
+    <Match ID="45" category="KO:4" who="37,39" when="30/6@21" where="MAR" scoreboard="" />
+    <Match ID="46" category="KO:4" who="38,42" when="1/7@21" where="LIL" scoreboard="" />
+    <Match ID="47" category="KO:4" who="41,43" when="2/7@21" where="BOR" scoreboard="" />
+    <Match ID="48" category="KO:4" who="40,44" when="3/7@21" where="STD" scoreboard="" />
+    <Match ID="49" category="KO:2" who="45,46" when="6/7@21" where="LYO" scoreboard="" />
+    <Match ID="50" category="KO:2" who="47,48" when="7/7@21" where="MAR" scoreboard="" />
+    <Match ID="51" category="KO:1" who="49,50" when="10/7@21" where="STD" scoreboard="" />
+  </MATCHES>
+  <SETTINGS>
+    <Test value="False" />
+  </SETTINGS>
+</DATABASE>
