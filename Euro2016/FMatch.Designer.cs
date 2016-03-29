@@ -28,48 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.awayNicknameL = new System.Windows.Forms.Label();
-            this.homeNicknameL = new System.Windows.Forms.Label();
-            this.awayTeamL = new System.Windows.Forms.Label();
             this.awayFlagPB = new System.Windows.Forms.PictureBox();
-            this.scoreL = new System.Windows.Forms.Label();
-            this.phaseL = new System.Windows.Forms.Label();
-            this.homeTeamL = new System.Windows.Forms.Label();
-            this.whereL = new System.Windows.Forms.Label();
-            this.whenL = new System.Windows.Forms.Label();
             this.homeFlagPB = new System.Windows.Forms.PictureBox();
-            this.matchesP = new Euro2016.VisualComponents.MyPanel();
+            this.whenL = new Euro2016.VisualComponents.SmoothLabel();
+            this.halvesL = new Euro2016.VisualComponents.SmoothLabel();
             this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
+            this.matchesP = new Euro2016.VisualComponents.MyPanel();
+            this.awayNicknameL = new Euro2016.VisualComponents.SmoothLabel();
+            this.homeNicknameL = new Euro2016.VisualComponents.SmoothLabel();
+            this.awayTeamL = new Euro2016.VisualComponents.SmoothLabel();
+            this.scoreL = new Euro2016.VisualComponents.SmoothLabel();
+            this.phaseL = new Euro2016.VisualComponents.SmoothLabel();
+            this.homeTeamL = new Euro2016.VisualComponents.SmoothLabel();
+            this.whereL = new Euro2016.VisualComponents.SmoothLabel();
+            this.editB = new Euro2016.VisualComponents.MyButton();
             ((System.ComponentModel.ISupportInitialize)(this.awayFlagPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeFlagPB)).BeginInit();
             this.SuspendLayout();
             // 
+            // awayFlagPB
+            // 
+            this.awayFlagPB.BackColor = System.Drawing.Color.Transparent;
+            this.awayFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.awayFlagPB.Location = new System.Drawing.Point(479, 168);
+            this.awayFlagPB.Name = "awayFlagPB";
+            this.awayFlagPB.Size = new System.Drawing.Size(160, 100);
+            this.awayFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.awayFlagPB.TabIndex = 6;
+            this.awayFlagPB.TabStop = false;
+            this.awayFlagPB.Click += new System.EventHandler(this.awayFlagPB_Click);
+            // 
+            // homeFlagPB
+            // 
+            this.homeFlagPB.BackColor = System.Drawing.Color.Transparent;
+            this.homeFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeFlagPB.Location = new System.Drawing.Point(151, 168);
+            this.homeFlagPB.Name = "homeFlagPB";
+            this.homeFlagPB.Size = new System.Drawing.Size(160, 100);
+            this.homeFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.homeFlagPB.TabIndex = 0;
+            this.homeFlagPB.TabStop = false;
+            this.homeFlagPB.Click += new System.EventHandler(this.homeFlagPB_Click);
+            // 
+            // whenL
+            // 
+            this.whenL.BackColor = System.Drawing.Color.Transparent;
+            this.whenL.ForeColor = System.Drawing.Color.White;
+            this.whenL.Location = new System.Drawing.Point(151, 144);
+            this.whenL.Name = "whenL";
+            this.whenL.Size = new System.Drawing.Size(488, 21);
+            this.whenL.TabIndex = 14;
+            this.whenL.Text = "label1";
+            this.whenL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // halvesL
+            // 
+            this.halvesL.BackColor = System.Drawing.Color.Transparent;
+            this.halvesL.Font = new System.Drawing.Font("Segoe UI Semilight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.halvesL.ForeColor = System.Drawing.Color.White;
+            this.halvesL.Location = new System.Drawing.Point(314, 271);
+            this.halvesL.Name = "halvesL";
+            this.halvesL.Size = new System.Drawing.Size(159, 93);
+            this.halvesL.TabIndex = 13;
+            this.halvesL.Text = "10-0";
+            this.halvesL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // titleLabel1
+            // 
+            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
+            this.titleLabel1.DrawBar = true;
+            this.titleLabel1.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel1.Name = "titleLabel1";
+            this.titleLabel1.Size = new System.Drawing.Size(621, 78);
+            this.titleLabel1.TabIndex = 12;
+            this.titleLabel1.Text = "titleLabel1";
+            this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.titleLabel1.TextSubtitle = "Individual match info";
+            this.titleLabel1.TextTitle = "Match";
+            // 
+            // matchesP
+            // 
+            this.matchesP.DrawPanelAccent = false;
+            this.matchesP.Location = new System.Drawing.Point(779, 12);
+            this.matchesP.Name = "matchesP";
+            this.matchesP.Size = new System.Drawing.Size(480, 349);
+            this.matchesP.TabIndex = 11;
+            // 
             // awayNicknameL
             // 
             this.awayNicknameL.BackColor = System.Drawing.Color.Transparent;
+            this.awayNicknameL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.awayNicknameL.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.awayNicknameL.ForeColor = System.Drawing.Color.White;
             this.awayNicknameL.Location = new System.Drawing.Point(475, 313);
             this.awayNicknameL.Name = "awayNicknameL";
-            this.awayNicknameL.Size = new System.Drawing.Size(298, 42);
+            this.awayNicknameL.Size = new System.Drawing.Size(298, 48);
             this.awayNicknameL.TabIndex = 9;
             this.awayNicknameL.Text = "Tuaisceart Éireann";
+            this.awayNicknameL.Click += new System.EventHandler(this.awayFlagPB_Click);
             // 
             // homeNicknameL
             // 
             this.homeNicknameL.BackColor = System.Drawing.Color.Transparent;
+            this.homeNicknameL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homeNicknameL.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.homeNicknameL.ForeColor = System.Drawing.Color.White;
             this.homeNicknameL.Location = new System.Drawing.Point(10, 313);
             this.homeNicknameL.Name = "homeNicknameL";
-            this.homeNicknameL.Size = new System.Drawing.Size(298, 42);
+            this.homeNicknameL.Size = new System.Drawing.Size(298, 48);
             this.homeNicknameL.TabIndex = 8;
             this.homeNicknameL.Text = "Tuaisceart Éireann";
             this.homeNicknameL.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.homeNicknameL.Click += new System.EventHandler(this.homeFlagPB_Click);
             // 
             // awayTeamL
             // 
             this.awayTeamL.BackColor = System.Drawing.Color.Transparent;
+            this.awayTeamL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.awayTeamL.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.awayTeamL.ForeColor = System.Drawing.Color.White;
             this.awayTeamL.Location = new System.Drawing.Point(472, 271);
@@ -77,16 +154,7 @@
             this.awayTeamL.Size = new System.Drawing.Size(301, 42);
             this.awayTeamL.TabIndex = 7;
             this.awayTeamL.Text = "Tuaisceart Éireann";
-            // 
-            // awayFlagPB
-            // 
-            this.awayFlagPB.BackColor = System.Drawing.Color.Transparent;
-            this.awayFlagPB.Location = new System.Drawing.Point(479, 168);
-            this.awayFlagPB.Name = "awayFlagPB";
-            this.awayFlagPB.Size = new System.Drawing.Size(160, 100);
-            this.awayFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.awayFlagPB.TabIndex = 6;
-            this.awayFlagPB.TabStop = false;
+            this.awayTeamL.Click += new System.EventHandler(this.awayFlagPB_Click);
             // 
             // scoreL
             // 
@@ -95,7 +163,7 @@
             this.scoreL.ForeColor = System.Drawing.Color.White;
             this.scoreL.Location = new System.Drawing.Point(317, 168);
             this.scoreL.Name = "scoreL";
-            this.scoreL.Size = new System.Drawing.Size(149, 187);
+            this.scoreL.Size = new System.Drawing.Size(156, 100);
             this.scoreL.TabIndex = 5;
             this.scoreL.Text = "10-0";
             this.scoreL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,6 +183,7 @@
             // homeTeamL
             // 
             this.homeTeamL.BackColor = System.Drawing.Color.Transparent;
+            this.homeTeamL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.homeTeamL.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeTeamL.ForeColor = System.Drawing.Color.White;
             this.homeTeamL.Location = new System.Drawing.Point(10, 271);
@@ -123,65 +192,43 @@
             this.homeTeamL.TabIndex = 3;
             this.homeTeamL.Text = "Tuaisceart Éireann";
             this.homeTeamL.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.homeTeamL.Click += new System.EventHandler(this.homeFlagPB_Click);
             // 
             // whereL
             // 
             this.whereL.BackColor = System.Drawing.Color.Transparent;
+            this.whereL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.whereL.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.whereL.ForeColor = System.Drawing.Color.White;
-            this.whereL.Location = new System.Drawing.Point(151, 144);
+            this.whereL.Location = new System.Drawing.Point(151, 123);
             this.whereL.Name = "whereL";
             this.whereL.Size = new System.Drawing.Size(488, 21);
             this.whereL.TabIndex = 2;
             this.whereL.Text = "label2";
             this.whereL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.whereL.Click += new System.EventHandler(this.whereL_Click);
             // 
-            // whenL
+            // editB
             // 
-            this.whenL.BackColor = System.Drawing.Color.Transparent;
-            this.whenL.ForeColor = System.Drawing.Color.White;
-            this.whenL.Location = new System.Drawing.Point(151, 123);
-            this.whenL.Name = "whenL";
-            this.whenL.Size = new System.Drawing.Size(488, 21);
-            this.whenL.TabIndex = 1;
-            this.whenL.Text = "label1";
-            this.whenL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // homeFlagPB
-            // 
-            this.homeFlagPB.BackColor = System.Drawing.Color.Transparent;
-            this.homeFlagPB.Location = new System.Drawing.Point(151, 168);
-            this.homeFlagPB.Name = "homeFlagPB";
-            this.homeFlagPB.Size = new System.Drawing.Size(160, 100);
-            this.homeFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.homeFlagPB.TabIndex = 0;
-            this.homeFlagPB.TabStop = false;
-            // 
-            // matchesP
-            // 
-            this.matchesP.DrawPanelAccent = false;
-            this.matchesP.Location = new System.Drawing.Point(779, 96);
-            this.matchesP.Name = "matchesP";
-            this.matchesP.Size = new System.Drawing.Size(480, 252);
-            this.matchesP.TabIndex = 11;
-            // 
-            // titleLabel1
-            // 
-            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.titleLabel1.BigBar = false;
-            this.titleLabel1.DrawBar = true;
-            this.titleLabel1.Location = new System.Drawing.Point(12, 12);
-            this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(1247, 78);
-            this.titleLabel1.TabIndex = 12;
-            this.titleLabel1.Text = "titleLabel1";
-            this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.titleLabel1.TextSubtitle = "Individual match info";
-            this.titleLabel1.TextTitle = "Match";
+            this.editB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.editB.BigBar = false;
+            this.editB.Checked = false;
+            this.editB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editB.DrawBar = true;
+            this.editB.Image = null;
+            this.editB.Location = new System.Drawing.Point(639, 12);
+            this.editB.Name = "editB";
+            this.editB.Size = new System.Drawing.Size(134, 78);
+            this.editB.TabIndex = 15;
+            this.editB.Text = "EDIT";
+            this.editB.Click += new System.EventHandler(this.editB_Click);
             // 
             // FMatch
             // 
-            this.ClientSize = new System.Drawing.Size(1270, 360);
+            this.ClientSize = new System.Drawing.Size(1270, 373);
+            this.Controls.Add(this.editB);
+            this.Controls.Add(this.whenL);
+            this.Controls.Add(this.halvesL);
             this.Controls.Add(this.titleLabel1);
             this.Controls.Add(this.matchesP);
             this.Controls.Add(this.awayNicknameL);
@@ -192,7 +239,6 @@
             this.Controls.Add(this.phaseL);
             this.Controls.Add(this.homeTeamL);
             this.Controls.Add(this.whereL);
-            this.Controls.Add(this.whenL);
             this.Controls.Add(this.homeFlagPB);
             this.Name = "FMatch";
             this.Load += new System.EventHandler(this.FMatch_Load);
@@ -205,16 +251,18 @@
         #endregion
 
         private System.Windows.Forms.PictureBox homeFlagPB;
-        private System.Windows.Forms.Label whenL;
-        private System.Windows.Forms.Label whereL;
-        private System.Windows.Forms.Label homeTeamL;
-        private System.Windows.Forms.Label phaseL;
-        private System.Windows.Forms.Label scoreL;
-        private System.Windows.Forms.Label awayTeamL;
+        private Euro2016.VisualComponents.SmoothLabel whereL;
+        private Euro2016.VisualComponents.SmoothLabel homeTeamL;
+        private Euro2016.VisualComponents.SmoothLabel phaseL;
+        private Euro2016.VisualComponents.SmoothLabel scoreL;
+        private Euro2016.VisualComponents.SmoothLabel awayTeamL;
         private System.Windows.Forms.PictureBox awayFlagPB;
-        private System.Windows.Forms.Label awayNicknameL;
-        private System.Windows.Forms.Label homeNicknameL;
+        private Euro2016.VisualComponents.SmoothLabel awayNicknameL;
+        private Euro2016.VisualComponents.SmoothLabel homeNicknameL;
         private VisualComponents.MyPanel matchesP;
         private VisualComponents.TitleLabel titleLabel1;
+        private VisualComponents.SmoothLabel halvesL;
+        private VisualComponents.SmoothLabel whenL;
+        private VisualComponents.MyButton editB;
     }
 }

@@ -111,7 +111,7 @@ namespace Euro2016
                     this.Groups.Add(Group.Parse(node, this.Teams));
 
                 this.ThirdPlacedTeams = new Group(Database.ThirdPlacedTeamsGroupID, "Third place", new List<TableLine>());
-                this.Groups.Add(this.ThirdPlacedTeams);
+                //this.Groups.Add(this.ThirdPlacedTeams);
 
                 nodes = doc.SelectNodes("DATABASE/MATCHES/Match");
                 foreach (XmlNode node in nodes)
@@ -241,7 +241,7 @@ namespace Euro2016
             {
                 Match match = this.Matches.GetItemByID(reference);
                 if (match.Teams.Home != null & match.Teams.Away != null && match.Scoreboard.Played)
-                    return match.Scoreboard.FinalScore.HomeWin ? match.Teams.Home : match.Teams.Away;
+                    return match.Scoreboard.FullScore.HomeWin ? match.Teams.Home : match.Teams.Away;
                 return null;
             }
         }

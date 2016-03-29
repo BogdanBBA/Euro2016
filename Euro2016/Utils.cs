@@ -379,9 +379,9 @@ namespace Euro2016
             foreach (Match match in matches)
                 if (match.IsGroupMatch)
                     if (match.Teams.Home.Equals(teamA) && match.Teams.Away.Equals(teamB))
-                        return match.Scoreboard.Played ? match.Scoreboard.FinalScore.WhichTeamWon : -2;
+                        return match.Scoreboard.Played ? match.Scoreboard.FullScore.WhichTeamWon : -2;
                     else if (match.Teams.Home.Equals(teamB) && match.Teams.Away.Equals(teamA))
-                        return match.Scoreboard.Played ? -match.Scoreboard.FinalScore.WhichTeamWon : -2;
+                        return match.Scoreboard.Played ? -match.Scoreboard.FullScore.WhichTeamWon : -2;
             return -2;
         }
 
@@ -391,12 +391,12 @@ namespace Euro2016
             halves.Add(new HalfScoreboard(Utils.Random.Next(5), Utils.Random.Next(5)));
             halves.Add(new HalfScoreboard(Utils.Random.Next(5), Utils.Random.Next(5)));
             MatchScoreboard result = new MatchScoreboard(halves);
-            if (canEndInDraw || result.FinalScore.WhichTeamWon != 0)
+            if (canEndInDraw || result.FullScore.WhichTeamWon != 0)
                 return result;
             halves.Add(new HalfScoreboard(Utils.Random.Next(3), Utils.Random.Next(3)));
             halves.Add(new HalfScoreboard(Utils.Random.Next(3), Utils.Random.Next(3)));
             result.SetHalves(halves);
-            if (result.FinalScore.WhichTeamWon != 0)
+            if (result.FullScore.WhichTeamWon != 0)
                 return result;
             int home = 0, away = 0;
             while (home == away)
@@ -407,6 +407,24 @@ namespace Euro2016
             halves.Add(new HalfScoreboard(home, away));
             result.SetHalves(halves);
             return result;
+        }
+
+        public static MatchScoreboard GetAllGoals(this ListOfIDObjects<Match> matches, Team team)
+        {
+            List<HalfScoreboard> resultHalves = new List<HalfScoreboard>();
+            foreach (Match match in matches)
+                if (team == null || ((match.Teams.Home != null && match.Teams.Home.Equals(team)) || (match.Teams.Away != null && match.Teams.Away.Equals(team))))
+                    for (int iHalf = 0; iHalf < 5; iHalf++)
+                        if (iHalf < match.Scoreboard.Halves.Count)
+                        {
+                            if (resultHalves.Count <= iHalf)
+                                resultHalves.Add(new HalfScoreboard());
+                            HalfScoreboard half = team == null || match.Teams.Home.Equals(team) 
+                                ? match.Scoreboard.Halves[iHalf] 
+                                : new HalfScoreboard(match.Scoreboard.Halves[iHalf].Away, match.Scoreboard.Halves[iHalf].Home);
+                            resultHalves[iHalf].AddHalfScoreboard(half);
+                        }
+            return new MatchScoreboard(resultHalves);
         }
 
         /// <summary>Searches this list of matches and returns a sublist containing all items that are relevant to the given parameter. The parameter can be an instance of Venue, Team, Group, DateTime, string (category) or bool (played).</summary>

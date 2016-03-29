@@ -130,7 +130,7 @@ namespace Euro2016
 
         public void GroupHeader_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FGroup, Group>((sender as GroupHeader).Group);
+            this.ShowForm<FGroup, Group>((sender as GroupButton).Group);
         }
 
         public void GroupRow_Click(object sender, EventArgs e)

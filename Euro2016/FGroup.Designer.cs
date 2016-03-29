@@ -38,6 +38,7 @@
             // 
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -53,7 +54,7 @@
             this.matchesP.DrawPanelAccent = false;
             this.matchesP.Location = new System.Drawing.Point(874, 12);
             this.matchesP.Name = "matchesP";
-            this.matchesP.Size = new System.Drawing.Size(480, 382);
+            this.matchesP.Size = new System.Drawing.Size(480, 400);
             this.matchesP.TabIndex = 2;
             // 
             // groupP
@@ -61,7 +62,7 @@
             this.groupP.DrawPanelAccent = false;
             this.groupP.Location = new System.Drawing.Point(12, 162);
             this.groupP.Name = "groupP";
-            this.groupP.Size = new System.Drawing.Size(856, 232);
+            this.groupP.Size = new System.Drawing.Size(856, 250);
             this.groupP.TabIndex = 1;
             // 
             // groupButtonP
@@ -74,7 +75,7 @@
             // 
             // FGroup
             // 
-            this.ClientSize = new System.Drawing.Size(1366, 405);
+            this.ClientSize = new System.Drawing.Size(1366, 423);
             this.Controls.Add(this.titleLabel1);
             this.Controls.Add(this.matchesP);
             this.Controls.Add(this.groupP);

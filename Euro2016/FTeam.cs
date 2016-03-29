@@ -52,8 +52,11 @@ namespace Euro2016
             this.flagPB.Image = team.Country.Flag100px;
             teamNameHomeIV.TextText = team.Country.Names.Home;
             teamNameAwayIV.TextText = team.Country.Names.Away;
-            goalsL.Text = goalsAverageL.Text = label6.Text = "n/a";
-            this.matchesView.SetMatches(this.mainForm.Database.Matches.GetMatchesBy(team));
+            ListOfIDObjects<Match> matches = this.mainForm.Database.Matches.GetMatchesBy(team);
+            MatchScoreboard matchesScoreboard = matches.GetAllGoals(team);
+            infoViewDetail1.TextText = string.Format("{0}-{1}", matchesScoreboard.FinalScoreWithoutPenalties.Home, matchesScoreboard.FinalScoreWithoutPenalties.Away);
+            infoViewDetail2.TextText = string.Format("{0:N2}-{1:N2}", (double) matchesScoreboard.FinalScoreWithoutPenalties.Home / matches.Count, (double) matchesScoreboard.FinalScoreWithoutPenalties.Away / matches.Count);
+            this.matchesView.SetMatches(matches);
         }
     }
 }

@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Friday, 25 March 2016, 11:54:29">
+<DATABASE lastSaved="Tuesday, 29 March 2016, 11:27:41">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -6,7 +6,7 @@
     <Venue ID="LYO" name="Parc Olympique" city="Lyon" location="45.76556,4.981111" year="2016" capacity="59286" />
     <Venue ID="LIL" name="Stade Pierre-Mauroy" city="Lille" location="50.61194,3.130556" year="2012" capacity="50186" />
     <Venue ID="BOR" name="Nouveau Stade" city="Bordeaux" location="44.89722,-0.561944" year="2015" capacity="42115" />
-    <Venue ID="TOU" name="Stadium Municipal" city="Toulouse" location="43.58306,1.434167" year="1937" capacity="33300" />
+    <Venue ID="TOU" name="Stadium Municipal" city="Toulouse" location="43.5819454,1.4339112" year="1937" capacity="33300" />
     <Venue ID="LEN" name="Stade Bollaert-Delelis" city="Lens" location="50.43285,2.814853" year="1933" capacity="38223" />
     <Venue ID="NIC" name="Allianz Riviera" city="Nice" location="43.70694,7.194444" year="2013" capacity="35624" />
     <Venue ID="STE" name="Stade Geoffroy-Guichard" city="Saint-Étienne" location="45.46083,4.39" year="1931" capacity="41965" />
@@ -64,10 +64,10 @@
     <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" />
   </TEAMS>
   <GROUPS>
-    <Group ID="A" name="Group A" teams="FRA,ROU,SUI,ALB" />
+    <Group ID="A" name="Group A" teams="ROU,SUI,FRA,ALB" />
     <Group ID="B" name="Group B" teams="SVK,RUS,WLS,ENG" />
     <Group ID="C" name="Group C" teams="UKR,POL,NIR,GER" />
-    <Group ID="D" name="Group D" teams="TUR,ESP,HRV,CZE" />
+    <Group ID="D" name="Group D" teams="ESP,HRV,TUR,CZE" />
     <Group ID="E" name="Group E" teams="SWE,BEL,ITA,IRL" />
     <Group ID="F" name="Group F" teams="AUT,POR,HUN,ISL" />
   </GROUPS>
@@ -110,7 +110,7 @@
     <Match ID="35" category="G:E" who="ITA,IRL" when="22/6@21" where="LIL" scoreboard="2-0,1-3" />
     <Match ID="37" category="KO:8" who="A:2,C:2" when="25/6@15" where="STE" scoreboard="3-2,0-1,2-1,0-1,1-4" />
     <Match ID="38" category="KO:8" who="B:1,T:A/C/D" when="25/6@18" where="PAR" scoreboard="3-0,2-4" />
-    <Match ID="39" category="KO:8" who="D:1,T:B/E/F" when="25/6@21" where="LEN" scoreboard="0-2,2-3" />
+    <Match ID="39" category="KO:8" who="D:1,T:B/E/F" when="25/6@21" where="LEN" scoreboard="3-2,2-3,0-0,0-1" />
     <Match ID="40" category="KO:8" who="A:1,T:C/D/E" when="26/6@15" where="LYO" scoreboard="2-1,4-0" />
     <Match ID="41" category="KO:8" who="C:1,T:A/B/F" when="26/6@18" where="LIL" scoreboard="0-1,0-3" />
     <Match ID="42" category="KO:8" who="F:1,E:2" when="26/6@21" where="TOU" scoreboard="1-3,3-2" />

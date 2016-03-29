@@ -155,7 +155,7 @@ namespace Euro2016.VisualComponents
             this.DrawImage(e.Graphics, image, HorizontalAlignment.Center, 0.43f, 0.53f);
 
             if (this.Match.Scoreboard.Played)
-                this.DrawText(e.Graphics, MatchRow.ScoreFont, MyGUIs.Text[this.mouseIsOver].Brush, this.Match.Scoreboard.FormatScore, HorizontalAlignment.Center, 0.53f, 0.63f);
+                this.DrawText(e.Graphics, MatchRow.ScoreFont, MyGUIs.Text[this.mouseIsOver].Brush, this.Match.Scoreboard.FormatScore(false), HorizontalAlignment.Center, 0.53f, 0.63f);
             else
                 this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsOver].Brush, this.Match.When.ToString("HH:mm"), HorizontalAlignment.Center, 0.53f, 0.63f);
 

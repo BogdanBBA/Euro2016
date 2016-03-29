@@ -13,10 +13,10 @@ namespace Euro2016
 {
     public partial class FGroup : MyForm
     {
-        private const string GroupButtonNamePrefix = "groupGH_";
+        private const string GroupButtonNamePrefix = "groupGB_";
 
         private FMain mainForm;
-        private List<GroupHeader> groupButtons;
+        private List<GroupButton> groupButtons;
         private GroupView groupView;
         private MatchesView matchesView;
 
@@ -32,7 +32,7 @@ namespace Euro2016
             string[] groupNames = new string[this.mainForm.Database.Groups.Count];
             for (int index = 0; index < this.mainForm.Database.Groups.Count; index++)
                 groupNames[index] = this.mainForm.Database.Groups[index].Name;
-            this.groupButtons = MyEuroBaseControl.CreateControlCollection<GroupHeader>(groupNames, this.GroupButton_Click, GroupButtonNamePrefix, null);
+            this.groupButtons = MyEuroBaseControl.CreateControlCollection<GroupButton>(groupNames, this.GroupButton_Click, GroupButtonNamePrefix, null);
             for (int index = 0; index < this.mainForm.Database.Groups.Count; index++)
             {
                 this.groupButtons[index].Group = this.mainForm.Database.Groups[index];
@@ -46,13 +46,13 @@ namespace Euro2016
 
         private void GroupButton_Click(object sender, EventArgs e)
         {
-            this.RefreshInformation(sender is GroupHeader ? (sender as GroupHeader).Group : sender as Group);
+            this.RefreshInformation(sender is GroupButton ? (sender as GroupButton).Group : sender as Group);
         }
 
         public override void RefreshInformation(object item)
         {
             Group group = item as Group;
-            this.groupButtons.CheckItemAndUncheckAllOthers<GroupHeader>(this.groupButtons.First(gh => gh.Group.Equals(group)));
+            this.groupButtons.CheckItemAndUncheckAllOthers<GroupButton>(this.groupButtons.First(gh => gh.Group.Equals(group)));
             this.groupView.SetGroup(group);
 
             ListOfIDObjects<Match> matches = new ListOfIDObjects<Match>();

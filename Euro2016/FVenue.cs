@@ -18,6 +18,7 @@ namespace Euro2016
         private FMain mainForm;
         private List<MyButton> venueButtons;
         private MatchesView matchesView;
+        private Venue lastVenue;
 
         public FVenue(FMain mainForm)
         {
@@ -40,6 +41,7 @@ namespace Euro2016
         public override void RefreshInformation(object item)
         {
             Venue venue = item as Venue;
+            this.lastVenue = venue;
             this.venueButtons.CheckItemAndUncheckAllOthers<MyButton>(this.venueButtons.First(vb => vb.Text.Equals(venue.City)));
             venueNameIV.TextText = venue.Name;
             venueCityIV.TextText = venue.City + ", France";
@@ -53,6 +55,16 @@ namespace Euro2016
         private void VenueButton_Click(object sender, EventArgs e)
         {
             this.RefreshInformation(this.mainForm.Database.Venues.First(v => v.City.Equals((sender as Control).Text)));
+        }
+
+        private void venueNameIV_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"https://en.wikipedia.org/w/index.php?search=" + (sender as InfoView).TextText);
+        }
+
+        private void locationPB_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(string.Format(@"https://www.google.de/maps/@{0},{1},3000a,20y/data=!3m1!1e3?hl=en", this.lastVenue.Location.X, this.lastVenue.Location.Y));
         }
     }
 }

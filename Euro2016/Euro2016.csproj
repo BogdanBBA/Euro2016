@@ -74,6 +74,12 @@
     <Compile Include="FMatch.Designer.cs">
       <DependentUpon>FMatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMatchEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMatchEditor.Designer.cs">
+      <DependentUpon>FMatchEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="VisualComponents\InfoView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisualComponents\InfoViewDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VisualComponents\MatchView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -141,6 +150,9 @@
     <Compile Include="VisualComponents\MyToolStripMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisualComponents\SmoothLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VisualComponents\TitleLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -158,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMatch.resx">
       <DependentUpon>FMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMatchEditor.resx">
+      <DependentUpon>FMatchEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMore.resx">
       <DependentUpon>FMore.cs</DependentUpon>

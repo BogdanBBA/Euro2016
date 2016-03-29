@@ -24,65 +24,20 @@
 
         private void InitializeComponent()
         {
-            this.venueCityIV = new Euro2016.VisualComponents.InfoView();
-            this.venueNameIV = new Euro2016.VisualComponents.InfoView();
-            this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
             this.stadiumInsidePB = new System.Windows.Forms.PictureBox();
             this.stadiumOutsidePB = new System.Windows.Forms.PictureBox();
             this.cityPB = new System.Windows.Forms.PictureBox();
-            this.matchesP = new Euro2016.VisualComponents.MyPanel();
             this.locationPB = new System.Windows.Forms.PictureBox();
+            this.venueCityIV = new Euro2016.VisualComponents.InfoView();
+            this.venueNameIV = new Euro2016.VisualComponents.InfoView();
+            this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
+            this.matchesP = new Euro2016.VisualComponents.MyPanel();
             this.venueButtonP = new Euro2016.VisualComponents.MyPanel();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumInsidePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stadiumOutsidePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationPB)).BeginInit();
             this.SuspendLayout();
-            // 
-            // infoView2
-            // 
-            this.venueCityIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.venueCityIV.BigBar = true;
-            this.venueCityIV.Checked = false;
-            this.venueCityIV.DrawBar = false;
-            this.venueCityIV.Location = new System.Drawing.Point(218, 152);
-            this.venueCityIV.Name = "infoView2";
-            this.venueCityIV.Size = new System.Drawing.Size(385, 50);
-            this.venueCityIV.TabIndex = 11;
-            this.venueCityIV.Text = "infoView2";
-            this.venueCityIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.venueCityIV.TextDescription = "City of";
-            this.venueCityIV.TextText = "#text";
-            // 
-            // infoView1
-            // 
-            this.venueNameIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.venueNameIV.BigBar = true;
-            this.venueNameIV.Checked = false;
-            this.venueNameIV.DrawBar = false;
-            this.venueNameIV.Location = new System.Drawing.Point(218, 96);
-            this.venueNameIV.Name = "infoView1";
-            this.venueNameIV.Size = new System.Drawing.Size(385, 50);
-            this.venueNameIV.TabIndex = 10;
-            this.venueNameIV.Text = "infoView1";
-            this.venueNameIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.venueNameIV.TextDescription = "Stadium name";
-            this.venueNameIV.TextText = "#text";
-            // 
-            // titleLabel1
-            // 
-            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.titleLabel1.BigBar = false;
-            this.titleLabel1.Checked = false;
-            this.titleLabel1.DrawBar = true;
-            this.titleLabel1.Location = new System.Drawing.Point(12, 12);
-            this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(591, 78);
-            this.titleLabel1.TabIndex = 9;
-            this.titleLabel1.Text = "titleLabel1";
-            this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.titleLabel1.TextSubtitle = "Host cities and football stadiums";
-            this.titleLabel1.TextTitle = "Venues";
             // 
             // stadiumInsidePB
             // 
@@ -114,6 +69,67 @@
             this.cityPB.TabIndex = 5;
             this.cityPB.TabStop = false;
             // 
+            // locationPB
+            // 
+            this.locationPB.BackColor = System.Drawing.Color.Transparent;
+            this.locationPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.locationPB.Location = new System.Drawing.Point(218, 208);
+            this.locationPB.Name = "locationPB";
+            this.locationPB.Size = new System.Drawing.Size(200, 189);
+            this.locationPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.locationPB.TabIndex = 3;
+            this.locationPB.TabStop = false;
+            this.locationPB.Click += new System.EventHandler(this.locationPB_Click);
+            // 
+            // venueCityIV
+            // 
+            this.venueCityIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.venueCityIV.BigBar = true;
+            this.venueCityIV.Checked = false;
+            this.venueCityIV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.venueCityIV.DrawBar = false;
+            this.venueCityIV.Location = new System.Drawing.Point(218, 152);
+            this.venueCityIV.Name = "venueCityIV";
+            this.venueCityIV.Size = new System.Drawing.Size(385, 50);
+            this.venueCityIV.TabIndex = 11;
+            this.venueCityIV.Text = "infoView2";
+            this.venueCityIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.venueCityIV.TextDescription = "City of";
+            this.venueCityIV.TextText = "#text";
+            this.venueCityIV.Click += new System.EventHandler(this.venueNameIV_Click);
+            // 
+            // venueNameIV
+            // 
+            this.venueNameIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.venueNameIV.BigBar = true;
+            this.venueNameIV.Checked = false;
+            this.venueNameIV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.venueNameIV.DrawBar = false;
+            this.venueNameIV.Location = new System.Drawing.Point(218, 96);
+            this.venueNameIV.Name = "venueNameIV";
+            this.venueNameIV.Size = new System.Drawing.Size(385, 50);
+            this.venueNameIV.TabIndex = 10;
+            this.venueNameIV.Text = "infoView1";
+            this.venueNameIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.venueNameIV.TextDescription = "Stadium name";
+            this.venueNameIV.TextText = "#text";
+            this.venueNameIV.Click += new System.EventHandler(this.venueNameIV_Click);
+            // 
+            // titleLabel1
+            // 
+            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
+            this.titleLabel1.DrawBar = true;
+            this.titleLabel1.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel1.Name = "titleLabel1";
+            this.titleLabel1.Size = new System.Drawing.Size(591, 78);
+            this.titleLabel1.TabIndex = 9;
+            this.titleLabel1.Text = "titleLabel1";
+            this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.titleLabel1.TextSubtitle = "Host cities and football stadiums";
+            this.titleLabel1.TextTitle = "Venues";
+            // 
             // matchesP
             // 
             this.matchesP.DrawPanelAccent = false;
@@ -121,16 +137,6 @@
             this.matchesP.Name = "matchesP";
             this.matchesP.Size = new System.Drawing.Size(480, 385);
             this.matchesP.TabIndex = 4;
-            // 
-            // locationPB
-            // 
-            this.locationPB.BackColor = System.Drawing.Color.Transparent;
-            this.locationPB.Location = new System.Drawing.Point(218, 208);
-            this.locationPB.Name = "locationPB";
-            this.locationPB.Size = new System.Drawing.Size(200, 189);
-            this.locationPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.locationPB.TabIndex = 3;
-            this.locationPB.TabStop = false;
             // 
             // venueButtonP
             // 

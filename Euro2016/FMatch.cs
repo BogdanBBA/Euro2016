@@ -15,6 +15,7 @@ namespace Euro2016
     {
         private FMain mainForm;
         private MatchesView matchesView;
+        private Match lastMatch;
 
         public FMatch(FMain mainForm)
         {
@@ -28,6 +29,18 @@ namespace Euro2016
             this.matchesView = new MatchesView(matchesP, this.mainForm.MatchHeader_Click, this.MatchRow_Click, this.mainForm.Database.Settings);
             this.MouseWheel += this.matchesView.myScrollPanel.MouseWheelScroll_EventHandler;
             this.matchesView.SetMatches(this.mainForm.Database.Matches);
+
+            phaseL.ForeColor = MyGUIs.Text.Highlighted.Color;
+
+            phaseL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 18, FontStyle.Bold);
+            whereL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 13, FontStyle.Regular);
+            whenL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 13, FontStyle.Bold);
+            homeTeamL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 23, FontStyle.Bold);
+            awayTeamL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 23, FontStyle.Bold);
+            homeNicknameL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 12, FontStyle.Regular);
+            awayNicknameL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 12, FontStyle.Regular);
+            scoreL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 35, FontStyle.Bold);
+            halvesL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 10, FontStyle.Regular);
         }
 
         private void RefreshTeamInfo(Team team, PictureBox flagPB, Label nameL, Label nicknameL)
@@ -49,17 +62,39 @@ namespace Euro2016
         private void MatchRow_Click(object sender, EventArgs e)
         {
             Match match = sender is MatchRow ? (sender as MatchRow).Match : sender as Match;
+            this.lastMatch = match;
             phaseL.Text = match.FormatCategory;
             whenL.Text = match.When.ToString("dddd, d MMMM yyyy, 'at' HH:mm");
             whereL.Text = match.Where.Name + ", " + match.Where.City;
             this.RefreshTeamInfo(match.Teams.Home, homeFlagPB, homeTeamL, homeNicknameL);
             this.RefreshTeamInfo(match.Teams.Away, awayFlagPB, awayTeamL, awayNicknameL);
-            scoreL.Text = match.Scoreboard.FormatScore;
+            scoreL.Text = match.Scoreboard.FormatScore(false);
+            halvesL.Text = match.Scoreboard.ScoreDescription(false);
         }
 
         public override void RefreshInformation(object item)
         {
             this.MatchRow_Click(item, null);
+        }
+
+        private void whereL_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowForm<FVenue, Venue>(this.lastMatch.Where);
+        }
+
+        private void homeFlagPB_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Home);
+        }
+
+        private void awayFlagPB_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Away);
+        }
+
+        private void editB_Click(object sender, EventArgs e)
+        {
+            new FMatchEditor(this.lastMatch).ShowDialog(this);
         }
     }
 }

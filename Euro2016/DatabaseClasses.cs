@@ -104,6 +104,7 @@ namespace Euro2016
         public PairT<string> Names { get; private set; }
         public Bitmap FlagOriginal { get; private set; }
         public Bitmap Flag100px { get; private set; }
+        public Bitmap Flag40px { get; private set; }
         public Bitmap Flag20px { get; private set; }
 
         public Country(string id, PairT<string> names, Bitmap flagOriginal)
@@ -112,6 +113,7 @@ namespace Euro2016
             this.Names = names;
             this.FlagOriginal = flagOriginal;
             this.Flag100px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 160, 100, InterpolationMode.HighQualityBicubic, false);
+            this.Flag40px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 64, 40, InterpolationMode.HighQualityBicubic, false);
             this.Flag20px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 32, 20, InterpolationMode.HighQualityBicubic, false);
         }
 
@@ -231,7 +233,7 @@ namespace Euro2016
                 return;
             if (this.Team.Equals(match.Teams.Home)) // this team is home
             {
-                switch (match.Scoreboard.FinalScore.WhichTeamWon)
+                switch (match.Scoreboard.FullScore.WhichTeamWon)
                 {
                     case -1: // home
                         this.Won++;
@@ -243,12 +245,12 @@ namespace Euro2016
                         this.Lost++;
                         break;
                 }
-                this.GoalsFor += match.Scoreboard.FinalScore.Home;
-                this.GoalsAgainst += match.Scoreboard.FinalScore.Away;
+                this.GoalsFor += match.Scoreboard.FullScore.Home;
+                this.GoalsAgainst += match.Scoreboard.FullScore.Away;
             }
             else if (this.Team.Equals(match.Teams.Away))
             {
-                switch (match.Scoreboard.FinalScore.WhichTeamWon) // this team is away
+                switch (match.Scoreboard.FullScore.WhichTeamWon) // this team is away
                 {
                     case -1: // home
                         this.Lost++;
@@ -260,8 +262,8 @@ namespace Euro2016
                         this.Won++;
                         break;
                 }
-                this.GoalsFor += match.Scoreboard.FinalScore.Away;
-                this.GoalsAgainst += match.Scoreboard.FinalScore.Home;
+                this.GoalsFor += match.Scoreboard.FullScore.Away;
+                this.GoalsAgainst += match.Scoreboard.FullScore.Home;
             }
             else
                 return;
@@ -430,45 +432,70 @@ namespace Euro2016
     public class MatchScoreboard
     {
         public List<HalfScoreboard> Halves { get; private set; }
-        public HalfScoreboard FinalScore { get; private set; }
+        public HalfScoreboard FullScore { get; private set; }
+        public HalfScoreboard FinalScoreWithoutPenalties { get; private set; }
 
         public MatchScoreboard(List<HalfScoreboard> halves)
         {
             this.Halves = new List<HalfScoreboard>();
-            this.FinalScore = new HalfScoreboard();
+            this.FullScore = new HalfScoreboard();
+            this.FinalScoreWithoutPenalties = new HalfScoreboard();
             this.SetHalves(halves);
         }
 
         public void SetHalves(List<HalfScoreboard> halves)
         {
             this.Halves.Clear();
-            this.FinalScore.Reset();
-            foreach (HalfScoreboard half in halves)
+            this.FullScore.Reset();
+            for (int iHalf = 0; iHalf < halves.Count; iHalf++)
             {
-                this.Halves.Add(half);
-                this.FinalScore.AddHalfScoreboard(half);
+                this.Halves.Add(halves[iHalf]);
+                this.FullScore.AddHalfScoreboard(halves[iHalf]);
+                if (iHalf < 4)
+                    this.FinalScoreWithoutPenalties.AddHalfScoreboard(halves[iHalf]);
             }
         }
+
+        public bool FinishedInRegularTime
+        { get { return this.Halves.Count == 2; } }
+
+        public bool FinishedInExtraTime
+        { get { return this.Halves.Count == 4; } }
+
+        public bool FinishedAtPenalties
+        { get { return this.Halves.Count == 5; } }
 
         public bool Played
+        { get { return this.FinishedInRegularTime || this.FinishedInExtraTime || this.FinishedAtPenalties; } }
+
+        public string FormatScore(bool includePenaltiesIfAny)
         {
-            get
+            if (!this.Played)
+                return "-";
+            if (includePenaltiesIfAny)
+                return this.FullScore.FormatHalfScore;
+            StringBuilder sb = new StringBuilder(this.FinalScoreWithoutPenalties.FormatHalfScore);
+            if (this.FinishedAtPenalties)
             {
-                return this.Halves.Count == 2 || this.Halves.Count == 4 || this.Halves.Count == 5;
+                if (this.FullScore.HomeWin)
+                    sb.Insert(0, '*');
+                if (this.FullScore.AwayWin)
+                    sb.Append('*');
             }
+            return sb.ToString();
         }
 
-        public string FormatScore
+        public string ScoreDescription(bool includePenaltiesIfAny)
         {
-            get
-            {
-                if (!this.Played)
-                    return "-";
-                string score = this.FinalScore.FormatHalfScore;
-                //if (this.Halves.Count < 5)
-                return score;
-                //return this.FinalScore.AwayWin ? score + "*" : "*" + score;
-            }
+            if (!this.Played)
+                return "";
+            StringBuilder sb = new StringBuilder();
+            for (int iHalf = 0; iHalf < (includePenaltiesIfAny ? this.Halves.Count : (int) Math.Min(4, this.Halves.Count)); iHalf++)
+                sb.Append(this.Halves[iHalf].FormatHalfScore).Append(", ");
+            if (!this.FinishedAtPenalties)
+                return (this.FinishedInRegularTime ? "finished in regular time" : "finished in extra time") + "\n" + sb.ToString().Substring(0, sb.Length - 2);
+            else
+                return "finished at penalties\n" + string.Format("(score {0}-{1})", this.Halves[4].Home, this.Halves[4].Away) + "\n" + sb.ToString().Substring(0, sb.Length - 2);
         }
     }
 
