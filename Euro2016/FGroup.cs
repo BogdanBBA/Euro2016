@@ -57,7 +57,7 @@ namespace Euro2016
 
             ListOfIDObjects<Match> matches = new ListOfIDObjects<Match>();
             foreach (TableLine tableLine in group.TableLines)
-                matches.AddRange(this.mainForm.Database.Matches.GetMatchesBy(tableLine.Team));
+                matches.AddRange(this.mainForm.Database.Matches.GetMatchesBy(tableLine.Team).GetMatchesBy("G:"));
             this.matchesView.SetMatches(matches);
         }
     }

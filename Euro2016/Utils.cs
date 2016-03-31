@@ -419,12 +419,20 @@ namespace Euro2016
                         {
                             if (resultHalves.Count <= iHalf)
                                 resultHalves.Add(new HalfScoreboard());
-                            HalfScoreboard half = team == null || match.Teams.Home.Equals(team) 
-                                ? match.Scoreboard.Halves[iHalf] 
+                            HalfScoreboard half = team == null || match.Teams.Home.Equals(team)
+                                ? match.Scoreboard.Halves[iHalf]
                                 : new HalfScoreboard(match.Scoreboard.Halves[iHalf].Away, match.Scoreboard.Halves[iHalf].Home);
                             resultHalves[iHalf].AddHalfScoreboard(half);
                         }
             return new MatchScoreboard(resultHalves);
+        }
+
+        public static int IndexOfTeam(this List<TableLine> lines, Team team)
+        {
+            for (int index = 0; index < lines.Count; index++)
+                if (lines[index].Team != null && lines[index].Team.Equals(team))
+                    return index;
+            return -1;
         }
 
         /// <summary>Searches this list of matches and returns a sublist containing all items that are relevant to the given parameter. The parameter can be an instance of Venue, Team, Group, DateTime, string (category) or bool (played).</summary>

@@ -180,13 +180,13 @@ namespace Euro2016
 
         public override string ToString()
         {
-            return base.ToString();
+            return string.Format("Country={0}", this.Country != null ? this.Country.ID : "null");
         }
     }
 
     public class TableLine
     {
-        public Team Team { get; private set; }
+        public Team Team { get; internal set; }
         public int Position { get; set; }
         public int MatchesPlayed { get; set; }
         public int Won { get; set; }
@@ -227,9 +227,9 @@ namespace Euro2016
             this.Points = 0;
         }
 
-        public void AddMatchResult(Match match)
+        public void AddGroupMatchResult(Match match)
         {
-            if (!match.Scoreboard.Played)
+            if (!match.Scoreboard.Played || !match.IsGroupMatch)
                 return;
             if (this.Team.Equals(match.Teams.Home)) // this team is home
             {
@@ -309,53 +309,91 @@ namespace Euro2016
 
         public void SortTableLines(bool thirdPlacedTeamGroup, List<Match> matches)
         {
-            if (!thirdPlacedTeamGroup)
-                for (int iIndex = 0; iIndex < this.TableLines.Count - 1; iIndex++)
-                    for (int jIndex = iIndex + 1; jIndex < this.TableLines.Count; jIndex++)
+            // sort by points
+            for (int iIndex = 0; iIndex < this.TableLines.Count - 1; iIndex++)
+                for (int jIndex = iIndex + 1; jIndex < this.TableLines.Count; jIndex++)
+                    if (this.TableLines[iIndex].Points < this.TableLines[jIndex].Points)
+                        this.TableLines.SwapItemsAtPositions(iIndex, jIndex);
+
+            // take each set of teams with equal points
+            List<TableLine> tempLines = new List<TableLine>();
+            int iStart = 0, iEnd = 0;
+            while (iEnd < this.TableLines.Count)
+            {
+                // get set of teams with equal points (and remember full group interval with iStart and iEnd)
+                tempLines.Clear();
+                for (; iEnd < this.TableLines.Count && this.TableLines[iEnd].Points == this.TableLines[iStart].Points; iEnd++)
+                    tempLines.Add(new TableLine(this.TableLines[iEnd].Team));
+                iEnd--;
+
+                // register matches for this set (a kind of subgroup of teams, with matches only between them)
+                foreach (Match match in matches)
+                    if (tempLines.IndexOfTeam(match.Teams.Home) != -1 && tempLines.IndexOfTeam(match.Teams.Away) != -1)
+                        foreach (TableLine tLine in tempLines)
+                            tLine.AddGroupMatchResult(match);
+
+                // if more than one team, sort by appropriate criteria
+                if (tempLines.Count > 1)
+                {
+                    if (!thirdPlacedTeamGroup) // normal group, involves direct matches and more complicated criteria (and risk of incorrect output, given combination of results, and lack of certain types of input data)
                     {
-                        TableLine iT = this.TableLines[iIndex], jT = this.TableLines[jIndex];
-                        bool needToSwap = false;
-
-                        if (iT.Points < jT.Points)
-                            needToSwap = true;
-                        else if (iT.Points == jT.Points)
-                        {
-                            int whoWonDirectMatch = matches.WhoWonGroupMatchBetween(iT.Team, jT.Team);
-                            if (whoWonDirectMatch == 1)
-                                needToSwap = true;
-                            else if (whoWonDirectMatch == 0 || whoWonDirectMatch == -2)
+                        for (int iIndex = 0; iIndex < tempLines.Count - 1; iIndex++)
+                            for (int jIndex = iIndex + 1; jIndex < tempLines.Count; jIndex++)
                             {
-                                if (iT.GoalDifference < jT.GoalDifference)
-                                    needToSwap = true;
-                            }
-                        }
+                                TableLine iT = tempLines[iIndex], jT = tempLines[jIndex];
+                                bool needToSwap = false;
 
-                        if (needToSwap)
-                            this.TableLines.SwapItemsAtPositions(iIndex, jIndex);
+                                int whoWonDirectMatch = matches.WhoWonGroupMatchBetween(iT.Team, jT.Team);
+                                if (whoWonDirectMatch == 1)
+                                    needToSwap = true;
+                                else if (whoWonDirectMatch == 0 || whoWonDirectMatch == -2)
+                                {
+                                    if (iT.GoalDifference < jT.GoalDifference)
+                                        needToSwap = true;
+                                }
+
+                                if (needToSwap)
+                                    tempLines.SwapItemsAtPositions(iIndex, jIndex);
+                            }
+
+                        for (int indexInFullTable = iStart; indexInFullTable <= iEnd; indexInFullTable++)
+                        {
+                            int indexInTempTable = indexInFullTable - iStart;
+                            if (!this.TableLines[indexInFullTable].Team.Equals(tempLines[indexInTempTable].Team))
+                                this.TableLines.SwapItemsAtPositions(this.TableLines.IndexOfTeam(tempLines[indexInTempTable].Team), indexInTempTable);
+                        }
                     }
-            else
-                for (int iIndex = 0; iIndex < this.TableLines.Count - 1; iIndex++)
-                    for (int jIndex = iIndex + 1; jIndex < this.TableLines.Count; jIndex++)
+                    else // third-placed teams group, more simple sorting criteria
                     {
-                        TableLine iT = this.TableLines[iIndex], jT = this.TableLines[jIndex];
-                        bool needToSwap = false;
-
-                        if (iT.Points < jT.Points)
-                            needToSwap = true;
-                        if (iT.Points == jT.Points)
-                        {
-                            if (iT.GoalDifference < jT.GoalDifference)
-                                needToSwap = true;
-                            else if (iT.GoalDifference == jT.GoalDifference)
+                        for (int iIndex = 0; iIndex < tempLines.Count - 1; iIndex++)
+                            for (int jIndex = iIndex + 1; jIndex < tempLines.Count; jIndex++)
                             {
-                                if (iT.GoalsFor < jT.GoalsFor)
-                                    needToSwap = true;
-                            }
-                        }
+                                TableLine iT = tempLines[iIndex], jT = tempLines[jIndex];
+                                bool needToSwap = false;
 
-                        if (needToSwap)
-                            this.TableLines.SwapItemsAtPositions(iIndex, jIndex);
+                                if (iT.Points < jT.Points)
+                                    needToSwap = true;
+                                else if (iT.Points == jT.Points)
+                                {
+                                    if (iT.GoalDifference < jT.GoalDifference)
+                                        needToSwap = true;
+                                    else if (iT.GoalDifference == jT.GoalDifference)
+                                    {
+                                        if (iT.GoalsFor < jT.GoalsFor)
+                                            needToSwap = true;
+                                    }
+                                }
+
+                                if (needToSwap)
+                                    tempLines.SwapItemsAtPositions(iIndex, jIndex);
+                            }
                     }
+                }
+
+                iEnd++;
+                iStart = iEnd;
+            }
+
             for (int index = 0; index < this.TableLines.Count; index++)
                 this.TableLines[index].Position = index + 1;
         }
@@ -378,6 +416,7 @@ namespace Euro2016
             List<string> countryIDs = new List<string>();
             foreach (TableLine line in this.TableLines)
                 countryIDs.Add(line.Team.Country.ID);
+            countryIDs.Sort();
             node.AddAttribute(doc, "teams", countryIDs.GetListString(","));
             return node;
         }
@@ -427,6 +466,17 @@ namespace Euro2016
         {
             get { return this.Home + "-" + this.Away; }
         }
+
+        public static HalfScoreboard Parse(string text)
+        {
+            string[] parts = text.Split('-');
+            return new HalfScoreboard(Int32.Parse(parts[0]), Int32.Parse(parts[1]));
+        }
+
+        public override string ToString()
+        {
+            return this.FormatHalfScore;
+        }
     }
 
     public class MatchScoreboard
@@ -447,6 +497,7 @@ namespace Euro2016
         {
             this.Halves.Clear();
             this.FullScore.Reset();
+            this.FinalScoreWithoutPenalties.Reset();
             for (int iHalf = 0; iHalf < halves.Count; iHalf++)
             {
                 this.Halves.Add(halves[iHalf]);
@@ -496,6 +547,20 @@ namespace Euro2016
                 return (this.FinishedInRegularTime ? "finished in regular time" : "finished in extra time") + "\n" + sb.ToString().Substring(0, sb.Length - 2);
             else
                 return "finished at penalties\n" + string.Format("(score {0}-{1})", this.Halves[4].Home, this.Halves[4].Away) + "\n" + sb.ToString().Substring(0, sb.Length - 2);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder(this.FullScore.FormatHalfScore);
+            sb.Append(" (").Append(this.Halves.Count).Append(" halves");
+            if (this.Halves.Count > 0)
+            {
+                sb.Append(": ");
+                foreach (HalfScoreboard half in this.Halves)
+                    sb.Append(half.FormatHalfScore).Append(',');
+                sb = sb.Remove(sb.Length - 1, 1);
+            }
+            return sb.Append(')').ToString();
         }
     }
 
@@ -569,10 +634,7 @@ namespace Euro2016
             {
                 string[] scoreParts = scoreboardStr.Split(',');
                 foreach (string score in scoreParts)
-                {
-                    string[] goals = score.Split('-');
-                    halves.Add(new HalfScoreboard(Int32.Parse(goals[0]), Int32.Parse(goals[1])));
-                }
+                    halves.Add(HalfScoreboard.Parse(score));
             }
             MatchScoreboard scoreboard = new MatchScoreboard(halves);
             return new Match(id, category, teamReferences, when, where, scoreboard);
@@ -590,6 +652,12 @@ namespace Euro2016
                 scores.Add(score.Home + "-" + score.Away);
             node.AddAttribute(doc, "scoreboard", scores.GetListString(","));
             return node;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("ID={0}, category={1}, references={2}-{3}, scoreboard={4}",
+                this.ID, this.Category, this.TeamReferences.Home, this.TeamReferences.Away, this.Scoreboard.ToString());
         }
     }
 }

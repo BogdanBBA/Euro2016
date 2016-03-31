@@ -13,7 +13,7 @@ namespace Euro2016
 {
     public partial class FMatch : MyForm
     {
-        private FMain mainForm;
+        internal FMain mainForm;
         private MatchesView matchesView;
         private Match lastMatch;
 
@@ -77,6 +77,14 @@ namespace Euro2016
             this.MatchRow_Click(item, null);
         }
 
+        private void phaseL_Click(object sender, EventArgs e)
+        {
+            if (this.lastMatch.IsGroupMatch)
+                this.mainForm.ShowForm<FGroup, Group>(this.mainForm.Database.Groups.GetItemByID(this.lastMatch.Category.Substring(this.lastMatch.Category.IndexOf(':') + 1)));
+            else
+                this.mainForm.ShowForm<FKnockOut, ListOfIDObjects<Match>>(this.mainForm.Database.Matches.GetMatchesBy("KO"));
+        }
+
         private void whereL_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowForm<FVenue, Venue>(this.lastMatch.Where);
@@ -84,16 +92,23 @@ namespace Euro2016
 
         private void homeFlagPB_Click(object sender, EventArgs e)
         {
-            this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Home);
+            if (this.lastMatch.Teams.Home != null)
+                this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Home);
         }
 
         private void awayFlagPB_Click(object sender, EventArgs e)
         {
-            this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Away);
+            if (this.lastMatch.Teams.Away != null)
+                this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Away);
         }
 
         private void editB_Click(object sender, EventArgs e)
         {
+            if (this.lastMatch.Teams.Home == null || this.lastMatch.Teams.Away == null)
+            {
+                MessageBox.Show("Both teams of a match must be known in order to edit the match.", "Match editor warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             new FMatchEditor(this.lastMatch).ShowDialog(this);
         }
     }

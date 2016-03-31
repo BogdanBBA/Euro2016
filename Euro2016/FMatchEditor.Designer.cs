@@ -40,8 +40,9 @@
             this.matchExtraTimeChB = new System.Windows.Forms.CheckBox();
             this.penaltiesTB = new System.Windows.Forms.TextBox();
             this.matchPenaltiesChB = new System.Windows.Forms.CheckBox();
-            this.dashBetweenTeamsL = new System.Windows.Forms.Label();
+            this.scoreL = new Euro2016.VisualComponents.SmoothLabel();
             this.errorL = new System.Windows.Forms.Label();
+            this.cancelB = new Euro2016.VisualComponents.MyButton();
             this.SuspendLayout();
             // 
             // awayTeamCV
@@ -50,7 +51,6 @@
             this.awayTeamCV.Checked = false;
             this.awayTeamCV.Country = null;
             this.awayTeamCV.Cursor = System.Windows.Forms.Cursors.Default;
-            this.awayTeamCV.Font = new System.Drawing.Font("Arial", 12F);
             this.awayTeamCV.InverseFlag = false;
             this.awayTeamCV.Location = new System.Drawing.Point(267, 70);
             this.awayTeamCV.Name = "awayTeamCV";
@@ -65,7 +65,6 @@
             this.homeTeamCV.Checked = false;
             this.homeTeamCV.Country = null;
             this.homeTeamCV.Cursor = System.Windows.Forms.Cursors.Default;
-            this.homeTeamCV.Font = new System.Drawing.Font("Arial", 12F);
             this.homeTeamCV.InverseFlag = true;
             this.homeTeamCV.Location = new System.Drawing.Point(12, 70);
             this.homeTeamCV.Name = "homeTeamCV";
@@ -96,11 +95,10 @@
             this.okB.Checked = false;
             this.okB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okB.DrawBar = true;
-            this.okB.Font = new System.Drawing.Font("Arial", 10F);
             this.okB.Image = null;
-            this.okB.Location = new System.Drawing.Point(135, 363);
+            this.okB.Location = new System.Drawing.Point(12, 384);
             this.okB.Name = "okB";
-            this.okB.Size = new System.Drawing.Size(206, 71);
+            this.okB.Size = new System.Drawing.Size(223, 50);
             this.okB.TabIndex = 0;
             this.okB.Text = "Save and close";
             this.okB.Click += new System.EventHandler(this.okB_Click);
@@ -129,6 +127,7 @@
             this.regularFirstHalfTB.TabIndex = 7;
             this.regularFirstHalfTB.Text = "10-10";
             this.regularFirstHalfTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regularFirstHalfTB.TextChanged += new System.EventHandler(this.Checks_Event);
             // 
             // regularSecondHalfTB
             // 
@@ -141,30 +140,33 @@
             this.regularSecondHalfTB.TabIndex = 8;
             this.regularSecondHalfTB.Text = "10-10";
             this.regularSecondHalfTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.regularSecondHalfTB.TextChanged += new System.EventHandler(this.Checks_Event);
             // 
             // extraFirstHalfTB
             // 
             this.extraFirstHalfTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.extraFirstHalfTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.extraFirstHalfTB.ForeColor = System.Drawing.Color.White;
-            this.extraFirstHalfTB.Location = new System.Drawing.Point(241, 198);
+            this.extraFirstHalfTB.Location = new System.Drawing.Point(135, 198);
             this.extraFirstHalfTB.Name = "extraFirstHalfTB";
             this.extraFirstHalfTB.Size = new System.Drawing.Size(100, 22);
             this.extraFirstHalfTB.TabIndex = 11;
             this.extraFirstHalfTB.Text = "10-10";
             this.extraFirstHalfTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.extraFirstHalfTB.TextChanged += new System.EventHandler(this.Checks_Event);
             // 
             // extraSecondHalfTB
             // 
             this.extraSecondHalfTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.extraSecondHalfTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.extraSecondHalfTB.ForeColor = System.Drawing.Color.White;
-            this.extraSecondHalfTB.Location = new System.Drawing.Point(135, 198);
+            this.extraSecondHalfTB.Location = new System.Drawing.Point(241, 198);
             this.extraSecondHalfTB.Name = "extraSecondHalfTB";
             this.extraSecondHalfTB.Size = new System.Drawing.Size(100, 22);
             this.extraSecondHalfTB.TabIndex = 10;
             this.extraSecondHalfTB.Text = "10-10";
             this.extraSecondHalfTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.extraSecondHalfTB.TextChanged += new System.EventHandler(this.Checks_Event);
             // 
             // matchExtraTimeChB
             // 
@@ -190,6 +192,7 @@
             this.penaltiesTB.TabIndex = 13;
             this.penaltiesTB.Text = "10-10";
             this.penaltiesTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.penaltiesTB.TextChanged += new System.EventHandler(this.Checks_Event);
             // 
             // matchPenaltiesChB
             // 
@@ -206,13 +209,13 @@
             // 
             // dashBetweenTeamsL
             // 
-            this.dashBetweenTeamsL.BackColor = System.Drawing.Color.Transparent;
-            this.dashBetweenTeamsL.Location = new System.Drawing.Point(218, 70);
-            this.dashBetweenTeamsL.Name = "dashBetweenTeamsL";
-            this.dashBetweenTeamsL.Size = new System.Drawing.Size(43, 28);
-            this.dashBetweenTeamsL.TabIndex = 14;
-            this.dashBetweenTeamsL.Text = "-";
-            this.dashBetweenTeamsL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.scoreL.BackColor = System.Drawing.Color.Transparent;
+            this.scoreL.Location = new System.Drawing.Point(218, 70);
+            this.scoreL.Name = "dashBetweenTeamsL";
+            this.scoreL.Size = new System.Drawing.Size(43, 28);
+            this.scoreL.TabIndex = 14;
+            this.scoreL.Text = "-";
+            this.scoreL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // errorL
             // 
@@ -226,11 +229,27 @@
             this.errorL.Text = "test test here";
             this.errorL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cancelB
+            // 
+            this.cancelB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.cancelB.BigBar = false;
+            this.cancelB.Checked = false;
+            this.cancelB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelB.DrawBar = true;
+            this.cancelB.Image = null;
+            this.cancelB.Location = new System.Drawing.Point(241, 384);
+            this.cancelB.Name = "cancelB";
+            this.cancelB.Size = new System.Drawing.Size(226, 50);
+            this.cancelB.TabIndex = 16;
+            this.cancelB.Text = "Cancel";
+            this.cancelB.Click += new System.EventHandler(this.cancelB_Click);
+            // 
             // FMatchEditor
             // 
             this.ClientSize = new System.Drawing.Size(480, 446);
+            this.Controls.Add(this.cancelB);
             this.Controls.Add(this.errorL);
-            this.Controls.Add(this.dashBetweenTeamsL);
+            this.Controls.Add(this.scoreL);
             this.Controls.Add(this.penaltiesTB);
             this.Controls.Add(this.matchPenaltiesChB);
             this.Controls.Add(this.extraFirstHalfTB);
@@ -264,7 +283,8 @@
         private System.Windows.Forms.CheckBox matchExtraTimeChB;
         private System.Windows.Forms.TextBox penaltiesTB;
         private System.Windows.Forms.CheckBox matchPenaltiesChB;
-        private System.Windows.Forms.Label dashBetweenTeamsL;
+        private Euro2016.VisualComponents.SmoothLabel scoreL;
         private System.Windows.Forms.Label errorL;
+        private VisualComponents.MyButton cancelB;
     }
 }

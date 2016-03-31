@@ -15,6 +15,7 @@ namespace Euro2016
     {
         private enum MatchPhase { None, RegularTime, ExtraTime, Penalties };
         private Match match;
+        private HalfScoreboard score;
 
         public FMatchEditor(Match match)
         {
@@ -46,11 +47,11 @@ namespace Euro2016
             {
                 regularFirstHalfTB.Text = this.match.Scoreboard.Halves[0].FormatHalfScore;
                 regularSecondHalfTB.Text = this.match.Scoreboard.Halves[1].FormatHalfScore;
-                if (this.match.Scoreboard.FinishedInExtraTime)
+                if (this.match.Scoreboard.Halves.Count > 2)
                 {
                     extraFirstHalfTB.Text = this.match.Scoreboard.Halves[2].FormatHalfScore;
                     extraSecondHalfTB.Text = this.match.Scoreboard.Halves[3].FormatHalfScore;
-                    if (this.match.Scoreboard.FinishedAtPenalties)
+                    if (this.match.Scoreboard.Halves.Count > 4)
                         penaltiesTB.Text = this.match.Scoreboard.Halves[4].FormatHalfScore;
                 }
             }
@@ -86,8 +87,7 @@ namespace Euro2016
 
         private void SetScoreBox(TextBox box, bool enabled)
         {
-            box.Enabled = enabled;
-            box.BackColor = MyGUIs.Background[enabled].Color;
+            box.Visible = enabled;
             box.Text = enabled ? "0-0" : "";
         }
 
@@ -98,7 +98,11 @@ namespace Euro2016
             this.SetScoreBox(regularSecondHalfTB, matchPlayedChB.Checked);
 
             matchExtraTimeChB.Visible = matchPlayedChB.Checked;
+            if (!matchExtraTimeChB.Visible)
+                matchExtraTimeChB.Checked = false;
             matchExtraTimeChB_CheckedChanged(sender, e);
+
+            Checks_Event(sender, e);
         }
 
         // extra time
@@ -108,16 +112,117 @@ namespace Euro2016
             this.SetScoreBox(extraSecondHalfTB, matchExtraTimeChB.Checked);
 
             matchPenaltiesChB.Visible = matchExtraTimeChB.Checked;
+            if (!matchPenaltiesChB.Visible)
+                matchPenaltiesChB.Checked = false;
             matchPenaltiesChB_CheckedChanged(sender, e);
+
+            Checks_Event(sender, e);
         }
 
         // penalties
         private void matchPenaltiesChB_CheckedChanged(object sender, EventArgs e)
         {
             this.SetScoreBox(penaltiesTB, matchPenaltiesChB.Checked);
+
+            Checks_Event(sender, e);
+        }
+
+        private bool CheckScoreboxFormat(TextBox box, out string error)
+        {
+            try
+            {
+                string[] parts = box.Text.Split('-');
+                if (parts.Length != 2)
+                    throw new ApplicationException("Incorrect number of parts separated by a dash");
+                int a = Int32.Parse(parts[0]), b = Int32.Parse(parts[1]);
+                if (a < 0 || b < 0)
+                    throw new ApplicationException("Incorrect number of goals scored");
+                error = "";
+                return true;
+            }
+            catch (Exception E)
+            {
+                error = box.Name.Replace("TB", "") + ": " + E.Message;
+                return false;
+            }
+        }
+
+        private string ChecksResult()
+        {
+            string error;
+            if (matchPlayedChB.Checked && !this.CheckScoreboxFormat(regularFirstHalfTB, out error))
+                return error;
+            if (matchPlayedChB.Checked && !this.CheckScoreboxFormat(regularSecondHalfTB, out error))
+                return error;
+            if (matchExtraTimeChB.Checked && !this.CheckScoreboxFormat(extraFirstHalfTB, out error))
+                return error;
+            if (matchExtraTimeChB.Checked && !this.CheckScoreboxFormat(extraSecondHalfTB, out error))
+                return error;
+            if (matchPenaltiesChB.Checked && !this.CheckScoreboxFormat(penaltiesTB, out error))
+                return error;
+
+            if (matchPlayedChB.Checked)
+            {
+                score = HalfScoreboard.Parse(regularFirstHalfTB.Text);
+                score.AddHalfScoreboard(HalfScoreboard.Parse(regularSecondHalfTB.Text));
+                if (!this.match.IsGroupMatch && score.Tie && !matchExtraTimeChB.Checked)
+                    return "Knock-out match can not end in a tie";
+                if (this.match.IsGroupMatch && matchExtraTimeChB.Checked)
+                    return "A group match can not have extra time"; //meh
+                if (!score.Tie && matchExtraTimeChB.Checked)
+                    return "A match can not have extra time if the score is not a tie";
+                if (matchExtraTimeChB.Checked)
+                {
+                    score.AddHalfScoreboard(HalfScoreboard.Parse(extraFirstHalfTB.Text));
+                    score.AddHalfScoreboard(HalfScoreboard.Parse(extraSecondHalfTB.Text));
+                    if (score.Tie && !matchPenaltiesChB.Checked)
+                        return "Knock-out match can not end in a tie";
+                    if (!score.Tie && matchPenaltiesChB.Checked)
+                        return "A match can not have penalties if the score is not a tie";
+                    if (matchPenaltiesChB.Checked)
+                    {
+                        score.AddHalfScoreboard(HalfScoreboard.Parse(penaltiesTB.Text));
+                        if (score.Tie)
+                            return "Knock-out match can not end in a tie";
+                    }
+                }
+            }
+
+            return "";
+        }
+
+        private void Checks_Event(object sender, EventArgs e)
+        {
+            errorL.Text = this.ChecksResult();
+            okB.Visible = errorL.Text.Equals("");
+            scoreL.Text = okB.Visible ? this.score.FormatHalfScore : "-";
         }
 
         private void okB_Click(object sender, EventArgs e)
+        {
+            List<HalfScoreboard> halves = new List<HalfScoreboard>();
+            if (matchPlayedChB.Checked)
+            {
+                halves.Add(HalfScoreboard.Parse(regularFirstHalfTB.Text));
+                halves.Add(HalfScoreboard.Parse(regularSecondHalfTB.Text));
+                if (matchExtraTimeChB.Checked)
+                {
+                    halves.Add(HalfScoreboard.Parse(extraFirstHalfTB.Text));
+                    halves.Add(HalfScoreboard.Parse(extraSecondHalfTB.Text));
+                    if (matchPenaltiesChB.Checked)
+                        halves.Add(HalfScoreboard.Parse(penaltiesTB.Text));
+                }
+            }
+            this.match.Scoreboard.SetHalves(halves);
+
+            FMatch matchForm = this.Owner as FMatch;
+            matchForm.mainForm.Database.Calculate(false, true, true);
+            matchForm.RefreshInformation(this.match);
+            matchForm.mainForm.RefreshInformation(null);
+            this.Close();
+        }
+
+        private void cancelB_Click(object sender, EventArgs e)
         {
             this.Close();
         }

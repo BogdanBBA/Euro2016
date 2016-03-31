@@ -143,6 +143,9 @@ namespace Euro2016
             if (this.OpenForm != null)
                 this.OpenForm.Close();
             StaticData.PVC.Dispose();
+            string saveResult = this.Database.SaveDatabase(Paths.DatabaseFile);
+            if (!saveResult.Equals(""))
+                MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();
         }
     }

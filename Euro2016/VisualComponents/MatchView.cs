@@ -145,7 +145,7 @@ namespace Euro2016.VisualComponents
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.AssumeLinear;
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
-            string text = this.Match.ID + ". " + this.Match.Category; //this.Match.FormatCategory;
+            string text = this.Match.FormatCategory;
             this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsClicked].Brush, text, HorizontalAlignment.Center, 0f, 0.16f);
 
             text = this.Match.Teams.Home != null ? this.Match.Teams.Home.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";

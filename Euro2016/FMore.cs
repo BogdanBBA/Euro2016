@@ -43,6 +43,7 @@ namespace Euro2016
             switch (button.Text)
             {
                 case "Reset matches":
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null); 
                     playedMatches = db.Matches.GetMatchesBy(true);
                     if (playedMatches.Count == 0)
                         MessageBox.Show("The database matches are already reset (set as not played)!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -63,6 +64,7 @@ namespace Euro2016
                     break;
 
                 case "Simulate results":
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null); 
                     unplayedMatches = db.Matches.GetMatchesBy(false);
                     if (unplayedMatches.Count == 0)
                         MessageBox.Show("There aren't any matches that have not been played! All good then.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -83,6 +85,7 @@ namespace Euro2016
                     break;
 
                 case "xxx":
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null); 
                     break;
 
                 case "CLOSE":

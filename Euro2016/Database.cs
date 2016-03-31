@@ -64,13 +64,12 @@ namespace Euro2016
     /// </summary>
     public class Database
     {
-        public const string ThirdPlacedTeamsGroupID = "T";
+        public const string ThirdPlacedTeamsID = "T";
 
         public ListOfIDObjects<Venue> Venues { get; private set; }
         public ListOfIDObjects<Country> Countries { get; private set; }
         public List<Team> Teams { get; private set; }
         public ListOfIDObjects<Group> Groups { get; private set; }
-        public Group ThirdPlacedTeams { get; private set; }
         public ListOfIDObjects<Match> Matches { get; private set; }
         public Settings Settings { get; private set; }
 
@@ -109,9 +108,6 @@ namespace Euro2016
                 nodes = doc.SelectNodes("DATABASE/GROUPS/Group");
                 foreach (XmlNode node in nodes)
                     this.Groups.Add(Group.Parse(node, this.Teams));
-
-                this.ThirdPlacedTeams = new Group(Database.ThirdPlacedTeamsGroupID, "Third place", new List<TableLine>());
-                //this.Groups.Add(this.ThirdPlacedTeams);
 
                 nodes = doc.SelectNodes("DATABASE/MATCHES/Match");
                 foreach (XmlNode node in nodes)
@@ -154,8 +150,7 @@ namespace Euro2016
 
                 node = root.AppendChild(doc.CreateElement("GROUPS"));
                 foreach (Group group in this.Groups)
-                    if (!group.ID.Equals(Database.ThirdPlacedTeamsGroupID))
-                        node.AppendChild(group.ToXml(doc, "Group"));
+                    node.AppendChild(group.ToXml(doc, "Group"));
 
                 node = root.AppendChild(doc.CreateElement("MATCHES"));
                 foreach (Match match in this.Matches)
@@ -194,26 +189,25 @@ namespace Euro2016
 
         public void CalculateGroups()
         {
-            this.ThirdPlacedTeams.TableLines.Clear();
             foreach (Group group in this.Groups)
-                if (!group.ID.Equals(Database.ThirdPlacedTeamsGroupID))
+            {
+                foreach (TableLine line in group.TableLines)
                 {
+                    line.Reset();
                     foreach (Match match in this.Matches.GetMatchesBy(group))
-                        foreach (TableLine line in group.TableLines)
-                            line.AddMatchResult(match);
-                    group.SortTableLines(false, this.Matches);
-                    this.ThirdPlacedTeams.TableLines.Add(new TableLine(group.TableLines[2]));
+                        line.AddGroupMatchResult(match);
                 }
-            this.ThirdPlacedTeams.SortTableLines(true, this.Matches);
+                group.SortTableLines(false, this.Matches);
+            }
         }
 
-        private Team CalculateTeam(string reference) // format: "B:1" or "T:A/C/D"
+        private Team ParseTeamReference(string reference) // format: "refGroup:refTeam" (for example, "B:1" or "T:A/C/D")
         {
             if (reference.Contains(':')) // table line reference
             {
                 string refGroup = reference.Split(':')[0], refTeam = reference.Split(':')[1];
 
-                if (!refGroup.Equals(Database.ThirdPlacedTeamsGroupID)) // normal group
+                if (!refGroup.Equals(Database.ThirdPlacedTeamsID)) // normal group
                 {
                     Group group = this.Groups.GetItemByID(refGroup);
                     if (group != null && group.AllMatchesPlayed)
@@ -251,8 +245,8 @@ namespace Euro2016
             ListOfIDObjects<Match> matches = this.Matches.GetMatchesBy("KO");
             foreach (Match match in matches)
             {
-                match.Teams.Home = this.CalculateTeam(match.TeamReferences.Home);
-                match.Teams.Away = this.CalculateTeam(match.TeamReferences.Away);
+                match.Teams.Home = this.ParseTeamReference(match.TeamReferences.Home);
+                match.Teams.Away = this.ParseTeamReference(match.TeamReferences.Away);
             }
         }
     }

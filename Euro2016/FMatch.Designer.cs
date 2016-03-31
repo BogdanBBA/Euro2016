@@ -171,6 +171,7 @@
             // phaseL
             // 
             this.phaseL.BackColor = System.Drawing.Color.Transparent;
+            this.phaseL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.phaseL.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phaseL.ForeColor = System.Drawing.Color.White;
             this.phaseL.Location = new System.Drawing.Point(151, 93);
@@ -179,6 +180,7 @@
             this.phaseL.TabIndex = 4;
             this.phaseL.Text = "label4";
             this.phaseL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.phaseL.Click += new System.EventHandler(this.phaseL_Click);
             // 
             // homeTeamL
             // 
