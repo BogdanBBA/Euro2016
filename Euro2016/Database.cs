@@ -245,6 +245,11 @@ namespace Euro2016
             ListOfIDObjects<Match> matches = this.Matches.GetMatchesBy("KO");
             foreach (Match match in matches)
             {
+                match.Teams.Home = null;
+                match.Teams.Away = null;
+            }
+            foreach (Match match in matches)
+            {
                 match.Teams.Home = this.ParseTeamReference(match.TeamReferences.Home);
                 match.Teams.Away = this.ParseTeamReference(match.TeamReferences.Away);
             }

@@ -149,7 +149,7 @@ namespace Euro2016.VisualComponents
             this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsClicked].Brush, text, HorizontalAlignment.Center, 0f, 0.16f);
 
             text = this.Match.Teams.Home != null ? this.Match.Teams.Home.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";
-            this.DrawText(e.Graphics, MatchRow.TeamFont, MyGUIs.Text[this.mouseIsOver].Brush, this.Match.TeamReferences.Home + ". " + text, HorizontalAlignment.Right, 0.16f, 0.43f);
+            this.DrawText(e.Graphics, MatchRow.TeamFont, MyGUIs.Text[this.mouseIsOver].Brush, text, HorizontalAlignment.Right, 0.16f, 0.43f);
 
             Bitmap image = this.Match.Teams.Home != null ? this.Match.Teams.Home.Country.Flag20px : (Bitmap) Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], 32, 20, InterpolationMode.NearestNeighbor, false);
             this.DrawImage(e.Graphics, image, HorizontalAlignment.Center, 0.43f, 0.53f);
@@ -163,7 +163,7 @@ namespace Euro2016.VisualComponents
             this.DrawImage(e.Graphics, image, HorizontalAlignment.Center, 0.63f, 0.73f);
 
             text = this.Match.Teams.Away != null ? this.Match.Teams.Away.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";
-            this.DrawText(e.Graphics, MatchRow.TeamFont, MyGUIs.Text[this.mouseIsOver].Brush, this.Match.TeamReferences.Away + ". " + text, HorizontalAlignment.Left, 0.73f, 1f);
+            this.DrawText(e.Graphics, MatchRow.TeamFont, MyGUIs.Text[this.mouseIsOver].Brush, text, HorizontalAlignment.Left, 0.73f, 1f);
         }
     }
 }

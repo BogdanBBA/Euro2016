@@ -50,6 +50,12 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseClasses.cs" />
+    <Compile Include="FAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAbout.Designer.cs">
+      <DependentUpon>FAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="VisualComponents\VisualComponentCentral.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FAbout.resx">
+      <DependentUpon>FAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FGroup.resx">
       <DependentUpon>FGroup.cs</DependentUpon>
     </EmbeddedResource>

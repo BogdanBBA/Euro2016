@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,6 +11,14 @@ namespace Euro2016.VisualComponents
 {
     public class TitleLabel : MyEuroBaseControl
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public static readonly Pair<int> BarHeight = new Pair<int>(2, 4);
         public const int TitleLabelHeight = 78;
 
@@ -21,6 +30,7 @@ namespace Euro2016.VisualComponents
             this.subtitle = new Tuple<Font, Brush, string>(StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 14, FontStyle.Regular) : new Font("Arial", 15, FontStyle.Bold),
                 MyGUIs.Text.Highlighted.Brush, "[Subtitle text]");
             this.Size = new Size(400, TitleLabel.TitleLabelHeight);
+            this.Cursor = Cursors.SizeAll;
         }
 
         private bool drawBar = true;
@@ -57,6 +67,16 @@ namespace Euro2016.VisualComponents
         {
             get { return this.textAlign; }
             set { this.textAlign = value; this.Invalidate(); }
+        }
+
+        protected override void OnMouseDown(MouseEventArgs mevent)
+        {
+            base.OnMouseDown(mevent);
+            if (mevent.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
 
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)

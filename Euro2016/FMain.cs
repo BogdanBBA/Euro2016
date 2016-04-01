@@ -19,6 +19,7 @@ namespace Euro2016
         protected GroupView[] GroupViews { get; private set; }
         protected MatchesView MatchesView { get; private set; }
         internal MyForm OpenForm { get; set; }
+        internal FAbout AboutForm { private get; set; }
 
         public FMain(Database database)
         {
@@ -65,6 +66,8 @@ namespace Euro2016
 
         public void ShowForm<FORM_TYPE, OBJECT_TYPE>(object forItem) where FORM_TYPE : MyForm
         {
+            if (this.AboutForm != null)
+                this.AboutForm.Close();
             if (forItem is OBJECT_TYPE)
             {
                 if (this.OpenForm != null)

@@ -323,14 +323,17 @@ namespace Euro2016
                 // get set of teams with equal points (and remember full group interval with iStart and iEnd)
                 tempLines.Clear();
                 for (; iEnd < this.TableLines.Count && this.TableLines[iEnd].Points == this.TableLines[iStart].Points; iEnd++)
-                    tempLines.Add(new TableLine(this.TableLines[iEnd].Team));
+                    tempLines.Add(thirdPlacedTeamGroup ? new TableLine(this.TableLines[iEnd]) : new TableLine(this.TableLines[iEnd].Team));
                 iEnd--;
 
-                // register matches for this set (a kind of subgroup of teams, with matches only between them)
-                foreach (Match match in matches)
-                    if (tempLines.IndexOfTeam(match.Teams.Home) != -1 && tempLines.IndexOfTeam(match.Teams.Away) != -1)
-                        foreach (TableLine tLine in tempLines)
-                            tLine.AddGroupMatchResult(match);
+                // if normal group, register matches for this set (a kind of subgroup of teams, with matches only between them); otherwise, existing matches are good
+                if (!thirdPlacedTeamGroup)
+                {
+                    foreach (Match match in matches)
+                        if (tempLines.IndexOfTeam(match.Teams.Home) != -1 && tempLines.IndexOfTeam(match.Teams.Away) != -1)
+                            foreach (TableLine tLine in tempLines)
+                                tLine.AddGroupMatchResult(match);
+                }
 
                 // if more than one team, sort by appropriate criteria
                 if (tempLines.Count > 1)
@@ -343,24 +346,28 @@ namespace Euro2016
                                 TableLine iT = tempLines[iIndex], jT = tempLines[jIndex];
                                 bool needToSwap = false;
 
-                                int whoWonDirectMatch = matches.WhoWonGroupMatchBetween(iT.Team, jT.Team);
-                                if (whoWonDirectMatch == 1)
+                                if (iT.Points < jT.Points)
                                     needToSwap = true;
-                                else if (whoWonDirectMatch == 0 || whoWonDirectMatch == -2)
+                                else if (iT.Points == jT.Points)
                                 {
                                     if (iT.GoalDifference < jT.GoalDifference)
                                         needToSwap = true;
+                                    else if (iT.GoalDifference == jT.GoalDifference)
+                                    {
+                                        if (iT.GoalsFor < jT.GoalsFor)
+                                            needToSwap = true;
+                                    }
                                 }
 
                                 if (needToSwap)
                                     tempLines.SwapItemsAtPositions(iIndex, jIndex);
                             }
 
-                        for (int indexInFullTable = iStart; indexInFullTable <= iEnd; indexInFullTable++)
+                        for (int fullTableIndex = iStart; fullTableIndex <= iEnd; fullTableIndex++)
                         {
-                            int indexInTempTable = indexInFullTable - iStart;
-                            if (!this.TableLines[indexInFullTable].Team.Equals(tempLines[indexInTempTable].Team))
-                                this.TableLines.SwapItemsAtPositions(this.TableLines.IndexOfTeam(tempLines[indexInTempTable].Team), indexInTempTable);
+                            int tempTableIndex = fullTableIndex - iStart;
+                            if (!this.TableLines[fullTableIndex].Team.Equals(tempLines[tempTableIndex].Team))
+                                this.TableLines.SwapItemsAtPositions(fullTableIndex, this.TableLines.IndexOfTeam(tempLines[tempTableIndex].Team));
                         }
                     }
                     else // third-placed teams group, more simple sorting criteria
@@ -394,6 +401,7 @@ namespace Euro2016
                 iStart = iEnd;
             }
 
+            // assign position number
             for (int index = 0; index < this.TableLines.Count; index++)
                 this.TableLines[index].Position = index + 1;
         }
