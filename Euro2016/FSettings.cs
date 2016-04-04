@@ -36,6 +36,7 @@ namespace Euro2016
         {
             foreach (Team team in this.mainForm.Database.Teams)
                 favoriteTeamCB.Items.Add(this.FormatTeamForCombobox(team));
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         public override void RefreshInformation(object item)

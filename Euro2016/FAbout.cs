@@ -25,6 +25,7 @@ namespace Euro2016
         {
             this.goTeamIV.TextText = this.mainForm.Database.Settings.FavoriteTeam.Country.Names[this.mainForm.Database.Settings.ShowCountryNamesInNativeLanguage];
             flagPB.Image = this.mainForm.Database.Settings.FavoriteTeam.Country.Flag100px;
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         private void FAbout_Click(object sender, EventArgs e)

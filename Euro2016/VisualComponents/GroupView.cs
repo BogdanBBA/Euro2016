@@ -10,8 +10,8 @@ namespace Euro2016.VisualComponents
 {
     public class GroupView
     {
-        internal static readonly double[] ColumnWidthPercentages = new double[] { 0.07, 0.08, 0.27, 0.08, 0.05, 0.05, 0.05, 2 * 0.07, 1.5 * 0.07, 1.5 * 0.07 }; // Pos Flag TEAM MP W D L GF-GA +/-GD Pts
-        internal static readonly string[] ColumnWidthCaptions = new string[] { "Pos", "", "Team", "MP", "W", "D", "L", "Goals", "Diff", "Points" };
+        internal static readonly double[] ColumnWidthPercentages = new double[] { 0.06, 0.11, 0.31, 0.08, 0.04, 0.04, 0.04, 2 * 0.07, 1.5 * 0.06, 1.5 * 0.06 }; // Pos Flag TEAM MP W D L GF-GA +/-GD Pts
+        internal static readonly string[] ColumnWidthCaptions = new string[] { "Pos", "", "Team", "MP", "W", "D", "L", "Goals", "Diff", "Pts" };
 
         public Group Group { get; private set; }
 
@@ -105,7 +105,7 @@ namespace Euro2016.VisualComponents
         public GroupHeader()
             : base()
         {
-            this.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 14, FontStyle.Bold);
+            this.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 17, FontStyle.Bold);
             this.Cursor = Cursors.Default;
         }
 
@@ -114,7 +114,7 @@ namespace Euro2016.VisualComponents
             RectangleF rect = new RectangleF(this.Width * (float) percentageStart, 0, (float) (this.Width * (percentageEnd - percentageStart)), this.Height);
             SizeF size = g.MeasureString(text, this.Font);
             PointF location = new PointF(rect.Left + rect.Width / 2 - size.Width / 2, rect.Height / 2 - size.Height / 2);
-            g.DrawString(text, this.Font, MyGUIs.Text.Highlighted.Brush, location);
+            g.DrawString(text, this.Font, MyGUIs.Text.Normal.Brush, location);
         }
 
         protected override void OnPaint(PaintEventArgs e)

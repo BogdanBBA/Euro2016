@@ -38,10 +38,11 @@ namespace Euro2016
                 this.groupButtons[index].Group = this.mainForm.Database.Groups[index];
                 this.groupButtons[index].Click += this.GroupButton_Click;
             }
-            Utils.SizeAndPositionControlsInPanel(groupButtonP, this.groupButtons, true, 0);
+            Utils.SizeAndPositionControlsInPanel(groupButtonP, this.groupButtons, false, 0);
             this.groupView = new GroupView(groupP, true, this.GroupButton_Click, this.mainForm.GroupRow_Click, this.mainForm.Database.Settings);
             this.matchesView = new MatchesView(this.matchesP, this.mainForm.MatchHeader_Click, this.mainForm.MatchRow_Click, this.mainForm.Database.Settings);
             this.MouseWheel += this.matchesView.myScrollPanel.MouseWheelScroll_EventHandler;
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         private void GroupButton_Click(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace Euro2016
         {
             Group group = item as Group;
             this.groupButtons.CheckItemAndUncheckAllOthers<GroupButton>(this.groupButtons.First(gh => gh.Group.Equals(group)));
+            currentGroupIV.TextText = group.Name;
             this.groupView.SetGroup(group);
 
             ListOfIDObjects<Match> matches = new ListOfIDObjects<Match>();

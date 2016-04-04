@@ -14,7 +14,7 @@ namespace Euro2016
     public partial class FMore : MyForm
     {
         private const string MenuButtonPrefix = "button";
-        private static readonly string[] ButtonCaptions = { "Reset matches", "Simulate results", "x", "About the app", "CLOSE" };
+        private static readonly string[] ButtonCaptions = { "Reset matches", "Simulate results", "About the app", "CLOSE" };
 
         private FMain mainForm;
         private List<MyButton> menuButtons;
@@ -84,7 +84,7 @@ namespace Euro2016
                         }
                     break;
 
-                case "x":
+                case "x": // modify this when adding new item
                     this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null);
                     break;
 

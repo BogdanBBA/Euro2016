@@ -41,6 +41,8 @@ namespace Euro2016
             awayNicknameL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 12, FontStyle.Regular);
             scoreL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 35, FontStyle.Bold);
             halvesL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 10, FontStyle.Regular);
+            
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         private void RefreshTeamInfo(Team team, PictureBox flagPB, Label nameL, Label nicknameL)

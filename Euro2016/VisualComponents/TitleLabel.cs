@@ -11,23 +11,17 @@ namespace Euro2016.VisualComponents
 {
     public class TitleLabel : MyEuroBaseControl
     {
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
         public static readonly Pair<int> BarHeight = new Pair<int>(2, 4);
         public const int TitleLabelHeight = 78;
 
         public TitleLabel()
             : base()
         {
-            this.title = new Tuple<Font, Brush, string>(StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 27, FontStyle.Bold) : new Font("Arial", 32, FontStyle.Bold),
+            this.title = new Tuple<Font, Brush, string>(
+                StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 27, FontStyle.Bold) : new Font("Arial", 32, FontStyle.Bold),
                 MyGUIs.Text.Normal.Brush, "[Title text]");
-            this.subtitle = new Tuple<Font, Brush, string>(StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 14, FontStyle.Regular) : new Font("Arial", 15, FontStyle.Bold),
+            this.subtitle = new Tuple<Font, Brush, string>(
+                StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 14, FontStyle.Regular) : new Font("Arial", 15, FontStyle.Bold),
                 MyGUIs.Text.Highlighted.Brush, "[Subtitle text]");
             this.Size = new Size(400, TitleLabel.TitleLabelHeight);
             this.Cursor = Cursors.SizeAll;
@@ -69,28 +63,20 @@ namespace Euro2016.VisualComponents
             set { this.textAlign = value; this.Invalidate(); }
         }
 
-        protected override void OnMouseDown(MouseEventArgs mevent)
-        {
-            base.OnMouseDown(mevent);
-            if (mevent.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
         {
             e.Graphics.Clear(MyGUIs.Background.Normal.Color);
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
             SizeF size = e.Graphics.MeasureString(this.title.Item3, this.title.Item1);
-            PointF location = new PointF(this.textAlign == HorizontalAlignment.Left ? 0 : (this.textAlign == HorizontalAlignment.Center ? this.Width / 2 - size.Width / 2 : this.Width - size.Width), 0);
+            PointF location = new PointF(this.textAlign == HorizontalAlignment.Left
+                ? 0 : (this.textAlign == HorizontalAlignment.Center ? this.Width / 2 - size.Width / 2 : this.Width - size.Width), 0);
             e.Graphics.DrawString(this.title.Item3, this.title.Item1, this.title.Item2, location);
 
             float lastBottom = location.Y + size.Height;
             size = e.Graphics.MeasureString(this.subtitle.Item3, this.subtitle.Item1);
-            location = new PointF(this.textAlign == HorizontalAlignment.Left ? 4 : (this.textAlign == HorizontalAlignment.Center ? this.Width / 2 - size.Width / 2 : this.Width - size.Width - 4), lastBottom - 8);
+            location = new PointF(this.textAlign == HorizontalAlignment.Left
+                ? 4 : (this.textAlign == HorizontalAlignment.Center ? this.Width / 2 - size.Width / 2 : this.Width - size.Width - 4), lastBottom - 8);
             e.Graphics.DrawString(this.subtitle.Item3, this.subtitle.Item1, this.subtitle.Item2, location);
 
             if (this.drawBar)

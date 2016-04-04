@@ -55,6 +55,8 @@ namespace Euro2016
                         penaltiesTB.Text = this.match.Scoreboard.Halves[4].FormatHalfScore;
                 }
             }
+
+            this.RegisterControlsToMoveForm(this.titleIV);
         }
 
         private void SetMatchPhase(MatchPhase phase)
@@ -195,7 +197,7 @@ namespace Euro2016
         {
             errorL.Text = this.ChecksResult();
             okB.Visible = errorL.Text.Equals("");
-            scoreL.Text = okB.Visible ? this.score.FormatHalfScore : "-";
+            scoreL.Text = okB.Visible ? (this.matchPlayedChB.Checked ? this.score.FormatHalfScore : "-") : "-";
         }
 
         private void okB_Click(object sender, EventArgs e)

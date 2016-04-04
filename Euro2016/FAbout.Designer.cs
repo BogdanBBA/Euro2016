@@ -32,6 +32,7 @@
             this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
             this.goTeamIV = new Euro2016.VisualComponents.InfoView();
             this.flagPB = new System.Windows.Forms.PictureBox();
+            this.infoViewDetail2 = new Euro2016.VisualComponents.InfoViewDetail();
             ((System.ComponentModel.ISupportInitialize)(this.flagPB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = true;
             this.titleLabel1.Checked = false;
+            this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -65,7 +67,6 @@
             this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.titleLabel1.TextSubtitle = "by BogdanBBA";
             this.titleLabel1.TextTitle = "Euro 2016";
-            this.titleLabel1.Click += new System.EventHandler(this.FAbout_Click);
             // 
             // goTeamIV
             // 
@@ -81,6 +82,7 @@
             this.goTeamIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.goTeamIV.TextDescription = "Go, go";
             this.goTeamIV.TextText = "#text";
+            this.goTeamIV.Click += new System.EventHandler(this.FAbout_Click);
             // 
             // flagPB
             // 
@@ -91,10 +93,28 @@
             this.flagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.flagPB.TabIndex = 3;
             this.flagPB.TabStop = false;
+            this.flagPB.Click += new System.EventHandler(this.FAbout_Click);
+            // 
+            // infoViewDetail2
+            // 
+            this.infoViewDetail2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.infoViewDetail2.BigBar = false;
+            this.infoViewDetail2.Checked = false;
+            this.infoViewDetail2.DrawBar = false;
+            this.infoViewDetail2.Location = new System.Drawing.Point(29, 237);
+            this.infoViewDetail2.Name = "infoViewDetail2";
+            this.infoViewDetail2.Size = new System.Drawing.Size(352, 35);
+            this.infoViewDetail2.TabIndex = 4;
+            this.infoViewDetail2.Text = "infoViewDetail2";
+            this.infoViewDetail2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.infoViewDetail2.TextDescription = "April 4th, 2016";
+            this.infoViewDetail2.TextText = "1.0 beta";
+            this.infoViewDetail2.Click += new System.EventHandler(this.FAbout_Click);
             // 
             // FAbout
             // 
-            this.ClientSize = new System.Drawing.Size(408, 249);
+            this.ClientSize = new System.Drawing.Size(408, 302);
+            this.Controls.Add(this.infoViewDetail2);
             this.Controls.Add(this.flagPB);
             this.Controls.Add(this.goTeamIV);
             this.Controls.Add(this.infoViewDetail1);
@@ -113,5 +133,6 @@
         private VisualComponents.InfoViewDetail infoViewDetail1;
         private VisualComponents.InfoView goTeamIV;
         private System.Windows.Forms.PictureBox flagPB;
+        private VisualComponents.InfoViewDetail infoViewDetail2;
     }
 }

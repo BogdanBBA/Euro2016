@@ -54,6 +54,8 @@ namespace Euro2016
             this.CreateNewMatchRow(this.mainForm.Database.Matches.GetItemByID("50"), myPanel14);
             
             this.CreateNewMatchRow(this.mainForm.Database.Matches.GetItemByID("51"), myPanel15);
+            
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
     }
 }

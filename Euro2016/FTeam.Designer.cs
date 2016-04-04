@@ -120,6 +120,7 @@
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = false;
             this.titleLabel1.Checked = false;
+            this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -145,7 +146,7 @@
             this.matchesP.DrawPanelAccent = false;
             this.matchesP.Location = new System.Drawing.Point(12, 265);
             this.matchesP.Name = "matchesP";
-            this.matchesP.Size = new System.Drawing.Size(480, 515);
+            this.matchesP.Size = new System.Drawing.Size(480, 491);
             this.matchesP.TabIndex = 1;
             // 
             // teamButtonP
@@ -153,12 +154,12 @@
             this.teamButtonP.DrawPanelAccent = false;
             this.teamButtonP.Location = new System.Drawing.Point(498, 12);
             this.teamButtonP.Name = "teamButtonP";
-            this.teamButtonP.Size = new System.Drawing.Size(200, 768);
+            this.teamButtonP.Size = new System.Drawing.Size(200, 744);
             this.teamButtonP.TabIndex = 0;
             // 
             // FTeam
             // 
-            this.ClientSize = new System.Drawing.Size(710, 792);
+            this.ClientSize = new System.Drawing.Size(710, 768);
             this.Controls.Add(this.infoViewDetail3);
             this.Controls.Add(this.infoViewDetail2);
             this.Controls.Add(this.infoViewDetail1);

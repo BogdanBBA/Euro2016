@@ -36,6 +36,7 @@ namespace Euro2016
             Utils.SizeAndPositionControlsInPanel(venueButtonP, this.venueButtons, false, 0);
             this.matchesView = new MatchesView(this.matchesP, this.mainForm.MatchHeader_Click, this.mainForm.MatchRow_Click, this.mainForm.Database.Settings);
             this.MouseWheel += this.matchesView.myScrollPanel.MouseWheelScroll_EventHandler;
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         public override void RefreshInformation(object item)
@@ -45,6 +46,9 @@ namespace Euro2016
             this.venueButtons.CheckItemAndUncheckAllOthers<MyButton>(this.venueButtons.First(vb => vb.Text.Equals(venue.City)));
             venueNameIV.TextText = venue.Name;
             venueCityIV.TextText = venue.City + ", France";
+            yearOpenedIVD.TextText = venue.YearOpened.ToString();
+            capacityIVD.TextText = Utils.FormatNumber(venue.Capacity);
+            geoCoordinatesIVD.TextText = string.Format("{0:N5}, {1:N5}", venue.Location.X, venue.Location.Y);
             locationPB.Load(Paths.StadiumLocationsFolder + venue.ID + ".png");
             cityPB.Load(Paths.CitiesFolder + venue.ID + ".jpg");
             stadiumOutsidePB.Load(Paths.StadiumOutsidesFolder + venue.ID + ".jpg");

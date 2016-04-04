@@ -38,6 +38,7 @@ namespace Euro2016
             Utils.SizeAndPositionControlsInPanel(teamButtonP, this.countryButtons, false, 0);
             this.matchesView = new MatchesView(this.matchesP, this.mainForm.MatchHeader_Click, this.mainForm.MatchRow_Click, this.mainForm.Database.Settings);
             this.MouseWheel += this.matchesView.myScrollPanel.MouseWheelScroll_EventHandler;
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         private void VenueButton_Click(object sender, EventArgs e)

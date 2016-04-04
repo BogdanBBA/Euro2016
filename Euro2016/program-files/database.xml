@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Friday, 1 April 2016, 17:45:43">
+<DATABASE lastSaved="Monday, 4 April 2016, 18:34:23">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -84,7 +84,7 @@
     <Match ID="10" category="G:E" who="BEL,ITA" when="13/6@21" where="LYO" scoreboard="4-1,0-0" />
     <Match ID="11" category="G:F" who="AUT,HUN" when="14/6@18" where="BOR" scoreboard="0-2,0-3" />
     <Match ID="12" category="G:F" who="POR,ISL" when="14/6@21" where="STE" scoreboard="3-4,1-2" />
-    <Match ID="13" category="G:B" who="RUS,SVK" when="15/6@15" where="LIL" scoreboard="4-4,1-4" />
+    <Match ID="13" category="G:B" who="RUS,SVK" when="15/6@15" where="LIL" scoreboard="2-1,0-2" />
     <Match ID="14" category="G:A" who="ROU,SUI" when="15/6@18" where="PAR" scoreboard="1-2,0-0" />
     <Match ID="15" category="G:A" who="FRA,ALB" when="15/6@21" where="MAR" scoreboard="1-1,0-0" />
     <Match ID="16" category="G:B" who="ENG,WLS" when="16/6@15" where="LEN" scoreboard="0-1,1-3" />
