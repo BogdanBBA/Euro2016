@@ -1,12 +1,14 @@
 ﻿using Euro2016.VisualComponents;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -342,6 +344,15 @@ namespace Euro2016
                 else
                     controls[index].SetBounds(0, lastPos, container.Width, newControlSize);
             }
+        }
+
+        public static void RemoveAllClickEvents(this Control control)
+        {
+            FieldInfo f1 = typeof(Control).GetField("EventMouseWheel", BindingFlags.Static | BindingFlags.NonPublic);
+            object obj = f1.GetValue(control);
+            PropertyInfo pi = control.GetType().GetProperty("Events", BindingFlags.NonPublic | BindingFlags.Instance);
+            EventHandlerList list = (EventHandlerList) pi.GetValue(control, null);
+            list.RemoveHandler(obj, list[obj]);
         }
 
         public static void SwapItemsAtPositions<TYPE>(this List<TYPE> list, int posA, int posB)

@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Wednesday, 6 April 2016, 12:55:18">
+<DATABASE lastSaved="Wednesday, 6 April 2016, 15:38:55">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -39,30 +39,30 @@
     <Country ID="XXX" names="DUMMOIS|DUMMY" />
   </COUNTRIES>
   <TEAMS>
-    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" />
-    <Team countryID="ROU" nicknames="Tricolorii" />
-    <Team countryID="ALB" nicknames="Kuq e Zinjtë (Red and Blacks);Shqiponjat (Eagles)" />
-    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" />
-    <Team countryID="ENG" nicknames="The Three Lions" />
-    <Team countryID="RUS" nicknames="Национа́льная Сбо́рная (National Team)" />
-    <Team countryID="WLS" nicknames="Y Dreigiau (Dragons)" />
-    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" />
-    <Team countryID="GER" nicknames="Die Mannschaft (Team);Nationalelf (National Eleven);DFB-Elf (DFV Eleven)" />
-    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" />
-    <Team countryID="POL" nicknames="Biało-czerwoni (White and Reds);Białe Orły (White Eagles)" />
-    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" />
-    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" />
-    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" />
-    <Team countryID="TUR" nicknames="Ay Yıldızlılar (Crescent-Stars)" />
-    <Team countryID="HRV" nicknames="Vatreni (Blazers)" />
-    <Team countryID="BEL" nicknames="De Rode Duivels (Red Devils);Les Diables Rouges (Red Devils);Die Roten Teufel (Red Devils)" />
-    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" />
-    <Team countryID="IRL" nicknames="The Boys in Green;The Green Army" />
-    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" />
-    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" />
-    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" />
-    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" />
-    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" />
+    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" coach="XXX:Dummy Coach" />
+    <Team countryID="ROU" nicknames="Tricolorii" coach="XXX:Dummy Coach" />
+    <Team countryID="ALB" nicknames="Kuq e Zinjtë (Red and Blacks);Shqiponjat (Eagles)" coach="XXX:Dummy Coach" />
+    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" coach="XXX:Dummy Coach" />
+    <Team countryID="ENG" nicknames="The Three Lions" coach="XXX:Dummy Coach" />
+    <Team countryID="RUS" nicknames="Национа́льная Сбо́рная (National Team)" coach="XXX:Dummy Coach" />
+    <Team countryID="WLS" nicknames="Y Dreigiau (Dragons)" coach="XXX:Dummy Coach" />
+    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" coach="XXX:Dummy Coach" />
+    <Team countryID="GER" nicknames="Die Mannschaft (Team);Nationalelf (National Eleven);DFB-Elf (DFV Eleven)" coach="XXX:Dummy Coach" />
+    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" coach="XXX:Dummy Coach" />
+    <Team countryID="POL" nicknames="Biało-czerwoni (White and Reds);Białe Orły (White Eagles)" coach="XXX:Dummy Coach" />
+    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" coach="XXX:Dummy Coach" />
+    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" coach="XXX:Dummy Coach" />
+    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" coach="XXX:Dummy Coach" />
+    <Team countryID="TUR" nicknames="Ay Yıldızlılar (Crescent-Stars)" coach="XXX:Dummy Coach" />
+    <Team countryID="HRV" nicknames="Vatreni (Blazers)" coach="XXX:Dummy Coach" />
+    <Team countryID="BEL" nicknames="De Rode Duivels (Red Devils);Les Diables Rouges (Red Devils);Die Roten Teufel (Red Devils)" coach="XXX:Dummy Coach" />
+    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" coach="XXX:Dummy Coach" />
+    <Team countryID="IRL" nicknames="The Boys in Green;The Green Army" coach="XXX:Dummy Coach" />
+    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" coach="XXX:Dummy Coach" />
+    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" coach="XXX:Dummy Coach" />
+    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" coach="XXX:Dummy Coach" />
+    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" coach="XXX:Dummy Coach" />
+    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" coach="XXX:Dummy Coach" />
   </TEAMS>
   <GROUPS>
     <Group ID="A" name="Group A" teams="ALB,FRA,ROU,SUI" />

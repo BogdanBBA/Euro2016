@@ -249,12 +249,14 @@ namespace Euro2016
     {
         public Country Country { get; private set; }
         public List<string> Nicknames { get; private set; }
+        public KeyValuePair<Country, string> Coach { get; private set; }
         public ListOfIDObjects<Player> Players { get; private set; }
 
-        public Team(Country country, List<string> nicknames)
+        public Team(Country country, KeyValuePair<Country, string> coach, List<string> nicknames)
         {
             this.Country = country;
             this.Nicknames = nicknames;
+            this.Coach = coach;
             this.Players = new ListOfIDObjects<Player>();
         }
 
@@ -262,7 +264,9 @@ namespace Euro2016
         {
             Country country = countries.GetItemByID(node.Attributes["countryID"].Value);
             List<string> nicknames = node.Attributes["nicknames"].Value.Split(';').ToList();
-            return new Team(country, nicknames);
+            string[] coachParts = node.Attributes["coach"].Value.Split(':');
+            KeyValuePair<Country, string> coach = new KeyValuePair<Country, string>(countries.GetItemByID(coachParts[0]), coachParts[1]);
+            return new Team(country, coach, nicknames);
         }
 
         public XmlNode ToXml(XmlDocument doc, string name)
@@ -270,6 +274,7 @@ namespace Euro2016
             XmlNode node = doc.CreateElement(name);
             node.AddAttribute(doc, "countryID", this.Country.ID);
             node.AddAttribute(doc, "nicknames", this.Nicknames.GetListString(";"));
+            node.AddAttribute(doc, "coach", string.Format("{0}:{1}", this.Coach.Key.ID, this.Coach.Value));
             return node;
         }
 
