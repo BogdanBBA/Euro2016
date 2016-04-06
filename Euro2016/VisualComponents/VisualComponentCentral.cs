@@ -56,6 +56,25 @@ namespace Euro2016.VisualComponents
             this.Invalidate();
         }
 
+        protected void DrawImageCell(Graphics g, Bitmap image, HorizontalAlignment alignment, double percentageStart, double percentageEnd)
+        {
+            RectangleF rect = new RectangleF((float) (this.Width * percentageStart), 0, (float) (this.Width * (percentageEnd - percentageStart)), this.Height);
+            PointF location = new PointF(alignment == HorizontalAlignment.Left
+                ? rect.Left : (alignment == HorizontalAlignment.Center ? rect.Left + rect.Width / 2 - image.Size.Width / 2 : rect.Right - image.Size.Width),
+                rect.Height / 2 - image.Size.Height / 2);
+            g.DrawImage(image, location);
+        }
+
+        protected void DrawTextCell(Graphics g, Font font, string text, HorizontalAlignment alignment, double percentageStart, double percentageEnd)
+        {
+            RectangleF rect = new RectangleF((float) (this.Width * percentageStart), 0, (float) (this.Width * (percentageEnd - percentageStart)), this.Height);
+            SizeF size = g.MeasureString(text, font);
+            PointF location = new PointF(alignment == HorizontalAlignment.Left
+                ? rect.Left : (alignment == HorizontalAlignment.Center ? rect.Left + rect.Width / 2 - size.Width / 2 : rect.Right - size.Width),
+                rect.Height / 2 - size.Height / 2);
+            g.DrawString(text, font, MyGUIs.Text[this.mouseIsOver].Brush, location);
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.Clear(MyGUIs.Background.GetValue(this.mouseIsOver).Color);

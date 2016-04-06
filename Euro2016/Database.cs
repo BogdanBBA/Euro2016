@@ -68,6 +68,8 @@ namespace Euro2016
 
         public ListOfIDObjects<Venue> Venues { get; private set; }
         public ListOfIDObjects<Country> Countries { get; private set; }
+        public ListOfIDObjects<Club> Clubs { get; private set; }
+        public ListOfIDObjects<Player> Players { get; private set; }
         public List<Team> Teams { get; private set; }
         public ListOfIDObjects<Group> Groups { get; private set; }
         public ListOfIDObjects<Match> Matches { get; private set; }
@@ -78,6 +80,8 @@ namespace Euro2016
         {
             this.Venues = new ListOfIDObjects<Venue>();
             this.Countries = new ListOfIDObjects<Country>();
+            this.Clubs = new ListOfIDObjects<Club>();
+            this.Players = new ListOfIDObjects<Player>();
             this.Teams = new List<Team>();
             this.Groups = new ListOfIDObjects<Group>();
             this.Matches = new ListOfIDObjects<Match>();
@@ -85,13 +89,14 @@ namespace Euro2016
         }
 
         /// <summary>Loads a Database object using data from the database file.</summary>
-        /// <param name="databaseFile">the path to the database file</param>
-        public string LoadDatabase(string databaseFile)
+        /// <param name="databaseFilePath">the path to the first part of the database file</param>
+        /// <param name="databaseFilePathB">the path to the second part of the database file</param>
+        public string LoadDatabase(string databaseFilePath, string databaseFilePathB)
         {
             try
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(databaseFile);
+                doc.Load(databaseFilePath);
 
                 XmlNodeList nodes = doc.SelectNodes("DATABASE/VENUES/Venue");
                 foreach (XmlNode node in nodes)
@@ -115,6 +120,21 @@ namespace Euro2016
 
                 this.Settings.ReadSettings(doc.SelectSingleNode("DATABASE/SETTINGS"), this.Teams);
 
+                doc = new XmlDocument();
+                doc.Load(databaseFilePathB);
+
+                nodes = doc.SelectNodes("PLAYER_DATABASE/CLUBS/Club");
+                foreach (XmlNode node in nodes)
+                    this.Clubs.Add(Club.Parse(node, this.Countries));
+
+                nodes = doc.SelectNodes("PLAYER_DATABASE/PLAYERS/Player");
+                foreach (XmlNode node in nodes)
+                {
+                    Player player = Player.Parse(node, this.Teams, this.Clubs);
+                    player.Nationality.Players.Add(player);
+                    this.Players.Add(player);
+                }
+
                 this.CalculateGroupMatchTeams();
                 this.CalculateGroups();
                 this.CalculateKnockoutMatches();
@@ -128,7 +148,7 @@ namespace Euro2016
         /// <summary>
         /// Saves database to file.
         /// </summary>
-        public string SaveDatabase(string filepath)
+        public string SaveDatabase(string databateFilePath, string databaseFilePathB = null)
         {
             try
             {
@@ -160,7 +180,25 @@ namespace Euro2016
                 this.Settings.ToXml(doc, "SETTINGS", out settingsNode);
                 root.AppendChild(settingsNode);
 
-                doc.Save(filepath);
+                doc.Save(databateFilePath);
+
+                if (databaseFilePathB != null)
+                {
+                    doc = new XmlDocument();
+                    root = doc.AppendChild(doc.CreateElement("PLAYER_DATABASE"));
+                    root.AddAttribute(doc, "lastSaved", DateTime.Now.ToString("dddd, d MMMM yyyy, HH:mm:ss"));
+
+                    node = root.AppendChild(doc.CreateElement("CLUBS"));
+                    foreach (Club club in this.Clubs)
+                        node.AppendChild(club.ToXml(doc, "Club"));
+
+                    node = root.AppendChild(doc.CreateElement("PLAYERS"));
+                    foreach (Player player in this.Players)
+                        node.AppendChild(player.ToXml(doc, "Player"));
+
+                    doc.Save(databaseFilePathB);
+                }
+
                 return "";
             }
             catch (Exception E)

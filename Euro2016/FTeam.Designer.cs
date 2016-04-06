@@ -45,6 +45,7 @@
             this.infoViewDetail3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.infoViewDetail3.BigBar = false;
             this.infoViewDetail3.Checked = false;
+            this.infoViewDetail3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoViewDetail3.DrawBar = false;
             this.infoViewDetail3.Location = new System.Drawing.Point(340, 211);
             this.infoViewDetail3.Name = "infoViewDetail3";
@@ -52,8 +53,9 @@
             this.infoViewDetail3.TabIndex = 18;
             this.infoViewDetail3.Text = "infoViewDetail3";
             this.infoViewDetail3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.infoViewDetail3.TextDescription = "#description";
+            this.infoViewDetail3.TextDescription = "Squad";
             this.infoViewDetail3.TextText = "#text";
+            this.infoViewDetail3.Click += new System.EventHandler(this.infoViewDetail3_Click);
             // 
             // infoViewDetail2
             // 

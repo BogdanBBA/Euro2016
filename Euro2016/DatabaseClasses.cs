@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,15 +114,16 @@ namespace Euro2016
             this.Names = names;
             this.FlagOriginal = flagOriginal;
             this.Flag100px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 160, 100, InterpolationMode.HighQualityBicubic, false);
-            this.Flag40px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 64, 40, InterpolationMode.HighQualityBicubic, false);
-            this.Flag20px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 32, 20, InterpolationMode.HighQualityBicubic, false);
+            this.Flag40px = (Bitmap) Utils.ScaleImage(this.Flag100px, 64, 40, InterpolationMode.HighQualityBicubic, false);
+            this.Flag20px = (Bitmap) Utils.ScaleImage(this.Flag40px, 32, 20, InterpolationMode.HighQualityBicubic, false);
         }
 
         public static Country Parse(XmlNode node)
         {
             string id = node.Attributes["ID"].Value;
             string[] names = node.Attributes["names"].Value.Split('|');
-            Bitmap flag = new Bitmap(Paths.FlagsFolder + id + ".png");
+            string flagPath = Paths.FlagsFolder + id + ".png";
+            Bitmap flag = File.Exists(flagPath) ? new Bitmap(flagPath) : StaticData.Images[Paths.UnknownTeamImageFile];
             return new Country(id, new PairT<string>(names[0], names[1]), flag);
         }
 
@@ -141,15 +143,119 @@ namespace Euro2016
     /// <summary>
     /// 
     /// </summary>
+    public class Club : ObjectWithID
+    {
+        public string Name { get; private set; }
+        public Country Country { get; private set; }
+        public ListOfIDObjects<Player> Players { get; internal set; }
+
+        public Club(string id, string name, Country country)
+            : base(id)
+        {
+            this.Name = name;
+            this.Country = country;
+        }
+
+        public static Club Parse(XmlNode node, ListOfIDObjects<Country> countries)
+        {
+            string id = node.Attributes["ID"].Value;
+            string name = node.Attributes["name"].Value;
+            Country country = countries.GetItemByID(node.Attributes["countryID"].Value);
+            return new Club(id, name, country);
+        }
+
+        public new XmlNode ToXml(XmlDocument doc, string name)
+        {
+            XmlNode node = base.ToXml(doc, name);
+            node.AddAttribute(doc, "name", this.Name);
+            node.AddAttribute(doc, "countryID", this.Country.ID);
+            return node;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, {1} ({2} players)", this.Name, this.Country.ID, this.Players.Count);
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Player : ObjectWithID
+    {
+        public enum PlayingPosition { GK, DF, MF, FW };
+        public static readonly Color[] PlayingPositionColors = { ColorTranslator.FromHtml("#FF8400"), ColorTranslator.FromHtml("#5BBD00"), ColorTranslator.FromHtml("#0071BD"), ColorTranslator.FromHtml("#BD0035") };
+
+        public string Name { get; private set; }
+        public int Number { get; private set; }
+        public PlayingPosition PlayerPosition { get; private set; }
+        public DateTime BirthDate { get; private set; }
+        public int Caps { get; private set; }
+        public int Goals { get; private set; }
+        public Team Nationality { get; private set; }
+        public Club Club { get; private set; }
+
+        public Player(string id, string name, int number, PlayingPosition position, DateTime birth, int caps, int goals, Team nationality, Club club)
+            : base(id)
+        {
+            this.Name = name;
+            this.Number = number;
+            this.PlayerPosition = position;
+            this.BirthDate = birth;
+            this.Caps = caps;
+            this.Goals = goals;
+            this.Nationality = nationality;
+            this.Club = club;
+        }
+
+        public static Player Parse(XmlNode node, List<Team> teams, ListOfIDObjects<Club> clubs)
+        {
+            string id = node.Attributes["ID"].Value;
+            string name = node.Attributes["name"].Value;
+            int number = Int32.Parse(node.Attributes["number"].Value);
+            PlayingPosition position = (PlayingPosition) Enum.Parse(typeof(PlayingPosition), node.Attributes["position"].Value);
+            DateTime birth = DateTime.Parse(node.Attributes["birthDate"].Value);
+            int caps = Int32.Parse(node.Attributes["caps"].Value);
+            int goals = Int32.Parse(node.Attributes["goals"].Value);
+            Team nationality = teams.First(t => t.Country.ID.Equals(node.Attributes["countryID"].Value));
+            Club club = clubs.GetItemByID(node.Attributes["clubID"].Value);
+            return new Player(id, name, number, position, birth, caps, goals, nationality, club);
+        }
+
+        public new XmlNode ToXml(XmlDocument doc, string name)
+        {
+            XmlNode node = base.ToXml(doc, name);
+            node.AddAttribute(doc, "name", this.Name);
+            node.AddAttribute(doc, "number", this.Number);
+            node.AddAttribute(doc, "position", this.PlayerPosition.ToString());
+            node.AddAttribute(doc, "birthDate", this.BirthDate.ToShortDateString());
+            node.AddAttribute(doc, "caps", this.Caps);
+            node.AddAttribute(doc, "goals", this.Goals);
+            node.AddAttribute(doc, "countryID", this.Nationality.Country.ID);
+            node.AddAttribute(doc, "clubID", this.Club.ID);
+            return node;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}. {1} ({2}/{3})", this.Number, this.Name, this.Nationality.Country.ID, this.Club.Name);
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class Team
     {
         public Country Country { get; private set; }
         public List<string> Nicknames { get; private set; }
+        public ListOfIDObjects<Player> Players { get; private set; }
 
         public Team(Country country, List<string> nicknames)
         {
             this.Country = country;
             this.Nicknames = nicknames;
+            this.Players = new ListOfIDObjects<Player>();
         }
 
         public static Team Parse(XmlNode node, ListOfIDObjects<Country> countries)
@@ -184,6 +290,9 @@ namespace Euro2016
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class TableLine
     {
         public Team Team { get; internal set; }
@@ -435,6 +544,9 @@ namespace Euro2016
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class HalfScoreboard : PairT<int>
     {
         public HalfScoreboard()
@@ -572,6 +684,9 @@ namespace Euro2016
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Match : ObjectWithID
     {
         public string Category { get; private set; }

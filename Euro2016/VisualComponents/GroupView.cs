@@ -109,14 +109,6 @@ namespace Euro2016.VisualComponents
             this.Cursor = Cursors.Default;
         }
 
-        private void DrawText(Graphics g, string text, double percentageStart, double percentageEnd)
-        {
-            RectangleF rect = new RectangleF(this.Width * (float) percentageStart, 0, (float) (this.Width * (percentageEnd - percentageStart)), this.Height);
-            SizeF size = g.MeasureString(text, this.Font);
-            PointF location = new PointF(rect.Left + rect.Width / 2 - size.Width / 2, rect.Height / 2 - size.Height / 2);
-            g.DrawString(text, this.Font, MyGUIs.Text.Normal.Brush, location);
-        }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             e.Graphics.Clear(MyGUIs.Background.Normal.Color);
@@ -124,7 +116,7 @@ namespace Euro2016.VisualComponents
 
             double lastLeft = 0.0;
             for (int iCol = 0; iCol < GroupView.ColumnWidthPercentages.Length; lastLeft += GroupView.ColumnWidthPercentages[iCol], iCol++)
-                this.DrawText(e.Graphics, GroupView.ColumnWidthCaptions[iCol], lastLeft, lastLeft + GroupView.ColumnWidthPercentages[iCol]);
+                this.DrawTextCell(e.Graphics, this.Font, GroupView.ColumnWidthCaptions[iCol], HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[iCol]);
         }
     }
 
@@ -156,25 +148,6 @@ namespace Euro2016.VisualComponents
             this.detailedLayout = detailedLayout;
         }
 
-        private void DrawImage(Graphics g, Bitmap image, HorizontalAlignment alignment, double percentageStart, double percentageEnd)
-        {
-            RectangleF rect = new RectangleF((float) (this.Width * percentageStart), 0, (float) (this.Width * (percentageEnd - percentageStart)), this.Height);
-            PointF location = new PointF(alignment == HorizontalAlignment.Left
-                ? rect.Left : (alignment == HorizontalAlignment.Center ? rect.Left + rect.Width / 2 - image.Size.Width / 2 : rect.Right - image.Size.Width),
-                rect.Height / 2 - image.Size.Height / 2);
-            g.DrawImage(image, location);
-        }
-
-        private void DrawText(Graphics g, Font font, string text, HorizontalAlignment alignment, double percentageStart, double percentageEnd)
-        {
-            RectangleF rect = new RectangleF((float) (this.Width * percentageStart), 0, (float) (this.Width * (percentageEnd - percentageStart)), this.Height);
-            SizeF size = g.MeasureString(text, font);
-            PointF location = new PointF(alignment == HorizontalAlignment.Left
-                ? rect.Left : (alignment == HorizontalAlignment.Center ? rect.Left + rect.Width / 2 - size.Width / 2 : rect.Right - size.Width),
-                rect.Height / 2 - size.Height / 2);
-            g.DrawString(text, font, MyGUIs.Text[this.mouseIsOver].Brush, location);
-        }
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -186,35 +159,35 @@ namespace Euro2016.VisualComponents
             if (this.detailedLayout)
             {
                 double lastLeft = 0.0;
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.Position + ".", HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[0]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.Position + ".", HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[0]);
                 lastLeft += GroupView.ColumnWidthPercentages[0];
-                this.DrawImage(e.Graphics, this.tableLine.Team.Country.Flag40px, HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[1]);
+                this.DrawImageCell(e.Graphics, this.tableLine.Team.Country.Flag40px, HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[1]);
                 lastLeft += GroupView.ColumnWidthPercentages[1];
-                this.DrawText(e.Graphics, this.fontEmphasized, this.tableLine.Team.Country.Names[this.settings.ShowCountryNamesInNativeLanguage], HorizontalAlignment.Left, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[2]);
+                this.DrawTextCell(e.Graphics, this.fontEmphasized, this.tableLine.Team.Country.Names[this.settings.ShowCountryNamesInNativeLanguage], HorizontalAlignment.Left, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[2]);
                 lastLeft += GroupView.ColumnWidthPercentages[2];
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.MatchesPlayed.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[3]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.MatchesPlayed.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[3]);
                 lastLeft += GroupView.ColumnWidthPercentages[3];
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.Won.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[4]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.Won.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[4]);
                 lastLeft += GroupView.ColumnWidthPercentages[4];
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.Drawn.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[5]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.Drawn.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[5]);
                 lastLeft += GroupView.ColumnWidthPercentages[5];
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.Lost.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[6]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.Lost.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[6]);
                 lastLeft += GroupView.ColumnWidthPercentages[6];
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.GoalsFor + "-" + this.tableLine.GoalsAgainst, HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[7]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.GoalsFor + "-" + this.tableLine.GoalsAgainst, HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[7]);
                 lastLeft += GroupView.ColumnWidthPercentages[7];
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.FormatGoalDifference, HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[8]);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.FormatGoalDifference, HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[8]);
                 lastLeft += GroupView.ColumnWidthPercentages[8];
-                this.DrawText(e.Graphics, this.fontEmphasized, this.tableLine.Points.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[9]);
+                this.DrawTextCell(e.Graphics, this.fontEmphasized, this.tableLine.Points.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + GroupView.ColumnWidthPercentages[9]);
                 lastLeft += GroupView.ColumnWidthPercentages[9];
             }
             else
             {
-                this.DrawText(e.Graphics, this.fontEmphasized, this.tableLine.Position + ".", HorizontalAlignment.Center, 0f, 0.08f);
-                this.DrawImage(e.Graphics, this.tableLine.Team.Country.Flag20px, HorizontalAlignment.Center, 0.08f, 0.15f);
-                this.DrawText(e.Graphics, this.fontEmphasized, this.tableLine.Team.Country.Names[this.settings.ShowCountryNamesInNativeLanguage], HorizontalAlignment.Left, 0.17f, 0.65f);
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.MatchesPlayed + "m", HorizontalAlignment.Center, 0.65f, 0.75f);
-                this.DrawText(e.Graphics, this.fontNormal, this.tableLine.FormatGoalDifference, HorizontalAlignment.Center, 0.75f, 0.9f);
-                this.DrawText(e.Graphics, this.fontEmphasized, this.tableLine.Points + "p", HorizontalAlignment.Center, 0.9f, 1f);
+                this.DrawTextCell(e.Graphics, this.fontEmphasized, this.tableLine.Position + ".", HorizontalAlignment.Center, 0f, 0.08f);
+                this.DrawImageCell(e.Graphics, this.tableLine.Team.Country.Flag20px, HorizontalAlignment.Center, 0.08f, 0.15f);
+                this.DrawTextCell(e.Graphics, this.fontEmphasized, this.tableLine.Team.Country.Names[this.settings.ShowCountryNamesInNativeLanguage], HorizontalAlignment.Left, 0.17f, 0.65f);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.MatchesPlayed + "m", HorizontalAlignment.Center, 0.65f, 0.75f);
+                this.DrawTextCell(e.Graphics, this.fontNormal, this.tableLine.FormatGoalDifference, HorizontalAlignment.Center, 0.75f, 0.9f);
+                this.DrawTextCell(e.Graphics, this.fontEmphasized, this.tableLine.Points + "p", HorizontalAlignment.Center, 0.9f, 1f);
             }
         }
     }

@@ -18,6 +18,7 @@ namespace Euro2016
         private FMain mainForm;
         private List<CountryView> countryButtons;
         private MatchesView matchesView;
+        private Team team;
 
         public FTeam(FMain mainForm)
         {
@@ -41,6 +42,11 @@ namespace Euro2016
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
+        private void infoViewDetail3_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowForm<FPlayers, Country>(this.team.Country);
+        }
+
         private void VenueButton_Click(object sender, EventArgs e)
         {
             this.RefreshInformation(this.mainForm.Database.Teams.First(t => t.Country.Equals(sender is CountryView ? (sender as CountryView).Country : (sender as Team).Country)));
@@ -49,6 +55,7 @@ namespace Euro2016
         public override void RefreshInformation(object item)
         {
             Team team = item as Team;
+            this.team = team;
             this.countryButtons.CheckItemAndUncheckAllOthers<CountryView>(this.countryButtons.First(cb => cb.Country.Equals(team.Country)));
             this.flagPB.Image = team.Country.Flag100px;
             teamNameHomeIV.TextText = team.Country.Names.Home;
@@ -57,6 +64,7 @@ namespace Euro2016
             MatchScoreboard matchesScoreboard = matches.GetAllGoals(team);
             infoViewDetail1.TextText = string.Format("{0}-{1}", matchesScoreboard.FinalScoreWithoutPenalties.Home, matchesScoreboard.FinalScoreWithoutPenalties.Away);
             infoViewDetail2.TextText = string.Format("{0:N2}-{1:N2}", (double) matchesScoreboard.FinalScoreWithoutPenalties.Home / matches.Count, (double) matchesScoreboard.FinalScoreWithoutPenalties.Away / matches.Count);
+            infoViewDetail3.TextText = team.Players.Count + " players";
             this.matchesView.SetMatches(matches);
         }
     }

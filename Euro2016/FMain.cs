@@ -49,6 +49,12 @@ namespace Euro2016
                 this.GroupViews[index].SetGroup(this.Database.Groups.GetItemByID(((char) (65 + index)).ToString()));
             }
             Utils.SizeAndPositionControlsInPanel(menuP, new Control[] { venuesB, teamsB, groupsB, matchesB, knockoutB, settingsB, moreB, exitB }, true, 0);
+
+            /*this.Database.Clubs.Add(new Club("XXX", "DummyClub", this.Database.Countries.GetItemByID("XXX")));
+            for (int iT = 0; iT < this.Database.Teams.Count; iT++)
+                for (int iP = 0; iP < 23; iP++)
+                    this.Database.Players.Add(new Player((23 * iT + iP + 1).ToString(), "Dummy Player", iP + 1, (Player.PlayingPosition) (iP / 6), DateTime.Now,
+                        Utils.Random.Next(100), Utils.Random.Next(20), this.Database.Teams[iT].Country, this.Database.Clubs.GetItemByID("XXX")));*/
         }
 
         private void FMain_Shown(object sender, EventArgs e)
@@ -64,23 +70,21 @@ namespace Euro2016
                 view.SetGroup(view.Group);
         }
 
-        public void ShowForm<FORM_TYPE, OBJECT_TYPE>(object forItem) where FORM_TYPE : MyForm
+        public void ShowForm<FORM_TYPE, OBJECT_TYPE>(OBJECT_TYPE forItem) where FORM_TYPE : MyForm
         {
             if (this.AboutForm != null)
                 this.AboutForm.Close();
-            if (forItem is OBJECT_TYPE)
+            if (this.OpenForm != null)
             {
-                if (this.OpenForm != null)
+                this.OpenForm.Close();
+                if (this.OpenForm is FORM_TYPE)
                 {
-                    this.OpenForm.Close();
-                    if (this.OpenForm is FORM_TYPE)
-                    {
-                        this.OpenForm = null;
-                        return;
-                    }
+                    this.OpenForm = null;
+                    return;
                 }
-                this.OpenForm = (FORM_TYPE) typeof(FORM_TYPE).GetConstructor(new Type[] { typeof(FMain) }).Invoke(new object[] { this });
             }
+            this.OpenForm = (FORM_TYPE) typeof(FORM_TYPE).GetConstructor(new Type[] { typeof(FMain) }).Invoke(new object[] { this });
+            this.OpenForm.Owner = this;
             this.OpenForm.Show();
             this.OpenForm.Focus();
             this.OpenForm.RefreshInformation(forItem);
@@ -119,7 +123,7 @@ namespace Euro2016
 
         private void moreB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FMore, MyButton>(sender);
+            this.ShowForm<FMore, MyButton>(null);
         }
 
         public void MatchHeader_Click(object sender, EventArgs e)
@@ -146,7 +150,7 @@ namespace Euro2016
             if (this.OpenForm != null)
                 this.OpenForm.Close();
             StaticData.PVC.Dispose();
-            string saveResult = this.Database.SaveDatabase(Paths.DatabaseFile);
+            string saveResult = this.Database.SaveDatabase(Paths.DatabaseFile, Paths.DatabaseFileB);
             if (!saveResult.Equals(""))
                 MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();

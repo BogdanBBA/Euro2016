@@ -540,12 +540,13 @@ namespace Euro2016
         public static readonly string StadiumInsidesFolder = ProgramFilesFolder + "stadiums-inside/";
 
         public static readonly string DatabaseFile = ProgramFilesFolder + "database.xml";
+        public static readonly string DatabaseFileB = ProgramFilesFolder + "databaseB.xml";
         public static readonly string LogoImageFile = ResourcesFolder + "logo.png";
         public static readonly string UnknownTeamImageFile = ResourcesFolder + "unknownTeam.png";
         public static readonly string KnockoutImageFile = ResourcesFolder + "knockout.png";
 
         public static readonly string[] Folders = { ProgramFilesFolder, ResourcesFolder, FlagsFolder, CitiesFolder, StadiumLocationsFolder, StadiumOutsidesFolder, StadiumInsidesFolder };
-        public static readonly string[] Files = { DatabaseFile, LogoImageFile, UnknownTeamImageFile };
+        public static readonly string[] Files = { DatabaseFile, DatabaseFileB, LogoImageFile, UnknownTeamImageFile };
 
         public static string CheckPaths(bool tryToCreateMissingFolders)
         {

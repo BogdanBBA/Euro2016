@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Monday, 4 April 2016, 18:34:23">
+<DATABASE lastSaved="Wednesday, 6 April 2016, 12:55:18">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -36,6 +36,7 @@
     <Country ID="ISL" names="Ísland|Iceland" />
     <Country ID="AUT" names="Österreich|Austria" />
     <Country ID="HUN" names="Magyarország|Hungary" />
+    <Country ID="XXX" names="DUMMOIS|DUMMY" />
   </COUNTRIES>
   <TEAMS>
     <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" />
