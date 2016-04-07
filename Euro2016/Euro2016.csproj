@@ -80,6 +80,12 @@
     <Compile Include="FMatch.Designer.cs">
       <DependentUpon>FMatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMatchDays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMatchDays.Designer.cs">
+      <DependentUpon>FMatchDays.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMatchEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     <Compile Include="VisualComponents\InfoViewDetail.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisualComponents\MatchDayView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VisualComponents\MatchView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -188,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMatch.resx">
       <DependentUpon>FMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMatchDays.resx">
+      <DependentUpon>FMatchDays.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMatchEditor.resx">
       <DependentUpon>FMatchEditor.cs</DependentUpon>

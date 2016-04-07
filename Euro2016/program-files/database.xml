@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Wednesday, 6 April 2016, 15:38:55">
+<DATABASE lastSaved="Thursday, 7 April 2016, 16:45:04">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -74,7 +74,7 @@
   </GROUPS>
   <MATCHES>
     <Match ID="1" category="G:A" who="FRA,ROU" when="10/6@21" where="STD" scoreboard="1-1,0-0" />
-    <Match ID="2" category="G:A" who="ALB,SUI" when="11/6@15" where="LEN" scoreboard="4-1,0-0" />
+    <Match ID="2" category="G:A" who="ALB,SUI" when="11/6@15" where="LEN" scoreboard="2-0,5-2" />
     <Match ID="3" category="G:B" who="WLS,SVK" when="11/6@18" where="BOR" scoreboard="4-1,4-0" />
     <Match ID="4" category="G:B" who="ENG,RUS" when="11/6@21" where="MAR" scoreboard="0-3,3-3" />
     <Match ID="5" category="G:D" who="TUR,HRV" when="12/6@15" where="PAR" scoreboard="3-0,0-4" />
@@ -126,7 +126,7 @@
     <Match ID="51" category="KO:1" who="49,50" when="10/7@21" where="STD" scoreboard="1-2,5-4,0-0,0-1" />
   </MATCHES>
   <SETTINGS>
-    <FavoriteTeam value="ROU" />
+    <FavoriteTeam value="GER" />
     <ShowCountryNamesInNativeLanguage value="True" />
     <ShowKnockoutStageOnStartup value="False" />
   </SETTINGS>

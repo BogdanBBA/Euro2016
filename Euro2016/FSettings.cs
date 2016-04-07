@@ -59,6 +59,7 @@ namespace Euro2016
                 MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             this.mainForm.RefreshInformation(null);
+            this.mainForm.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
             this.Close();
         }
     }

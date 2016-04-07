@@ -14,8 +14,8 @@ namespace Euro2016.VisualComponents
         private EventHandler onMatchHeaderClickDelegate;
         private EventHandler onMatchRowClickDelegate;
 
-        private MatchHeader[] headers;
-        private MatchRow[] rows;
+        private List<MatchHeader> headers;
+        private List<MatchRow> rows;
 
         internal MyScrollPanel myScrollPanel;
         private Settings settings;
@@ -25,8 +25,8 @@ namespace Euro2016.VisualComponents
             this.onMatchHeaderClickDelegate = onMatchHeaderClickDelegate;
             this.onMatchRowClickDelegate = onMatchRowClickDelegate;
 
-            this.headers = new MatchHeader[0];
-            this.rows = new MatchRow[0];
+            this.headers = new List<MatchHeader>();
+            this.rows = new List<MatchRow>();
 
             this.myScrollPanel = new MyScrollPanel(parent, MyScrollBar.ScrollBarPosition.Right, 2, 80);
             this.myScrollPanel.UpdatePanelSize();
@@ -42,34 +42,43 @@ namespace Euro2016.VisualComponents
                 if (dates.IndexOf(match.When.Date) == -1)
                     dates.Add(match.When.Date);
 
-            foreach (MatchHeader header in this.headers)
-            {
-                header.Hide();
-                header.Dispose();
-            }
-            foreach (MatchRow row in this.rows)
-            {
-                row.Hide();
-                row.Dispose();
-            }
-            this.headers = new MatchHeader[dates.Count];
-            this.rows = new MatchRow[matches.Count];
+            Size headerSize = new Size(this.myScrollPanel.VisibleSize.Width, MatchHeader.HeaderHeight);
+            if (this.headers.Count > dates.Count)
+                for (int index = dates.Count; index < this.headers.Count; index++)
+                    this.headers[index].Hide();
+            else if (this.headers.Count < dates.Count)
+                for (int index = this.headers.Count; index < dates.Count; index++)
+                    this.headers.Add(new MatchHeader(DateTime.Now, this.onMatchHeaderClickDelegate) { Size = headerSize });
+
+            Size rowSize = new Size(this.myScrollPanel.VisibleSize.Width, MatchRow.RowHeight);
+            if (this.rows.Count > matches.Count)
+                for (int index = matches.Count; index < this.rows.Count; index++)
+                    this.rows[index].Hide();
+            else if (this.rows.Count < matches.Count)
+                for (int index = this.rows.Count; index < matches.Count; index++)
+                    this.rows.Add(new MatchRow(null, this.onMatchRowClickDelegate, this.settings) { Size = rowSize });
 
             DateTime lastDate = new DateTime(2000, 1, 1);
+            Point location;
             for (int iM = 0, iD = -1, lastTop = 0; iM < matches.Count; iM++)
             {
                 if (lastDate.Date.CompareTo(matches[iM].When.Date) != 0)
                 {
                     lastDate = dates[++iD];
-                    this.headers[iD] = new MatchHeader(lastDate, this.onMatchHeaderClickDelegate);
-                    this.headers[iD].Size = new Size(this.myScrollPanel.VisibleSize.Width, MatchHeader.HeaderHeight);
-                    this.myScrollPanel.AddControl(this.headers[iD], new Point(0, lastTop), false);
+                    location = new Point(0, lastTop);
                     lastTop += MatchHeader.HeaderHeight;
+                    if (!this.myScrollPanel.ContainsControl(this.headers[iD]) || !this.headers[iD].Location.Equals(location))
+                        this.myScrollPanel.AddControl(this.headers[iD], location, false);
+                    this.headers[iD].Show();
+                    this.headers[iD].Date = dates[iD];
                 }
-                this.rows[iM] = new MatchRow(matches[iM], this.onMatchRowClickDelegate, this.settings);
-                this.rows[iM].Size = new Size(this.myScrollPanel.VisibleSize.Width, MatchRow.RowHeight);
-                this.myScrollPanel.AddControl(this.rows[iM], new Point(0, lastTop), false);
+
+                location = new Point(0, lastTop);
                 lastTop += MatchRow.RowHeight;
+                if (!this.myScrollPanel.ContainsControl(this.rows[iM]) || !this.rows[iM].Location.Equals(location))
+                    this.myScrollPanel.AddControl(this.rows[iM], location, false);
+                this.rows[iM].Show();
+                this.rows[iM].Match = matches[iM];
             }
 
             this.myScrollPanel.UpdatePanelSize();
@@ -82,12 +91,18 @@ namespace Euro2016.VisualComponents
         public static int HeaderHeight = 40;
 
         private DateTime date;
+        public DateTime Date
+        {
+            get { return this.date; }
+            set { this.date = value; this.Invalidate(); }
+        }
 
         public MatchHeader(DateTime date, EventHandler onClickDelegate)
             : base()
         {
             this.date = date;
             this.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 13, FontStyle.Bold);
+            this.Cursor = Cursors.Hand;
             this.Click += onClickDelegate;
         }
 
@@ -108,13 +123,18 @@ namespace Euro2016.VisualComponents
         private static readonly Font TeamFont = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 10, FontStyle.Regular);
         private static readonly Font ScoreFont = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 12, FontStyle.Bold);
 
-        public Match Match { get; private set; }
+        private Match match;
+        public Match Match
+        {
+            get { return this.match; }
+            set { this.match = value; this.Invalidate(); }
+        }
         private Settings settings;
 
         public MatchRow(Match match, EventHandler onClickDelegate, Settings settings)
             : base()
         {
-            this.Match = match;
+            this.match = match;
             this.settings = settings;
             this.Cursor = Cursors.Hand;
             this.Click += onClickDelegate;
@@ -145,24 +165,30 @@ namespace Euro2016.VisualComponents
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.AssumeLinear;
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
-            string text = this.Match.FormatCategory;
+            if (this.match == null)
+            {
+                e.Graphics.DrawString("this.Match == null", this.Font, MyGUIs.Text.Normal.Brush, Point.Empty);
+                return;
+            }
+
+            string text = this.match.FormatCategory;
             this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsClicked].Brush, text, HorizontalAlignment.Center, 0f, 0.16f);
 
-            text = this.Match.Teams.Home != null ? this.Match.Teams.Home.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";
+            text = this.match.Teams.Home != null ? this.match.Teams.Home.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";
             this.DrawText(e.Graphics, MatchRow.TeamFont, MyGUIs.Text[this.mouseIsOver].Brush, text, HorizontalAlignment.Right, 0.16f, 0.43f);
 
-            Bitmap image = this.Match.Teams.Home != null ? this.Match.Teams.Home.Country.Flag20px : (Bitmap) Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], 32, 20, InterpolationMode.NearestNeighbor, false);
+            Bitmap image = this.match.Teams.Home != null ? this.match.Teams.Home.Country.Flag20px : (Bitmap) Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], 32, 20, InterpolationMode.NearestNeighbor, false);
             this.DrawImage(e.Graphics, image, HorizontalAlignment.Center, 0.43f, 0.53f);
 
-            if (this.Match.Scoreboard.Played)
-                this.DrawText(e.Graphics, MatchRow.ScoreFont, MyGUIs.Text[this.mouseIsOver].Brush, this.Match.Scoreboard.FormatScore(false), HorizontalAlignment.Center, 0.53f, 0.63f);
+            if (this.match.Scoreboard.Played)
+                this.DrawText(e.Graphics, MatchRow.ScoreFont, MyGUIs.Text[this.mouseIsOver].Brush, this.match.Scoreboard.FormatScore(false), HorizontalAlignment.Center, 0.53f, 0.63f);
             else
-                this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsOver].Brush, this.Match.When.ToString("HH:mm"), HorizontalAlignment.Center, 0.53f, 0.63f);
+                this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsOver].Brush, this.match.When.ToString("HH:mm"), HorizontalAlignment.Center, 0.53f, 0.63f);
 
-            image = this.Match.Teams.Away != null ? this.Match.Teams.Away.Country.Flag20px : (Bitmap) Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], 32, 20, InterpolationMode.NearestNeighbor, false);
+            image = this.match.Teams.Away != null ? this.match.Teams.Away.Country.Flag20px : (Bitmap) Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], 32, 20, InterpolationMode.NearestNeighbor, false);
             this.DrawImage(e.Graphics, image, HorizontalAlignment.Center, 0.63f, 0.73f);
 
-            text = this.Match.Teams.Away != null ? this.Match.Teams.Away.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";
+            text = this.match.Teams.Away != null ? this.match.Teams.Away.Country.Names[this.settings.ShowCountryNamesInNativeLanguage] : "TBD";
             this.DrawText(e.Graphics, MatchRow.TeamFont, MyGUIs.Text[this.mouseIsOver].Brush, text, HorizontalAlignment.Left, 0.73f, 1f);
         }
     }

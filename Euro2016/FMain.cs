@@ -18,8 +18,7 @@ namespace Euro2016
         public Database Database { get; private set; }
         protected GroupView[] GroupViews { get; private set; }
         protected MatchesView MatchesView { get; private set; }
-        internal MyForm OpenForm { get; set; }
-        internal FAbout AboutForm { private get; set; }
+        internal KeyValuePair<MyForm, object> OpenFormAndItem { get; set; }
 
         public FMain(Database database)
         {
@@ -70,64 +69,79 @@ namespace Euro2016
                 view.SetGroup(view.Group);
         }
 
-        public void ShowForm<FORM_TYPE, OBJECT_TYPE>(OBJECT_TYPE forItem) where FORM_TYPE : MyForm
+        public void ShowForm<FORM_TYPE, OBJECT_TYPE>(OBJECT_TYPE forItem, bool closeIfFormTypeIsTheSame = false) where FORM_TYPE : MyForm
         {
-            if (this.AboutForm != null)
-                this.AboutForm.Close();
-            if (this.OpenForm != null)
-            {
-                this.OpenForm.Close();
-                if (this.OpenForm is FORM_TYPE)
+            // note: remember to set this.OpenFormAndItem to null from FSettings, FMore itself and anything created directly or indirectly from FMore
+
+            // if the form exists and it should be closed if its type is the same as the given type (that is, if the command is passed from the main form menu buttons), close it and be done with it
+            if (closeIfFormTypeIsTheSame && this.OpenFormAndItem.Key != null && this.OpenFormAndItem.Key is FORM_TYPE)
+                if (this.OpenFormAndItem.Key != null)
                 {
-                    this.OpenForm = null;
+                    this.OpenFormAndItem.Key.Close();
+                    this.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
                     return;
                 }
+
+            // if a form different from what we want exists, close it
+            if (this.OpenFormAndItem.Key != null && !(this.OpenFormAndItem.Key is FORM_TYPE))
+            {
+                this.OpenFormAndItem.Key.Close();
+                this.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
             }
-            this.OpenForm = (FORM_TYPE) typeof(FORM_TYPE).GetConstructor(new Type[] { typeof(FMain) }).Invoke(new object[] { this });
-            this.OpenForm.Owner = this;
-            this.OpenForm.Show();
-            this.OpenForm.Focus();
-            this.OpenForm.RefreshInformation(forItem);
+
+            // if we don't have it open, we should create and open the form
+            if (this.OpenFormAndItem.Key == null)
+            {
+                MyForm form = (FORM_TYPE) typeof(FORM_TYPE).GetConstructor(new Type[] { typeof(FMain) }).Invoke(new object[] { this });
+                form.Owner = this;
+                form.Show();
+                form.Focus();
+                this.OpenFormAndItem = new KeyValuePair<MyForm, object>(form, forItem);
+            }
+
+            // refresh the form with the given item
+            this.OpenFormAndItem.Key.RefreshInformation(forItem);
         }
 
         public void venuesB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FVenue, Venue>(this.Database.Venues.GetItemByID(this.Database.Matches.GetMatchesBy("KO:1")[0].Where.ID));
+            this.ShowForm<FVenue, Venue>(this.Database.Venues.GetItemByID(this.Database.Matches.GetMatchesBy("KO:1")[0].Where.ID), true);
         }
 
         public void teamsB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FTeam, Team>(this.Database.Settings.FavoriteTeam);
+            this.ShowForm<FTeam, Team>(this.Database.Settings.FavoriteTeam, true);
         }
 
         private void groupsB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FGroup, Group>(this.Database.Groups.First(group => group.TableLines.FirstOrDefault(tableLine => tableLine.Team.Equals(this.Database.Settings.FavoriteTeam)) != null));
+            this.ShowForm<FGroup, Group>(this.Database.Groups.First(group => group.TableLines.FirstOrDefault(tableLine => tableLine.Team.Equals(this.Database.Settings.FavoriteTeam)) != null), true);
         }
 
         private void matchesB_Click(object sender, EventArgs e)
         {
             Match firstUnplayedMatch = this.Database.Matches.FirstOrDefault(match => !match.Scoreboard.Played);
-            this.ShowForm<FMatch, Match>(firstUnplayedMatch != null ? firstUnplayedMatch : this.Database.Matches.GetMatchesBy("KO:1")[0]);
+            this.ShowForm<FMatch, Match>(firstUnplayedMatch != null ? firstUnplayedMatch : this.Database.Matches.GetMatchesBy("KO:1")[0], true);
         }
 
         private void knockoutB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FKnockOut, ListOfIDObjects<Match>>(this.Database.Matches.GetMatchesBy("KO"));
+            this.ShowForm<FKnockOut, ListOfIDObjects<Match>>(this.Database.Matches.GetMatchesBy("KO"), true);
         }
 
         private void settingsB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FSettings, Settings>(this.Database.Settings);
+            this.ShowForm<FSettings, Settings>(this.Database.Settings, true);
         }
 
         private void moreB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FMore, MyButton>(null);
+            this.ShowForm<FMore, MyButton>(null, true);
         }
 
         public void MatchHeader_Click(object sender, EventArgs e)
         {
+            this.ShowForm<FMatchDays, DateTime>((sender as MatchHeader).Date);
         }
 
         public void MatchRow_Click(object sender, EventArgs e)
@@ -147,8 +161,8 @@ namespace Euro2016
 
         private void exitB_Click(object sender, EventArgs e)
         {
-            if (this.OpenForm != null)
-                this.OpenForm.Close();
+            if (this.OpenFormAndItem.Key != null)
+                this.OpenFormAndItem.Key.Close();
             StaticData.PVC.Dispose();
             string saveResult = this.Database.SaveDatabase(Paths.DatabaseFile, Paths.DatabaseFileB);
             if (!saveResult.Equals(""))

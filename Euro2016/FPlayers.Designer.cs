@@ -43,6 +43,7 @@
             // flagPB
             // 
             this.flagPB.BackColor = System.Drawing.Color.Transparent;
+            this.flagPB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.flagPB.Location = new System.Drawing.Point(218, 96);
             this.flagPB.Name = "flagPB";
             this.flagPB.Size = new System.Drawing.Size(160, 100);
@@ -65,14 +66,14 @@
             this.infoViewDetail2.TextDescription = "Information valid as of";
             this.infoViewDetail2.TextText = "(...first match day)";
             // 
-            // infoViewDetail1
+            // coachIVD
             // 
             this.coachIVD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.coachIVD.BigBar = false;
             this.coachIVD.Checked = false;
             this.coachIVD.DrawBar = false;
             this.coachIVD.Location = new System.Drawing.Point(454, 161);
-            this.coachIVD.Name = "infoViewDetail1";
+            this.coachIVD.Name = "coachIVD";
             this.coachIVD.Size = new System.Drawing.Size(308, 35);
             this.coachIVD.TabIndex = 5;
             this.coachIVD.Text = "infoViewDetail1";
@@ -101,6 +102,7 @@
             this.countryIV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.countryIV.BigBar = false;
             this.countryIV.Checked = false;
+            this.countryIV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.countryIV.DrawBar = false;
             this.countryIV.Location = new System.Drawing.Point(384, 96);
             this.countryIV.Name = "countryIV";
@@ -110,6 +112,7 @@
             this.countryIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.countryIV.TextDescription = "Players of";
             this.countryIV.TextText = "#text";
+            this.countryIV.Click += new System.EventHandler(this.countryIV_Click);
             // 
             // countriesP
             // 

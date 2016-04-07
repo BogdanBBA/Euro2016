@@ -73,6 +73,8 @@
             // whenL
             // 
             this.whenL.BackColor = System.Drawing.Color.Transparent;
+            this.whenL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.whenL.Font = new System.Drawing.Font("Arial", 16F);
             this.whenL.ForeColor = System.Drawing.Color.White;
             this.whenL.Location = new System.Drawing.Point(151, 144);
             this.whenL.Name = "whenL";
@@ -80,6 +82,7 @@
             this.whenL.TabIndex = 14;
             this.whenL.Text = "label1";
             this.whenL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.whenL.Click += new System.EventHandler(this.whenL_Click);
             // 
             // halvesL
             // 
@@ -98,6 +101,7 @@
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = false;
             this.titleLabel1.Checked = false;
+            this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -217,6 +221,7 @@
             this.editB.Checked = false;
             this.editB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editB.DrawBar = true;
+            this.editB.Font = new System.Drawing.Font("Arial", 10F);
             this.editB.Image = null;
             this.editB.Location = new System.Drawing.Point(639, 12);
             this.editB.Name = "editB";

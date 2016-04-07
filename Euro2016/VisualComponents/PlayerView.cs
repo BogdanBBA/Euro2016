@@ -57,9 +57,12 @@ namespace Euro2016.VisualComponents
                 this.rows = temp;
             }
 
-            this.myScrollPanel.UpdatePanelSize();
-            for (int i = 0; i < this.rows.Length; i++)
+            for (int i = 0; i < players.Count; i++)
+            {
+                this.rows[i].Show();
                 this.rows[i].Player = players[i];
+            }
+            this.myScrollPanel.UpdatePanelSize();
         }
     }
 
@@ -74,6 +77,36 @@ namespace Euro2016.VisualComponents
             base.OnPaint(e);
             e.Graphics.CompositingQuality = CompositingQuality.AssumeLinear;
             e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+        }
+    }
+
+    public class PlayerViewHeader : PlayerViewBase
+    {
+        public PlayerViewHeader()
+        {
+            this.Font = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 16, FontStyle.Regular) : new Font("Arial", 12, FontStyle.Regular);
+            this.Size = new Size(500, PlayerViewBase.DefaultHeight);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            e.Graphics.Clear(MyGUIs.Background.Normal.Color);
+
+            double lastLeft = 0;
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[0], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[0]);
+            lastLeft += PlayerViewBase.ColumnWidths[0];
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[2], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[1] + PlayerViewBase.ColumnWidths[2]);
+            lastLeft += PlayerViewBase.ColumnWidths[1] + PlayerViewBase.ColumnWidths[2];
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[3], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[3]);
+            lastLeft += PlayerViewBase.ColumnWidths[3];
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[4], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[4]);
+            lastLeft += PlayerViewBase.ColumnWidths[4];
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[5], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[5]);
+            lastLeft += PlayerViewBase.ColumnWidths[5];
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[6], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[6]);
+            lastLeft += PlayerViewBase.ColumnWidths[6];
+            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[8], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[7] + PlayerViewBase.ColumnWidths[8]);
         }
     }
 
@@ -116,36 +149,6 @@ namespace Euro2016.VisualComponents
             this.DrawImageCell(e.Graphics, this.player.Club.Country.Flag20px, HorizontalAlignment.Right, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[7]);
             lastLeft += PlayerViewBase.ColumnWidths[7];
             this.DrawTextCell(e.Graphics, this.Font, this.player.Club.Name, HorizontalAlignment.Left, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[8]);
-        }
-    }
-
-    public class PlayerViewHeader : PlayerViewBase
-    {
-        public PlayerViewHeader()
-        {
-            this.Font = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 16, FontStyle.Regular) : new Font("Arial", 12, FontStyle.Regular);
-            this.Size = new Size(500, PlayerViewBase.DefaultHeight);
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            e.Graphics.Clear(MyGUIs.Background.Normal.Color);
-
-            double lastLeft = 0;
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[0], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[0]);
-            lastLeft += PlayerViewBase.ColumnWidths[0];
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[2], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[1] + PlayerViewBase.ColumnWidths[2]);
-            lastLeft += PlayerViewBase.ColumnWidths[1] + PlayerViewBase.ColumnWidths[2];
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[3], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[3]);
-            lastLeft += PlayerViewBase.ColumnWidths[3];
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[4], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[4]);
-            lastLeft += PlayerViewBase.ColumnWidths[4];
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[5], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[5]);
-            lastLeft += PlayerViewBase.ColumnWidths[5];
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[6], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[6]);
-            lastLeft += PlayerViewBase.ColumnWidths[6];
-            this.DrawTextCell(e.Graphics, this.Font, PlayerViewBase.ColumnCaptions[8], HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[7] + PlayerViewBase.ColumnWidths[8]);
         }
     }
 }

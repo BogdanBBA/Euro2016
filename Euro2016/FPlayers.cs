@@ -19,6 +19,7 @@ namespace Euro2016
         private MyScrollPanel countryMSP;
         private List<CountryView> countryViews;
         private PlayersView playersView;
+        private Team team = null;
 
         public FPlayers(FMain mainForm)
         {
@@ -69,6 +70,11 @@ namespace Euro2016
             //
         }
 
+        private void countryIV_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public override void RefreshInformation(object item)
         {
             Country country = item as Country;
@@ -79,10 +85,20 @@ namespace Euro2016
             flagPB.Image = country.Flag100px;
             countryIV.TextText = country.Names[this.mainForm.Database.Settings.ShowCountryNamesInNativeLanguage];
 
-            Team team = this.mainForm.Database.Teams.First(t => t.Country.Equals(country));
-            coachFlagPB.Image = team.Coach.Key.Flag40px;
-            coachIVD.TextText = team.Coach.Value;
-            this.playersView.SetPlayers(team == null ? new ListOfIDObjects<Player>() : team.Players);
+            if (this.mainForm.Database.Teams.Find(t => t.Country.Equals(country)) != null)
+            {
+                this.team = this.mainForm.Database.Teams.First(t => t.Country.Equals(country));
+                coachFlagPB.Image = team.Coach.Key.Flag40px;
+                coachIVD.TextText = team.Coach.Value;
+                this.playersView.SetPlayers(team.Players);
+            }
+            else
+            {
+                this.team = null;
+                coachFlagPB.Image = null;
+                coachIVD.TextText = "";
+                this.playersView.SetPlayers(new ListOfIDObjects<Player>());
+            }
         }
     }
 }

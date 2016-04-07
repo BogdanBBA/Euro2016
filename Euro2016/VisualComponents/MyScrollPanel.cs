@@ -95,6 +95,12 @@ namespace Euro2016.VisualComponents
             return control;
         }
 
+        /// <summary>Checks whether this MyScrollPanel contains the given control.</summary>
+        public bool ContainsControl(Control control)
+        {
+            return this.controls.Contains(control);
+        }
+
         /// <summary>Resizes the 'inner panel' that contains all the controls associated with this scroll panel.
         /// Code-wise, this is called by AddControl and in turn calls RefreshScroll.</summary>
         public void UpdatePanelSize()
@@ -117,6 +123,7 @@ namespace Euro2016.VisualComponents
                 this.currentScrollTop = Math.Max(0, Math.Min(this.currentScrollTop, this.ContentsSize.Width - this.VisibleSize.Width));
 
             this.RefreshScroll();
+            this.scrollBar.Visible = this.scrollBar.Position == MyScrollBar.ScrollBarPosition.Right ? this.movingPanel.Height > this.containerPanel.Height : this.movingPanel.Width > this.containerPanel.Width;
         }
 
         /// <summary>Updates the location of the 'inner panel' that contains all the controls associated with this scroll panel and refreshes the scroll bar.

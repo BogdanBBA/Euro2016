@@ -14,7 +14,8 @@ namespace Euro2016
     public partial class FMore : MyForm
     {
         private const string MenuButtonPrefix = "button";
-        private static readonly string[] ButtonCaptions = { "Players", "Reset matches", "Simulate results", "About the app", "CLOSE" };
+        private const string CloseButtonLabel = "CLOSE";
+        private static readonly string[] ButtonCaptions = { "Match days", "Players", "Reset matches", "Simulate results", "About the app", CloseButtonLabel };
 
         private FMain mainForm;
         private List<MyButton> menuButtons;
@@ -42,13 +43,18 @@ namespace Euro2016
             string saveResult;
             switch (button.Text)
             {
+                case "Match days":
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
+                    this.mainForm.ShowForm<FMatchDays, DateTime>(DateTime.Now.Date);
+                    break;
+
                 case "Players":
-                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null);
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
                     this.mainForm.ShowForm<FPlayers, Country>(this.mainForm.Database.Settings.FavoriteTeam.Country);
                     break;
 
                 case "Reset matches":
-                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null);
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
                     playedMatches = db.Matches.GetMatchesBy(true);
                     if (playedMatches.Count == 0)
                         MessageBox.Show("The database matches are already reset (set as not played)!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -69,7 +75,7 @@ namespace Euro2016
                     break;
 
                 case "Simulate results":
-                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null);
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
                     unplayedMatches = db.Matches.GetMatchesBy(false);
                     if (unplayedMatches.Count == 0)
                         MessageBox.Show("There aren't any matches that have not been played! All good then.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,12 +96,12 @@ namespace Euro2016
                     break;
 
                 case "About the app":
-                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals("CLOSE")), null);
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
                     this.mainForm.ShowForm<FAbout, Country>(this.mainForm.Database.Settings.FavoriteTeam.Country);
                     break;
 
-                case "CLOSE":
-                    this.mainForm.OpenForm = null;
+                case CloseButtonLabel:
+                    this.mainForm.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
                     this.Close();
                     break;
             }

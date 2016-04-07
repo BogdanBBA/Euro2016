@@ -41,7 +41,7 @@ namespace Euro2016
             awayNicknameL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 12, FontStyle.Regular);
             scoreL.Font = new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 35, FontStyle.Bold);
             halvesL.Font = new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 10, FontStyle.Regular);
-            
+
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
@@ -90,6 +90,11 @@ namespace Euro2016
         private void whereL_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowForm<FVenue, Venue>(this.lastMatch.Where);
+        }
+
+        private void whenL_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowForm<FMatchDays, DateTime>(this.lastMatch.When.Date);
         }
 
         private void homeFlagPB_Click(object sender, EventArgs e)
