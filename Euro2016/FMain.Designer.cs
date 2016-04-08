@@ -107,6 +107,7 @@
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.logoPB.TabIndex = 2;
             this.logoPB.TabStop = false;
+            this.logoPB.Click += new System.EventHandler(this.logoPB_Click);
             // 
             // menuP
             // 
@@ -128,6 +129,7 @@
             // 
             this.settingsB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.settingsB.BigBar = true;
+            this.settingsB.Checked = false;
             this.settingsB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingsB.DrawBar = true;
             this.settingsB.Image = null;
@@ -142,6 +144,7 @@
             // 
             this.knockoutB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.knockoutB.BigBar = true;
+            this.knockoutB.Checked = false;
             this.knockoutB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.knockoutB.DrawBar = true;
             this.knockoutB.Image = null;
@@ -156,6 +159,7 @@
             // 
             this.matchesB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.matchesB.BigBar = true;
+            this.matchesB.Checked = false;
             this.matchesB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.matchesB.DrawBar = true;
             this.matchesB.Image = null;
@@ -170,6 +174,7 @@
             // 
             this.groupsB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.groupsB.BigBar = true;
+            this.groupsB.Checked = false;
             this.groupsB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupsB.DrawBar = true;
             this.groupsB.Image = null;
@@ -184,6 +189,7 @@
             // 
             this.exitB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.exitB.BigBar = true;
+            this.exitB.Checked = false;
             this.exitB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitB.DrawBar = true;
             this.exitB.Image = null;
@@ -198,6 +204,7 @@
             // 
             this.teamsB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.teamsB.BigBar = true;
+            this.teamsB.Checked = false;
             this.teamsB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.teamsB.DrawBar = true;
             this.teamsB.Image = null;
@@ -212,6 +219,7 @@
             // 
             this.moreB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.moreB.BigBar = true;
+            this.moreB.Checked = false;
             this.moreB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.moreB.DrawBar = true;
             this.moreB.Image = null;
@@ -226,6 +234,7 @@
             // 
             this.venuesB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.venuesB.BigBar = true;
+            this.venuesB.Checked = false;
             this.venuesB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.venuesB.DrawBar = true;
             this.venuesB.Image = null;

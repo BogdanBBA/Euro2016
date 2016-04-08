@@ -159,12 +159,17 @@ namespace Euro2016
             this.ShowForm<FTeam, Team>((sender as GroupRow).TableLine.Team);
         }
 
+        private void logoPB_Click(object sender, EventArgs e)
+        {
+            this.ShowForm<FMap, object>(null, true);
+        }
+
         private void exitB_Click(object sender, EventArgs e)
         {
             if (this.OpenFormAndItem.Key != null)
                 this.OpenFormAndItem.Key.Close();
             StaticData.PVC.Dispose();
-            string saveResult = this.Database.SaveDatabase(Paths.DatabaseFile, Paths.DatabaseFileB);
+            string saveResult = this.Database.SaveDatabase(Paths.DatabaseFile, Paths.DatabasePlayersFile);
             if (!saveResult.Equals(""))
                 MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();

@@ -36,6 +36,57 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotSpatial.Analysis">
+      <HintPath>program-files\resources\dll\DotSpatial.Analysis.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Compatibility">
+      <HintPath>program-files\resources\dll\DotSpatial.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Controls">
+      <HintPath>program-files\resources\dll\DotSpatial.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Data">
+      <HintPath>program-files\resources\dll\DotSpatial.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Data.Forms">
+      <HintPath>program-files\resources\dll\DotSpatial.Data.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Extensions">
+      <HintPath>program-files\resources\dll\DotSpatial.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Modeling.Forms">
+      <HintPath>program-files\resources\dll\DotSpatial.Modeling.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Mono">
+      <HintPath>program-files\resources\dll\DotSpatial.Mono.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Positioning">
+      <HintPath>program-files\resources\dll\DotSpatial.Positioning.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Positioning.Design">
+      <HintPath>program-files\resources\dll\DotSpatial.Positioning.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Positioning.Forms">
+      <HintPath>program-files\resources\dll\DotSpatial.Positioning.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Projections">
+      <HintPath>program-files\resources\dll\DotSpatial.Projections.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Projections.Forms">
+      <HintPath>program-files\resources\dll\DotSpatial.Projections.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Serialization">
+      <HintPath>program-files\resources\dll\DotSpatial.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Symbology">
+      <HintPath>program-files\resources\dll\DotSpatial.Symbology.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Symbology.Forms">
+      <HintPath>program-files\resources\dll\DotSpatial.Symbology.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Topology">
+      <HintPath>program-files\resources\dll\DotSpatial.Topology.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +124,12 @@
     </Compile>
     <Compile Include="FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMap.Designer.cs">
+      <DependentUpon>FMap.cs</DependentUpon>
     </Compile>
     <Compile Include="FMatch.cs">
       <SubType>Form</SubType>
@@ -194,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMap.resx">
+      <DependentUpon>FMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMatch.resx">
       <DependentUpon>FMatch.cs</DependentUpon>

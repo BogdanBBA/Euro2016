@@ -69,7 +69,7 @@ namespace Euro2016
                 throw new ApplicationException(checkResult);
 
             Database database = new Database();
-            checkResult = database.LoadDatabase(Paths.DatabaseFile, Paths.DatabaseFileB);
+            checkResult = database.LoadDatabase(Paths.DatabaseFile, Paths.DatabasePlayersFile);
             if (!checkResult.Equals(""))
                 throw new ApplicationException(checkResult);
 
