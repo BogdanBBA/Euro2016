@@ -54,6 +54,8 @@ namespace Euro2016
                 for (int iP = 0; iP < 23; iP++)
                     this.Database.Players.Add(new Player((23 * iT + iP + 1).ToString(), "Dummy Player", iP + 1, (Player.PlayingPosition) (iP / 6), DateTime.Now,
                         Utils.Random.Next(100), Utils.Random.Next(20), this.Database.Teams[iT].Country, this.Database.Clubs.GetItemByID("XXX")));*/
+
+            logoPB_Click(null, null);
         }
 
         private void FMain_Shown(object sender, EventArgs e)

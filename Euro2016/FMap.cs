@@ -29,16 +29,10 @@ namespace Euro2016
             FeatureSet fs = (FeatureSet) FeatureSet.Open(Paths.MapShapefile);
             fs.Reproject(KnownCoordinateSystems.Projected.Europe.EuropeLambertConformalConic);
             fs.FillAttributes();
-            foreach (DataRow row in fs.DataTable.Rows)
-            {
-                object x = row["id"];
-            }
             map.Layers.Add(fs);
             map.FunctionMode = DotSpatial.Controls.FunctionMode.Select;
 
             map.ViewExtents = new Extent(new double[] { -1750871.40255991, 459306.659425525, 3353464.2366365, 4450918.39684444 });
-
-
         }
 
         public override void RefreshInformation(object item)
