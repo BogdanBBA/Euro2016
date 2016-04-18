@@ -87,8 +87,12 @@
     <Reference Include="DotSpatial.Topology">
       <HintPath>program-files\resources\dll\DotSpatial.Topology.dll</HintPath>
     </Reference>
+    <Reference Include="Svg">
+      <HintPath>..\packages\Svg.2.1.0\lib\Svg.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -295,6 +299,7 @@
     <EmbeddedResource Include="VisualComponents\MyForm.resx">
       <DependentUpon>MyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

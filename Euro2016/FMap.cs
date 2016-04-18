@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Svg;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Euro2016
 {
@@ -21,23 +24,53 @@ namespace Euro2016
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            this.map.BackColor = MyGUIs.Background.Normal.Color;
         }
 
         private void FMap_Load(object sender, EventArgs e)
         {
-            FeatureSet fs = (FeatureSet) FeatureSet.Open(Paths.MapShapefile);
-            fs.Reproject(KnownCoordinateSystems.Projected.Europe.EuropeLambertConformalConic);
-            fs.FillAttributes();
-            map.Layers.Add(fs);
-            map.FunctionMode = DotSpatial.Controls.FunctionMode.Select;
+            try
+            {
+                using (FileStream fileStream = File.OpenRead(Paths.SvgMapFile))
+                {
+                    MemoryStream memoryStream = new MemoryStream();
+                    memoryStream.SetLength(fileStream.Length);
+                    fileStream.Read(memoryStream.GetBuffer(), 0, (int) fileStream.Length);
 
-            map.ViewExtents = new Extent(new double[] { -1750871.40255991, 459306.659425525, 3353464.2366365, 4450918.39684444 });
+                    SvgDocument doc = SvgDocument.Open<SvgDocument>(memoryStream);
+
+                    foreach (SvgElement element in doc.Children)
+                    {
+                        string idValue;
+                        if (element.TryGetAttribute("id", out idValue))
+                        {
+                            Country country = this.mainForm.Database.Countries.GetItemByID(idValue);
+                            Team team = this.mainForm.Database.Teams.FirstOrDefault(t => t.Country.Equals(country));
+                            SetPathAttributes(element, country, team);
+                        }
+                    }
+
+                    mapPB.Image = doc.Draw(mapPB.Width, mapPB.Height);
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.ToString(), "Draw error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void SetPathAttributes(SvgElement element, Country country, Team team)
+        {
+            if (element is SvgPath || element is SvgEllipse)
+                element.Fill = new SvgColourServer(country == null ? Color.Black : (team == null ? Color.Pink : Color.DarkRed));
+            else if (element is SvgGroup)
+                foreach (SvgElement subElement in element.Children)
+                    SetPathAttributes(subElement, country, team);
         }
 
         public override void RefreshInformation(object item)
         {
-
+            //
         }
     }
 }

@@ -559,9 +559,10 @@ namespace Euro2016
         public static readonly string UnknownTeamImageFile = ResourcesFolder + "unknownTeam.png";
         public static readonly string KnockoutImageFile = ResourcesFolder + "knockout.png";
         public static readonly string MapShapefile = MapFolder + "qualifiersF.shp";
+        public static readonly string SvgMapFile = ResourcesFolder + "svgMap.svg";
 
         public static readonly string[] Folders = { ProgramFilesFolder, ResourcesFolder, FlagsFolder, CitiesFolder, StadiumLocationsFolder, StadiumOutsidesFolder, StadiumInsidesFolder };
-        public static readonly string[] Files = { DatabaseFile, DatabasePlayersFile, DatabaseGeographicFile, LogoImageFile, UnknownTeamImageFile, KnockoutImageFile, MapShapefile };
+        public static readonly string[] Files = { DatabaseFile, DatabasePlayersFile, DatabaseGeographicFile, LogoImageFile, UnknownTeamImageFile, KnockoutImageFile, MapShapefile, SvgMapFile };
 
         public static string CheckPaths(bool tryToCreateMissingFolders)
         {
