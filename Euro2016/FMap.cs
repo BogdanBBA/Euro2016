@@ -28,44 +28,10 @@ namespace Euro2016
 
         private void FMap_Load(object sender, EventArgs e)
         {
-            try
-            {
-                using (FileStream fileStream = File.OpenRead(Paths.SvgMapFile))
-                {
-                    MemoryStream memoryStream = new MemoryStream();
-                    memoryStream.SetLength(fileStream.Length);
-                    fileStream.Read(memoryStream.GetBuffer(), 0, (int) fileStream.Length);
+            this.mySvgMap1.LoadSvg(this.mainForm.Database, Paths.SvgMapFile);
+            this.mySvgMap1.RefreshSvgMap();
 
-                    SvgDocument doc = SvgDocument.Open<SvgDocument>(memoryStream);
-
-                    foreach (SvgElement element in doc.Children)
-                    {
-                        string idValue;
-                        if (element.TryGetAttribute("id", out idValue))
-                        {
-                            Country country = this.mainForm.Database.Countries.GetItemByID(idValue);
-                            Team team = this.mainForm.Database.Teams.FirstOrDefault(t => t.Country.Equals(country));
-                            SetPathAttributes(element, country, team);
-                        }
-                    }
-
-                    mapPB.Image = doc.Draw(mapPB.Width, mapPB.Height);
-                }
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show(E.ToString(), "Draw error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private void SetPathAttributes(SvgElement element, Country country, Team team)
-        {
-            if (element is SvgPath || element is SvgEllipse)
-                element.Fill = new SvgColourServer(country == null ? Color.Black : (team == null ? Color.Pink : Color.DarkRed));
-            else if (element is SvgGroup)
-                foreach (SvgElement subElement in element.Children)
-                    SetPathAttributes(subElement, country, team);
+            this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
         public override void RefreshInformation(object item)

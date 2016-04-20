@@ -103,15 +103,17 @@ namespace Euro2016
     public class Country : ObjectWithID
     {
         public PairT<string> Names { get; private set; }
+        public bool UefaCountry { get; private set; }
         public Bitmap FlagOriginal { get; private set; }
         public Bitmap Flag100px { get; private set; }
         public Bitmap Flag40px { get; private set; }
         public Bitmap Flag20px { get; private set; }
 
-        public Country(string id, PairT<string> names, Bitmap flagOriginal)
+        public Country(string id, PairT<string> names, bool uefa, Bitmap flagOriginal)
             : base(id)
         {
             this.Names = names;
+            this.UefaCountry = uefa;
             this.FlagOriginal = flagOriginal;
             this.Flag100px = (Bitmap) Utils.ScaleImage(this.FlagOriginal, 160, 100, InterpolationMode.HighQualityBicubic, false);
             this.Flag40px = (Bitmap) Utils.ScaleImage(this.Flag100px, 64, 40, InterpolationMode.HighQualityBicubic, false);
@@ -122,15 +124,17 @@ namespace Euro2016
         {
             string id = node.Attributes["ID"].Value;
             string[] names = node.Attributes["names"].Value.Split('|');
+            bool uefa = bool.Parse(node.Attributes["uefa"].Value);
             string flagPath = Paths.FlagsFolder + id + ".png";
             Bitmap flag = File.Exists(flagPath) ? new Bitmap(flagPath) : StaticData.Images[Paths.UnknownTeamImageFile];
-            return new Country(id, new PairT<string>(names[0], names[1]), flag);
+            return new Country(id, new PairT<string>(names[0], names[1]), uefa, flag);
         }
 
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);
             node.AddAttribute(doc, "names", this.Names.Home + "|" + this.Names.Away);
+            node.AddAttribute(doc, "uefa", this.UefaCountry.ToString());
             return node;
         }
 

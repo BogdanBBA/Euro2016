@@ -229,6 +229,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="VisualComponents\MyScrollPanel.cs" />
+    <Compile Include="VisualComponents\MySvgMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VisualComponents\MyToolStripMenu.cs">
       <SubType>Component</SubType>
     </Compile>

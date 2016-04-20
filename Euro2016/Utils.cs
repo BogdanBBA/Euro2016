@@ -543,8 +543,6 @@ namespace Euro2016
     {
         public static readonly string ProgramFilesFolder = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).FullName).FullName + "/program-files/";
         public static readonly string ResourcesFolder = ProgramFilesFolder + "resources/";
-        public static readonly string DllFolder = ResourcesFolder + "dll/";
-        public static readonly string MapFolder = ProgramFilesFolder + "map/";
         public static readonly string FontsFolder = ResourcesFolder + "fonts/";
         public static readonly string FlagsFolder = ProgramFilesFolder + "flags/";
         public static readonly string CitiesFolder = ProgramFilesFolder + "cities/";
@@ -554,15 +552,13 @@ namespace Euro2016
 
         public static readonly string DatabaseFile = ProgramFilesFolder + "database.xml";
         public static readonly string DatabasePlayersFile = ProgramFilesFolder + "database_players.xml";
-        public static readonly string DatabaseGeographicFile = ProgramFilesFolder + "database_geographic.xml";
         public static readonly string LogoImageFile = ResourcesFolder + "logo.png";
         public static readonly string UnknownTeamImageFile = ResourcesFolder + "unknownTeam.png";
         public static readonly string KnockoutImageFile = ResourcesFolder + "knockout.png";
-        public static readonly string MapShapefile = MapFolder + "qualifiersF.shp";
         public static readonly string SvgMapFile = ResourcesFolder + "svgMap.svg";
 
         public static readonly string[] Folders = { ProgramFilesFolder, ResourcesFolder, FlagsFolder, CitiesFolder, StadiumLocationsFolder, StadiumOutsidesFolder, StadiumInsidesFolder };
-        public static readonly string[] Files = { DatabaseFile, DatabasePlayersFile, DatabaseGeographicFile, LogoImageFile, UnknownTeamImageFile, KnockoutImageFile, MapShapefile, SvgMapFile };
+        public static readonly string[] Files = { DatabaseFile, DatabasePlayersFile, LogoImageFile, UnknownTeamImageFile, KnockoutImageFile, SvgMapFile };
 
         public static string CheckPaths(bool tryToCreateMissingFolders)
         {

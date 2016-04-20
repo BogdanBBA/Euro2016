@@ -28,33 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mapPB = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.mapPB)).BeginInit();
+            this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
+            this.mySvgMap1 = new Euro2016.VisualComponents.MySvgMap();
             this.SuspendLayout();
             // 
-            // mapPB
+            // titleLabel1
             // 
-            this.mapPB.BackColor = System.Drawing.Color.Transparent;
-            this.mapPB.Location = new System.Drawing.Point(12, 12);
-            this.mapPB.Name = "mapPB";
-            this.mapPB.Size = new System.Drawing.Size(799, 718);
-            this.mapPB.TabIndex = 0;
-            this.mapPB.TabStop = false;
+            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
+            this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.titleLabel1.DrawBar = true;
+            this.titleLabel1.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel1.Name = "titleLabel1";
+            this.titleLabel1.Size = new System.Drawing.Size(1014, 78);
+            this.titleLabel1.TabIndex = 1;
+            this.titleLabel1.Text = "titleLabel1";
+            this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.titleLabel1.TextSubtitle = "Map of countries";
+            this.titleLabel1.TextTitle = "Euro 2016";
+            // 
+            // mySvgMap1
+            // 
+            this.mySvgMap1.Location = new System.Drawing.Point(12, 96);
+            this.mySvgMap1.Name = "mySvgMap1";
+            this.mySvgMap1.Size = new System.Drawing.Size(1014, 912);
+            this.mySvgMap1.TabIndex = 2;
+            this.mySvgMap1.TabStop = false;
             // 
             // FMap
             // 
-            this.ClientSize = new System.Drawing.Size(822, 742);
-            this.Controls.Add(this.mapPB);
+            this.ClientSize = new System.Drawing.Size(1037, 1020);
+            this.Controls.Add(this.mySvgMap1);
+            this.Controls.Add(this.titleLabel1);
             this.Name = "FMap";
             this.Load += new System.EventHandler(this.FMap_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.mapPB)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox mapPB;
+        private VisualComponents.TitleLabel titleLabel1;
+        private VisualComponents.MySvgMap mySvgMap1;
 
     }
 }

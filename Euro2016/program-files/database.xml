@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Monday, 18 April 2016, 18:16:59">
+<DATABASE lastSaved="Wednesday, 20 April 2016, 07:13:52">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -12,31 +12,71 @@
     <Venue ID="STE" name="Stade Geoffroy-Guichard" city="Saint-Étienne" location="45.46083,4.39" year="1931" capacity="41965" />
   </VENUES>
   <COUNTRIES>
-    <Country ID="FRA" names="France|France" />
-    <Country ID="ROU" names="România|Romania" />
-    <Country ID="ALB" names="Shqipëria|Albania" />
-    <Country ID="SUI" names="Schweiz/Suisse|Switzerland" />
-    <Country ID="ENG" names="England|England" />
-    <Country ID="RUS" names="Россия|Russia" />
-    <Country ID="WLS" names="Cymru|Wales" />
-    <Country ID="SVK" names="Slovensko|Slovakia" />
-    <Country ID="GER" names="Deutschland|Germany" />
-    <Country ID="UKR" names="Україна|Ukraine" />
-    <Country ID="POL" names="Polska|Poland" />
-    <Country ID="NIR" names="Tuaisceart Éireann|Northern Ireland" />
-    <Country ID="ESP" names="España|Spain" />
-    <Country ID="CZE" names="Česká Republika|Czech Republic" />
-    <Country ID="TUR" names="Türkiye|Turkey" />
-    <Country ID="HRV" names="Hrvatska|Croatia" />
-    <Country ID="BEL" names="België/Belgique|Belgium" />
-    <Country ID="ITA" names="Italia|Italy" />
-    <Country ID="IRL" names="Éire|Ireland" />
-    <Country ID="SWE" names="Sverige|Sweden" />
-    <Country ID="POR" names="Portugal|Portugal" />
-    <Country ID="ISL" names="Ísland|Iceland" />
-    <Country ID="AUT" names="Österreich|Austria" />
-    <Country ID="HUN" names="Magyarország|Hungary" />
-    <Country ID="XXX" names="DUMMOIS|DUMMY" />
+    <Country ID="XXX" names="DUMMOIS|DUMMY" uefa="False" />
+    <Country ID="FRA" names="France|France" uefa="True" />
+    <Country ID="ROU" names="România|Romania" uefa="True" />
+    <Country ID="ALB" names="Shqipëria|Albania" uefa="True" />
+    <Country ID="SUI" names="Schweiz/Suisse|Switzerland" uefa="True" />
+    <Country ID="ENG" names="England|England" uefa="True" />
+    <Country ID="RUS" names="Россия|Russia" uefa="True" />
+    <Country ID="WLS" names="Cymru|Wales" uefa="True" />
+    <Country ID="SVK" names="Slovensko|Slovakia" uefa="True" />
+    <Country ID="GER" names="Deutschland|Germany" uefa="True" />
+    <Country ID="UKR" names="Україна|Ukraine" uefa="True" />
+    <Country ID="POL" names="Polska|Poland" uefa="True" />
+    <Country ID="NIR" names="Tuaisceart Éireann|Northern Ireland" uefa="True" />
+    <Country ID="ESP" names="España|Spain" uefa="True" />
+    <Country ID="CZE" names="Česká Republika|Czech Republic" uefa="True" />
+    <Country ID="TUR" names="Türkiye|Turkey" uefa="True" />
+    <Country ID="HRV" names="Hrvatska|Croatia" uefa="True" />
+    <Country ID="BEL" names="België/Belgique|Belgium" uefa="True" />
+    <Country ID="ITA" names="Italia|Italy" uefa="True" />
+    <Country ID="IRL" names="Éire|Ireland" uefa="True" />
+    <Country ID="SWE" names="Sverige|Sweden" uefa="True" />
+    <Country ID="POR" names="Portugal|Portugal" uefa="True" />
+    <Country ID="ISL" names="Ísland|Iceland" uefa="True" />
+    <Country ID="AUT" names="Österreich|Austria" uefa="True" />
+    <Country ID="HUN" names="Magyarország|Hungary" uefa="True" />
+    <Country ID="TKM" names="-|Turkmenistan" uefa="False" />
+    <Country ID="IRN" names="-|Iran" uefa="False" />
+    <Country ID="IRQ" names="-|Iraq" uefa="False" />
+    <Country ID="SYR" names="-|Syria" uefa="False" />
+    <Country ID="LEB" names="-|Lebanon" uefa="False" />
+    <Country ID="JOR" names="-|Jordan" uefa="False" />
+    <Country ID="SAU" names="-|Saudi Arabia" uefa="False" />
+    <Country ID="TUN" names="-|Tunisia" uefa="False" />
+    <Country ID="ALG" names="-|Algeria" uefa="False" />
+    <Country ID="MRC" names="-|Morocco" uefa="False" />
+    <Country ID="KAZ" names="-|Kazakstan" uefa="True" />
+    <Country ID="GEO" names="-|Georgia" uefa="True" />
+    <Country ID="AZE" names="-|Azerbaijan" uefa="True" />
+    <Country ID="ARM" names="-|Armenia" uefa="True" />
+    <Country ID="ISR" names="-|Israel" uefa="True" />
+    <Country ID="CYP" names="-|Cyprus" uefa="True" />
+    <Country ID="GRE" names="-|Greece" uefa="True" />
+    <Country ID="BUL" names="-|Bulgaria" uefa="True" />
+    <Country ID="FYR" names="-|FYR Macedonia" uefa="True" />
+    <Country ID="SER" names="-|Serbia" uefa="True" />
+    <Country ID="MNE" names="-|Montenegro" uefa="True" />
+    <Country ID="BIH" names="-|Bosnia and Herzegovina" uefa="True" />
+    <Country ID="SLO" names="-|Slovenia" uefa="True" />
+    <Country ID="MDA" names="-|Moldova" uefa="True" />
+    <Country ID="BLR" names="-|Belarus" uefa="True" />
+    <Country ID="LTU" names="-|Lithuania" uefa="True" />
+    <Country ID="LAT" names="-|Latvia" uefa="True" />
+    <Country ID="EST" names="-|Estonia" uefa="True" />
+    <Country ID="FIN" names="-|Finland" uefa="True" />
+    <Country ID="NOR" names="-|Norway" uefa="True" />
+    <Country ID="DEN" names="-|Denmark" uefa="True" />
+    <Country ID="NED" names="-|Netherlands" uefa="True" />
+    <Country ID="SCO" names="-|Scotland" uefa="True" />
+    <Country ID="FAR" names="-|Faroe Islands" uefa="True" />
+    <Country ID="LUX" names="-|Luxembourg" uefa="True" />
+    <Country ID="LIE" names="-|Liechtenstein" uefa="True" />
+    <Country ID="SMR" names="-|San Marino" uefa="True" />
+    <Country ID="MAL" names="-|Malta" uefa="True" />
+    <Country ID="AND" names="-|Andorra" uefa="True" />
+    <Country ID="GIB" names="-|Gibraltar" uefa="True" />
   </COUNTRIES>
   <TEAMS>
     <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" coach="XXX:Dummy Coach" />
@@ -127,7 +167,7 @@
   </MATCHES>
   <SETTINGS>
     <FavoriteTeam value="SWE" />
-    <ShowCountryNamesInNativeLanguage value="True" />
+    <ShowCountryNamesInNativeLanguage value="False" />
     <ShowKnockoutStageOnStartup value="False" />
   </SETTINGS>
 </DATABASE>
