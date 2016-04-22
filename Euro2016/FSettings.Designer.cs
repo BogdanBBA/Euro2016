@@ -34,12 +34,15 @@
             this.showKnockoutPhaseOnStartupChB = new System.Windows.Forms.CheckBox();
             this.okB = new Euro2016.VisualComponents.MyButton();
             this.showCountryNamesInNativeLanguageChB = new System.Windows.Forms.CheckBox();
+            this.showFlagsOnMapChB = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // titleLabel1
             // 
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.titleLabel1.BigBar = false;
+            this.titleLabel1.Checked = false;
+            this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
             this.titleLabel1.Name = "titleLabel1";
@@ -86,10 +89,11 @@
             // 
             this.okB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.okB.BigBar = true;
+            this.okB.Checked = false;
             this.okB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okB.DrawBar = true;
             this.okB.Image = null;
-            this.okB.Location = new System.Drawing.Point(164, 252);
+            this.okB.Location = new System.Drawing.Point(163, 275);
             this.okB.Name = "okB";
             this.okB.Size = new System.Drawing.Size(200, 50);
             this.okB.TabIndex = 4;
@@ -108,9 +112,22 @@
             this.showCountryNamesInNativeLanguageChB.Text = "Show country names in native language";
             this.showCountryNamesInNativeLanguageChB.UseVisualStyleBackColor = false;
             // 
+            // showFlagsOnMapChB
+            // 
+            this.showFlagsOnMapChB.AutoSize = true;
+            this.showFlagsOnMapChB.BackColor = System.Drawing.Color.Transparent;
+            this.showFlagsOnMapChB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showFlagsOnMapChB.Location = new System.Drawing.Point(68, 233);
+            this.showFlagsOnMapChB.Name = "showFlagsOnMapChB";
+            this.showFlagsOnMapChB.Size = new System.Drawing.Size(162, 25);
+            this.showFlagsOnMapChB.TabIndex = 6;
+            this.showFlagsOnMapChB.Text = "Show flags on map";
+            this.showFlagsOnMapChB.UseVisualStyleBackColor = false;
+            // 
             // FSettings
             // 
-            this.ClientSize = new System.Drawing.Size(544, 317);
+            this.ClientSize = new System.Drawing.Size(544, 345);
+            this.Controls.Add(this.showFlagsOnMapChB);
             this.Controls.Add(this.showCountryNamesInNativeLanguageChB);
             this.Controls.Add(this.okB);
             this.Controls.Add(this.showKnockoutPhaseOnStartupChB);
@@ -132,6 +149,7 @@
         private System.Windows.Forms.CheckBox showKnockoutPhaseOnStartupChB;
         private VisualComponents.MyButton okB;
         private System.Windows.Forms.CheckBox showCountryNamesInNativeLanguageChB;
+        private System.Windows.Forms.CheckBox showFlagsOnMapChB;
 
 
     }

@@ -45,6 +45,7 @@ namespace Euro2016
             favoriteTeamCB.SelectedIndex = favoriteTeamCB.Items.IndexOf(this.FormatTeamForCombobox(sett.FavoriteTeam));
             showCountryNamesInNativeLanguageChB.Checked = sett.ShowCountryNamesInNativeLanguage;
             showKnockoutPhaseOnStartupChB.Checked = sett.ShowKnockoutStageOnStartup;
+            showFlagsOnMapChB.Checked = sett.ShowFlagsOnMap;
         }
 
         private void okB_Click(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace Euro2016
             sett.FavoriteTeam = this.ParseTeamFromCombobox(favoriteTeamCB.Items[favoriteTeamCB.SelectedIndex] as string);
             sett.ShowCountryNamesInNativeLanguage = showCountryNamesInNativeLanguageChB.Checked;
             sett.ShowKnockoutStageOnStartup = showKnockoutPhaseOnStartupChB.Checked;
+            sett.ShowFlagsOnMap = showFlagsOnMapChB.Checked;
 
             string saveResult = this.mainForm.Database.SaveDatabase(Paths.DatabaseFile);
             if (!saveResult.Equals(""))

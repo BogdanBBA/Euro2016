@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,13 +38,13 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1096"
+     inkscape:window-height="1018"
      id="namedview81"
      showgrid="false"
-     inkscape:zoom="0.65738162"
-     inkscape:cx="577.79298"
-     inkscape:cy="479.89224"
-     inkscape:window-x="1912"
+     inkscape:zoom="2.6295265"
+     inkscape:cx="222.30535"
+     inkscape:cy="836.46167"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2"
@@ -478,4 +478,130 @@
      cy="6757.3853"
      rx="87.259995"
      ry="87.300842" />
+  <rect
+     style="fill:#707070;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210"
+     width="341.08044"
+     height="213.17525"
+     x="1885.4514"
+     y="34.291687" />
+  <rect
+     style="fill:#5d4773;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210-0"
+     width="341.08041"
+     height="213.17525"
+     x="1885.4514"
+     y="260.04166" />
+  <rect
+     style="fill:#1f5491;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210-6"
+     width="341.08041"
+     height="213.17525"
+     x="1885.4514"
+     y="485.79196" />
+  <rect
+     style="fill:#4c911f;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210-0-1"
+     width="341.08041"
+     height="213.17525"
+     x="1885.4514"
+     y="711.54236" />
+  <rect
+     style="fill:#fab411;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210-5"
+     width="341.08041"
+     height="213.17525"
+     x="1885.4514"
+     y="937.29242" />
+  <rect
+     style="fill:#b32064;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210-0-4"
+     width="341.08041"
+     height="213.17525"
+     x="1885.4514"
+     y="1163.043" />
+  <rect
+     style="fill:#c4c4c4;fill-opacity:1;stroke:#ffffff;stroke-width:7.45234346;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4210-0-1-1"
+     width="341.08041"
+     height="213.17525"
+     x="1885.4514"
+     y="-191.4588" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.18844604px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2278.0588"
+     y="-30.637712"
+     id="text4268"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270"
+       x="2278.0588"
+       y="-30.637712">not part of UEFA</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.1884613px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2278.0588"
+     y="194.02829"
+     id="text4268-9"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270-3"
+       x="2278.0588"
+       y="194.02829">not qualified for final tournament</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.1884613px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2284.8367"
+     y="417.04514"
+     id="text4268-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270-36"
+       x="2284.8367"
+       y="417.04514">group phase</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.1884613px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2282.4553"
+     y="643.26727"
+     id="text4268-87"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270-6"
+       x="2282.4553"
+       y="643.26727">eighth-finals</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.1884613px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2282.272"
+     y="868.0249"
+     id="text4268-1"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270-2"
+       x="2282.272"
+       y="868.0249">quater-finals</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.1884613px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2283.188"
+     y="1110.002"
+     id="text4268-2"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270-4"
+       x="2283.188"
+       y="1110.002">semi-finals</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:183.1884613px;line-height:125%;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2284.8367"
+     y="1317.2643"
+     id="text4268-29"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4270-9"
+       x="2284.8367"
+       y="1317.2643">grand final</tspan></text>
 </svg>

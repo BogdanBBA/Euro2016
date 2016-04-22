@@ -195,6 +195,9 @@
     <Compile Include="VisualComponents\CountryView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="VisualComponents\FlagView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="VisualComponents\GroupView.cs">
       <SubType>Component</SubType>
     </Compile>

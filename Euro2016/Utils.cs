@@ -93,18 +93,21 @@ namespace Euro2016
     /// </summary>
     public class ListOfIDObjects<TYPE> : List<TYPE> where TYPE : ObjectWithID
     {
+        /// <summary>Adds the given item to this list if it is unique (that is, if there is no other item in this list with the same ID).</summary>
         public new void Add(TYPE item)
         {
             if (this.GetIndexOfItemByID(item.ID) == -1)
                 base.Add(item);
         }
 
+        /// <summary>Iterates over the given list of items and calls this.Add(item) for each one.</summary>
         public new void AddRange(IEnumerable<TYPE> items)
         {
             foreach (TYPE item in items)
                 this.Add(item);
         }
 
+        /// <summary>Searches the current list for an item with the given ID, and return its index if it is found, or -1 otherwise.</summary>
         public int GetIndexOfItemByID(string id)
         {
             for (int iItem = 0; iItem < this.Count; iItem++)
@@ -113,22 +116,26 @@ namespace Euro2016
             return -1;
         }
 
+        /// <summary>Searches the current list for an item with the given item's ID, and return its index if it is found, or -1 otherwise.</summary>
         public int GetIndexOfItem(TYPE item)
         {
             return this.GetIndexOfItemByID(item.ID);
         }
 
+        /// <summary>Searches the current list for an item with the given ID, and returns it if it is found, or null otherwise.</summary>
         public TYPE GetItemByID(string id)
         {
             int index = this.GetIndexOfItemByID(id);
             return index != -1 ? this[index] : null;
         }
 
+        /// <summary>Searches the current list for an item with the given item's ID, and returns it if it is found, or null otherwise.</summary>
         public TYPE GetItem(TYPE item)
         {
             return item != null ? this.GetItemByID(item.ID) : null;
         }
 
+        /// <summary>Generates and returns a new list with all of this list's items added to it.</summary>
         public ListOfIDObjects<TYPE> GetDeepCopy()
         {
             ListOfIDObjects<TYPE> result = new ListOfIDObjects<TYPE>();
@@ -137,13 +144,14 @@ namespace Euro2016
             return result;
         }
 
-        public void SwapItemsAtPositions(int posA, int posB)
+        /// <summary>Performs a swap between the items at the given indexes.</summary>
+        public void SwapItemsAtPositions(int indexA, int indexB)
         {
-            if (posA >= 0 && posA < this.Count && posB >= 0 && posB < this.Count)
+            if (indexA >= 0 && indexA < this.Count && indexB >= 0 && indexB < this.Count)
             {
-                TYPE aux = this[posA];
-                this[posA] = this[posB];
-                this[posB] = aux;
+                TYPE aux = this[indexA];
+                this[indexA] = this[indexB];
+                this[indexB] = aux;
             }
         }
     }
@@ -375,6 +383,7 @@ namespace Euro2016
             return sb.ToString();
         }
 
+        /// <summary>Sorts the matches in this list in chronological order.</summary>
         public static void SortMatchesChronologically(this ListOfIDObjects<Match> matches)
         {
             for (int iM = 0; iM < matches.Count - 1; iM++)
@@ -396,6 +405,7 @@ namespace Euro2016
             return -2;
         }
 
+        /// <summary>Generates a quasi-random match scoreboard.</summary>
         public static MatchScoreboard GetRandomResult(bool canEndInDraw)
         {
             List<HalfScoreboard> halves = new List<HalfScoreboard>();
@@ -420,6 +430,7 @@ namespace Euro2016
             return result;
         }
 
+        /// <summary>Generates and returns a match scoreboard with all the goals from the given team's matches added up.</summary>
         public static MatchScoreboard GetAllGoals(this ListOfIDObjects<Match> matches, Team team)
         {
             List<HalfScoreboard> resultHalves = new List<HalfScoreboard>();
@@ -438,6 +449,7 @@ namespace Euro2016
             return new MatchScoreboard(resultHalves);
         }
 
+        /// <summary>Searches this list of table lines' for the given team, and returns its index if it is found, or -1 otherwise.</summary>
         public static int IndexOfTeam(this List<TableLine> lines, Team team)
         {
             for (int index = 0; index < lines.Count; index++)
@@ -496,8 +508,65 @@ namespace Euro2016
 
             return result;
         }
+
+        /// <summary>Formats the category of a match to make it look nice and clear.</summary>
+        public static string FormatMatchCategory(string category)
+        {
+            string[] parts = category.Split(':');
+            switch (parts[0])
+            {
+                case "G":
+                    return "Group " + parts[1];
+                case "KO":
+                    switch (parts[1])
+                    {
+                        case "8":
+                            return "Eighth-final";
+                        case "4":
+                            return "Quarter-final";
+                        case "2":
+                            return "Semi-final";
+                        case "1":
+                            return "Grand final";
+                        default:
+                            return "Unknown knockout";
+                    }
+                default:
+                    return "unknown";
+            }
+        }
+
+        /// <summary>Determines the app-convened color for a given team's country, depending on the team's result in the tournament. To be used on the SVG map.</summary>
+        public static Color TournamentResultColorForTeam(string matchCategory)
+        {
+            string[] matchCategoryParts = matchCategory.Split(':');
+            switch (matchCategoryParts[0])
+            {
+                case "G":
+                    return ColorTranslator.FromHtml("#5D4773");
+                case "KO":
+                    switch (matchCategoryParts[1])
+                    {
+                        case "8":
+                            return ColorTranslator.FromHtml("#1F5491");
+                        case "4":
+                            return ColorTranslator.FromHtml("#4C911F");
+                        case "2":
+                            return ColorTranslator.FromHtml("#FAB411");
+                        case "1":
+                            return ColorTranslator.FromHtml("#B32064");
+                        default:
+                            return Color.White;
+                    }
+                default:
+                    return Color.White;
+            }
+        }
     }
 
+    /// <summary>
+    /// Contains static data that must be initialized immediately after the app starts, such as images and fonts.
+    /// </summary>
     public static class StaticData
     {
         public static SortedDictionary<string, Bitmap> Images { get; private set; }
@@ -537,7 +606,7 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Contains folder and file paths (relative to the app executable) that are needed for the application, as well as related utility methods.
     /// </summary>
     public static class Paths
     {
@@ -560,6 +629,8 @@ namespace Euro2016
         public static readonly string[] Folders = { ProgramFilesFolder, ResourcesFolder, FlagsFolder, CitiesFolder, StadiumLocationsFolder, StadiumOutsidesFolder, StadiumInsidesFolder };
         public static readonly string[] Files = { DatabaseFile, DatabasePlayersFile, LogoImageFile, UnknownTeamImageFile, KnockoutImageFile, SvgMapFile };
 
+        /// <summary>Checks that all files and folders in the respective static string lists of the Paths class exist.</summary>
+        /// <returns>an empty string if execution ended successfully, or the error description otherwise</returns>
         public static string CheckPaths(bool tryToCreateMissingFolders)
         {
             string phase = "initializing";

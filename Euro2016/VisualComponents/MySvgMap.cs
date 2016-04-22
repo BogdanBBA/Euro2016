@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,13 +15,13 @@ namespace Euro2016.VisualComponents
     public class MySvgMap : Control
     {
         protected static readonly Color unknown = ColorTranslator.FromHtml("#000000");
-        protected static readonly Color notUefa = ColorTranslator.FromHtml("#919191");
-        protected static readonly Color notQualified = ColorTranslator.FromHtml("#824B94");
-        protected static readonly Color qualified = ColorTranslator.FromHtml("#1054A1");
+        protected static readonly Color notUefa = ColorTranslator.FromHtml("#C4C4C4");
+        protected static readonly Color notQualified = ColorTranslator.FromHtml("#707070");
 
         public enum MySvgMapStatus { NotInitialized, Working, Done };
 
         public MySvgMapStatus Status { get; private set; }
+        public Action OnDrawFinishCallback { get; set; }
         private Database database;
         private SvgDocument svgDoc;
         private BackgroundWorker bgWorker;
@@ -58,19 +59,19 @@ namespace Euro2016.VisualComponents
                     {
                         Country country = this.database.Countries.GetItemByID(idValue);
                         Team team = this.database.Teams.FirstOrDefault(t => t.Country.Equals(country));
-                        SetPathAttributes(element, country, team);
+                        SetSvgElementAttributes(element, country, team);
                     }
                 }
             }
         }
 
-        private void SetPathAttributes(SvgElement element, Country country, Team team)
+        private void SetSvgElementAttributes(SvgElement element, Country country, Team team)
         {
             if (element is SvgPath || element is SvgEllipse)
-                element.Fill = new SvgColourServer(country == null ? unknown : (country.UefaCountry ? (team != null ? qualified : notQualified) : notUefa));
+                element.Fill = new SvgColourServer(country == null ? unknown : (country.UefaCountry ? (team != null ? Utils.TournamentResultColorForTeam(this.database.TournamentResultOfTeam(team)) : notQualified) : notUefa));
             else if (element is SvgGroup)
                 foreach (SvgElement subElement in element.Children)
-                    SetPathAttributes(subElement, country, team);
+                    SetSvgElementAttributes(subElement, country, team);
         }
 
         public void RefreshSvgMap()
@@ -109,6 +110,8 @@ namespace Euro2016.VisualComponents
             else if (this.Status == MySvgMapStatus.Done)
             {
                 e.Graphics.DrawImage(this.image, Point.Empty);
+                if (this.OnDrawFinishCallback != null)
+                    this.OnDrawFinishCallback();
             }
         }
     }

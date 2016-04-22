@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.infoViewDetail4 = new Euro2016.VisualComponents.InfoViewDetail();
             this.infoViewDetail3 = new Euro2016.VisualComponents.InfoViewDetail();
             this.infoViewDetail2 = new Euro2016.VisualComponents.InfoViewDetail();
             this.infoViewDetail1 = new Euro2016.VisualComponents.InfoViewDetail();
@@ -40,6 +41,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.flagPB)).BeginInit();
             this.SuspendLayout();
             // 
+            // infoViewDetail4
+            // 
+            this.infoViewDetail4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.infoViewDetail4.BigBar = false;
+            this.infoViewDetail4.Checked = false;
+            this.infoViewDetail4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoViewDetail4.DrawBar = false;
+            this.infoViewDetail4.Location = new System.Drawing.Point(12, 211);
+            this.infoViewDetail4.Name = "infoViewDetail4";
+            this.infoViewDetail4.Size = new System.Drawing.Size(143, 35);
+            this.infoViewDetail4.TabIndex = 19;
+            this.infoViewDetail4.Text = "infoViewDetail4";
+            this.infoViewDetail4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.infoViewDetail4.TextDescription = "Tournament result";
+            this.infoViewDetail4.TextText = "#text";
+            // 
             // infoViewDetail3
             // 
             this.infoViewDetail3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
@@ -47,9 +64,9 @@
             this.infoViewDetail3.Checked = false;
             this.infoViewDetail3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoViewDetail3.DrawBar = false;
-            this.infoViewDetail3.Location = new System.Drawing.Point(340, 211);
+            this.infoViewDetail3.Location = new System.Drawing.Point(371, 211);
             this.infoViewDetail3.Name = "infoViewDetail3";
-            this.infoViewDetail3.Size = new System.Drawing.Size(152, 35);
+            this.infoViewDetail3.Size = new System.Drawing.Size(121, 35);
             this.infoViewDetail3.TabIndex = 18;
             this.infoViewDetail3.Text = "infoViewDetail3";
             this.infoViewDetail3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -63,9 +80,9 @@
             this.infoViewDetail2.BigBar = false;
             this.infoViewDetail2.Checked = false;
             this.infoViewDetail2.DrawBar = false;
-            this.infoViewDetail2.Location = new System.Drawing.Point(170, 211);
+            this.infoViewDetail2.Location = new System.Drawing.Point(260, 211);
             this.infoViewDetail2.Name = "infoViewDetail2";
-            this.infoViewDetail2.Size = new System.Drawing.Size(164, 35);
+            this.infoViewDetail2.Size = new System.Drawing.Size(105, 35);
             this.infoViewDetail2.TabIndex = 17;
             this.infoViewDetail2.Text = "infoViewDetail2";
             this.infoViewDetail2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -78,9 +95,9 @@
             this.infoViewDetail1.BigBar = false;
             this.infoViewDetail1.Checked = false;
             this.infoViewDetail1.DrawBar = false;
-            this.infoViewDetail1.Location = new System.Drawing.Point(12, 211);
+            this.infoViewDetail1.Location = new System.Drawing.Point(161, 211);
             this.infoViewDetail1.Name = "infoViewDetail1";
-            this.infoViewDetail1.Size = new System.Drawing.Size(152, 35);
+            this.infoViewDetail1.Size = new System.Drawing.Size(93, 35);
             this.infoViewDetail1.TabIndex = 16;
             this.infoViewDetail1.Text = "infoViewDetail1";
             this.infoViewDetail1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -162,6 +179,7 @@
             // FTeam
             // 
             this.ClientSize = new System.Drawing.Size(710, 768);
+            this.Controls.Add(this.infoViewDetail4);
             this.Controls.Add(this.infoViewDetail3);
             this.Controls.Add(this.infoViewDetail2);
             this.Controls.Add(this.infoViewDetail1);
@@ -189,6 +207,7 @@
         private VisualComponents.InfoViewDetail infoViewDetail1;
         private VisualComponents.InfoViewDetail infoViewDetail2;
         private VisualComponents.InfoViewDetail infoViewDetail3;
+        private VisualComponents.InfoViewDetail infoViewDetail4;
 
     }
 }

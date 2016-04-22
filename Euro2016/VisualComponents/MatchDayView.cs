@@ -101,7 +101,7 @@ namespace Euro2016.VisualComponents
                 string text = this.matches.Count + (this.matches.Count > 1 ? " matches" : " match");
                 size = e.Graphics.MeasureString(text, this.matchCountFont);
                 float left = this.Width / 2f - size.Width / 2f;
-                if (this.matches.FirstOrDefault(m => m.Teams.Home.Equals(this.settings.FavoriteTeam) || m.Teams.Away.Equals(this.settings.FavoriteTeam)) != null)
+                if (this.matches.FirstOrDefault(m => m.Teams.Home != null && m.Teams.Home.Equals(this.settings.FavoriteTeam) || m.Teams.Away != null && m.Teams.Away.Equals(this.settings.FavoriteTeam)) != null)
                 {
                     left -= this.settings.FavoriteTeam.Country.Flag20px.Width / 2f;
                     e.Graphics.DrawImage(this.settings.FavoriteTeam.Country.Flag20px, left, this.Height - this.settings.FavoriteTeam.Country.Flag20px.Height - 8);

@@ -15,7 +15,7 @@ namespace Euro2016
     {
         private const string MenuButtonPrefix = "button";
         private const string CloseButtonLabel = "CLOSE";
-        private static readonly string[] ButtonCaptions = { "Match days", "Players", "Reset matches", "Simulate results","Open workspace", "About the app", CloseButtonLabel };
+        private static readonly string[] ButtonCaptions = { "Euro 2016 map", "Match days", "Players", "Reset matches", "Simulate results", "Open workspace", "About the app", CloseButtonLabel };
 
         private FMain mainForm;
         private List<MyButton> menuButtons;
@@ -43,6 +43,11 @@ namespace Euro2016
             string saveResult;
             switch (button.Text)
             {
+                case "Euro 2016 map":
+                    this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
+                    this.mainForm.ShowForm<FMap, object>(null);
+                    break;
+
                 case "Match days":
                     this.MenuButton_Click(this.menuButtons.First(mb => mb.Text.Equals(CloseButtonLabel)), null);
                     this.mainForm.ShowForm<FMatchDays, DateTime>(DateTime.Now.Date);

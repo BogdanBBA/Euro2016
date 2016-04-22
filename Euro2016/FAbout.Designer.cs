@@ -107,7 +107,7 @@
             this.infoViewDetail2.TabIndex = 4;
             this.infoViewDetail2.Text = "infoViewDetail2";
             this.infoViewDetail2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.infoViewDetail2.TextDescription = "April 4th, 2016";
+            this.infoViewDetail2.TextDescription = "April 4th - April 22nd, 2016";
             this.infoViewDetail2.TextText = "1.0 beta";
             this.infoViewDetail2.Click += new System.EventHandler(this.FAbout_Click);
             // 

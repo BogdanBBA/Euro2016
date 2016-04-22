@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
-            this.mySvgMap1 = new Euro2016.VisualComponents.MySvgMap();
+            this.mapMSM = new Euro2016.VisualComponents.MySvgMap();
             this.SuspendLayout();
             // 
             // titleLabel1
@@ -45,21 +45,22 @@
             this.titleLabel1.TabIndex = 1;
             this.titleLabel1.Text = "titleLabel1";
             this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.titleLabel1.TextSubtitle = "Map of countries";
-            this.titleLabel1.TextTitle = "Euro 2016";
+            this.titleLabel1.TextSubtitle = "Map of countries and their results in the tournament";
+            this.titleLabel1.TextTitle = "Euro 2016 map";
             // 
-            // mySvgMap1
+            // mapMSM
             // 
-            this.mySvgMap1.Location = new System.Drawing.Point(12, 96);
-            this.mySvgMap1.Name = "mySvgMap1";
-            this.mySvgMap1.Size = new System.Drawing.Size(1014, 912);
-            this.mySvgMap1.TabIndex = 2;
-            this.mySvgMap1.TabStop = false;
+            this.mapMSM.Location = new System.Drawing.Point(12, 96);
+            this.mapMSM.Name = "mapMSM";
+            this.mapMSM.OnDrawFinishCallback = null;
+            this.mapMSM.Size = new System.Drawing.Size(1014, 912);
+            this.mapMSM.TabIndex = 2;
+            this.mapMSM.TabStop = false;
             // 
             // FMap
             // 
             this.ClientSize = new System.Drawing.Size(1037, 1020);
-            this.Controls.Add(this.mySvgMap1);
+            this.Controls.Add(this.mapMSM);
             this.Controls.Add(this.titleLabel1);
             this.Name = "FMap";
             this.Load += new System.EventHandler(this.FMap_Load);
@@ -70,7 +71,7 @@
         #endregion
 
         private VisualComponents.TitleLabel titleLabel1;
-        private VisualComponents.MySvgMap mySvgMap1;
+        private VisualComponents.MySvgMap mapMSM;
 
     }
 }

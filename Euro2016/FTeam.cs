@@ -65,6 +65,7 @@ namespace Euro2016
             infoViewDetail1.TextText = string.Format("{0}-{1}", matchesScoreboard.FinalScoreWithoutPenalties.Home, matchesScoreboard.FinalScoreWithoutPenalties.Away);
             infoViewDetail2.TextText = string.Format("{0:N2}-{1:N2}", (double) matchesScoreboard.FinalScoreWithoutPenalties.Home / matches.Count, (double) matchesScoreboard.FinalScoreWithoutPenalties.Away / matches.Count);
             infoViewDetail3.TextText = team.Players.Count + " players";
+            infoViewDetail4.TextText = Utils.FormatMatchCategory(this.mainForm.Database.TournamentResultOfTeam(team));
             this.matchesView.SetMatches(matches);
         }
     }

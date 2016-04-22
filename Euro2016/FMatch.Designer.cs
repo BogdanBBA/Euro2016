@@ -221,7 +221,6 @@
             this.editB.Checked = false;
             this.editB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editB.DrawBar = true;
-            this.editB.Font = new System.Drawing.Font("Arial", 10F);
             this.editB.Image = null;
             this.editB.Location = new System.Drawing.Point(639, 12);
             this.editB.Name = "editB";

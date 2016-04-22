@@ -11,14 +11,18 @@ using System.Xml;
 namespace Euro2016
 {
     /// <summary>
-    /// Contains settings regarding map generation. Please construct instances of this class using instance initializers.
+    /// Defines information related to user settings. Member property names are sufficiently explicit.
     /// </summary>
     public class Settings
     {
         public Team FavoriteTeam { get; set; }
         public bool ShowCountryNamesInNativeLanguage { get; set; }
         public bool ShowKnockoutStageOnStartup { get; set; }
+        public bool ShowFlagsOnMap { get; set; }
 
+        /// <summary>Parses the settings from a XmlNode object.</summary>
+        /// <param name="teams">the reference to the full list of teams participating in the competition</param>
+        /// <returns>an empty string if execution ended successfully, or the error description otherwise</returns>
         public string ReadSettings(XmlNode settingsNode, List<Team> teams)
         {
             try
@@ -32,11 +36,18 @@ namespace Euro2016
                 try { this.ShowKnockoutStageOnStartup = bool.Parse(settingsNode.SelectSingleNode("ShowKnockoutStageOnStartup").Attributes["value"].Value); }
                 catch (Exception) { this.ShowKnockoutStageOnStartup = true; }
 
+                try { this.ShowFlagsOnMap = bool.Parse(settingsNode.SelectSingleNode("ShowFlagsOnMap").Attributes["value"].Value); }
+                catch (Exception) { this.ShowFlagsOnMap = true; }
+
                 return "";
             }
             catch (Exception E) { return E.ToString(); }
         }
 
+        /// <summary>Generates a XmlNode object from the settings.</summary>
+        /// <param name="doc">the XmlDocument object that will create the XML elements</param>
+        /// <param name="nodeName">the name of the resulting XML node</param>
+        /// <returns>an empty string if execution ended successfully, or the error description otherwise</returns>
         public string ToXml(XmlDocument doc, string nodeName, out XmlNode resultNode)
         {
             try
@@ -52,6 +63,9 @@ namespace Euro2016
                 node = result.AppendChild(doc.CreateElement("ShowKnockoutStageOnStartup"));
                 node.AddAttribute(doc, "value", this.ShowKnockoutStageOnStartup.ToString());
 
+                node = result.AppendChild(doc.CreateElement("ShowFlagsOnMap"));
+                node.AddAttribute(doc, "value", this.ShowFlagsOnMap.ToString());
+
                 resultNode = result;
                 return "";
             }
@@ -60,19 +74,28 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// Defines the top-level data structures for the administrative unit- or data container-related information.
+    /// Defines the top-level data for the application. Contains the centralized lists of various data types, read and write methods, and utility methods.
     /// </summary>
     public class Database
     {
+        /// <summary>The identifier for any third-placed teams group in the team references of a match.</summary>
         public const string ThirdPlacedTeamsID = "T";
 
+        /// <summary>Gets or privately sets the list of venues involved at Euro 2016.</summary>
         public ListOfIDObjects<Venue> Venues { get; private set; }
+        /// <summary>Gets or privately sets the list of all countries used within the application.</summary>
         public ListOfIDObjects<Country> Countries { get; private set; }
+        /// <summary>Gets or privately sets the list of clubs used within the application.</summary>
         public ListOfIDObjects<Club> Clubs { get; private set; }
+        /// <summary>Gets or privately sets the list of players used within the application.</summary>
         public ListOfIDObjects<Player> Players { get; private set; }
+        /// <summary>Gets or privately sets the list of teams involved at Euro 2016.</summary>
         public List<Team> Teams { get; private set; }
+        /// <summary>Gets or privately sets the list of ranking groups of Euro 2016.</summary>
         public ListOfIDObjects<Group> Groups { get; private set; }
+        /// <summary>Gets or privately sets the list of matches of Euro 2016.</summary>
         public ListOfIDObjects<Match> Matches { get; private set; }
+        /// <summary>Gets or privately sets the user settings for the application.</summary>
         public Settings Settings { get; private set; }
 
         /// <summary>Constructs an empty Database object.</summary>
@@ -89,14 +112,15 @@ namespace Euro2016
         }
 
         /// <summary>Loads a Database object using data from the database file.</summary>
-        /// <param name="databaseFilePath">the path to the first part of the database file</param>
-        /// <param name="databaseFilePathB">the path to the second part of the database file</param>
-        public string LoadDatabase(string databaseFilePath, string databaseFilePathB)
+        /// <param name="mainDatabaseFilePath">the path to the main part of the database file</param>
+        /// <param name="playerDatabaseFilePath">the path to the player part of the database file</param>
+        /// <returns>an empty string if execution ended successfully, or the error description otherwise</returns>
+        public string LoadDatabase(string mainDatabaseFilePath, string playerDatabaseFilePath)
         {
             try
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(databaseFilePath);
+                doc.Load(mainDatabaseFilePath);
 
                 XmlNodeList nodes = doc.SelectNodes("DATABASE/VENUES/Venue");
                 foreach (XmlNode node in nodes)
@@ -121,7 +145,7 @@ namespace Euro2016
                 this.Settings.ReadSettings(doc.SelectSingleNode("DATABASE/SETTINGS"), this.Teams);
 
                 doc = new XmlDocument();
-                doc.Load(databaseFilePathB);
+                doc.Load(playerDatabaseFilePath);
 
                 nodes = doc.SelectNodes("PLAYER_DATABASE/CLUBS/Club");
                 foreach (XmlNode node in nodes)
@@ -135,9 +159,7 @@ namespace Euro2016
                     this.Players.Add(player);
                 }
 
-                this.CalculateGroupMatchTeams();
-                this.CalculateGroups();
-                this.CalculateKnockoutMatches();
+                this.Calculate(true, true, true);
 
                 return "";
             }
@@ -145,10 +167,11 @@ namespace Euro2016
             { return E.ToString(); }
         }
 
-        /// <summary>
-        /// Saves database to file.
-        /// </summary>
-        public string SaveDatabase(string databateFilePath, string databaseFilePathB = null)
+        /// <summary>Saves the database to file.</summary>
+        /// <param name="mainDatabaseFilePath">the path to the main part of the database file</param>
+        /// <param name="playerDatabaseFilePath">the path to the player part of the database file. If null (or not passed), this part will not be written</param>
+        /// <returns>an empty string if execution ended successfully, or the error description otherwise</returns>
+        public string SaveDatabase(string mainDatabaseFilePath, string playerDatabaseFilePath = null)
         {
             try
             {
@@ -180,9 +203,9 @@ namespace Euro2016
                 this.Settings.ToXml(doc, "SETTINGS", out settingsNode);
                 root.AppendChild(settingsNode);
 
-                doc.Save(databateFilePath);
+                doc.Save(mainDatabaseFilePath);
 
-                if (databaseFilePathB != null)
+                if (playerDatabaseFilePath != null)
                 {
                     doc = new XmlDocument();
                     root = doc.AppendChild(doc.CreateElement("PLAYER_DATABASE"));
@@ -196,7 +219,7 @@ namespace Euro2016
                     foreach (Player player in this.Players)
                         node.AppendChild(player.ToXml(doc, "Player"));
 
-                    doc.Save(databaseFilePathB);
+                    doc.Save(playerDatabaseFilePath);
                 }
 
                 return "";
@@ -205,9 +228,10 @@ namespace Euro2016
             { return E.ToString(); }
         }
 
-        public void Calculate(bool matchTeams, bool groups, bool knockoutMatches)
+        /// <summary>Utility method. Calls the respective 'calculate' methods for the parameter values that are set to true</summary>
+        public void Calculate(bool groupMatchTeams, bool groups, bool knockoutMatches)
         {
-            if (matchTeams)
+            if (groupMatchTeams)
                 this.CalculateGroupMatchTeams();
             if (groups)
                 this.CalculateGroups();
@@ -215,6 +239,7 @@ namespace Euro2016
                 this.CalculateKnockoutMatches();
         }
 
+        /// <summary>Calculates the group matches' team references. Should normally only be called once during execution.</summary>
         public void CalculateGroupMatchTeams()
         {
             foreach (Match match in this.Matches)
@@ -225,6 +250,7 @@ namespace Euro2016
                 }
         }
 
+        /// <summary>Calculates the group rankings (resets rankings, adds all valid match results, then sorts).</summary>
         public void CalculateGroups()
         {
             foreach (Group group in this.Groups)
@@ -239,7 +265,8 @@ namespace Euro2016
             }
         }
 
-        private Team ParseTeamReference(string reference) // format: "refGroup:refTeam" (for example, "B:1" or "T:A/C/D")
+        /// <summary>Parses a team reference (in the format 'refGroup:refTeam'; for example, "B:1" or "T:A/C/D") and, if valid, returns the correctly corresponding Team object, or null otherwise</summary>
+        private Team ParseTeamReference(string reference) 
         {
             if (reference.Contains(':')) // table line reference
             {
@@ -278,6 +305,7 @@ namespace Euro2016
             }
         }
 
+        /// <summary>Calculates the knockout matches' team references.</summary>
         public void CalculateKnockoutMatches()
         {
             ListOfIDObjects<Match> matches = this.Matches.GetMatchesBy("KO");
@@ -291,6 +319,12 @@ namespace Euro2016
                 match.Teams.Home = this.ParseTeamReference(match.TeamReferences.Home);
                 match.Teams.Away = this.ParseTeamReference(match.TeamReferences.Away);
             }
+        }
+
+        /// <summary>Determines the best result so far in the competition of the given team. More specifically, it returns the category of the last (chronologically-sorted) match involving the given team.</summary>
+        public string TournamentResultOfTeam(Team team)
+        {
+            return this.Matches.GetMatchesBy(team).Last().Category;
         }
     }
 }

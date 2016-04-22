@@ -15,13 +15,18 @@ namespace Euro2016
     /// </summary>
     public abstract class ObjectWithID
     {
+        /// <summary>Gets and privately sets the ID of the object. Should be unique.</summary>
         public string ID { get; private set; }
 
+        /// <summary>Constructs a new ObjectWithID object from the given string ID parameter.</summary>
         public ObjectWithID(string id)
         {
             this.ID = id;
         }
 
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = doc.CreateElement(name);
@@ -52,12 +57,24 @@ namespace Euro2016
     /// </summary>
     public class Venue : ObjectWithID
     {
+        /// <summary>Gets and privately sets the name of the venue.</summary>
         public string Name { get; private set; }
+        /// <summary>Gets and privately sets the city in which the venue is located.</summary>
         public string City { get; private set; }
+        /// <summary>Gets and privately sets the geographic coordinates of the venue.</summary>
         public PointF Location { get; private set; }
+        /// <summary>Gets and privately sets the year in which the venue was opened (not in which construction began).</summary>
         public int YearOpened { get; private set; }
+        /// <summary>Gets and privately sets the seating capacity of the venue.</summary>
         public int Capacity { get; private set; }
 
+        /// <summary>Constructs a new Venue object from the given parameters.</summary>
+        /// <param name="id">the ID of the venue</param>
+        /// <param name="name">the name of the venue</param>
+        /// <param name="city">the city in which the venue is located</param>
+        /// <param name="location">the geographic coordinates of the venue</param>
+        /// <param name="yearOpened">the year in which the venue was opened</param>
+        /// <param name="capacity">the seating capacity of the venue</param>
         public Venue(string id, string name, string city, PointF location, int yearOpened, int capacity)
             : base(id)
         {
@@ -68,6 +85,7 @@ namespace Euro2016
             this.Capacity = capacity;
         }
 
+        /// <summary>Parses the given XmlNode into a new Venue object.</summary>
         public static Venue Parse(XmlNode node)
         {
             string id = node.Attributes["ID"].Value;
@@ -79,7 +97,10 @@ namespace Euro2016
             int capacity = Int32.Parse(node.Attributes["capacity"].Value);
             return new Venue(id, name, city, location, year, capacity);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);
@@ -98,17 +119,28 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// Defines information related to a country.
+    /// Defines information related to a country used within the app. Does not need to be a country with a team participating in the final tournament, or even part of UEFA.
     /// </summary>
     public class Country : ObjectWithID
     {
+        /// <summary>Gets and privately sets the name pair (native and english languages) of the country.</summary>
         public PairT<string> Names { get; private set; }
+        /// <summary>Gets and privately sets whether the country is part of UEFA.</summary>
         public bool UefaCountry { get; private set; }
+        /// <summary>Gets and privately sets the full-size flag image for this country.</summary>
         public Bitmap FlagOriginal { get; private set; }
+        /// <summary>Gets and privately sets the flag image (resized from the original to fit in 160 x 100px) for this country.</summary>
         public Bitmap Flag100px { get; private set; }
+        /// <summary>Gets and privately sets the flag image (resized from the original to fit in 64 x 40px) for this country.</summary>
         public Bitmap Flag40px { get; private set; }
+        /// <summary>Gets and privately sets the flag image (resized from the original to fit in 32 x 20px) for this country.</summary>
         public Bitmap Flag20px { get; private set; }
 
+        /// <summary>Constructs a new Country object from the given parameters.</summary>
+        /// <param name="id">the ID of the country</param>
+        /// <param name="names">the name pair of the country</param>
+        /// <param name="uefa">whether the country is part of UEFA</param>
+        /// <param name="flagOriginal">the full-size flag image for this country</param>
         public Country(string id, PairT<string> names, bool uefa, Bitmap flagOriginal)
             : base(id)
         {
@@ -119,7 +151,8 @@ namespace Euro2016
             this.Flag40px = (Bitmap) Utils.ScaleImage(this.Flag100px, 64, 40, InterpolationMode.HighQualityBicubic, false);
             this.Flag20px = (Bitmap) Utils.ScaleImage(this.Flag40px, 32, 20, InterpolationMode.HighQualityBicubic, false);
         }
-
+        
+        /// <summary>Parses the given XmlNode into a new Country object.</summary>
         public static Country Parse(XmlNode node)
         {
             string id = node.Attributes["ID"].Value;
@@ -129,7 +162,10 @@ namespace Euro2016
             Bitmap flag = File.Exists(flagPath) ? new Bitmap(flagPath) : StaticData.Images[Paths.UnknownTeamImageFile];
             return new Country(id, new PairT<string>(names[0], names[1]), uefa, flag);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);
@@ -145,21 +181,29 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Defines information related to a club.
     /// </summary>
     public class Club : ObjectWithID
     {
+        /// <summary>Gets and privately sets the name of the club.</summary>
         public string Name { get; private set; }
+        /// <summary>Gets and privately sets the country of the club.</summary>
         public Country Country { get; private set; }
+        /// <summary>Gets and internally sets the player list of the club.</summary>
         public ListOfIDObjects<Player> Players { get; internal set; }
 
+        /// <summary>Constructs a new Club object from the given parameters.</summary>
+        /// <param name="id">the name of the club</param>
+        /// <param name="name">the country of the club</param>
+        /// <param name="country">the player list of the club</param>
         public Club(string id, string name, Country country)
             : base(id)
         {
             this.Name = name;
             this.Country = country;
         }
-
+        
+        /// <summary>Parses the given XmlNode into a new Club object.</summary>
         public static Club Parse(XmlNode node, ListOfIDObjects<Country> countries)
         {
             string id = node.Attributes["ID"].Value;
@@ -167,7 +211,10 @@ namespace Euro2016
             Country country = countries.GetItemByID(node.Attributes["countryID"].Value);
             return new Club(id, name, country);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);
@@ -183,22 +230,42 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Defines summary information related to a player.
     /// </summary>
     public class Player : ObjectWithID
     {
+        /// <summary>Defines possible playing positions for a player.</summary>
         public enum PlayingPosition { GK, DF, MF, FW };
+        /// <summary>Defines the colors of the player playing positions.</summary>
         public static readonly Color[] PlayingPositionColors = { ColorTranslator.FromHtml("#FF8400"), ColorTranslator.FromHtml("#5BBD00"), ColorTranslator.FromHtml("#0071BD"), ColorTranslator.FromHtml("#BD0035") };
 
+        /// <summary>Gets or privately sets the name of the player.</summary>
         public string Name { get; private set; }
+        /// <summary>Gets or privately sets the shirt number of the player.</summary>
         public int Number { get; private set; }
+        /// <summary>Gets or privately sets the playing position of the player.</summary>
         public PlayingPosition PlayerPosition { get; private set; }
+        /// <summary>Gets or privately sets the birth date of the player.</summary>
         public DateTime BirthDate { get; private set; }
+        /// <summary>Gets or privately sets the caps (number of selections in the national team) of the player.</summary>
         public int Caps { get; private set; }
+        /// <summary>Gets or privately sets the number of goals for the national team of the player.</summary>
         public int Goals { get; private set; }
+        /// <summary>Gets or privately sets the nationality of the player. The property type is Team, as we are only interested in players from countries with participating teams.</summary>
         public Team Nationality { get; private set; }
+        /// <summary>Gets or privately sets the club where the player is registered.</summary>
         public Club Club { get; private set; }
 
+        /// <summary>Constructs a new Player object from the given parameters.</summary>
+        /// <param name="id">the ID of the player</param>
+        /// <param name="name">the name of the player</param>
+        /// <param name="number">the shirt number of the player</param>
+        /// <param name="position">the playing position of the player</param>
+        /// <param name="birth">the birth date of the player</param>
+        /// <param name="caps">the caps of the player</param>
+        /// <param name="goals">the number of goals of the player</param>
+        /// <param name="nationality">the nationality of the player</param>
+        /// <param name="club">the club where the player is registered</param>
         public Player(string id, string name, int number, PlayingPosition position, DateTime birth, int caps, int goals, Team nationality, Club club)
             : base(id)
         {
@@ -211,7 +278,8 @@ namespace Euro2016
             this.Nationality = nationality;
             this.Club = club;
         }
-
+        
+        /// <summary>Parses the given XmlNode into a new Player object.</summary>
         public static Player Parse(XmlNode node, List<Team> teams, ListOfIDObjects<Club> clubs)
         {
             string id = node.Attributes["ID"].Value;
@@ -225,7 +293,10 @@ namespace Euro2016
             Club club = clubs.GetItemByID(node.Attributes["clubID"].Value);
             return new Player(id, name, number, position, birth, caps, goals, nationality, club);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);
@@ -247,38 +318,56 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Defines information related to a Team that is participating in the competition. Each team has a country associated with it (1:1 relationship), but not all countries in the database are participating.
     /// </summary>
     public class Team
     {
+        /// <summary>Gets or privately sets the country associated with the team.</summary>
         public Country Country { get; private set; }
+        /// <summary>Gets or privately sets the nicknames of the team.</summary>
         public List<string> Nicknames { get; private set; }
+        /// <summary>Gets or privately sets the map coordinates for the flag. It is used to position a 32x20 FlagView control over the fixed-size map of Europe loaded from the SVG resource file.</summary>
+        public Point MapCoords { get; private set; }
+        /// <summary>Gets or privately sets the nationality and name of the coach of the team.</summary>
         public KeyValuePair<Country, string> Coach { get; private set; }
+        /// <summary>Gets or privately sets the list of players of the team.</summary>
         public ListOfIDObjects<Player> Players { get; private set; }
 
-        public Team(Country country, KeyValuePair<Country, string> coach, List<string> nicknames)
+        /// <summary>Constructs a new Team object from the given parameters.</summary>
+        /// <param name="country">the country associated with the team</param>
+        /// <param name="nicknames">the nicknames of the team</param>
+        /// <param name="mapCoords">the fixed-size SVG map coordinates for the FlagView control</param>
+        /// <param name="coach">the nationality and name of the coach of the team</param>
+        public Team(Country country, List<string> nicknames, Point mapCoords, KeyValuePair<Country, string> coach)
         {
             this.Country = country;
             this.Nicknames = nicknames;
+            this.MapCoords = mapCoords;
             this.Coach = coach;
             this.Players = new ListOfIDObjects<Player>();
         }
-
+        
+        /// <summary>Parses the given XmlNode into a new Team object.</summary>
         public static Team Parse(XmlNode node, ListOfIDObjects<Country> countries)
         {
             Country country = countries.GetItemByID(node.Attributes["countryID"].Value);
             List<string> nicknames = node.Attributes["nicknames"].Value.Split(';').ToList();
+            Point mapCoords = new Point(Int32.Parse(node.Attributes["mapCoords"].Value.Split(',')[0]), Int32.Parse(node.Attributes["mapCoords"].Value.Split(',')[1]));
             string[] coachParts = node.Attributes["coach"].Value.Split(':');
             KeyValuePair<Country, string> coach = new KeyValuePair<Country, string>(countries.GetItemByID(coachParts[0]), coachParts[1]);
-            return new Team(country, coach, nicknames);
+            return new Team(country, nicknames, mapCoords, coach);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = doc.CreateElement(name);
             node.AddAttribute(doc, "countryID", this.Country.ID);
             node.AddAttribute(doc, "nicknames", this.Nicknames.GetListString(";"));
             node.AddAttribute(doc, "coach", string.Format("{0}:{1}", this.Coach.Key.ID, this.Coach.Value));
+            node.AddAttribute(doc, "mapCoords", this.MapCoords.X + "," + this.MapCoords.Y);
             return node;
         }
 
@@ -300,27 +389,39 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Defines information related to one team's group ranking table line. Contains information such as number of matches played or goals scored.
     /// </summary>
     public class TableLine
     {
+        /// <summary>Gets or internally sets the team of this table line.</summary>
         public Team Team { get; internal set; }
+        /// <summary>Gets or sets the group ranking position for this table line.</summary>
         public int Position { get; set; }
+        /// <summary>Gets or sets the number of matches played for this table line.</summary>
         public int MatchesPlayed { get; set; }
+        /// <summary>Gets or sets the number of matches won for this table line.</summary>
         public int Won { get; set; }
+        /// <summary>Gets or sets the number of matches drawn for this table line.</summary>
         public int Drawn { get; set; }
+        /// <summary>Gets or sets the number of matches lost for this table line.</summary>
         public int Lost { get; set; }
+        /// <summary>Gets or sets the number of goals scored by the team of this table line.</summary>
         public int GoalsFor { get; set; }
+        /// <summary>Gets or sets the number of goals scored against the team of this table line.</summary>
         public int GoalsAgainst { get; set; }
+        /// <summary>Gets or sets the goal difference for this table line.</summary>
         public int GoalDifference { get; set; }
+        /// <summary>Gets or sets the number of points for this table line.</summary>
         public int Points { get; set; }
 
+        /// <summary>Constructs a new TableLine object, with the given team and all other fields reset.</summary>
         public TableLine(Team team)
         {
             this.Team = team;
             this.Reset();
         }
 
+        /// <summary>Constructs a new TableLine object, by copying the values from the given parameter TableLine object.</summary>
         public TableLine(TableLine tableLine)
         {
             this.Team = tableLine.Team;
@@ -335,6 +436,7 @@ namespace Euro2016
             this.Points = 3 * this.Won + this.Drawn;
         }
 
+        /// <summary>Resets all fields of this table line to default values.</summary>
         public void Reset()
         {
             this.Position = 1;
@@ -345,6 +447,8 @@ namespace Euro2016
             this.Points = 0;
         }
 
+        /// <summary>Updates the values of this table line by adding a new match result from the given match (if valid).</summary>
+        /// <param name="match">the match result to add. Will be ignored if not played or table line team not involved</param>
         public void AddGroupMatchResult(Match match)
         {
             if (!match.Scoreboard.Played || !match.IsGroupMatch)
@@ -390,6 +494,7 @@ namespace Euro2016
             this.Points = 3 * this.Won + this.Drawn;
         }
 
+        /// <summary>Formats the goal difference of this table line to look nice and clear.</summary>
         public string FormatGoalDifference
         {
             get { return this.GoalDifference == 0 ? "0" : (this.GoalDifference > 0 ? "+" + this.GoalDifference : this.GoalDifference.ToString()); }
@@ -402,11 +507,20 @@ namespace Euro2016
         }
     }
 
+    /// <summary>
+    /// Defines information related to a rankings group.
+    /// </summary>
     public class Group : ObjectWithID
     {
+        /// <summary>Gets or privately sets the name of the group.</summary>
         public string Name { get; private set; }
+        /// <summary>Gets or privately sets the list of table lines of the group.</summary>
         public List<TableLine> TableLines { get; private set; }
 
+        /// <summary>Constructs a new Group object from the given parameters.</summary>
+        /// <param name="id">the ID of the group</param>
+        /// <param name="name">the name of the group</param>
+        /// <param name="tableLines">the list of table lines of the group</param>
         public Group(string id, string name, List<TableLine> tableLines)
             : base(id)
         {
@@ -414,6 +528,7 @@ namespace Euro2016
             this.TableLines = tableLines;
         }
 
+        /// <summary>Determines whether all the matches in this group have been played. More specifically, tests whether all table lines in the group have exactly 3 matches played.</summary>
         public bool AllMatchesPlayed
         {
             get
@@ -425,6 +540,9 @@ namespace Euro2016
             }
         }
 
+        /// <summary>Sorts the table lines in this group.</summary>
+        /// <param name="thirdPlacedTeamGroup">whether to apply the ruleset for sorting third-placed teams</param>
+        /// <param name="matches">the reference to the full match list of the database</param>
         public void SortTableLines(bool thirdPlacedTeamGroup, List<Match> matches)
         {
             // sort by points
@@ -523,7 +641,8 @@ namespace Euro2016
             for (int index = 0; index < this.TableLines.Count; index++)
                 this.TableLines[index].Position = index + 1;
         }
-
+        
+        /// <summary>Parses the given XmlNode into a new Group object.</summary>
         public static Group Parse(XmlNode node, List<Team> teams)
         {
             string id = node.Attributes["ID"].Value;
@@ -534,7 +653,10 @@ namespace Euro2016
                 tableLines.Add(new TableLine(teams.First(t => t.Country.ID.Equals(countryID))));
             return new Group(id, name, tableLines);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);
@@ -554,48 +676,58 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Defines information related to a simple scoreboard for one gameplay half.
     /// </summary>
     public class HalfScoreboard : PairT<int>
     {
+        /// <summary>Constructs a new HalfScoreboard object with default values (0-0).</summary>
         public HalfScoreboard()
             : this(0, 0)
         {
         }
-
+        
+        /// <summary>Constructs a new HalfScoreboard object with the given values.</summary>
         public HalfScoreboard(int home, int away)
             : base(home, away)
         {
         }
 
+        /// <summary>Determines whether the home team has won this half.</summary>
         public bool HomeWin
         { get { return this.Home > this.Away; } }
-
+        
+        /// <summary>Determines whether the home teams have drawn in this half.</summary>
         public bool Tie
         { get { return this.Home == this.Away; } }
-
+        
+        /// <summary>Determines whether the away team has won this half.</summary>
         public bool AwayWin
         { get { return this.Home < this.Away; } }
 
+        /// <summary>Returns a value indicating which team has won this half. The value is -1 for a home win, 0 for a tie, and 1 for an away win.</summary>
         public int WhichTeamWon
         { get { return this.Tie ? 0 : (this.HomeWin ? -1 : 1); } }
 
+        /// <summary>Adds the goal values of the given HalfScoreboard object to the goals of the current half.</summary>
         public void AddHalfScoreboard(HalfScoreboard scoreboard)
         {
             this.Home += scoreboard.Home;
             this.Away += scoreboard.Away;
         }
 
+        /// <summary>Resets the goal values of this half scoreboard to 0-0.</summary>
         public void Reset()
         {
             this.Home = this.Away = 0;
         }
 
+        /// <summary>Formats the score to look nice and clear.</summary>
         public string FormatHalfScore
         {
             get { return this.Home + "-" + this.Away; }
         }
-
+        
+        /// <summary>Parses the given XmlNode into a new HalfScoreboard object.</summary>
         public static HalfScoreboard Parse(string text)
         {
             string[] parts = text.Split('-');
@@ -608,12 +740,19 @@ namespace Euro2016
         }
     }
 
+    /// <summary>
+    /// Defines information related to a full, match scoreboard.
+    /// </summary>
     public class MatchScoreboard
     {
+        /// <summary>Gets or privately sets the list of scoreboards for the gameplay halves.</summary>
         public List<HalfScoreboard> Halves { get; private set; }
+        /// <summary>Gets or privately sets the full score scoreboard, potentially including a fifth HalfScoreboard object with the score of the penalty shootout.</summary>
         public HalfScoreboard FullScore { get; private set; }
+        /// <summary>Gets or privately sets the full score scoreboard, without any penalties.</summary>
         public HalfScoreboard FinalScoreWithoutPenalties { get; private set; }
 
+        /// <summary>Constructs a new MatchScoreboard object from the given parameter list of halves.</summary>
         public MatchScoreboard(List<HalfScoreboard> halves)
         {
             this.Halves = new List<HalfScoreboard>();
@@ -622,6 +761,7 @@ namespace Euro2016
             this.SetHalves(halves);
         }
 
+        /// <summary>Sets the list of halves of this match scoreboard and updates the final scores.</summary>
         public void SetHalves(List<HalfScoreboard> halves)
         {
             this.Halves.Clear();
@@ -636,18 +776,24 @@ namespace Euro2016
             }
         }
 
+        /// <summary>Determines whether the match finished in regular playing time. More specifically, it tests whether there are exactly 2 halves.</summary>
         public bool FinishedInRegularTime
         { get { return this.Halves.Count == 2; } }
-
+        
+        /// <summary>Determines whether the match finished in extra playing time. More specifically, it tests whether there are exactly 4 halves.</summary>
         public bool FinishedInExtraTime
         { get { return this.Halves.Count == 4; } }
-
+        
+        /// <summary>Determines whether the match finished at the penalty shootout. More specifically, it tests whether there are exactly 5 halves.</summary>
         public bool FinishedAtPenalties
         { get { return this.Halves.Count == 5; } }
-
+        
+        /// <summary>Determines whether the match was played. More specifically, it tests if any of the FinishedInRegularTime, FinishedInExtraTime or FinishedAtPenalties properties return true.</summary>
         public bool Played
         { get { return this.FinishedInRegularTime || this.FinishedInExtraTime || this.FinishedAtPenalties; } }
 
+        /// <summary>Formats the full score to make it look nice and clear.</summary>
+        /// <param name="includePenaltiesIfAny">if set to true, an asterix will be included on the side of the winning team (left for home, or right for away) if the match has reached the penalty shootout</param>
         public string FormatScore(bool includePenaltiesIfAny)
         {
             if (!this.Played)
@@ -665,6 +811,8 @@ namespace Euro2016
             return sb.ToString();
         }
 
+        /// <summary>Returns a text description of the result of the match.</summary>
+        /// <param name="includePenaltiesIfAny">if set to true, the fifth penalty shootout score will be included if the match has reached the penalty shootout</param>
         public string ScoreDescription(bool includePenaltiesIfAny)
         {
             if (!this.Played)
@@ -694,17 +842,30 @@ namespace Euro2016
     }
 
     /// <summary>
-    /// 
+    /// Defines information related to a match.
     /// </summary>
     public class Match : ObjectWithID
     {
+        /// <summary>Gets or privately sets the category of the match. It consists of a string code, that can be formatted using the FormatCategory property.</summary>
         public string Category { get; private set; }
+        /// <summary>Gets or privately sets the string team reference pair for the match. It can consist in team IDs, group positions or match IDs.</summary>
         public PairT<string> TeamReferences { get; private set; }
+        /// <summary>Gets or sets the teams of the match. Each item is null initially or if participating teams are not yet known, they are set in the 'calculate' methods of the Database class.</summary>
         public PairT<Team> Teams { get; private set; }
+        /// <summary>Gets or privately sets the date and time when the match is played.</summary>
         public DateTime When { get; private set; }
+        /// <summary>Gets or privately sets the venue where the match is played.</summary>
         public Venue Where { get; private set; }
+        /// <summary>Gets or privately sets the scoreboard of the match.</summary>
         public MatchScoreboard Scoreboard { get; internal set; }
 
+        /// <summary>Constructs a new Match object from the given parameters.</summary>
+        /// <param name="id">the ID of the match</param>
+        /// <param name="category">the category of the match</param>
+        /// <param name="teamReferences">the team reference pair for the match</param>
+        /// <param name="when">the date and time when the match is played</param>
+        /// <param name="where">the venue where the match is played</param>
+        /// <param name="scoreboard">the scoreboard of the match</param>
         public Match(string id, string category, PairT<string> teamReferences, DateTime when, Venue where, MatchScoreboard scoreboard)
             : base(id)
         {
@@ -716,38 +877,15 @@ namespace Euro2016
             this.Scoreboard = scoreboard;
         }
 
+        /// <summary>Determines whether this match is a group match (based on its category string).</summary>
         public bool IsGroupMatch
         { get { return this.Category[0] == 'G'; } }
 
+        /// <summary>Formats the category of the match to make it look nice and clear.</summary>
         public string FormatCategory
-        {
-            get
-            {
-                string[] parts = this.Category.Split(':');
-                switch (parts[0])
-                {
-                    case "G":
-                        return "Group " + parts[1];
-                    case "KO":
-                        switch (parts[1])
-                        {
-                            case "8":
-                                return "Eighth-final";
-                            case "4":
-                                return "Quarter-final";
-                            case "2":
-                                return "Semi-final";
-                            case "1":
-                                return "Grand final";
-                            default:
-                                return "Unknown knockout";
-                        }
-                    default:
-                        return "unknown";
-                }
-            }
-        }
-
+        { get { return Utils.FormatMatchCategory(this.Category); } }
+        
+        /// <summary>Parses the given XmlNode into a new Match object.</summary>
         public static Match Parse(XmlNode node, Database database)
         {
             string id = node.Attributes["ID"].Value;
@@ -771,7 +909,10 @@ namespace Euro2016
             MatchScoreboard scoreboard = new MatchScoreboard(halves);
             return new Match(id, category, teamReferences, when, where, scoreboard);
         }
-
+        
+        /// <summary>Generates an XmlNode from this object.</summary>
+        /// <param name="doc">the XmlDocument used to create the element</param>
+        /// <param name="name">the name of the XmlNode to be created</param>
         public new XmlNode ToXml(XmlDocument doc, string name)
         {
             XmlNode node = base.ToXml(doc, name);

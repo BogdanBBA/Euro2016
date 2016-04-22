@@ -45,7 +45,7 @@ namespace Euro2016
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
-        private void RefreshTeamInfo(Team team, PictureBox flagPB, Label nameL, Label nicknameL)
+        private void RefreshTeamInfo(string teamReference, Team team, PictureBox flagPB, Label nameL, Label nicknameL)
         {
             if (team != null)
             {
@@ -57,7 +57,7 @@ namespace Euro2016
             {
                 flagPB.Image = Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], flagPB.Width, flagPB.Height, System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic, false);
                 nameL.Text = "TBD";
-                nicknameL.Text = "";
+                nicknameL.Text = teamReference;
             }
         }
 
@@ -68,8 +68,8 @@ namespace Euro2016
             phaseL.Text = match.FormatCategory;
             whenL.Text = match.When.ToString("dddd, d MMMM yyyy, 'at' HH:mm");
             whereL.Text = match.Where.Name + ", " + match.Where.City;
-            this.RefreshTeamInfo(match.Teams.Home, homeFlagPB, homeTeamL, homeNicknameL);
-            this.RefreshTeamInfo(match.Teams.Away, awayFlagPB, awayTeamL, awayNicknameL);
+            this.RefreshTeamInfo(match.TeamReferences.Home, match.Teams.Home, homeFlagPB, homeTeamL, homeNicknameL);
+            this.RefreshTeamInfo(match.TeamReferences.Away, match.Teams.Away, awayFlagPB, awayTeamL, awayNicknameL);
             scoreL.Text = match.Scoreboard.FormatScore(false);
             halvesL.Text = match.Scoreboard.ScoreDescription(false);
         }
