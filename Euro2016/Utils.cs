@@ -449,6 +449,23 @@ namespace Euro2016
             return new MatchScoreboard(resultHalves);
         }
 
+        /// <summary>Counts the wins, ties and losses in the given match list from the perspective of the 'home' team.</summary>
+        public static Tuple<int, int, int> GetResults(this ListOfIDObjects<Match> matches)
+        {
+            int wins = 0, ties = 0, losses = 0;
+            foreach (Match match in matches)
+                if (match.Scoreboard.Played)
+                {
+                    if (match.Scoreboard.FullScore.HomeWin)
+                        wins++;
+                    else if (match.Scoreboard.FullScore.Tie)
+                        ties++;
+                    else if (match.Scoreboard.FullScore.AwayWin)
+                        losses++;
+                }
+            return new Tuple<int, int, int>(wins, ties, losses);
+        }
+
         /// <summary>Searches this list of table lines' for the given team, and returns its index if it is found, or -1 otherwise.</summary>
         public static int IndexOfTeam(this List<TableLine> lines, Team team)
         {
@@ -458,7 +475,8 @@ namespace Euro2016
             return -1;
         }
 
-        /// <summary>Searches this list of matches and returns a sublist containing all items that are relevant to the given parameter. The parameter can be an instance of Venue, Team, Group, DateTime, string (category) or bool (played).</summary>
+        /// <summary>Searches this list of matches and returns a sublist containing all items that are relevant to the given parameter. 
+        /// The parameter can be an instance of Venue, Team, Group, DateTime, string (category), bool (played) or int (number of halves).</summary>
         public static ListOfIDObjects<Match> GetMatchesBy(this ListOfIDObjects<Match> matches, object whatever)
         {
             ListOfIDObjects<Match> result = new ListOfIDObjects<Match>();
@@ -503,6 +521,13 @@ namespace Euro2016
                 bool played = (bool) whatever;
                 foreach (Match match in matches)
                     if (match.Scoreboard.Played == played)
+                        result.Add(match);
+            }
+            else if (whatever is int)
+            {
+                int nHalves = (int) whatever;
+                foreach (Match match in matches)
+                    if (match.Scoreboard.Halves.Count == nHalves)
                         result.Add(match);
             }
 

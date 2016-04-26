@@ -30,10 +30,6 @@ namespace Euro2016
             startT.Enabled = true;
         }
 
-        public override void RefreshInformation(object item)
-        {
-        }
-
         private void startT_Tick(object sender, EventArgs e)
         {
             startT.Enabled = false;

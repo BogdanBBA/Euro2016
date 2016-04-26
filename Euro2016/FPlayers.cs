@@ -74,7 +74,9 @@ namespace Euro2016
         {
 
         }
-
+        
+        /// <summary>Refreshes the information for the given Country object.</summary>
+        /// <param name="item">the Country object to display information for</param>
         public override void RefreshInformation(object item)
         {
             Country country = item as Country;

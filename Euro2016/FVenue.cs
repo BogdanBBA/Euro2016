@@ -38,7 +38,9 @@ namespace Euro2016
             this.MouseWheel += this.matchesView.myScrollPanel.MouseWheelScroll_EventHandler;
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
-
+        
+        /// <summary>Refreshes the information for the given Venue object.</summary>
+        /// <param name="item">the Venue object to display information for</param>
         public override void RefreshInformation(object item)
         {
             Venue venue = item as Venue;

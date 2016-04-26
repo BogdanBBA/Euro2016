@@ -93,6 +93,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -170,6 +171,12 @@
     </Compile>
     <Compile Include="FSettings.Designer.cs">
       <DependentUpon>FSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FStats.Designer.cs">
+      <DependentUpon>FStats.cs</DependentUpon>
     </Compile>
     <Compile Include="FTeam.cs">
       <SubType>Form</SubType>
@@ -282,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FSettings.resx">
       <DependentUpon>FSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FStats.resx">
+      <DependentUpon>FStats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FTeam.resx">
       <DependentUpon>FTeam.cs</DependentUpon>

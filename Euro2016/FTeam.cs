@@ -42,16 +42,42 @@ namespace Euro2016
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
+        private void infoViewDetail4_Click(object sender, EventArgs e)
+        {
+            string resultCategory = this.mainForm.Database.TournamentResultOfTeam(this.team);
+            if (resultCategory.Contains("KO"))
+                this.mainForm.ShowForm<FKnockOut, object>(null);
+            else
+                this.mainForm.ShowForm<FGroup, Group>(this.mainForm.Database.Groups.GetItemByID(resultCategory.Split(':')[1]));
+        }
+
+        private void infoViewDetail1_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowForm<FStats, object>(null);
+        }
+
         private void infoViewDetail3_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowForm<FPlayers, Country>(this.team.Country);
+        }
+
+        private void infoViewDetail4_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as InfoViewDetail).DrawBar = true;
+        }
+
+        private void infoViewDetail4_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as InfoViewDetail).DrawBar = false;
         }
 
         private void VenueButton_Click(object sender, EventArgs e)
         {
             this.RefreshInformation(this.mainForm.Database.Teams.First(t => t.Country.Equals(sender is CountryView ? (sender as CountryView).Country : (sender as Team).Country)));
         }
-
+        
+        /// <summary>Refreshes the information for the given Team object.</summary>
+        /// <param name="item">the Team object to display information for</param>
         public override void RefreshInformation(object item)
         {
             Team team = item as Team;

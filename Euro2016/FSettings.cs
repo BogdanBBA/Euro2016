@@ -38,7 +38,9 @@ namespace Euro2016
                 favoriteTeamCB.Items.Add(this.FormatTeamForCombobox(team));
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
-
+        
+        /// <summary>Refreshes the information for the main form database settings.</summary>
+        /// <param name="item">no item needed, pass null</param>
         public override void RefreshInformation(object item)
         {
             Settings sett = this.mainForm.Database.Settings;

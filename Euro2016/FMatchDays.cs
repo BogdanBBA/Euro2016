@@ -35,7 +35,9 @@ namespace Euro2016
         {
             this.RefreshInformation((sender as MatchDayView).Date);
         }
-
+        
+        /// <summary>Refreshes the information for the given DateTime object.</summary>
+        /// <param name="item">the DateTime object to display information for</param>
         public override void RefreshInformation(object item)
         {
             DateTime date = ((DateTime) item).Date;

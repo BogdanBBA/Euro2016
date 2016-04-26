@@ -46,16 +46,19 @@
             this.infoViewDetail4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.infoViewDetail4.BigBar = false;
             this.infoViewDetail4.Checked = false;
-            this.infoViewDetail4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.infoViewDetail4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoViewDetail4.DrawBar = false;
             this.infoViewDetail4.Location = new System.Drawing.Point(12, 211);
             this.infoViewDetail4.Name = "infoViewDetail4";
-            this.infoViewDetail4.Size = new System.Drawing.Size(143, 35);
+            this.infoViewDetail4.Size = new System.Drawing.Size(143, 44);
             this.infoViewDetail4.TabIndex = 19;
             this.infoViewDetail4.Text = "infoViewDetail4";
             this.infoViewDetail4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.infoViewDetail4.TextDescription = "Tournament result";
             this.infoViewDetail4.TextText = "#text";
+            this.infoViewDetail4.Click += new System.EventHandler(this.infoViewDetail4_Click);
+            this.infoViewDetail4.MouseEnter += new System.EventHandler(this.infoViewDetail4_MouseEnter);
+            this.infoViewDetail4.MouseLeave += new System.EventHandler(this.infoViewDetail4_MouseLeave);
             // 
             // infoViewDetail3
             // 
@@ -66,43 +69,53 @@
             this.infoViewDetail3.DrawBar = false;
             this.infoViewDetail3.Location = new System.Drawing.Point(371, 211);
             this.infoViewDetail3.Name = "infoViewDetail3";
-            this.infoViewDetail3.Size = new System.Drawing.Size(121, 35);
+            this.infoViewDetail3.Size = new System.Drawing.Size(121, 44);
             this.infoViewDetail3.TabIndex = 18;
             this.infoViewDetail3.Text = "infoViewDetail3";
             this.infoViewDetail3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.infoViewDetail3.TextDescription = "Squad";
             this.infoViewDetail3.TextText = "#text";
             this.infoViewDetail3.Click += new System.EventHandler(this.infoViewDetail3_Click);
+            this.infoViewDetail3.MouseEnter += new System.EventHandler(this.infoViewDetail4_MouseEnter);
+            this.infoViewDetail3.MouseLeave += new System.EventHandler(this.infoViewDetail4_MouseLeave);
             // 
             // infoViewDetail2
             // 
             this.infoViewDetail2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.infoViewDetail2.BigBar = false;
             this.infoViewDetail2.Checked = false;
+            this.infoViewDetail2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoViewDetail2.DrawBar = false;
             this.infoViewDetail2.Location = new System.Drawing.Point(260, 211);
             this.infoViewDetail2.Name = "infoViewDetail2";
-            this.infoViewDetail2.Size = new System.Drawing.Size(105, 35);
+            this.infoViewDetail2.Size = new System.Drawing.Size(105, 44);
             this.infoViewDetail2.TabIndex = 17;
             this.infoViewDetail2.Text = "infoViewDetail2";
             this.infoViewDetail2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.infoViewDetail2.TextDescription = "Average goals";
             this.infoViewDetail2.TextText = "#text";
+            this.infoViewDetail2.Click += new System.EventHandler(this.infoViewDetail1_Click);
+            this.infoViewDetail2.MouseEnter += new System.EventHandler(this.infoViewDetail4_MouseEnter);
+            this.infoViewDetail2.MouseLeave += new System.EventHandler(this.infoViewDetail4_MouseLeave);
             // 
             // infoViewDetail1
             // 
             this.infoViewDetail1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.infoViewDetail1.BigBar = false;
             this.infoViewDetail1.Checked = false;
+            this.infoViewDetail1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.infoViewDetail1.DrawBar = false;
             this.infoViewDetail1.Location = new System.Drawing.Point(161, 211);
             this.infoViewDetail1.Name = "infoViewDetail1";
-            this.infoViewDetail1.Size = new System.Drawing.Size(93, 35);
+            this.infoViewDetail1.Size = new System.Drawing.Size(93, 44);
             this.infoViewDetail1.TabIndex = 16;
             this.infoViewDetail1.Text = "infoViewDetail1";
             this.infoViewDetail1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.infoViewDetail1.TextDescription = "Goals";
             this.infoViewDetail1.TextText = "#text";
+            this.infoViewDetail1.Click += new System.EventHandler(this.infoViewDetail1_Click);
+            this.infoViewDetail1.MouseEnter += new System.EventHandler(this.infoViewDetail4_MouseEnter);
+            this.infoViewDetail1.MouseLeave += new System.EventHandler(this.infoViewDetail4_MouseLeave);
             // 
             // teamNameAwayIV
             // 

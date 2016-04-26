@@ -49,7 +49,9 @@ namespace Euro2016
         {
             this.RefreshInformation(sender is GroupButton ? (sender as GroupButton).Group : sender as Group);
         }
-
+        
+        /// <summary>Refreshes the information for the given Group object.</summary>
+        /// <param name="item">the Group object to display information for</param>
         public override void RefreshInformation(object item)
         {
             Group group = item as Group;

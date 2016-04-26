@@ -11,12 +11,18 @@ using System.Windows.Forms;
 
 namespace Euro2016.VisualComponents
 {
+    /// <summary>
+    /// Custom BBA-configured extension of the Form class.
+    /// </summary>
     public partial class MyForm : Form
     {
+        /// <summary>The pen used to draw the form accent.</summary>
         protected static readonly Pen formAccentPen = new Pen(MyGUIs.Accent.Normal.Color, 2);
 
+        /// <summary>A Point variable used for moving the form with child controls registered for that purpose with MyForm.RegisterControlsToMoveForm().</summary>
         protected Point downPoint = Point.Empty;
 
+        /// <summary>Constructs a new MyForm object with default attributes.</summary>
         public MyForm()
             : base()
         {
@@ -31,15 +37,19 @@ namespace Euro2016.VisualComponents
         }
 
         private bool drawFormAccent;
+        /// <summary>Gets or sets a value indicating whether to draw accent graphics to the form.</summary>
         public bool DrawFormAccent
         {
             get { return this.drawFormAccent; }
             set { this.drawFormAccent = value; this.Invalidate(); }
         }
 
+        /// <summary>Updates the information displayed on the form for the given argument. To be overridden in derived classes if necessary.
+        /// If you see this documentation from a derived class, then a refresh call is not necessary.</summary>
         public virtual void RefreshInformation(object item)
         { }
 
+        /// <summary>Assigns mouse event handlers to the given controls so that when the user clicks and drags any of those controls, the form will move with them.</summary>
         public void RegisterControlsToMoveForm(params Control[] controls)
         {
             foreach (Control control in controls)

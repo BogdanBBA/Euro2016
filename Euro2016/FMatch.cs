@@ -14,7 +14,7 @@ namespace Euro2016
     public partial class FMatch : MyForm
     {
         internal FMain mainForm;
-        private MatchesView matchesView;
+        internal MatchesView matchesView;
         private Match lastMatch;
 
         public FMatch(FMain mainForm)
@@ -72,8 +72,13 @@ namespace Euro2016
             this.RefreshTeamInfo(match.TeamReferences.Away, match.Teams.Away, awayFlagPB, awayTeamL, awayNicknameL);
             scoreL.Text = match.Scoreboard.FormatScore(false);
             halvesL.Text = match.Scoreboard.ScoreDescription(false);
-        }
 
+            MatchRow row = sender is MatchRow ? sender as MatchRow : this.matchesView.GetRowByMatch(match);
+            this.matchesView.myScrollPanel.ScrollToViewControl(row);
+        }
+        
+        /// <summary>Refreshes the information for the given Match object.</summary>
+        /// <param name="item">the Match object to display information for</param>
         public override void RefreshInformation(object item)
         {
             this.MatchRow_Click(item, null);

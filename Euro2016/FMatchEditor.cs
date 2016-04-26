@@ -220,6 +220,7 @@ namespace Euro2016
             FMatch matchForm = this.Owner as FMatch;
             matchForm.mainForm.Database.Calculate(false, true, true);
             matchForm.RefreshInformation(this.match);
+            matchForm.matchesView.GetRowByMatch(this.match).Invalidate();
             matchForm.mainForm.RefreshInformation(null);
             this.Close();
         }

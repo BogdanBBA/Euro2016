@@ -101,6 +101,41 @@ namespace Euro2016.VisualComponents
             return this.controls.Contains(control);
         }
 
+        /// <summary>Scrolls the inner panel so that the given control is in view.</summary>
+        /// <param name="control">the control to view</param>
+        public void ScrollToViewControl(Control control)
+        {
+            if (!this.ContainsControl(control))
+                return;
+
+            if (this.scrollBar.Position == MyScrollBar.ScrollBarPosition.Right)
+            {
+                if (control.Bottom > this.currentScrollTop + this.VisibleSize.Height)
+                {
+                    this.currentScrollTop = control.Bottom - this.VisibleSize.Height;
+                    this.RefreshScroll();
+                }
+                else if (control.Top < this.currentScrollTop)
+                {
+                    this.currentScrollTop = control.Top;
+                    this.RefreshScroll();
+                }
+            }
+            else if (this.scrollBar.Position == MyScrollBar.ScrollBarPosition.Bottom)
+            {
+                if (control.Right > this.currentScrollTop + this.VisibleSize.Width)
+                {
+                    this.currentScrollTop = control.Right - this.VisibleSize.Width;
+                    this.RefreshScroll();
+                }
+                else if (control.Left < this.currentScrollTop)
+                {
+                    this.currentScrollTop = control.Left;
+                    this.RefreshScroll();
+                }
+            }
+        }
+
         /// <summary>Resizes the 'inner panel' that contains all the controls associated with this scroll panel.
         /// Code-wise, this is called by AddControl and in turn calls RefreshScroll.</summary>
         public void UpdatePanelSize()
@@ -151,7 +186,7 @@ namespace Euro2016.VisualComponents
         /// Code-wise, this calls RefreshScroll.</summary>
         public void MouseWheelScroll_EventHandler(object sender, MouseEventArgs e) // e.Delta > 0 means "scroll up"
         {
-            Console.WriteLine(sender.ToString());
+            //Console.WriteLine(sender.ToString());
             KeyValuePair<int, int> sizes = this.scrollBar.Position == MyScrollBar.ScrollBarPosition.Right
                 ? new KeyValuePair<int, int>(this.movingPanel.Height, this.containerPanel.Height)
                 : new KeyValuePair<int, int>(this.movingPanel.Width, this.containerPanel.Width);

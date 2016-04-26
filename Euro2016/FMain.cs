@@ -48,30 +48,38 @@ namespace Euro2016
                 this.GroupViews[index].SetGroup(this.Database.Groups.GetItemByID(((char) (65 + index)).ToString()));
             }
             Utils.SizeAndPositionControlsInPanel(menuP, new Control[] { venuesB, teamsB, groupsB, matchesB, knockoutB, settingsB, moreB, exitB }, true, 0);
-
-            /*this.Database.Clubs.Add(new Club("XXX", "DummyClub", this.Database.Countries.GetItemByID("XXX")));
-            for (int iT = 0; iT < this.Database.Teams.Count; iT++)
-                for (int iP = 0; iP < 23; iP++)
-                    this.Database.Players.Add(new Player((23 * iT + iP + 1).ToString(), "Dummy Player", iP + 1, (Player.PlayingPosition) (iP / 6), DateTime.Now,
-                        Utils.Random.Next(100), Utils.Random.Next(20), this.Database.Teams[iT].Country, this.Database.Clubs.GetItemByID("XXX")));*/
         }
 
         private void FMain_Shown(object sender, EventArgs e)
         {
+            ListOfIDObjects<Match> matches = this.Database.Matches.GetMatchesBy(false);
+            if (matches.Count > 0)
+                this.MatchesView.myScrollPanel.ScrollToViewControl(this.MatchesView.GetRowByMatch(matches[0]));
+
             if (this.Database.Settings.ShowKnockoutStageOnStartup && this.Database.Matches.Count(m => m.IsGroupMatch && !m.Scoreboard.Played) == 0)
                 this.knockoutB_Click(sender, e);
         }
 
+        /// <summary>Refreshes the matches view and the group views of the main form.</summary>
+        /// <param name="item">no item needed, pass null</param>
         public override void RefreshInformation(object item)
         {
             this.MatchesView.SetMatches(this.Database.Matches);
-            foreach (GroupView view in this.GroupViews)
-                view.SetGroup(view.Group);
+            foreach (GroupView groupView in this.GroupViews)
+                groupView.SetGroup(groupView.Group);
         }
 
+        /// <summary>Closes any open form if different from the one to show (if same, passes the given argument to it to refresh), and displays the new one.
+        /// Note: only the FMain menu buttons act as on/off switches for forms (that is, opening and closing them), so that is probably the only case you may want to pass closeIfFormTypeIsTheSame argument set to true.
+        /// To clarify, FMain menu buttons show form X if X not shown, or close X if X is shown; however, controls such as MatchRow show form X if X not shown, and refresh X if X is shown.
+        /// Second note: apparently should remember to set this.mainForm.OpenFormAndItem to null from FSettings, FMore itself and anything created directly or indirectly from FMore.</summary>
+        /// <typeparam name="FORM_TYPE">the form class that should be created; must be derived from MyForm (for the constructor with one FMain argument and the RefreshInformation(object) method)</typeparam>
+        /// <typeparam name="OBJECT_TYPE">the class of the object that will be passed as argument; if no argument is actually needed, pass any type and a value of null</typeparam>
+        /// <param name="forItem">the item that will be passed to the RefreshInformation(object) method of the shown form</param>
+        /// <param name="closeIfFormTypeIsTheSame">if set to true (default is false), any currently shown form will be closed even if it is the same type as the new one</param>
         public void ShowForm<FORM_TYPE, OBJECT_TYPE>(OBJECT_TYPE forItem, bool closeIfFormTypeIsTheSame = false) where FORM_TYPE : MyForm
         {
-            // note: remember to set this.OpenFormAndItem to null from FSettings, FMore itself and anything created directly or indirectly from FMore
+            // 
 
             // if the form exists and it should be closed if its type is the same as the given type (that is, if the command is passed from the main form menu buttons), close it and be done with it
             if (closeIfFormTypeIsTheSame && this.OpenFormAndItem.Key != null && this.OpenFormAndItem.Key is FORM_TYPE)
@@ -126,7 +134,7 @@ namespace Euro2016
 
         private void knockoutB_Click(object sender, EventArgs e)
         {
-            this.ShowForm<FKnockOut, ListOfIDObjects<Match>>(this.Database.Matches.GetMatchesBy("KO"), true);
+            this.ShowForm<FKnockOut, object>(null, true);
         }
 
         private void settingsB_Click(object sender, EventArgs e)

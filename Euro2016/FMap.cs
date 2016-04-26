@@ -68,10 +68,5 @@ namespace Euro2016
             Team team = this.mainForm.Database.Teams.First(t => t.Country.ID.Equals((sender as FlagView).Name.Substring(FMap.FlagViewPrefix.Length, 3)));
             this.mainForm.ShowForm<FTeam, Team>(team);
         }
-
-        public override void RefreshInformation(object item)
-        {
-            //
-        }
     }
 }

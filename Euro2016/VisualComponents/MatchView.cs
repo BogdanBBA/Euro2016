@@ -83,6 +83,14 @@ namespace Euro2016.VisualComponents
 
             this.myScrollPanel.UpdatePanelSize();
         }
+
+        public MatchRow GetRowByMatch(Match match)
+        {
+            foreach (MatchRow row in this.rows)
+                if (row.Match.Equals(match))
+                    return row;
+            return null;
+        }
     }
 
     public class MatchHeader : MyEuroBaseControl
