@@ -97,7 +97,7 @@ namespace Euro2016
             int capacity = Int32.Parse(node.Attributes["capacity"].Value);
             return new Venue(id, name, city, location, year, capacity);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>
@@ -151,7 +151,7 @@ namespace Euro2016
             this.Flag40px = (Bitmap) Utils.ScaleImage(this.Flag100px, 64, 40, InterpolationMode.HighQualityBicubic, false);
             this.Flag20px = (Bitmap) Utils.ScaleImage(this.Flag40px, 32, 20, InterpolationMode.HighQualityBicubic, false);
         }
-        
+
         /// <summary>Parses the given XmlNode into a new Country object.</summary>
         public static Country Parse(XmlNode node)
         {
@@ -162,7 +162,7 @@ namespace Euro2016
             Bitmap flag = File.Exists(flagPath) ? new Bitmap(flagPath) : StaticData.Images[Paths.UnknownTeamImageFile];
             return new Country(id, new PairT<string>(names[0], names[1]), uefa, flag);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>
@@ -202,7 +202,7 @@ namespace Euro2016
             this.Name = name;
             this.Country = country;
         }
-        
+
         /// <summary>Parses the given XmlNode into a new Club object.</summary>
         public static Club Parse(XmlNode node, ListOfIDObjects<Country> countries)
         {
@@ -211,7 +211,7 @@ namespace Euro2016
             Country country = countries.GetItemByID(node.Attributes["countryID"].Value);
             return new Club(id, name, country);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>
@@ -278,7 +278,7 @@ namespace Euro2016
             this.Nationality = nationality;
             this.Club = club;
         }
-        
+
         /// <summary>Parses the given XmlNode into a new Player object.</summary>
         public static Player Parse(XmlNode node, List<Team> teams, ListOfIDObjects<Club> clubs)
         {
@@ -293,7 +293,7 @@ namespace Euro2016
             Club club = clubs.GetItemByID(node.Attributes["clubID"].Value);
             return new Player(id, name, number, position, birth, caps, goals, nationality, club);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>
@@ -346,7 +346,7 @@ namespace Euro2016
             this.Coach = coach;
             this.Players = new ListOfIDObjects<Player>();
         }
-        
+
         /// <summary>Parses the given XmlNode into a new Team object.</summary>
         public static Team Parse(XmlNode node, ListOfIDObjects<Country> countries)
         {
@@ -357,7 +357,7 @@ namespace Euro2016
             KeyValuePair<Country, string> coach = new KeyValuePair<Country, string>(countries.GetItemByID(coachParts[0]), coachParts[1]);
             return new Team(country, nicknames, mapCoords, coach);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>
@@ -592,6 +592,8 @@ namespace Euro2016
                                     {
                                         if (iT.GoalsFor < jT.GoalsFor)
                                             needToSwap = true;
+                                        else if (iT.GoalsFor == jT.GoalsFor)
+                                            needToSwap = iT.Team.Country.Names.Away.CompareTo(jT.Team.Country.Names.Away) > 0;
                                     }
                                 }
 
@@ -624,6 +626,8 @@ namespace Euro2016
                                     {
                                         if (iT.GoalsFor < jT.GoalsFor)
                                             needToSwap = true;
+                                        else if (iT.GoalsFor == jT.GoalsFor)
+                                            needToSwap = iT.Team.Country.Names.Away.CompareTo(jT.Team.Country.Names.Away) > 0;
                                     }
                                 }
 
@@ -641,7 +645,7 @@ namespace Euro2016
             for (int index = 0; index < this.TableLines.Count; index++)
                 this.TableLines[index].Position = index + 1;
         }
-        
+
         /// <summary>Parses the given XmlNode into a new Group object.</summary>
         public static Group Parse(XmlNode node, List<Team> teams)
         {
@@ -653,7 +657,7 @@ namespace Euro2016
                 tableLines.Add(new TableLine(teams.First(t => t.Country.ID.Equals(countryID))));
             return new Group(id, name, tableLines);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>
@@ -685,7 +689,7 @@ namespace Euro2016
             : this(0, 0)
         {
         }
-        
+
         /// <summary>Constructs a new HalfScoreboard object with the given values.</summary>
         public HalfScoreboard(int home, int away)
             : base(home, away)
@@ -695,11 +699,11 @@ namespace Euro2016
         /// <summary>Determines whether the home team has won this half.</summary>
         public bool HomeWin
         { get { return this.Home > this.Away; } }
-        
+
         /// <summary>Determines whether the home teams have drawn in this half.</summary>
         public bool Tie
         { get { return this.Home == this.Away; } }
-        
+
         /// <summary>Determines whether the away team has won this half.</summary>
         public bool AwayWin
         { get { return this.Home < this.Away; } }
@@ -726,7 +730,7 @@ namespace Euro2016
         {
             get { return this.Home + "-" + this.Away; }
         }
-        
+
         /// <summary>Parses the given XmlNode into a new HalfScoreboard object.</summary>
         public static HalfScoreboard Parse(string text)
         {
@@ -779,15 +783,15 @@ namespace Euro2016
         /// <summary>Determines whether the match finished in regular playing time. More specifically, it tests whether there are exactly 2 halves.</summary>
         public bool FinishedInRegularTime
         { get { return this.Halves.Count == 2; } }
-        
+
         /// <summary>Determines whether the match finished in extra playing time. More specifically, it tests whether there are exactly 4 halves.</summary>
         public bool FinishedInExtraTime
         { get { return this.Halves.Count == 4; } }
-        
+
         /// <summary>Determines whether the match finished at the penalty shootout. More specifically, it tests whether there are exactly 5 halves.</summary>
         public bool FinishedAtPenalties
         { get { return this.Halves.Count == 5; } }
-        
+
         /// <summary>Determines whether the match was played. More specifically, it tests if any of the FinishedInRegularTime, FinishedInExtraTime or FinishedAtPenalties properties return true.</summary>
         public bool Played
         { get { return this.FinishedInRegularTime || this.FinishedInExtraTime || this.FinishedAtPenalties; } }
@@ -884,7 +888,7 @@ namespace Euro2016
         /// <summary>Formats the category of the match to make it look nice and clear.</summary>
         public string FormatCategory
         { get { return Utils.FormatMatchCategory(this.Category); } }
-        
+
         /// <summary>Parses the given XmlNode into a new Match object.</summary>
         public static Match Parse(XmlNode node, Database database)
         {
@@ -909,7 +913,7 @@ namespace Euro2016
             MatchScoreboard scoreboard = new MatchScoreboard(halves);
             return new Match(id, category, teamReferences, when, where, scoreboard);
         }
-        
+
         /// <summary>Generates an XmlNode from this object.</summary>
         /// <param name="doc">the XmlDocument used to create the element</param>
         /// <param name="name">the name of the XmlNode to be created</param>

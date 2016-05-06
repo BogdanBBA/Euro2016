@@ -38,7 +38,7 @@ namespace Euro2016
                 favoriteTeamCB.Items.Add(this.FormatTeamForCombobox(team));
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
-        
+
         /// <summary>Refreshes the information for the main form database settings.</summary>
         /// <param name="item">no item needed, pass null</param>
         public override void RefreshInformation(object item)
@@ -47,6 +47,7 @@ namespace Euro2016
             favoriteTeamCB.SelectedIndex = favoriteTeamCB.Items.IndexOf(this.FormatTeamForCombobox(sett.FavoriteTeam));
             showCountryNamesInNativeLanguageChB.Checked = sett.ShowCountryNamesInNativeLanguage;
             showKnockoutPhaseOnStartupChB.Checked = sett.ShowKnockoutStageOnStartup;
+            spamWithWinnerOnStartupChB.Checked = sett.SpamWithWinnerOnStartup;
             showFlagsOnMapChB.Checked = sett.ShowFlagsOnMap;
         }
 
@@ -56,6 +57,7 @@ namespace Euro2016
             sett.FavoriteTeam = this.ParseTeamFromCombobox(favoriteTeamCB.Items[favoriteTeamCB.SelectedIndex] as string);
             sett.ShowCountryNamesInNativeLanguage = showCountryNamesInNativeLanguageChB.Checked;
             sett.ShowKnockoutStageOnStartup = showKnockoutPhaseOnStartupChB.Checked;
+            sett.SpamWithWinnerOnStartup = spamWithWinnerOnStartupChB.Checked;
             sett.ShowFlagsOnMap = showFlagsOnMapChB.Checked;
 
             string saveResult = this.mainForm.Database.SaveDatabase(Paths.DatabaseFile);
@@ -63,8 +65,7 @@ namespace Euro2016
                 MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             this.mainForm.RefreshInformation(null);
-            this.mainForm.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
-            this.Close();
+            this.mainForm.ShowForm<FSettings, object>(null, true);
         }
     }
 }

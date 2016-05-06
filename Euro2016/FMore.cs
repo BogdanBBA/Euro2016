@@ -116,8 +116,7 @@ namespace Euro2016
                     break;
 
                 case CloseButtonLabel:
-                    this.mainForm.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
-                    this.Close();
+                    this.mainForm.ShowForm<FMore, object>(null, true);
                     break;
             }
         }

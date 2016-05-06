@@ -35,6 +35,7 @@
             this.okB = new Euro2016.VisualComponents.MyButton();
             this.showCountryNamesInNativeLanguageChB = new System.Windows.Forms.CheckBox();
             this.showFlagsOnMapChB = new System.Windows.Forms.CheckBox();
+            this.spamWithWinnerOnStartupChB = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // titleLabel1
@@ -93,7 +94,7 @@
             this.okB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okB.DrawBar = true;
             this.okB.Image = null;
-            this.okB.Location = new System.Drawing.Point(163, 275);
+            this.okB.Location = new System.Drawing.Point(165, 305);
             this.okB.Name = "okB";
             this.okB.Size = new System.Drawing.Size(200, 50);
             this.okB.TabIndex = 4;
@@ -117,16 +118,29 @@
             this.showFlagsOnMapChB.AutoSize = true;
             this.showFlagsOnMapChB.BackColor = System.Drawing.Color.Transparent;
             this.showFlagsOnMapChB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showFlagsOnMapChB.Location = new System.Drawing.Point(68, 233);
+            this.showFlagsOnMapChB.Location = new System.Drawing.Point(68, 264);
             this.showFlagsOnMapChB.Name = "showFlagsOnMapChB";
             this.showFlagsOnMapChB.Size = new System.Drawing.Size(162, 25);
             this.showFlagsOnMapChB.TabIndex = 6;
             this.showFlagsOnMapChB.Text = "Show flags on map";
             this.showFlagsOnMapChB.UseVisualStyleBackColor = false;
             // 
+            // checkBox1
+            // 
+            this.spamWithWinnerOnStartupChB.AutoSize = true;
+            this.spamWithWinnerOnStartupChB.BackColor = System.Drawing.Color.Transparent;
+            this.spamWithWinnerOnStartupChB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.spamWithWinnerOnStartupChB.Location = new System.Drawing.Point(68, 233);
+            this.spamWithWinnerOnStartupChB.Name = "checkBox1";
+            this.spamWithWinnerOnStartupChB.Size = new System.Drawing.Size(434, 25);
+            this.spamWithWinnerOnStartupChB.TabIndex = 7;
+            this.spamWithWinnerOnStartupChB.Text = "Flash winner flag on main form on start-up (if final played)";
+            this.spamWithWinnerOnStartupChB.UseVisualStyleBackColor = false;
+            // 
             // FSettings
             // 
-            this.ClientSize = new System.Drawing.Size(544, 345);
+            this.ClientSize = new System.Drawing.Size(544, 376);
+            this.Controls.Add(this.spamWithWinnerOnStartupChB);
             this.Controls.Add(this.showFlagsOnMapChB);
             this.Controls.Add(this.showCountryNamesInNativeLanguageChB);
             this.Controls.Add(this.okB);
@@ -150,6 +164,7 @@
         private VisualComponents.MyButton okB;
         private System.Windows.Forms.CheckBox showCountryNamesInNativeLanguageChB;
         private System.Windows.Forms.CheckBox showFlagsOnMapChB;
+        private System.Windows.Forms.CheckBox spamWithWinnerOnStartupChB;
 
 
     }

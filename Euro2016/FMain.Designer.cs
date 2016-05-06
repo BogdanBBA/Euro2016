@@ -46,8 +46,10 @@
             this.moreB = new Euro2016.VisualComponents.MyButton();
             this.venuesB = new Euro2016.VisualComponents.MyButton();
             this.matchesP = new Euro2016.VisualComponents.MyPanel();
+            this.winnerFlagPB = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.menuP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.winnerFlagPB)).BeginInit();
             this.SuspendLayout();
             // 
             // groupFP
@@ -253,9 +255,22 @@
             this.matchesP.Size = new System.Drawing.Size(168, 439);
             this.matchesP.TabIndex = 0;
             // 
+            // winnerFlagPB
+            // 
+            this.winnerFlagPB.BackColor = System.Drawing.Color.Transparent;
+            this.winnerFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winnerFlagPB.Location = new System.Drawing.Point(260, 211);
+            this.winnerFlagPB.Name = "winnerFlagPB";
+            this.winnerFlagPB.Size = new System.Drawing.Size(100, 50);
+            this.winnerFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.winnerFlagPB.TabIndex = 9;
+            this.winnerFlagPB.TabStop = false;
+            this.winnerFlagPB.Click += new System.EventHandler(this.winnerFlagPB_Click);
+            // 
             // FMain
             // 
             this.ClientSize = new System.Drawing.Size(960, 540);
+            this.Controls.Add(this.winnerFlagPB);
             this.Controls.Add(this.groupFP);
             this.Controls.Add(this.groupEP);
             this.Controls.Add(this.groupDP);
@@ -275,7 +290,9 @@
             this.Resize += new System.EventHandler(this.FMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.menuP.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.winnerFlagPB)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -298,5 +315,6 @@
         private VisualComponents.MyButton matchesB;
         private VisualComponents.MyButton groupsB;
         private VisualComponents.MyButton settingsB;
+        private System.Windows.Forms.PictureBox winnerFlagPB;
     }
 }

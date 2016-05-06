@@ -18,7 +18,7 @@ namespace Euro2016
         public Database Database { get; private set; }
         protected GroupView[] GroupViews { get; private set; }
         protected MatchesView MatchesView { get; private set; }
-        internal KeyValuePair<MyForm, object> OpenFormAndItem { get; set; }
+        protected KeyValuePair<MyForm, object> OpenFormAndItem { get; set; }
 
         public FMain(Database database)
         {
@@ -58,6 +58,18 @@ namespace Euro2016
 
             if (this.Database.Settings.ShowKnockoutStageOnStartup && this.Database.Matches.Count(m => m.IsGroupMatch && !m.Scoreboard.Played) == 0)
                 this.knockoutB_Click(sender, e);
+
+            Match final = this.Database.Matches.GetMatchesBy("KO:1")[0];
+            if (this.Database.Settings.SpamWithWinnerOnStartup && final.Scoreboard.Played)
+            {
+                winnerFlagPB.Image = final.Scoreboard.FullScore.HomeWin ? final.Teams.Home.Country.FlagOriginal : final.Teams.Away.Country.FlagOriginal;
+                winnerFlagPB.Location = new Point(this.Width / 2 - winnerFlagPB.Width / 2, this.Height / 2 - winnerFlagPB.Height / 2);
+            }
+        }
+
+        private void winnerFlagPB_Click(object sender, EventArgs e)
+        {
+            winnerFlagPB.Hide();
         }
 
         /// <summary>Refreshes the matches view and the group views of the main form.</summary>
@@ -70,8 +82,9 @@ namespace Euro2016
         }
 
         /// <summary>Closes any open form if different from the one to show (if same, passes the given argument to it to refresh), and displays the new one.
-        /// Note: only the FMain menu buttons act as on/off switches for forms (that is, opening and closing them), so that is probably the only case you may want to pass closeIfFormTypeIsTheSame argument set to true.
-        /// To clarify, FMain menu buttons show form X if X not shown, or close X if X is shown; however, controls such as MatchRow show form X if X not shown, and refresh X if X is shown.
+        /// Note: only the FMain menu buttons act as on/off switches for forms (that is, opening and closing them), so that is probably the only case you may want to pass closeIfFormTypeIsTheSame argument set to true
+        /// (as well as to close a form, from within, but via FMain.ShowForm). To clarify, FMain menu buttons show form X if X not shown, or close X if X is shown; 
+        /// however, controls such as MatchRow show form X if X not shown, and refresh X if X is shown.
         /// Second note: apparently should remember to set this.mainForm.OpenFormAndItem to null from FSettings, FMore itself and anything created directly or indirectly from FMore.</summary>
         /// <typeparam name="FORM_TYPE">the form class that should be created; must be derived from MyForm (for the constructor with one FMain argument and the RefreshInformation(object) method)</typeparam>
         /// <typeparam name="OBJECT_TYPE">the class of the object that will be passed as argument; if no argument is actually needed, pass any type and a value of null</typeparam>
@@ -79,7 +92,9 @@ namespace Euro2016
         /// <param name="closeIfFormTypeIsTheSame">if set to true (default is false), any currently shown form will be closed even if it is the same type as the new one</param>
         public void ShowForm<FORM_TYPE, OBJECT_TYPE>(OBJECT_TYPE forItem, bool closeIfFormTypeIsTheSame = false) where FORM_TYPE : MyForm
         {
-            // 
+            // hide the winner flag if visible
+            if (winnerFlagPB.Visible)
+                winnerFlagPB.Hide();
 
             // if the form exists and it should be closed if its type is the same as the given type (that is, if the command is passed from the main form menu buttons), close it and be done with it
             if (closeIfFormTypeIsTheSame && this.OpenFormAndItem.Key != null && this.OpenFormAndItem.Key is FORM_TYPE)

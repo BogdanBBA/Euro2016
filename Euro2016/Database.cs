@@ -18,6 +18,7 @@ namespace Euro2016
         public Team FavoriteTeam { get; set; }
         public bool ShowCountryNamesInNativeLanguage { get; set; }
         public bool ShowKnockoutStageOnStartup { get; set; }
+        public bool SpamWithWinnerOnStartup { get; set; }
         public bool ShowFlagsOnMap { get; set; }
 
         /// <summary>Parses the settings from a XmlNode object.</summary>
@@ -35,6 +36,9 @@ namespace Euro2016
 
                 try { this.ShowKnockoutStageOnStartup = bool.Parse(settingsNode.SelectSingleNode("ShowKnockoutStageOnStartup").Attributes["value"].Value); }
                 catch (Exception) { this.ShowKnockoutStageOnStartup = true; }
+
+                try { this.SpamWithWinnerOnStartup = bool.Parse(settingsNode.SelectSingleNode("SpamWithWinnerOnStartup").Attributes["value"].Value); }
+                catch (Exception) { this.SpamWithWinnerOnStartup = true; }
 
                 try { this.ShowFlagsOnMap = bool.Parse(settingsNode.SelectSingleNode("ShowFlagsOnMap").Attributes["value"].Value); }
                 catch (Exception) { this.ShowFlagsOnMap = true; }
@@ -62,6 +66,9 @@ namespace Euro2016
 
                 node = result.AppendChild(doc.CreateElement("ShowKnockoutStageOnStartup"));
                 node.AddAttribute(doc, "value", this.ShowKnockoutStageOnStartup.ToString());
+
+                node = result.AppendChild(doc.CreateElement("SpamWithWinnerOnStartup"));
+                node.AddAttribute(doc, "value", this.SpamWithWinnerOnStartup.ToString());
 
                 node = result.AppendChild(doc.CreateElement("ShowFlagsOnMap"));
                 node.AddAttribute(doc, "value", this.ShowFlagsOnMap.ToString());
@@ -266,7 +273,7 @@ namespace Euro2016
         }
 
         /// <summary>Parses a team reference (in the format 'refGroup:refTeam'; for example, "B:1" or "T:A/C/D") and, if valid, returns the correctly corresponding Team object, or null otherwise</summary>
-        private Team ParseTeamReference(string reference) 
+        private Team ParseTeamReference(string reference)
         {
             if (reference.Contains(':')) // table line reference
             {

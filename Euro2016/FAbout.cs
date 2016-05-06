@@ -30,8 +30,7 @@ namespace Euro2016
 
         private void FAbout_Click(object sender, EventArgs e)
         {
-            this.mainForm.OpenFormAndItem = new KeyValuePair<MyForm, object>(null, null);
-            this.Close();
+            this.mainForm.ShowForm<FAbout, object>(null, true);
         }
     }
 }
