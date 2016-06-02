@@ -63,7 +63,7 @@
             this.infoViewDetail2.TabIndex = 6;
             this.infoViewDetail2.Text = "infoViewDetail2";
             this.infoViewDetail2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.infoViewDetail2.TextDescription = "Information valid as of";
+            this.infoViewDetail2.TextDescription = "Information calculated for";
             this.infoViewDetail2.TextText = "(...first match day)";
             // 
             // coachIVD

@@ -1,559 +1,778 @@
-<PLAYER_DATABASE lastSaved="Tuesday, 3 May 2016, 11:15:38">
+<PLAYER_DATABASE lastSaved="Thursday, 2 June 2016, 18:33:09">
   <CLUBS>
-    <Club ID="XXX" name="DummyClub" countryID="XXX" />
+    <Club ID="001" name="Tottenham Hotspur" countryID="ENG" />
+    <Club ID="002" name="Lyon" countryID="FRA" />
+    <Club ID="003" name="Juventus" countryID="ITA" />
+    <Club ID="004" name="Sevilla" countryID="ESP" />
+    <Club ID="005" name="Leicester City" countryID="ENG" />
+    <Club ID="006" name="Crystal Palace" countryID="ENG" />
+    <Club ID="007" name="Atlético Madrid" countryID="ESP" />
+    <Club ID="008" name="West Ham United" countryID="ENG" />
+    <Club ID="009" name="Arsenal" countryID="ENG" />
+    <Club ID="010" name="Tigres UANL" countryID="MEX" />
+    <Club ID="011" name="Manchester United" countryID="ENG" />
+    <Club ID="012" name="Manchester City" countryID="ENG" />
+    <Club ID="013" name="Paris Saint-Germain" countryID="FRA" />
+    <Club ID="014" name="Marseille" countryID="FRA" />
+    <Club ID="015" name="Roma" countryID="ITA" />
+    <Club ID="016" name="Newcastle United" countryID="ENG" />
+    <Club ID="017" name="Bayern Munich" countryID="GER" />
+    <Club ID="018" name="Rennes" countryID="FRA" />
+    <Club ID="019" name="Watford" countryID="ENG" />
+    <Club ID="020" name="Dinamo Zagreb" countryID="HRV" />
+    <Club ID="021" name="Rayo Vallecano" countryID="ESP" />
+    <Club ID="022" name="Ludogorets Razgrad" countryID="BUL" />
+    <Club ID="023" name="Hapoel Be'er Sheva" countryID="ISR" />
+    <Club ID="024" name="Napoli" countryID="ITA" />
+    <Club ID="025" name="Steaua București" countryID="ROU" />
+    <Club ID="026" name="Astra Giurgiu" countryID="ROU" />
+    <Club ID="027" name="Osmanlıspor" countryID="TUR" />
+    <Club ID="028" name="Fiorentina" countryID="ITA" />
+    <Club ID="029" name="Córdoba" countryID="ESP" />
+    <Club ID="030" name="Dinamo București" countryID="ROU" />
+    <Club ID="031" name="Al-Ittihad" countryID="SAU" />
+    <Club ID="032" name="Gençlerbirliği" countryID="TUR" />
+    <Club ID="033" name="Al-Sailiya" countryID="QAT" />
+    <Club ID="034" name="Pandurii Târgu Jiu" countryID="ROU" />
+    <Club ID="035" name="Lazio" countryID="ITA" />
+    <Club ID="036" name="PAS Giannina" countryID="GRE" />
+    <Club ID="037" name="Nantes" countryID="FRA" />
+    <Club ID="038" name="Lugano" countryID="SUI" />
+    <Club ID="039" name="Qarabağ" countryID="AZE" />
+    <Club ID="040" name="Como" countryID="ITA" />
+    <Club ID="041" name="Pescara" countryID="ITA" />
+    <Club ID="042" name="Vaduz" countryID="LIE" />
+    <Club ID="043" name="Colorado Rapids" countryID="USA" />
+    <Club ID="044" name="Skënderbeu Korçë" countryID="ALB" />
+    <Club ID="045" name="Zürich" countryID="SUI" />
+    <Club ID="046" name="Basel" countryID="SUI" />
+    <Club ID="047" name="1. FC Köln" countryID="GER" />
+    <Club ID="048" name="İstanbul Başakşehir" countryID="TUR" />
+    <Club ID="049" name="Frosinone" countryID="ITA" />
+    <Club ID="050" name="Rijeka" countryID="HRV" />
+    <Club ID="051" name="PAOK" countryID="GRE" />
+    <Club ID="052" name="SC Freiburg" countryID="GER" />
+    <Club ID="053" name="Partizani Tirana" countryID="ALB" />
+    <Club ID="054" name="Borussia Mönchengladbach" countryID="GER" />
+    <Club ID="055" name="Toulouse" countryID="FRA" />
+    <Club ID="056" name="Young Boys" countryID="SUI" />
+    <Club ID="057" name="Mainz 05" countryID="GER" />
+    <Club ID="058" name="Eintracht Frankfurt" countryID="GER" />
+    <Club ID="059" name="FC Augsburg" countryID="GER" />
+    <Club ID="060" name="VfL Wolfsburg" countryID="GER" />
+    <Club ID="061" name="Genoa" countryID="ITA" />
+    <Club ID="062" name="Grasshoppers" countryID="SUI" />
+    <Club ID="063" name="Bayer Leverkusen" countryID="GER" />
+    <Club ID="064" name="Kasımpaşa" countryID="TUR" />
+    <Club ID="065" name="Hamburger SV" countryID="GER" />
+    <Club ID="066" name="Borussia Dortmund" countryID="GER" />
+    <Club ID="067" name="1899 Hoffenheim" countryID="GER" />
+    <Club ID="068" name="Stoke City" countryID="ENG" />
+    <Club ID="069" name="Liverpool" countryID="ENG" />
+    <Club ID="070" name="Chelsea" countryID="ENG" />
+    <Club ID="071" name="Southampton" countryID="ENG" />
+    <Club ID="072" name="Everton" countryID="ENG" />
+    <Club ID="073" name="Burnley" countryID="ENG" />
+    <Club ID="074" name="CSKA Moscow" countryID="RUS" />
+    <Club ID="075" name="Lokomotiv Moscow" countryID="RUS" />
+    <Club ID="076" name="Zenit Saint Petersburg" countryID="RUS" />
+    <Club ID="077" name="Schalke 04" countryID="GER" />
+    <Club ID="078" name="Dynamo Moscow" countryID="RUS" />
+    <Club ID="079" name="Spartak Moscow" countryID="RUS" />
+    <Club ID="080" name="Krasnodar" countryID="RUS" />
+    <Club ID="081" name="Terek Grozny" countryID="RUS" />
+    <Club ID="082" name="Reading" countryID="ENG" />
+    <Club ID="083" name="Swansea City" countryID="WLS" />
+    <Club ID="084" name="West Bromwich Albion" countryID="ENG" />
+    <Club ID="085" name="Real Madrid" countryID="ESP" />
+    <Club ID="086" name="Inverness Caledonian Thistle" countryID="SCO" />
+    <Club ID="087" name="Gillingham" countryID="ENG" />
+    <Club ID="088" name="Wolverhampton Wanderers" countryID="ENG" />
+    <Club ID="089" name="Fulham" countryID="ENG" />
+    <Club ID="090" name="Birmingham City" countryID="ENG" />
+    <Club ID="091" name="Milton Keynes Dons" countryID="ENG" />
+    <Club ID="092" name="Nottingham Forest" countryID="ENG" />
+    <Club ID="093" name="Aberdeen" countryID="SCO" />
+    <Club ID="094" name="Slovan Bratislava" countryID="SVK" />
+    <Club ID="095" name="Hertha BSC" countryID="GER" />
+    <Club ID="096" name="Baumit Jablonec" countryID="CZE" />
+    <Club ID="097" name="Al-Gharafa" countryID="QAT" />
+    <Club ID="098" name="Legia Warsaw" countryID="POL" />
+    <Club ID="099" name="Ferencváros" countryID="HUN" />
+    <Club ID="100" name="Bursaspor" countryID="TUR" />
+    <Club ID="101" name="Willem II" countryID="NED" />
+    <Club ID="102" name="Rapid Wien" countryID="AUT" />
+    <Club ID="103" name="Viktoria Plzeň" countryID="CZE" />
+    <Club ID="104" name="Sampdoria" countryID="ITA" />
+    <Club ID="105" name="Milan" countryID="ITA" />
+    <Club ID="106" name="Žilina" countryID="SVK" />
+    <Club ID="107" name="Valencia" countryID="ESP" />
+    <Club ID="108" name="Galatasaray" countryID="TUR" />
+    <Club ID="109" name="Barcelona" countryID="ESP" />
+    <Club ID="110" name="Beşiktaş" countryID="TUR" />
+    <Club ID="111" name="Amkar Perm" countryID="RUS" />
+    <Club ID="112" name="Dynamo Kyiv" countryID="UKR" />
+    <Club ID="113" name="Kairat Almaty" countryID="KAZ" />
+    <Club ID="114" name="Shakhtar Donetsk" countryID="UKR" />
+    <Club ID="115" name="Dnipro Dnipropetrovsk" countryID="UKR" />
+    <Club ID="116" name="Kuban Krasnodar" countryID="RUS" />
+    <Club ID="117" name="Zorya Luhansk" countryID="UKR" />
+    <Club ID="118" name="Ufa" countryID="RUS" />
+    <Club ID="119" name="Palermo" countryID="ITA" />
+    <Club ID="120" name="Wisła Kraków" countryID="POL" />
+    <Club ID="121" name="Ajax" countryID="NED" />
+    <Club ID="122" name="Lech Poznań" countryID="POL" />
+    <Club ID="123" name="Bournemouth" countryID="ENG" />
+    <Club ID="124" name="Ruch Chorzów" countryID="POL" />
+    <Club ID="125" name="Lechia Gdańsk" countryID="POL" />
+    <Club ID="126" name="Torino" countryID="ITA" />
+    <Club ID="127" name="Cagliari" countryID="ITA" />
+    <Club ID="128" name="Empoli" countryID="ITA" />
+    <Club ID="129" name="Cracovia" countryID="POL" />
+    <Club ID="130" name="Zagłębie Lubin" countryID="POL" />
+    <Club ID="131" name="Hamilton Academical" countryID="SCO" />
+    <Club ID="132" name="Fleetwood Town" countryID="ENG" />
+    <Club ID="133" name="Millwall" countryID="ENG" />
+    <Club ID="134" name="Derby County" countryID="ENG" />
+    <Club ID="135" name="Wigan Athletic" countryID="ENG" />
+    <Club ID="136" name="Queens Park Rangers" countryID="ENG" />
+    <Club ID="137" name="Notts County" countryID="ENG" />
+    <Club ID="138" name="Blackburn Rovers" countryID="ENG" />
+    <Club ID="139" name="Leeds United" countryID="ENG" />
+    <Club ID="140" name="Doncaster Rovers" countryID="ENG" />
+    <Club ID="141" name="Melbourne City" countryID="AUS" />
+    <Club ID="142" name="Kilmarnock" countryID="SCO" />
+    <Club ID="143" name="St Johnstone" countryID="SCO" />
+    <Club ID="144" name="Porto" countryID="POR" />
+    <Club ID="145" name="Athletic Bilbao" countryID="ESP" />
+    <Club ID="146" name="Villarreal" countryID="ESP" />
+    <Club ID="147" name="Celta Vigo" countryID="ESP" />
+    <Club ID="148" name="Fenerbahçe" countryID="TUR" />
+    <Club ID="149" name="Werder Bremen" countryID="GER" />
+    <Club ID="150" name="Sparta Prague" countryID="CZE" />
+    <Club ID="151" name="Sheffield Wednesday" countryID="ENG" />
+    <Club ID="152" name="Slavia Prague" countryID="CZE" />
+    <Club ID="153" name="Bordeaux" countryID="FRA" />
+    <Club ID="154" name="Brighton" countryID="ENG" />
+    <Club ID="155" name="Slovan Liberec" countryID="CZE" />
+    <Club ID="156" name="Trabzonspor" countryID="TUR" />
+    <Club ID="157" name="Beijing Guoan" countryID="CHI" />
+    <Club ID="158" name="1. FSV Mainz 05" countryID="GER" />
+    <Club ID="159" name="FC Nordsjælland" countryID="DEN" />
+    <Club ID="160" name="Sassuolo" countryID="ITA" />
+    <Club ID="161" name="Internazionale" countryID="ITA" />
+    <Club ID="162" name="Hajduk Split" countryID="HRV" />
+    <Club ID="163" name="Málaga" countryID="ESP" />
+    <Club ID="164" name="Monaco" countryID="FRA" />
+    <Club ID="165" name="Mechelen" countryID="BEL" />
+    <Club ID="166" name="Club Brugge" countryID="BEL" />
+    <Club ID="167" name="Genk" countryID="BEL" />
+    <Club ID="168" name="Oostende" countryID="BEL" />
+    <Club ID="169" name="Montreal Impact" countryID="CAN" />
+    <Club ID="170" name="Bologna" countryID="ITA" />
+    <Club ID="171" name="Aston Villa" countryID="ENG" />
+    <Club ID="172" name="Sunderland" countryID="ENG" />
+    <Club ID="173" name="LA Galaxy" countryID="USA" />
+    <Club ID="174" name="Hull City" countryID="ENG" />
+    <Club ID="175" name="Norwich City" countryID="ENG" />
+    <Club ID="176" name="Ipswich Town" countryID="ENG" />
+    <Club ID="177" name="Celtic" countryID="SCO" />
+    <Club ID="178" name="Copenhagen" countryID="DEN" />
+    <Club ID="179" name="RB Leipzig" countryID="GER" />
+    <Club ID="180" name="Grasshopper" countryID="SUI" />
+    <Club ID="181" name="Panathinaikos" countryID="GRE" />
+    <Club ID="182" name="Benfica" countryID="POR" />
+    <Club ID="183" name="Malmö FF" countryID="SWE" />
+    <Club ID="184" name="IFK Norrköping" countryID="SWE" />
+    <Club ID="185" name="Olympiacos" countryID="GRE" />
+    <Club ID="186" name="AIK" countryID="SWE" />
+    <Club ID="187" name="Sporting CP" countryID="POR" />
+    <Club ID="188" name="Lorient" countryID="FRA" />
+    <Club ID="189" name="Lille" countryID="FRA" />
+    <Club ID="190" name="Wolfsburg" countryID="GER" />
+    <Club ID="191" name="Braga" countryID="POR" />
+    <Club ID="192" name="Bodø/Glimt" countryID="NOR" />
+    <Club ID="193" name="Hammarby IF" countryID="SWE" />
+    <Club ID="194" name="IFK Göteborg" countryID="SWE" />
+    <Club ID="195" name="Lokeren" countryID="BEL" />
+    <Club ID="196" name="Charlton Athletic" countryID="ENG" />
+    <Club ID="197" name="Augsburg" countryID="GER" />
+    <Club ID="198" name="Sandefjord" countryID="NOR" />
+    <Club ID="199" name="Kaiserslautern" countryID="GER" />
+    <Club ID="200" name="GIF Sundsvall" countryID="SWE" />
+    <Club ID="201" name="Cardiff City" countryID="WLS" />
+    <Club ID="202" name="AGF" countryID="DEN" />
+    <Club ID="203" name="Cesena" countryID="ITA" />
+    <Club ID="204" name="Udinese" countryID="ITA" />
+    <Club ID="205" name="Molde FK" countryID="NOR" />
+    <Club ID="206" name="OB" countryID="DEN" />
+    <Club ID="207" name="Wien" countryID="AUT" />
+    <Club ID="208" name="Darmstadt 98" countryID="GER" />
+    <Club ID="209" name="1860 München" countryID="GER" />
+    <Club ID="210" name="VfB Stuttgart" countryID="GER" />
+    <Club ID="211" name="Ingolstadt 04" countryID="GER" />
+    <Club ID="212" name="Luzern" countryID="SUI" />
+    <Club ID="213" name="Haladás" countryID="HUN" />
+    <Club ID="214" name="Videoton" countryID="HUN" />
+    <Club ID="215" name="Debrecen" countryID="HUN" />
+    <Club ID="216" name="Puskás Akadémia" countryID="HUN" />
+    <Club ID="217" name="Diósgyőri VTK" countryID="HUN" />
+    <Club ID="218" name="Hannover 96" countryID="GER" />
+    <Club ID="219" name="1. FC Nürnberg" countryID="GER" />
+    <Club ID="220" name="MTK Budapest" countryID="HUN" />
   </CLUBS>
   <PLAYERS>
-    <Player ID="1" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="87" goals="12" countryID="FRA" clubID="XXX" />
-    <Player ID="2" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="87" goals="18" countryID="FRA" clubID="XXX" />
-    <Player ID="3" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="51" goals="14" countryID="FRA" clubID="XXX" />
-    <Player ID="4" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="54" goals="16" countryID="FRA" clubID="XXX" />
-    <Player ID="5" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="16" goals="16" countryID="FRA" clubID="XXX" />
-    <Player ID="6" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="1" goals="11" countryID="FRA" clubID="XXX" />
-    <Player ID="7" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="8" goals="3" countryID="FRA" clubID="XXX" />
-    <Player ID="8" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="12" goals="2" countryID="FRA" clubID="XXX" />
-    <Player ID="9" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="38" goals="14" countryID="FRA" clubID="XXX" />
-    <Player ID="10" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="60" goals="15" countryID="FRA" clubID="XXX" />
-    <Player ID="11" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="27" goals="6" countryID="FRA" clubID="XXX" />
-    <Player ID="12" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="22" goals="5" countryID="FRA" clubID="XXX" />
-    <Player ID="13" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="99" goals="5" countryID="FRA" clubID="XXX" />
-    <Player ID="14" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="69" goals="15" countryID="FRA" clubID="XXX" />
-    <Player ID="15" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="92" goals="10" countryID="FRA" clubID="XXX" />
-    <Player ID="16" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="24" goals="17" countryID="FRA" clubID="XXX" />
-    <Player ID="17" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="98" goals="19" countryID="FRA" clubID="XXX" />
-    <Player ID="18" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="79" goals="9" countryID="FRA" clubID="XXX" />
-    <Player ID="19" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="52" goals="1" countryID="FRA" clubID="XXX" />
-    <Player ID="20" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="32" goals="9" countryID="FRA" clubID="XXX" />
-    <Player ID="21" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="19" goals="9" countryID="FRA" clubID="XXX" />
-    <Player ID="22" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="18" goals="0" countryID="FRA" clubID="XXX" />
-    <Player ID="23" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="79" goals="9" countryID="FRA" clubID="XXX" />
-    <Player ID="24" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="58" goals="5" countryID="ROU" clubID="XXX" />
-    <Player ID="25" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="10" goals="13" countryID="ROU" clubID="XXX" />
-    <Player ID="26" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="9" goals="2" countryID="ROU" clubID="XXX" />
-    <Player ID="27" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="74" goals="12" countryID="ROU" clubID="XXX" />
-    <Player ID="28" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="14" goals="10" countryID="ROU" clubID="XXX" />
-    <Player ID="29" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="39" goals="11" countryID="ROU" clubID="XXX" />
-    <Player ID="30" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="93" goals="4" countryID="ROU" clubID="XXX" />
-    <Player ID="31" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="3" goals="15" countryID="ROU" clubID="XXX" />
-    <Player ID="32" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="92" goals="13" countryID="ROU" clubID="XXX" />
-    <Player ID="33" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="55" goals="3" countryID="ROU" clubID="XXX" />
-    <Player ID="34" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="56" goals="2" countryID="ROU" clubID="XXX" />
-    <Player ID="35" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="36" goals="13" countryID="ROU" clubID="XXX" />
-    <Player ID="36" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="61" goals="6" countryID="ROU" clubID="XXX" />
-    <Player ID="37" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="40" goals="2" countryID="ROU" clubID="XXX" />
-    <Player ID="38" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="59" goals="16" countryID="ROU" clubID="XXX" />
-    <Player ID="39" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="15" goals="3" countryID="ROU" clubID="XXX" />
-    <Player ID="40" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="49" goals="10" countryID="ROU" clubID="XXX" />
-    <Player ID="41" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="70" goals="8" countryID="ROU" clubID="XXX" />
-    <Player ID="42" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="66" goals="4" countryID="ROU" clubID="XXX" />
-    <Player ID="43" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="42" goals="2" countryID="ROU" clubID="XXX" />
-    <Player ID="44" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="11" goals="7" countryID="ROU" clubID="XXX" />
-    <Player ID="45" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="81" goals="4" countryID="ROU" clubID="XXX" />
-    <Player ID="46" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="6" goals="18" countryID="ROU" clubID="XXX" />
-    <Player ID="47" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="14" goals="1" countryID="ALB" clubID="XXX" />
-    <Player ID="48" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="42" goals="8" countryID="ALB" clubID="XXX" />
-    <Player ID="49" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="54" goals="10" countryID="ALB" clubID="XXX" />
-    <Player ID="50" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="48" goals="12" countryID="ALB" clubID="XXX" />
-    <Player ID="51" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="88" goals="9" countryID="ALB" clubID="XXX" />
-    <Player ID="52" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="92" goals="8" countryID="ALB" clubID="XXX" />
-    <Player ID="53" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="5" goals="15" countryID="ALB" clubID="XXX" />
-    <Player ID="54" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="70" goals="12" countryID="ALB" clubID="XXX" />
-    <Player ID="55" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="3" goals="6" countryID="ALB" clubID="XXX" />
-    <Player ID="56" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="39" goals="4" countryID="ALB" clubID="XXX" />
-    <Player ID="57" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="9" goals="7" countryID="ALB" clubID="XXX" />
-    <Player ID="58" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="51" goals="12" countryID="ALB" clubID="XXX" />
-    <Player ID="59" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="10" goals="13" countryID="ALB" clubID="XXX" />
-    <Player ID="60" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="22" goals="8" countryID="ALB" clubID="XXX" />
-    <Player ID="61" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="4" goals="4" countryID="ALB" clubID="XXX" />
-    <Player ID="62" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="31" goals="2" countryID="ALB" clubID="XXX" />
-    <Player ID="63" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="59" goals="13" countryID="ALB" clubID="XXX" />
-    <Player ID="64" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="16" goals="6" countryID="ALB" clubID="XXX" />
-    <Player ID="65" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="71" goals="3" countryID="ALB" clubID="XXX" />
-    <Player ID="66" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="27" goals="12" countryID="ALB" clubID="XXX" />
-    <Player ID="67" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="69" goals="17" countryID="ALB" clubID="XXX" />
-    <Player ID="68" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="66" goals="5" countryID="ALB" clubID="XXX" />
-    <Player ID="69" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="48" goals="4" countryID="ALB" clubID="XXX" />
-    <Player ID="70" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="18" goals="12" countryID="SUI" clubID="XXX" />
-    <Player ID="71" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="42" goals="10" countryID="SUI" clubID="XXX" />
-    <Player ID="72" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="32" goals="9" countryID="SUI" clubID="XXX" />
-    <Player ID="73" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="84" goals="17" countryID="SUI" clubID="XXX" />
-    <Player ID="74" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="84" goals="14" countryID="SUI" clubID="XXX" />
-    <Player ID="75" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="57" goals="15" countryID="SUI" clubID="XXX" />
-    <Player ID="76" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="31" goals="17" countryID="SUI" clubID="XXX" />
-    <Player ID="77" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="30" goals="1" countryID="SUI" clubID="XXX" />
-    <Player ID="78" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="59" goals="13" countryID="SUI" clubID="XXX" />
-    <Player ID="79" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="13" goals="16" countryID="SUI" clubID="XXX" />
-    <Player ID="80" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="85" goals="7" countryID="SUI" clubID="XXX" />
-    <Player ID="81" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="62" goals="7" countryID="SUI" clubID="XXX" />
-    <Player ID="82" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="88" goals="17" countryID="SUI" clubID="XXX" />
-    <Player ID="83" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="5" goals="15" countryID="SUI" clubID="XXX" />
-    <Player ID="84" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="52" goals="4" countryID="SUI" clubID="XXX" />
-    <Player ID="85" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="73" goals="5" countryID="SUI" clubID="XXX" />
-    <Player ID="86" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="14" goals="17" countryID="SUI" clubID="XXX" />
-    <Player ID="87" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="48" goals="11" countryID="SUI" clubID="XXX" />
-    <Player ID="88" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="0" goals="10" countryID="SUI" clubID="XXX" />
-    <Player ID="89" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="88" goals="16" countryID="SUI" clubID="XXX" />
-    <Player ID="90" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="27" goals="14" countryID="SUI" clubID="XXX" />
-    <Player ID="91" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="84" goals="8" countryID="SUI" clubID="XXX" />
-    <Player ID="92" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="74" goals="18" countryID="SUI" clubID="XXX" />
-    <Player ID="93" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="85" goals="8" countryID="ENG" clubID="XXX" />
-    <Player ID="94" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="31" goals="12" countryID="ENG" clubID="XXX" />
-    <Player ID="95" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="25" goals="19" countryID="ENG" clubID="XXX" />
-    <Player ID="96" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="12" goals="13" countryID="ENG" clubID="XXX" />
-    <Player ID="97" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="37" goals="16" countryID="ENG" clubID="XXX" />
-    <Player ID="98" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="1" goals="0" countryID="ENG" clubID="XXX" />
-    <Player ID="99" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="62" goals="9" countryID="ENG" clubID="XXX" />
-    <Player ID="100" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="42" goals="1" countryID="ENG" clubID="XXX" />
-    <Player ID="101" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="32" goals="11" countryID="ENG" clubID="XXX" />
-    <Player ID="102" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="1" goals="6" countryID="ENG" clubID="XXX" />
-    <Player ID="103" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="65" goals="8" countryID="ENG" clubID="XXX" />
-    <Player ID="104" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="37" goals="14" countryID="ENG" clubID="XXX" />
-    <Player ID="105" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="5" goals="1" countryID="ENG" clubID="XXX" />
-    <Player ID="106" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="79" goals="6" countryID="ENG" clubID="XXX" />
-    <Player ID="107" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="53" goals="2" countryID="ENG" clubID="XXX" />
-    <Player ID="108" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="53" goals="4" countryID="ENG" clubID="XXX" />
-    <Player ID="109" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="65" goals="19" countryID="ENG" clubID="XXX" />
-    <Player ID="110" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="0" goals="12" countryID="ENG" clubID="XXX" />
-    <Player ID="111" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="46" goals="17" countryID="ENG" clubID="XXX" />
-    <Player ID="112" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="98" goals="14" countryID="ENG" clubID="XXX" />
-    <Player ID="113" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="14" goals="9" countryID="ENG" clubID="XXX" />
-    <Player ID="114" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="51" goals="13" countryID="ENG" clubID="XXX" />
-    <Player ID="115" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="56" goals="19" countryID="ENG" clubID="XXX" />
-    <Player ID="116" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="90" goals="8" countryID="RUS" clubID="XXX" />
-    <Player ID="117" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="40" goals="3" countryID="RUS" clubID="XXX" />
-    <Player ID="118" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="41" goals="4" countryID="RUS" clubID="XXX" />
-    <Player ID="119" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="39" goals="8" countryID="RUS" clubID="XXX" />
-    <Player ID="120" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="26" goals="8" countryID="RUS" clubID="XXX" />
-    <Player ID="121" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="3" goals="11" countryID="RUS" clubID="XXX" />
-    <Player ID="122" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="57" goals="3" countryID="RUS" clubID="XXX" />
-    <Player ID="123" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="19" goals="16" countryID="RUS" clubID="XXX" />
-    <Player ID="124" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="14" goals="5" countryID="RUS" clubID="XXX" />
-    <Player ID="125" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="26" goals="16" countryID="RUS" clubID="XXX" />
-    <Player ID="126" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="38" goals="13" countryID="RUS" clubID="XXX" />
-    <Player ID="127" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="45" goals="15" countryID="RUS" clubID="XXX" />
-    <Player ID="128" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="60" goals="8" countryID="RUS" clubID="XXX" />
-    <Player ID="129" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="60" goals="5" countryID="RUS" clubID="XXX" />
-    <Player ID="130" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="16" goals="3" countryID="RUS" clubID="XXX" />
-    <Player ID="131" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="91" goals="13" countryID="RUS" clubID="XXX" />
-    <Player ID="132" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="15" goals="1" countryID="RUS" clubID="XXX" />
-    <Player ID="133" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="15" goals="7" countryID="RUS" clubID="XXX" />
-    <Player ID="134" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="89" goals="6" countryID="RUS" clubID="XXX" />
-    <Player ID="135" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="68" goals="5" countryID="RUS" clubID="XXX" />
-    <Player ID="136" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="80" goals="4" countryID="RUS" clubID="XXX" />
-    <Player ID="137" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="70" goals="11" countryID="RUS" clubID="XXX" />
-    <Player ID="138" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="60" goals="17" countryID="RUS" clubID="XXX" />
-    <Player ID="139" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="31" goals="15" countryID="WLS" clubID="XXX" />
-    <Player ID="140" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="54" goals="6" countryID="WLS" clubID="XXX" />
-    <Player ID="141" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="32" goals="5" countryID="WLS" clubID="XXX" />
-    <Player ID="142" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="41" goals="14" countryID="WLS" clubID="XXX" />
-    <Player ID="143" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="59" goals="5" countryID="WLS" clubID="XXX" />
-    <Player ID="144" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="95" goals="12" countryID="WLS" clubID="XXX" />
-    <Player ID="145" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="59" goals="19" countryID="WLS" clubID="XXX" />
-    <Player ID="146" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="63" goals="2" countryID="WLS" clubID="XXX" />
-    <Player ID="147" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="26" goals="1" countryID="WLS" clubID="XXX" />
-    <Player ID="148" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="50" goals="6" countryID="WLS" clubID="XXX" />
-    <Player ID="149" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="43" goals="9" countryID="WLS" clubID="XXX" />
-    <Player ID="150" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="2" goals="16" countryID="WLS" clubID="XXX" />
-    <Player ID="151" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="92" goals="16" countryID="WLS" clubID="XXX" />
-    <Player ID="152" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="57" goals="19" countryID="WLS" clubID="XXX" />
-    <Player ID="153" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="0" goals="3" countryID="WLS" clubID="XXX" />
-    <Player ID="154" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="95" goals="17" countryID="WLS" clubID="XXX" />
-    <Player ID="155" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="17" goals="14" countryID="WLS" clubID="XXX" />
-    <Player ID="156" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="10" goals="16" countryID="WLS" clubID="XXX" />
-    <Player ID="157" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="72" goals="16" countryID="WLS" clubID="XXX" />
-    <Player ID="158" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="86" goals="13" countryID="WLS" clubID="XXX" />
-    <Player ID="159" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="28" goals="8" countryID="WLS" clubID="XXX" />
-    <Player ID="160" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="48" goals="18" countryID="WLS" clubID="XXX" />
-    <Player ID="161" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="41" goals="5" countryID="WLS" clubID="XXX" />
-    <Player ID="162" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="74" goals="13" countryID="SVK" clubID="XXX" />
-    <Player ID="163" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="65" goals="13" countryID="SVK" clubID="XXX" />
-    <Player ID="164" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="95" goals="12" countryID="SVK" clubID="XXX" />
-    <Player ID="165" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="7" goals="5" countryID="SVK" clubID="XXX" />
-    <Player ID="166" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="43" goals="16" countryID="SVK" clubID="XXX" />
-    <Player ID="167" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="76" goals="14" countryID="SVK" clubID="XXX" />
-    <Player ID="168" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="39" goals="10" countryID="SVK" clubID="XXX" />
-    <Player ID="169" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="67" goals="8" countryID="SVK" clubID="XXX" />
-    <Player ID="170" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="74" goals="8" countryID="SVK" clubID="XXX" />
-    <Player ID="171" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="29" goals="1" countryID="SVK" clubID="XXX" />
-    <Player ID="172" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="44" goals="17" countryID="SVK" clubID="XXX" />
-    <Player ID="173" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="88" goals="16" countryID="SVK" clubID="XXX" />
-    <Player ID="174" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="39" goals="8" countryID="SVK" clubID="XXX" />
-    <Player ID="175" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="21" goals="16" countryID="SVK" clubID="XXX" />
-    <Player ID="176" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="6" goals="0" countryID="SVK" clubID="XXX" />
-    <Player ID="177" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="0" goals="2" countryID="SVK" clubID="XXX" />
-    <Player ID="178" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="40" goals="13" countryID="SVK" clubID="XXX" />
-    <Player ID="179" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="6" goals="17" countryID="SVK" clubID="XXX" />
-    <Player ID="180" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="31" goals="6" countryID="SVK" clubID="XXX" />
-    <Player ID="181" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="21" goals="6" countryID="SVK" clubID="XXX" />
-    <Player ID="182" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="79" goals="18" countryID="SVK" clubID="XXX" />
-    <Player ID="183" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="29" goals="5" countryID="SVK" clubID="XXX" />
-    <Player ID="184" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="4" goals="19" countryID="SVK" clubID="XXX" />
-    <Player ID="185" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="45" goals="7" countryID="GER" clubID="XXX" />
-    <Player ID="186" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="98" goals="16" countryID="GER" clubID="XXX" />
-    <Player ID="187" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="66" goals="1" countryID="GER" clubID="XXX" />
-    <Player ID="188" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="61" goals="6" countryID="GER" clubID="XXX" />
-    <Player ID="189" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="82" goals="17" countryID="GER" clubID="XXX" />
-    <Player ID="190" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="81" goals="16" countryID="GER" clubID="XXX" />
-    <Player ID="191" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="28" goals="10" countryID="GER" clubID="XXX" />
-    <Player ID="192" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="40" goals="4" countryID="GER" clubID="XXX" />
-    <Player ID="193" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="20" goals="8" countryID="GER" clubID="XXX" />
-    <Player ID="194" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="81" goals="12" countryID="GER" clubID="XXX" />
-    <Player ID="195" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="32" goals="14" countryID="GER" clubID="XXX" />
-    <Player ID="196" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="44" goals="16" countryID="GER" clubID="XXX" />
-    <Player ID="197" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="12" goals="8" countryID="GER" clubID="XXX" />
-    <Player ID="198" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="21" goals="19" countryID="GER" clubID="XXX" />
-    <Player ID="199" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="28" goals="10" countryID="GER" clubID="XXX" />
-    <Player ID="200" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="55" goals="11" countryID="GER" clubID="XXX" />
-    <Player ID="201" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="78" goals="8" countryID="GER" clubID="XXX" />
-    <Player ID="202" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="95" goals="17" countryID="GER" clubID="XXX" />
-    <Player ID="203" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="84" goals="4" countryID="GER" clubID="XXX" />
-    <Player ID="204" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="35" goals="18" countryID="GER" clubID="XXX" />
-    <Player ID="205" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="51" goals="1" countryID="GER" clubID="XXX" />
-    <Player ID="206" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="82" goals="3" countryID="GER" clubID="XXX" />
-    <Player ID="207" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="6" goals="9" countryID="GER" clubID="XXX" />
-    <Player ID="208" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="3" goals="13" countryID="UKR" clubID="XXX" />
-    <Player ID="209" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="93" goals="11" countryID="UKR" clubID="XXX" />
-    <Player ID="210" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="70" goals="17" countryID="UKR" clubID="XXX" />
-    <Player ID="211" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="47" goals="7" countryID="UKR" clubID="XXX" />
-    <Player ID="212" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="67" goals="14" countryID="UKR" clubID="XXX" />
-    <Player ID="213" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="91" goals="3" countryID="UKR" clubID="XXX" />
-    <Player ID="214" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="72" goals="4" countryID="UKR" clubID="XXX" />
-    <Player ID="215" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="84" goals="13" countryID="UKR" clubID="XXX" />
-    <Player ID="216" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="4" goals="5" countryID="UKR" clubID="XXX" />
-    <Player ID="217" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="33" goals="4" countryID="UKR" clubID="XXX" />
-    <Player ID="218" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="5" goals="17" countryID="UKR" clubID="XXX" />
-    <Player ID="219" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="58" goals="10" countryID="UKR" clubID="XXX" />
-    <Player ID="220" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="39" goals="19" countryID="UKR" clubID="XXX" />
-    <Player ID="221" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="6" goals="17" countryID="UKR" clubID="XXX" />
-    <Player ID="222" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="13" goals="5" countryID="UKR" clubID="XXX" />
-    <Player ID="223" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="91" goals="5" countryID="UKR" clubID="XXX" />
-    <Player ID="224" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="73" goals="12" countryID="UKR" clubID="XXX" />
-    <Player ID="225" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="38" goals="10" countryID="UKR" clubID="XXX" />
-    <Player ID="226" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="2" goals="14" countryID="UKR" clubID="XXX" />
-    <Player ID="227" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="83" goals="13" countryID="UKR" clubID="XXX" />
-    <Player ID="228" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="12" goals="7" countryID="UKR" clubID="XXX" />
-    <Player ID="229" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="73" goals="4" countryID="UKR" clubID="XXX" />
-    <Player ID="230" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="94" goals="13" countryID="UKR" clubID="XXX" />
-    <Player ID="231" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="49" goals="2" countryID="POL" clubID="XXX" />
-    <Player ID="232" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="9" goals="17" countryID="POL" clubID="XXX" />
-    <Player ID="233" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="2" goals="10" countryID="POL" clubID="XXX" />
-    <Player ID="234" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="84" goals="17" countryID="POL" clubID="XXX" />
-    <Player ID="235" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="42" goals="3" countryID="POL" clubID="XXX" />
-    <Player ID="236" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="8" goals="7" countryID="POL" clubID="XXX" />
-    <Player ID="237" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="15" goals="14" countryID="POL" clubID="XXX" />
-    <Player ID="238" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="82" goals="11" countryID="POL" clubID="XXX" />
-    <Player ID="239" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="25" goals="8" countryID="POL" clubID="XXX" />
-    <Player ID="240" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="80" goals="12" countryID="POL" clubID="XXX" />
-    <Player ID="241" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="44" goals="1" countryID="POL" clubID="XXX" />
-    <Player ID="242" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="85" goals="6" countryID="POL" clubID="XXX" />
-    <Player ID="243" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="63" goals="6" countryID="POL" clubID="XXX" />
-    <Player ID="244" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="45" goals="13" countryID="POL" clubID="XXX" />
-    <Player ID="245" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="8" goals="13" countryID="POL" clubID="XXX" />
-    <Player ID="246" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="14" goals="6" countryID="POL" clubID="XXX" />
-    <Player ID="247" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="58" goals="14" countryID="POL" clubID="XXX" />
-    <Player ID="248" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="49" goals="18" countryID="POL" clubID="XXX" />
-    <Player ID="249" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="77" goals="5" countryID="POL" clubID="XXX" />
-    <Player ID="250" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="22" goals="7" countryID="POL" clubID="XXX" />
-    <Player ID="251" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="41" goals="17" countryID="POL" clubID="XXX" />
-    <Player ID="252" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="21" goals="4" countryID="POL" clubID="XXX" />
-    <Player ID="253" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="45" goals="12" countryID="POL" clubID="XXX" />
-    <Player ID="254" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="57" goals="2" countryID="NIR" clubID="XXX" />
-    <Player ID="255" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="85" goals="10" countryID="NIR" clubID="XXX" />
-    <Player ID="256" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="13" goals="6" countryID="NIR" clubID="XXX" />
-    <Player ID="257" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="43" goals="6" countryID="NIR" clubID="XXX" />
-    <Player ID="258" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="21" goals="8" countryID="NIR" clubID="XXX" />
-    <Player ID="259" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="25" goals="15" countryID="NIR" clubID="XXX" />
-    <Player ID="260" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="22" goals="14" countryID="NIR" clubID="XXX" />
-    <Player ID="261" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="7" goals="3" countryID="NIR" clubID="XXX" />
-    <Player ID="262" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="76" goals="15" countryID="NIR" clubID="XXX" />
-    <Player ID="263" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="0" goals="14" countryID="NIR" clubID="XXX" />
-    <Player ID="264" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="80" goals="8" countryID="NIR" clubID="XXX" />
-    <Player ID="265" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="22" goals="17" countryID="NIR" clubID="XXX" />
-    <Player ID="266" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="82" goals="19" countryID="NIR" clubID="XXX" />
-    <Player ID="267" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="19" goals="8" countryID="NIR" clubID="XXX" />
-    <Player ID="268" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="22" goals="11" countryID="NIR" clubID="XXX" />
-    <Player ID="269" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="87" goals="12" countryID="NIR" clubID="XXX" />
-    <Player ID="270" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="84" goals="0" countryID="NIR" clubID="XXX" />
-    <Player ID="271" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="73" goals="6" countryID="NIR" clubID="XXX" />
-    <Player ID="272" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="80" goals="11" countryID="NIR" clubID="XXX" />
-    <Player ID="273" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="53" goals="16" countryID="NIR" clubID="XXX" />
-    <Player ID="274" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="90" goals="5" countryID="NIR" clubID="XXX" />
-    <Player ID="275" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="51" goals="1" countryID="NIR" clubID="XXX" />
-    <Player ID="276" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="69" goals="19" countryID="NIR" clubID="XXX" />
-    <Player ID="277" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="5" goals="10" countryID="ESP" clubID="XXX" />
-    <Player ID="278" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="30" goals="4" countryID="ESP" clubID="XXX" />
-    <Player ID="279" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="11" goals="8" countryID="ESP" clubID="XXX" />
-    <Player ID="280" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="22" goals="14" countryID="ESP" clubID="XXX" />
-    <Player ID="281" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="81" goals="2" countryID="ESP" clubID="XXX" />
-    <Player ID="282" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="89" goals="19" countryID="ESP" clubID="XXX" />
-    <Player ID="283" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="70" goals="3" countryID="ESP" clubID="XXX" />
-    <Player ID="284" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="11" goals="0" countryID="ESP" clubID="XXX" />
-    <Player ID="285" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="7" goals="13" countryID="ESP" clubID="XXX" />
-    <Player ID="286" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="53" goals="12" countryID="ESP" clubID="XXX" />
-    <Player ID="287" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="95" goals="4" countryID="ESP" clubID="XXX" />
-    <Player ID="288" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="98" goals="14" countryID="ESP" clubID="XXX" />
-    <Player ID="289" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="38" goals="4" countryID="ESP" clubID="XXX" />
-    <Player ID="290" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="23" goals="3" countryID="ESP" clubID="XXX" />
-    <Player ID="291" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="83" goals="10" countryID="ESP" clubID="XXX" />
-    <Player ID="292" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="90" goals="2" countryID="ESP" clubID="XXX" />
-    <Player ID="293" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="17" goals="17" countryID="ESP" clubID="XXX" />
-    <Player ID="294" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="92" goals="13" countryID="ESP" clubID="XXX" />
-    <Player ID="295" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="11" goals="19" countryID="ESP" clubID="XXX" />
-    <Player ID="296" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="44" goals="8" countryID="ESP" clubID="XXX" />
-    <Player ID="297" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="40" goals="2" countryID="ESP" clubID="XXX" />
-    <Player ID="298" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="19" goals="11" countryID="ESP" clubID="XXX" />
-    <Player ID="299" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="45" goals="16" countryID="ESP" clubID="XXX" />
-    <Player ID="300" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="85" goals="7" countryID="CZE" clubID="XXX" />
-    <Player ID="301" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="71" goals="17" countryID="CZE" clubID="XXX" />
-    <Player ID="302" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="21" goals="17" countryID="CZE" clubID="XXX" />
-    <Player ID="303" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="54" goals="1" countryID="CZE" clubID="XXX" />
-    <Player ID="304" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="1" goals="16" countryID="CZE" clubID="XXX" />
-    <Player ID="305" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="52" goals="11" countryID="CZE" clubID="XXX" />
-    <Player ID="306" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="85" goals="17" countryID="CZE" clubID="XXX" />
-    <Player ID="307" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="21" goals="0" countryID="CZE" clubID="XXX" />
-    <Player ID="308" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="87" goals="5" countryID="CZE" clubID="XXX" />
-    <Player ID="309" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="24" goals="14" countryID="CZE" clubID="XXX" />
-    <Player ID="310" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="79" goals="16" countryID="CZE" clubID="XXX" />
-    <Player ID="311" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="22" goals="8" countryID="CZE" clubID="XXX" />
-    <Player ID="312" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="89" goals="1" countryID="CZE" clubID="XXX" />
-    <Player ID="313" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="20" goals="2" countryID="CZE" clubID="XXX" />
-    <Player ID="314" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="22" goals="16" countryID="CZE" clubID="XXX" />
-    <Player ID="315" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="2" goals="7" countryID="CZE" clubID="XXX" />
-    <Player ID="316" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="27" goals="11" countryID="CZE" clubID="XXX" />
-    <Player ID="317" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="36" goals="17" countryID="CZE" clubID="XXX" />
-    <Player ID="318" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="46" goals="18" countryID="CZE" clubID="XXX" />
-    <Player ID="319" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="30" goals="0" countryID="CZE" clubID="XXX" />
-    <Player ID="320" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="59" goals="2" countryID="CZE" clubID="XXX" />
-    <Player ID="321" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="83" goals="1" countryID="CZE" clubID="XXX" />
-    <Player ID="322" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="16" goals="10" countryID="CZE" clubID="XXX" />
-    <Player ID="323" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="14" goals="10" countryID="TUR" clubID="XXX" />
-    <Player ID="324" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="21" goals="7" countryID="TUR" clubID="XXX" />
-    <Player ID="325" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="25" goals="18" countryID="TUR" clubID="XXX" />
-    <Player ID="326" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="34" goals="14" countryID="TUR" clubID="XXX" />
-    <Player ID="327" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="3" goals="0" countryID="TUR" clubID="XXX" />
-    <Player ID="328" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="15" goals="5" countryID="TUR" clubID="XXX" />
-    <Player ID="329" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="99" goals="2" countryID="TUR" clubID="XXX" />
-    <Player ID="330" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="66" goals="8" countryID="TUR" clubID="XXX" />
-    <Player ID="331" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="84" goals="3" countryID="TUR" clubID="XXX" />
-    <Player ID="332" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="80" goals="2" countryID="TUR" clubID="XXX" />
-    <Player ID="333" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="30" goals="5" countryID="TUR" clubID="XXX" />
-    <Player ID="334" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="53" goals="7" countryID="TUR" clubID="XXX" />
-    <Player ID="335" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="58" goals="18" countryID="TUR" clubID="XXX" />
-    <Player ID="336" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="98" goals="3" countryID="TUR" clubID="XXX" />
-    <Player ID="337" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="15" goals="13" countryID="TUR" clubID="XXX" />
-    <Player ID="338" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="1" goals="2" countryID="TUR" clubID="XXX" />
-    <Player ID="339" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="25" goals="7" countryID="TUR" clubID="XXX" />
-    <Player ID="340" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="93" goals="13" countryID="TUR" clubID="XXX" />
-    <Player ID="341" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="89" goals="17" countryID="TUR" clubID="XXX" />
-    <Player ID="342" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="57" goals="2" countryID="TUR" clubID="XXX" />
-    <Player ID="343" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="5" goals="11" countryID="TUR" clubID="XXX" />
-    <Player ID="344" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="52" goals="7" countryID="TUR" clubID="XXX" />
-    <Player ID="345" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="69" goals="3" countryID="TUR" clubID="XXX" />
-    <Player ID="346" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="94" goals="3" countryID="HRV" clubID="XXX" />
-    <Player ID="347" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="38" goals="3" countryID="HRV" clubID="XXX" />
-    <Player ID="348" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="26" goals="12" countryID="HRV" clubID="XXX" />
-    <Player ID="349" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="29" goals="0" countryID="HRV" clubID="XXX" />
-    <Player ID="350" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="22" goals="16" countryID="HRV" clubID="XXX" />
-    <Player ID="351" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="1" goals="16" countryID="HRV" clubID="XXX" />
-    <Player ID="352" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="77" goals="6" countryID="HRV" clubID="XXX" />
-    <Player ID="353" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="92" goals="2" countryID="HRV" clubID="XXX" />
-    <Player ID="354" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="55" goals="6" countryID="HRV" clubID="XXX" />
-    <Player ID="355" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="99" goals="0" countryID="HRV" clubID="XXX" />
-    <Player ID="356" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="2" goals="12" countryID="HRV" clubID="XXX" />
-    <Player ID="357" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="19" goals="0" countryID="HRV" clubID="XXX" />
-    <Player ID="358" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="53" goals="19" countryID="HRV" clubID="XXX" />
-    <Player ID="359" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="62" goals="13" countryID="HRV" clubID="XXX" />
-    <Player ID="360" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="7" goals="14" countryID="HRV" clubID="XXX" />
-    <Player ID="361" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="77" goals="3" countryID="HRV" clubID="XXX" />
-    <Player ID="362" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="66" goals="8" countryID="HRV" clubID="XXX" />
-    <Player ID="363" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="99" goals="16" countryID="HRV" clubID="XXX" />
-    <Player ID="364" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="81" goals="19" countryID="HRV" clubID="XXX" />
-    <Player ID="365" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="42" goals="7" countryID="HRV" clubID="XXX" />
-    <Player ID="366" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="83" goals="4" countryID="HRV" clubID="XXX" />
-    <Player ID="367" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="13" goals="1" countryID="HRV" clubID="XXX" />
-    <Player ID="368" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="64" goals="0" countryID="HRV" clubID="XXX" />
-    <Player ID="369" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="8" goals="5" countryID="BEL" clubID="XXX" />
-    <Player ID="370" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="19" goals="18" countryID="BEL" clubID="XXX" />
-    <Player ID="371" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="1" goals="3" countryID="BEL" clubID="XXX" />
-    <Player ID="372" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="36" goals="13" countryID="BEL" clubID="XXX" />
-    <Player ID="373" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="14" goals="6" countryID="BEL" clubID="XXX" />
-    <Player ID="374" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="97" goals="7" countryID="BEL" clubID="XXX" />
-    <Player ID="375" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="62" goals="5" countryID="BEL" clubID="XXX" />
-    <Player ID="376" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="2" goals="12" countryID="BEL" clubID="XXX" />
-    <Player ID="377" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="96" goals="9" countryID="BEL" clubID="XXX" />
-    <Player ID="378" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="6" goals="16" countryID="BEL" clubID="XXX" />
-    <Player ID="379" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="18" goals="7" countryID="BEL" clubID="XXX" />
-    <Player ID="380" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="31" goals="2" countryID="BEL" clubID="XXX" />
-    <Player ID="381" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="33" goals="11" countryID="BEL" clubID="XXX" />
-    <Player ID="382" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="91" goals="12" countryID="BEL" clubID="XXX" />
-    <Player ID="383" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="19" goals="16" countryID="BEL" clubID="XXX" />
-    <Player ID="384" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="50" goals="2" countryID="BEL" clubID="XXX" />
-    <Player ID="385" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="36" goals="9" countryID="BEL" clubID="XXX" />
-    <Player ID="386" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="90" goals="7" countryID="BEL" clubID="XXX" />
-    <Player ID="387" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="49" goals="3" countryID="BEL" clubID="XXX" />
-    <Player ID="388" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="72" goals="11" countryID="BEL" clubID="XXX" />
-    <Player ID="389" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="82" goals="0" countryID="BEL" clubID="XXX" />
-    <Player ID="390" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="26" goals="13" countryID="BEL" clubID="XXX" />
-    <Player ID="391" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="82" goals="8" countryID="BEL" clubID="XXX" />
-    <Player ID="392" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="37" goals="2" countryID="ITA" clubID="XXX" />
-    <Player ID="393" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="34" goals="4" countryID="ITA" clubID="XXX" />
-    <Player ID="394" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="25" goals="12" countryID="ITA" clubID="XXX" />
-    <Player ID="395" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="1" goals="16" countryID="ITA" clubID="XXX" />
-    <Player ID="396" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="86" goals="14" countryID="ITA" clubID="XXX" />
-    <Player ID="397" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="93" goals="1" countryID="ITA" clubID="XXX" />
-    <Player ID="398" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="57" goals="9" countryID="ITA" clubID="XXX" />
-    <Player ID="399" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="26" goals="14" countryID="ITA" clubID="XXX" />
-    <Player ID="400" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="46" goals="6" countryID="ITA" clubID="XXX" />
-    <Player ID="401" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="80" goals="17" countryID="ITA" clubID="XXX" />
-    <Player ID="402" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="0" goals="2" countryID="ITA" clubID="XXX" />
-    <Player ID="403" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="37" goals="13" countryID="ITA" clubID="XXX" />
-    <Player ID="404" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="10" goals="15" countryID="ITA" clubID="XXX" />
-    <Player ID="405" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="77" goals="9" countryID="ITA" clubID="XXX" />
-    <Player ID="406" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="0" goals="3" countryID="ITA" clubID="XXX" />
-    <Player ID="407" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="9" goals="12" countryID="ITA" clubID="XXX" />
-    <Player ID="408" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="29" goals="17" countryID="ITA" clubID="XXX" />
-    <Player ID="409" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="18" goals="15" countryID="ITA" clubID="XXX" />
-    <Player ID="410" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="27" goals="19" countryID="ITA" clubID="XXX" />
-    <Player ID="411" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="54" goals="17" countryID="ITA" clubID="XXX" />
-    <Player ID="412" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="9" goals="11" countryID="ITA" clubID="XXX" />
-    <Player ID="413" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="62" goals="3" countryID="ITA" clubID="XXX" />
-    <Player ID="414" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="42" goals="8" countryID="ITA" clubID="XXX" />
-    <Player ID="415" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="59" goals="5" countryID="IRL" clubID="XXX" />
-    <Player ID="416" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="33" goals="1" countryID="IRL" clubID="XXX" />
-    <Player ID="417" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="54" goals="18" countryID="IRL" clubID="XXX" />
-    <Player ID="418" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="88" goals="19" countryID="IRL" clubID="XXX" />
-    <Player ID="419" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="44" goals="4" countryID="IRL" clubID="XXX" />
-    <Player ID="420" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="77" goals="13" countryID="IRL" clubID="XXX" />
-    <Player ID="421" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="12" goals="9" countryID="IRL" clubID="XXX" />
-    <Player ID="422" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="87" goals="10" countryID="IRL" clubID="XXX" />
-    <Player ID="423" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="80" goals="13" countryID="IRL" clubID="XXX" />
-    <Player ID="424" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="62" goals="6" countryID="IRL" clubID="XXX" />
-    <Player ID="425" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="77" goals="13" countryID="IRL" clubID="XXX" />
-    <Player ID="426" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="27" goals="9" countryID="IRL" clubID="XXX" />
-    <Player ID="427" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="46" goals="10" countryID="IRL" clubID="XXX" />
-    <Player ID="428" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="78" goals="18" countryID="IRL" clubID="XXX" />
-    <Player ID="429" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="77" goals="8" countryID="IRL" clubID="XXX" />
-    <Player ID="430" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="50" goals="3" countryID="IRL" clubID="XXX" />
-    <Player ID="431" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="22" goals="13" countryID="IRL" clubID="XXX" />
-    <Player ID="432" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="19" goals="10" countryID="IRL" clubID="XXX" />
-    <Player ID="433" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="13" goals="18" countryID="IRL" clubID="XXX" />
-    <Player ID="434" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="63" goals="3" countryID="IRL" clubID="XXX" />
-    <Player ID="435" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="74" goals="6" countryID="IRL" clubID="XXX" />
-    <Player ID="436" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="43" goals="18" countryID="IRL" clubID="XXX" />
-    <Player ID="437" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="99" goals="11" countryID="IRL" clubID="XXX" />
-    <Player ID="438" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="83" goals="1" countryID="SWE" clubID="XXX" />
-    <Player ID="439" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="98" goals="10" countryID="SWE" clubID="XXX" />
-    <Player ID="440" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="74" goals="18" countryID="SWE" clubID="XXX" />
-    <Player ID="441" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="56" goals="2" countryID="SWE" clubID="XXX" />
-    <Player ID="442" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="64" goals="18" countryID="SWE" clubID="XXX" />
-    <Player ID="443" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="99" goals="16" countryID="SWE" clubID="XXX" />
-    <Player ID="444" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="62" goals="0" countryID="SWE" clubID="XXX" />
-    <Player ID="445" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="15" goals="18" countryID="SWE" clubID="XXX" />
-    <Player ID="446" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="19" goals="19" countryID="SWE" clubID="XXX" />
-    <Player ID="447" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="73" goals="11" countryID="SWE" clubID="XXX" />
-    <Player ID="448" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="46" goals="8" countryID="SWE" clubID="XXX" />
-    <Player ID="449" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="27" goals="7" countryID="SWE" clubID="XXX" />
-    <Player ID="450" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="41" goals="17" countryID="SWE" clubID="XXX" />
-    <Player ID="451" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="6" goals="9" countryID="SWE" clubID="XXX" />
-    <Player ID="452" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="56" goals="8" countryID="SWE" clubID="XXX" />
-    <Player ID="453" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="25" goals="6" countryID="SWE" clubID="XXX" />
-    <Player ID="454" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="49" goals="17" countryID="SWE" clubID="XXX" />
-    <Player ID="455" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="66" goals="14" countryID="SWE" clubID="XXX" />
-    <Player ID="456" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="95" goals="4" countryID="SWE" clubID="XXX" />
-    <Player ID="457" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="69" goals="11" countryID="SWE" clubID="XXX" />
-    <Player ID="458" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="62" goals="2" countryID="SWE" clubID="XXX" />
-    <Player ID="459" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="4" goals="5" countryID="SWE" clubID="XXX" />
-    <Player ID="460" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="51" goals="5" countryID="SWE" clubID="XXX" />
-    <Player ID="461" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="30" goals="11" countryID="POR" clubID="XXX" />
-    <Player ID="462" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="0" goals="15" countryID="POR" clubID="XXX" />
-    <Player ID="463" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="13" goals="8" countryID="POR" clubID="XXX" />
-    <Player ID="464" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="20" goals="8" countryID="POR" clubID="XXX" />
-    <Player ID="465" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="11" goals="7" countryID="POR" clubID="XXX" />
-    <Player ID="466" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="80" goals="12" countryID="POR" clubID="XXX" />
-    <Player ID="467" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="13" goals="17" countryID="POR" clubID="XXX" />
-    <Player ID="468" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="86" goals="2" countryID="POR" clubID="XXX" />
-    <Player ID="469" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="55" goals="3" countryID="POR" clubID="XXX" />
-    <Player ID="470" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="65" goals="13" countryID="POR" clubID="XXX" />
-    <Player ID="471" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="35" goals="14" countryID="POR" clubID="XXX" />
-    <Player ID="472" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="37" goals="8" countryID="POR" clubID="XXX" />
-    <Player ID="473" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="98" goals="19" countryID="POR" clubID="XXX" />
-    <Player ID="474" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="30" goals="3" countryID="POR" clubID="XXX" />
-    <Player ID="475" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="96" goals="7" countryID="POR" clubID="XXX" />
-    <Player ID="476" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="39" goals="19" countryID="POR" clubID="XXX" />
-    <Player ID="477" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="85" goals="2" countryID="POR" clubID="XXX" />
-    <Player ID="478" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="58" goals="9" countryID="POR" clubID="XXX" />
-    <Player ID="479" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="45" goals="15" countryID="POR" clubID="XXX" />
-    <Player ID="480" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="31" goals="16" countryID="POR" clubID="XXX" />
-    <Player ID="481" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="12" goals="1" countryID="POR" clubID="XXX" />
-    <Player ID="482" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="76" goals="5" countryID="POR" clubID="XXX" />
-    <Player ID="483" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="90" goals="6" countryID="POR" clubID="XXX" />
-    <Player ID="484" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="9" goals="16" countryID="ISL" clubID="XXX" />
-    <Player ID="485" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="71" goals="10" countryID="ISL" clubID="XXX" />
-    <Player ID="486" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="54" goals="16" countryID="ISL" clubID="XXX" />
-    <Player ID="487" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="63" goals="16" countryID="ISL" clubID="XXX" />
-    <Player ID="488" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="93" goals="11" countryID="ISL" clubID="XXX" />
-    <Player ID="489" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="21" goals="11" countryID="ISL" clubID="XXX" />
-    <Player ID="490" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="81" goals="3" countryID="ISL" clubID="XXX" />
-    <Player ID="491" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="13" goals="0" countryID="ISL" clubID="XXX" />
-    <Player ID="492" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="44" goals="15" countryID="ISL" clubID="XXX" />
-    <Player ID="493" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="99" goals="16" countryID="ISL" clubID="XXX" />
-    <Player ID="494" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="76" goals="0" countryID="ISL" clubID="XXX" />
-    <Player ID="495" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="28" goals="7" countryID="ISL" clubID="XXX" />
-    <Player ID="496" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="65" goals="15" countryID="ISL" clubID="XXX" />
-    <Player ID="497" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="88" goals="16" countryID="ISL" clubID="XXX" />
-    <Player ID="498" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="53" goals="5" countryID="ISL" clubID="XXX" />
-    <Player ID="499" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="98" goals="2" countryID="ISL" clubID="XXX" />
-    <Player ID="500" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="54" goals="13" countryID="ISL" clubID="XXX" />
-    <Player ID="501" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="87" goals="9" countryID="ISL" clubID="XXX" />
-    <Player ID="502" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="44" goals="8" countryID="ISL" clubID="XXX" />
-    <Player ID="503" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="80" goals="11" countryID="ISL" clubID="XXX" />
-    <Player ID="504" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="36" goals="0" countryID="ISL" clubID="XXX" />
-    <Player ID="505" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="19" goals="0" countryID="ISL" clubID="XXX" />
-    <Player ID="506" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="26" goals="17" countryID="ISL" clubID="XXX" />
-    <Player ID="507" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="95" goals="2" countryID="AUT" clubID="XXX" />
-    <Player ID="508" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="67" goals="1" countryID="AUT" clubID="XXX" />
-    <Player ID="509" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="64" goals="19" countryID="AUT" clubID="XXX" />
-    <Player ID="510" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="27" goals="1" countryID="AUT" clubID="XXX" />
-    <Player ID="511" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="56" goals="1" countryID="AUT" clubID="XXX" />
-    <Player ID="512" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="54" goals="6" countryID="AUT" clubID="XXX" />
-    <Player ID="513" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="86" goals="15" countryID="AUT" clubID="XXX" />
-    <Player ID="514" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="96" goals="15" countryID="AUT" clubID="XXX" />
-    <Player ID="515" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="30" goals="13" countryID="AUT" clubID="XXX" />
-    <Player ID="516" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="57" goals="2" countryID="AUT" clubID="XXX" />
-    <Player ID="517" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="1" goals="3" countryID="AUT" clubID="XXX" />
-    <Player ID="518" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="29" goals="13" countryID="AUT" clubID="XXX" />
-    <Player ID="519" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="59" goals="19" countryID="AUT" clubID="XXX" />
-    <Player ID="520" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="95" goals="8" countryID="AUT" clubID="XXX" />
-    <Player ID="521" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="45" goals="15" countryID="AUT" clubID="XXX" />
-    <Player ID="522" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="81" goals="5" countryID="AUT" clubID="XXX" />
-    <Player ID="523" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="13" goals="15" countryID="AUT" clubID="XXX" />
-    <Player ID="524" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="84" goals="14" countryID="AUT" clubID="XXX" />
-    <Player ID="525" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="16" goals="9" countryID="AUT" clubID="XXX" />
-    <Player ID="526" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="62" goals="19" countryID="AUT" clubID="XXX" />
-    <Player ID="527" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="83" goals="9" countryID="AUT" clubID="XXX" />
-    <Player ID="528" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="9" goals="15" countryID="AUT" clubID="XXX" />
-    <Player ID="529" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="92" goals="2" countryID="AUT" clubID="XXX" />
-    <Player ID="530" name="Dummy Player" number="1" position="GK" birthDate="4 May 2016" caps="58" goals="1" countryID="HUN" clubID="XXX" />
-    <Player ID="531" name="Dummy Player" number="2" position="GK" birthDate="4 May 2016" caps="58" goals="11" countryID="HUN" clubID="XXX" />
-    <Player ID="532" name="Dummy Player" number="3" position="GK" birthDate="4 May 2016" caps="70" goals="10" countryID="HUN" clubID="XXX" />
-    <Player ID="533" name="Dummy Player" number="4" position="GK" birthDate="4 May 2016" caps="44" goals="3" countryID="HUN" clubID="XXX" />
-    <Player ID="534" name="Dummy Player" number="5" position="GK" birthDate="4 May 2016" caps="87" goals="15" countryID="HUN" clubID="XXX" />
-    <Player ID="535" name="Dummy Player" number="6" position="GK" birthDate="4 May 2016" caps="83" goals="0" countryID="HUN" clubID="XXX" />
-    <Player ID="536" name="Dummy Player" number="7" position="DF" birthDate="4 May 2016" caps="49" goals="12" countryID="HUN" clubID="XXX" />
-    <Player ID="537" name="Dummy Player" number="8" position="DF" birthDate="4 May 2016" caps="4" goals="16" countryID="HUN" clubID="XXX" />
-    <Player ID="538" name="Dummy Player" number="9" position="DF" birthDate="4 May 2016" caps="63" goals="16" countryID="HUN" clubID="XXX" />
-    <Player ID="539" name="Dummy Player" number="10" position="DF" birthDate="4 May 2016" caps="26" goals="5" countryID="HUN" clubID="XXX" />
-    <Player ID="540" name="Dummy Player" number="11" position="DF" birthDate="4 May 2016" caps="19" goals="2" countryID="HUN" clubID="XXX" />
-    <Player ID="541" name="Dummy Player" number="12" position="DF" birthDate="4 May 2016" caps="91" goals="4" countryID="HUN" clubID="XXX" />
-    <Player ID="542" name="Dummy Player" number="13" position="MF" birthDate="4 May 2016" caps="62" goals="17" countryID="HUN" clubID="XXX" />
-    <Player ID="543" name="Dummy Player" number="14" position="MF" birthDate="4 May 2016" caps="3" goals="11" countryID="HUN" clubID="XXX" />
-    <Player ID="544" name="Dummy Player" number="15" position="MF" birthDate="4 May 2016" caps="26" goals="11" countryID="HUN" clubID="XXX" />
-    <Player ID="545" name="Dummy Player" number="16" position="MF" birthDate="4 May 2016" caps="6" goals="10" countryID="HUN" clubID="XXX" />
-    <Player ID="546" name="Dummy Player" number="17" position="MF" birthDate="4 May 2016" caps="74" goals="9" countryID="HUN" clubID="XXX" />
-    <Player ID="547" name="Dummy Player" number="18" position="MF" birthDate="4 May 2016" caps="41" goals="18" countryID="HUN" clubID="XXX" />
-    <Player ID="548" name="Dummy Player" number="19" position="FW" birthDate="4 May 2016" caps="86" goals="17" countryID="HUN" clubID="XXX" />
-    <Player ID="549" name="Dummy Player" number="20" position="FW" birthDate="4 May 2016" caps="5" goals="5" countryID="HUN" clubID="XXX" />
-    <Player ID="550" name="Dummy Player" number="21" position="FW" birthDate="4 May 2016" caps="81" goals="19" countryID="HUN" clubID="XXX" />
-    <Player ID="551" name="Dummy Player" number="22" position="FW" birthDate="4 May 2016" caps="88" goals="0" countryID="HUN" clubID="XXX" />
-    <Player ID="552" name="Dummy Player" number="23" position="FW" birthDate="4 May 2016" caps="90" goals="3" countryID="HUN" clubID="XXX" />
+    <Player ID="001" name="Hugo Lloris (captain)" number="1" position="GK" birthDate="26 Dec 1986" caps="73" goals="0" countryID="FRA" clubID="001" />
+    <Player ID="002" name="Christophe Jallet" number="2" position="DF" birthDate="31 Oct 1983" caps="11" goals="1" countryID="FRA" clubID="002" />
+    <Player ID="003" name="Patrice Evra" number="3" position="DF" birthDate="15 May 1981" caps="71" goals="0" countryID="FRA" clubID="003" />
+    <Player ID="004" name="Adil Rami" number="4" position="DF" birthDate="27 Dec 1985" caps="26" goals="1" countryID="FRA" clubID="004" />
+    <Player ID="005" name="N'Golo Kanté" number="5" position="MF" birthDate="29 Mar 1991" caps="2" goals="1" countryID="FRA" clubID="005" />
+    <Player ID="006" name="Yohan Cabaye" number="6" position="MF" birthDate="14 Jan 1986" caps="44" goals="4" countryID="FRA" clubID="006" />
+    <Player ID="007" name="Antoine Griezmann" number="7" position="FW" birthDate="21 Mar 1991" caps="26" goals="7" countryID="FRA" clubID="007" />
+    <Player ID="008" name="Dimitri Payet" number="8" position="MF" birthDate="29 Mar 1987" caps="17" goals="2" countryID="FRA" clubID="008" />
+    <Player ID="009" name="Olivier Giroud" number="9" position="FW" birthDate="30 Sep 1986" caps="47" goals="14" countryID="FRA" clubID="009" />
+    <Player ID="010" name="André-Pierre Gignac" number="10" position="FW" birthDate="5 Dec 1985" caps="25" goals="7" countryID="FRA" clubID="010" />
+    <Player ID="011" name="Anthony Martial" number="11" position="FW" birthDate="5 Dec 1995" caps="8" goals="0" countryID="FRA" clubID="011" />
+    <Player ID="012" name="Morgan Schneiderlin" number="12" position="MF" birthDate="8 Nov 1989" caps="15" goals="0" countryID="FRA" clubID="011" />
+    <Player ID="013" name="Eliaquim Mangala" number="13" position="DF" birthDate="13 Feb 1991" caps="7" goals="0" countryID="FRA" clubID="012" />
+    <Player ID="014" name="Blaise Matuidi" number="14" position="MF" birthDate="9 Apr 1987" caps="42" goals="7" countryID="FRA" clubID="013" />
+    <Player ID="015" name="Paul Pogba" number="15" position="MF" birthDate="15 Mar 1993" caps="29" goals="5" countryID="FRA" clubID="003" />
+    <Player ID="016" name="Steve Mandanda" number="16" position="GK" birthDate="28 Mar 1985" caps="22" goals="0" countryID="FRA" clubID="014" />
+    <Player ID="017" name="Lucas Digne" number="17" position="DF" birthDate="20 Jul 1993" caps="12" goals="0" countryID="FRA" clubID="015" />
+    <Player ID="018" name="Moussa Sissoko" number="18" position="MF" birthDate="16 Aug 1989" caps="36" goals="1" countryID="FRA" clubID="016" />
+    <Player ID="019" name="Bacary Sagna" number="19" position="DF" birthDate="14 Feb 1983" caps="55" goals="0" countryID="FRA" clubID="012" />
+    <Player ID="020" name="Kingsley Coman" number="20" position="MF" birthDate="13 Jun 1996" caps="4" goals="1" countryID="FRA" clubID="017" />
+    <Player ID="021" name="Laurent Koscielny" number="21" position="DF" birthDate="10 Sep 1985" caps="27" goals="0" countryID="FRA" clubID="009" />
+    <Player ID="022" name="Samuel Umtiti" number="22" position="DF" birthDate="14 Nov 1993" caps="0" goals="0" countryID="FRA" clubID="002" />
+    <Player ID="023" name="Benoît Costil" number="23" position="GK" birthDate="3 Jul 1987" caps="0" goals="0" countryID="FRA" clubID="018" />
+    <Player ID="024" name="Costel Pantilimon" number="1" position="GK" birthDate="1 Feb 1987" caps="22" goals="0" countryID="ROU" clubID="019" />
+    <Player ID="025" name="Alexandru Mățel" number="2" position="DF" birthDate="17 Oct 1989" caps="16" goals="0" countryID="ROU" clubID="020" />
+    <Player ID="026" name="Răzvan Raț" number="3" position="DF" birthDate="26 May 1981" caps="110" goals="2" countryID="ROU" clubID="021" />
+    <Player ID="027" name="Cosmin Moți" number="4" position="DF" birthDate="3 Dec 1984" caps="7" goals="0" countryID="ROU" clubID="022" />
+    <Player ID="028" name="Ovidiu Hoban" number="5" position="MF" birthDate="27 Dec 1982" caps="19" goals="1" countryID="ROU" clubID="023" />
+    <Player ID="029" name="Vlad Chiricheș (captain)" number="6" position="DF" birthDate="14 Nov 1989" caps="40" goals="0" countryID="ROU" clubID="024" />
+    <Player ID="030" name="Alexandru Chipciu" number="7" position="MF" birthDate="18 May 1989" caps="20" goals="3" countryID="ROU" clubID="025" />
+    <Player ID="031" name="Mihai Pintilii" number="8" position="MF" birthDate="9 Nov 1984" caps="30" goals="1" countryID="ROU" clubID="025" />
+    <Player ID="032" name="Denis Alibec" number="9" position="FW" birthDate="5 Jan 1991" caps="3" goals="1" countryID="ROU" clubID="026" />
+    <Player ID="033" name="Nicolae Stanciu" number="10" position="MF" birthDate="7 May 1993" caps="4" goals="3" countryID="ROU" clubID="025" />
+    <Player ID="034" name="Gabriel Torje" number="11" position="MF" birthDate="22 Nov 1989" caps="49" goals="10" countryID="ROU" clubID="027" />
+    <Player ID="035" name="Ciprian Tătărușanu" number="12" position="GK" birthDate="9 Feb 1986" caps="35" goals="0" countryID="ROU" clubID="028" />
+    <Player ID="036" name="Claudiu Keșerü" number="13" position="FW" birthDate="2 Dec 1986" caps="12" goals="4" countryID="ROU" clubID="022" />
+    <Player ID="037" name="Florin Andone" number="14" position="FW" birthDate="11 Apr 1993" caps="5" goals="1" countryID="ROU" clubID="029" />
+    <Player ID="038" name="Valerică Găman" number="15" position="DF" birthDate="25 Feb 1989" caps="13" goals="1" countryID="ROU" clubID="026" />
+    <Player ID="039" name="Steliano Filip" number="16" position="DF" birthDate="15 May 1994" caps="4" goals="0" countryID="ROU" clubID="030" />
+    <Player ID="040" name="Lucian Sânmărtean" number="17" position="MF" birthDate="13 Mar 1980" caps="19" goals="0" countryID="ROU" clubID="031" />
+    <Player ID="041" name="Andrei Prepeliță" number="18" position="MF" birthDate="8 Dec 1985" caps="9" goals="0" countryID="ROU" clubID="022" />
+    <Player ID="042" name="Bogdan Stancu" number="19" position="FW" birthDate="28 Jun 1987" caps="39" goals="9" countryID="ROU" clubID="032" />
+    <Player ID="043" name="Adrian Popa" number="20" position="MF" birthDate="24 Jul 1988" caps="13" goals="0" countryID="ROU" clubID="025" />
+    <Player ID="044" name="Dragoș Grigore" number="21" position="DF" birthDate="7 Sep 1986" caps="19" goals="0" countryID="ROU" clubID="033" />
+    <Player ID="045" name="Cristian Săpunaru" number="22" position="DF" birthDate="5 Apr 1984" caps="12" goals="0" countryID="ROU" clubID="034" />
+    <Player ID="046" name="Silviu Lung Jr." number="23" position="GK" birthDate="4 Jun 1989" caps="3" goals="0" countryID="ROU" clubID="026" />
+    <Player ID="047" name="Etrit Berisha" number="1" position="GK" birthDate="10 Mar 1989" caps="34" goals="0" countryID="ALB" clubID="035" />
+    <Player ID="048" name="Andi Lila" number="2" position="DF" birthDate="12 Feb 1986" caps="59" goals="0" countryID="ALB" clubID="036" />
+    <Player ID="049" name="Ermir Lenjani" number="3" position="MF" birthDate="5 Aug 1989" caps="18" goals="3" countryID="ALB" clubID="037" />
+    <Player ID="050" name="Elseid Hysaj" number="4" position="DF" birthDate="20 Feb 1994" caps="19" goals="0" countryID="ALB" clubID="024" />
+    <Player ID="051" name="Lorik Cana (captain)" number="5" position="MF" birthDate="27 Jun 1983" caps="91" goals="1" countryID="ALB" clubID="037" />
+    <Player ID="052" name="Frederik Veseli" number="6" position="DF" birthDate="20 Nov 1992" caps="3" goals="0" countryID="ALB" clubID="038" />
+    <Player ID="053" name="Ansi Agolli" number="7" position="DF" birthDate="11 Nov 1982" caps="60" goals="2" countryID="ALB" clubID="039" />
+    <Player ID="054" name="Migjen Basha" number="8" position="MF" birthDate="5 Jan 1987" caps="18" goals="3" countryID="ALB" clubID="040" />
+    <Player ID="055" name="Ledian Memushaj" number="9" position="MF" birthDate="7 Dec 1986" caps="13" goals="0" countryID="ALB" clubID="041" />
+    <Player ID="056" name="Armando Sadiku" number="10" position="FW" birthDate="27 May 1991" caps="19" goals="4" countryID="ALB" clubID="042" />
+    <Player ID="057" name="Shkëlzen Gashi" number="11" position="FW" birthDate="15 Jul 1988" caps="13" goals="1" countryID="ALB" clubID="043" />
+    <Player ID="058" name="Orges Shehi" number="12" position="GK" birthDate="25 Sep 1977" caps="7" goals="0" countryID="ALB" clubID="044" />
+    <Player ID="059" name="Burim Kukeli" number="13" position="MF" birthDate="16 Jan 1984" caps="15" goals="0" countryID="ALB" clubID="045" />
+    <Player ID="060" name="Taulant Xhaka" number="14" position="MF" birthDate="28 Mar 1991" caps="11" goals="0" countryID="ALB" clubID="046" />
+    <Player ID="061" name="Mërgim Mavraj" number="15" position="DF" birthDate="9 Jun 1986" caps="25" goals="3" countryID="ALB" clubID="047" />
+    <Player ID="062" name="Sokol Cikalleshi" number="16" position="FW" birthDate="27 Jul 1990" caps="19" goals="2" countryID="ALB" clubID="048" />
+    <Player ID="063" name="Naser Aliji" number="17" position="DF" birthDate="27 Dec 1993" caps="5" goals="0" countryID="ALB" clubID="046" />
+    <Player ID="064" name="Arlind Ajeti" number="18" position="DF" birthDate="25 Sep 1993" caps="9" goals="1" countryID="ALB" clubID="049" />
+    <Player ID="065" name="Bekim Balaj" number="19" position="FW" birthDate="11 Jan 1991" caps="15" goals="2" countryID="ALB" clubID="050" />
+    <Player ID="066" name="Ergys Kaçe" number="20" position="MF" birthDate="8 Jul 1993" caps="15" goals="2" countryID="ALB" clubID="051" />
+    <Player ID="067" name="Odise Roshi" number="21" position="MF" birthDate="21 May 1991" caps="32" goals="1" countryID="ALB" clubID="050" />
+    <Player ID="068" name="Amir Abrashi" number="22" position="MF" birthDate="27 Mar 1990" caps="17" goals="0" countryID="ALB" clubID="052" />
+    <Player ID="069" name="Alban Hoxha" number="23" position="GK" birthDate="23 Nov 1987" caps="1" goals="0" countryID="ALB" clubID="053" />
+    <Player ID="070" name="Yann Sommer" number="1" position="GK" birthDate="7 Dec 1988" caps="17" goals="0" countryID="SUI" clubID="054" />
+    <Player ID="071" name="Stephan Lichtsteiner (captain)" number="2" position="DF" birthDate="16 Jan 1984" caps="80" goals="5" countryID="SUI" clubID="003" />
+    <Player ID="072" name="François Moubandje" number="3" position="DF" birthDate="21 Jun 1990" caps="10" goals="0" countryID="SUI" clubID="055" />
+    <Player ID="073" name="Nico Elvedi" number="4" position="DF" birthDate="30 Sep 1996" caps="1" goals="0" countryID="SUI" clubID="054" />
+    <Player ID="074" name="Steve von Bergen" number="5" position="DF" birthDate="10 Jun 1983" caps="49" goals="0" countryID="SUI" clubID="056" />
+    <Player ID="075" name="Michael Lang" number="6" position="DF" birthDate="8 Feb 1991" caps="15" goals="2" countryID="SUI" clubID="046" />
+    <Player ID="076" name="Breel Embolo" number="7" position="FW" birthDate="14 Feb 1997" caps="9" goals="1" countryID="SUI" clubID="046" />
+    <Player ID="077" name="Fabian Frei" number="8" position="MF" birthDate="8 Jan 1989" caps="7" goals="1" countryID="SUI" clubID="057" />
+    <Player ID="078" name="Haris Seferović" number="9" position="FW" birthDate="22 Feb 1992" caps="29" goals="7" countryID="SUI" clubID="058" />
+    <Player ID="079" name="Granit Xhaka" number="10" position="MF" birthDate="27 Sep 1992" caps="41" goals="6" countryID="SUI" clubID="054" />
+    <Player ID="080" name="Valon Behrami" number="11" position="MF" birthDate="19 Apr 1985" caps="64" goals="2" countryID="SUI" clubID="019" />
+    <Player ID="081" name="Marwin Hitz" number="12" position="GK" birthDate="18 Sep 1987" caps="2" goals="0" countryID="SUI" clubID="059" />
+    <Player ID="082" name="Ricardo Rodríguez" number="13" position="DF" birthDate="25 Aug 1992" caps="35" goals="0" countryID="SUI" clubID="060" />
+    <Player ID="083" name="Denis Zakaria" number="14" position="MF" birthDate="20 Nov 1996" caps="0" goals="0" countryID="SUI" clubID="056" />
+    <Player ID="084" name="Blerim Džemaili" number="15" position="MF" birthDate="12 Apr 1986" caps="46" goals="6" countryID="SUI" clubID="061" />
+    <Player ID="085" name="Gélson Fernandes" number="16" position="MF" birthDate="2 Sep 1986" caps="55" goals="2" countryID="SUI" clubID="018" />
+    <Player ID="086" name="Shani Tarashaj" number="17" position="FW" birthDate="7 Feb 1995" caps="2" goals="0" countryID="SUI" clubID="062" />
+    <Player ID="087" name="Admir Mehmedi" number="18" position="FW" birthDate="16 Mar 1991" caps="40" goals="3" countryID="SUI" clubID="063" />
+    <Player ID="088" name="Eren Derdiyok" number="19" position="FW" birthDate="12 Jun 1988" caps="50" goals="10" countryID="SUI" clubID="064" />
+    <Player ID="089" name="Johan Djourou" number="20" position="DF" birthDate="18 Jan 1987" caps="59" goals="2" countryID="SUI" clubID="065" />
+    <Player ID="090" name="Roman Bürki" number="21" position="GK" birthDate="14 Nov 1990" caps="4" goals="0" countryID="SUI" clubID="066" />
+    <Player ID="091" name="Fabian Schär" number="22" position="DF" birthDate="20 Dec 1991" caps="19" goals="5" countryID="SUI" clubID="067" />
+    <Player ID="092" name="Xherdan Shaqiri" number="23" position="MF" birthDate="10 Oct 1991" caps="51" goals="17" countryID="SUI" clubID="068" />
+    <Player ID="093" name="Joe Hart" number="1" position="GK" birthDate="19 Apr 1987" caps="58" goals="0" countryID="ENG" clubID="012" />
+    <Player ID="094" name="Kyle Walker" number="2" position="DF" birthDate="28 May 1990" caps="15" goals="0" countryID="ENG" clubID="001" />
+    <Player ID="095" name="Danny Rose" number="3" position="DF" birthDate="2 Jul 1990" caps="3" goals="0" countryID="ENG" clubID="001" />
+    <Player ID="096" name="James Milner" number="4" position="MF" birthDate="4 Jan 1986" caps="59" goals="1" countryID="ENG" clubID="069" />
+    <Player ID="097" name="Gary Cahill" number="5" position="DF" birthDate="19 Dec 1985" caps="42" goals="3" countryID="ENG" clubID="070" />
+    <Player ID="098" name="Chris Smalling" number="6" position="DF" birthDate="22 Nov 1989" caps="24" goals="0" countryID="ENG" clubID="011" />
+    <Player ID="099" name="Raheem Sterling" number="7" position="MF" birthDate="8 Dec 1994" caps="22" goals="2" countryID="ENG" clubID="012" />
+    <Player ID="100" name="Adam Lallana" number="8" position="MF" birthDate="10 May 1988" caps="22" goals="0" countryID="ENG" clubID="069" />
+    <Player ID="101" name="Harry Kane" number="9" position="FW" birthDate="28 Jul 1993" caps="11" goals="5" countryID="ENG" clubID="001" />
+    <Player ID="102" name="Wayne Rooney (captain)" number="10" position="FW" birthDate="24 Oct 1985" caps="110" goals="52" countryID="ENG" clubID="011" />
+    <Player ID="103" name="Jamie Vardy" number="11" position="FW" birthDate="11 Jan 1987" caps="7" goals="3" countryID="ENG" clubID="005" />
+    <Player ID="104" name="Nathaniel Clyne" number="12" position="DF" birthDate="5 Apr 1991" caps="12" goals="0" countryID="ENG" clubID="069" />
+    <Player ID="105" name="Fraser Forster" number="13" position="GK" birthDate="17 Mar 1988" caps="6" goals="0" countryID="ENG" clubID="071" />
+    <Player ID="106" name="Jordan Henderson" number="14" position="MF" birthDate="17 Jun 1990" caps="25" goals="0" countryID="ENG" clubID="069" />
+    <Player ID="107" name="Daniel Sturridge" number="15" position="FW" birthDate="1 Sep 1989" caps="17" goals="5" countryID="ENG" clubID="069" />
+    <Player ID="108" name="John Stones" number="16" position="DF" birthDate="28 May 1994" caps="10" goals="0" countryID="ENG" clubID="072" />
+    <Player ID="109" name="Eric Dier" number="17" position="MF" birthDate="15 Jan 1994" caps="6" goals="1" countryID="ENG" clubID="001" />
+    <Player ID="110" name="Jack Wilshere" number="18" position="MF" birthDate="1 Jan 1992" caps="30" goals="2" countryID="ENG" clubID="009" />
+    <Player ID="111" name="Ross Barkley" number="19" position="MF" birthDate="5 Dec 1993" caps="22" goals="2" countryID="ENG" clubID="072" />
+    <Player ID="112" name="Dele Alli" number="20" position="MF" birthDate="11 Apr 1996" caps="7" goals="1" countryID="ENG" clubID="001" />
+    <Player ID="113" name="Ryan Bertrand" number="21" position="DF" birthDate="5 Aug 1989" caps="8" goals="0" countryID="ENG" clubID="071" />
+    <Player ID="114" name="Marcus Rashford" number="22" position="FW" birthDate="31 Oct 1997" caps="1" goals="1" countryID="ENG" clubID="011" />
+    <Player ID="115" name="Tom Heaton" number="23" position="GK" birthDate="15 Apr 1986" caps="1" goals="0" countryID="ENG" clubID="073" />
+    <Player ID="116" name="Igor Akinfeev" number="1" position="GK" birthDate="8 Apr 1986" caps="86" goals="0" countryID="RUS" clubID="074" />
+    <Player ID="117" name="Roman Shishkin" number="2" position="DF" birthDate="27 Jan 1987" caps="10" goals="0" countryID="RUS" clubID="075" />
+    <Player ID="118" name="Igor Smolnikov" number="3" position="DF" birthDate="8 Aug 1988" caps="12" goals="0" countryID="RUS" clubID="076" />
+    <Player ID="119" name="Sergei Ignashevich" number="4" position="DF" birthDate="14 Jul 1979" caps="115" goals="8" countryID="RUS" clubID="074" />
+    <Player ID="120" name="Roman Neustädter" number="5" position="DF" birthDate="18 Feb 1988" caps="0" goals="0" countryID="RUS" clubID="077" />
+    <Player ID="121" name="Aleksei Berezutski" number="6" position="DF" birthDate="20 Jun 1982" caps="57" goals="0" countryID="RUS" clubID="074" />
+    <Player ID="122" name="Igor Denisov" number="7" position="MF" birthDate="17 May 1984" caps="52" goals="0" countryID="RUS" clubID="078" />
+    <Player ID="123" name="Denis Glushakov" number="8" position="MF" birthDate="27 Jan 1987" caps="42" goals="4" countryID="RUS" clubID="079" />
+    <Player ID="124" name="Aleksandr Kokorin" number="9" position="FW" birthDate="19 Mar 1991" caps="37" goals="11" countryID="RUS" clubID="076" />
+    <Player ID="125" name="Fyodor Smolov" number="10" position="FW" birthDate="5 Feb 1990" caps="12" goals="5" countryID="RUS" clubID="080" />
+    <Player ID="126" name="Pavel Mamayev" number="11" position="MF" birthDate="17 Sep 1988" caps="10" goals="0" countryID="RUS" clubID="080" />
+    <Player ID="127" name="Yuri Lodygin" number="12" position="GK" birthDate="26 May 1990" caps="10" goals="0" countryID="RUS" clubID="076" />
+    <Player ID="128" name="Aleksandr Golovin" number="13" position="MF" birthDate="30 May 1996" caps="3" goals="2" countryID="RUS" clubID="074" />
+    <Player ID="129" name="Vasili Berezutski" number="14" position="DF" birthDate="20 Jun 1982" caps="93" goals="4" countryID="RUS" clubID="074" />
+    <Player ID="130" name="Roman Shirokov (captain)" number="15" position="MF" birthDate="6 Jul 1981" caps="53" goals="13" countryID="RUS" clubID="074" />
+    <Player ID="131" name="Guilherme Marinato" number="16" position="GK" birthDate="12 Dec 1985" caps="1" goals="0" countryID="RUS" clubID="075" />
+    <Player ID="132" name="Oleg Shatov" number="17" position="MF" birthDate="29 Jun 1990" caps="21" goals="2" countryID="RUS" clubID="076" />
+    <Player ID="133" name="Oleg Ivanov" number="18" position="MF" birthDate="4 Aug 1986" caps="3" goals="0" countryID="RUS" clubID="081" />
+    <Player ID="134" name="Aleksandr Samedov" number="19" position="MF" birthDate="19 Jul 1984" caps="28" goals="3" countryID="RUS" clubID="075" />
+    <Player ID="135" name="Dmitri Torbinski" number="20" position="MF" birthDate="28 Apr 1984" caps="28" goals="2" countryID="RUS" clubID="080" />
+    <Player ID="136" name="Georgi Shchennikov" number="21" position="DF" birthDate="27 Apr 1991" caps="7" goals="0" countryID="RUS" clubID="074" />
+    <Player ID="137" name="Artem Dzyuba" number="22" position="FW" birthDate="22 Aug 1988" caps="16" goals="8" countryID="RUS" clubID="076" />
+    <Player ID="138" name="Dmitri Kombarov" number="23" position="DF" birthDate="22 Jan 1987" caps="38" goals="2" countryID="RUS" clubID="079" />
+    <Player ID="139" name="Wayne Hennessey" number="1" position="GK" birthDate="24 Jan 1987" caps="56" goals="0" countryID="WLS" clubID="006" />
+    <Player ID="140" name="Chris Gunter" number="2" position="DF" birthDate="21 Jul 1989" caps="66" goals="0" countryID="WLS" clubID="082" />
+    <Player ID="141" name="Neil Taylor" number="3" position="DF" birthDate="7 Feb 1989" caps="27" goals="0" countryID="WLS" clubID="083" />
+    <Player ID="142" name="Ben Davies" number="4" position="DF" birthDate="24 Apr 1993" caps="19" goals="0" countryID="WLS" clubID="001" />
+    <Player ID="143" name="James Chester" number="5" position="DF" birthDate="23 Jan 1989" caps="10" goals="0" countryID="WLS" clubID="084" />
+    <Player ID="144" name="Ashley Williams (captain)" number="6" position="DF" birthDate="23 Aug 1984" caps="58" goals="1" countryID="WLS" clubID="083" />
+    <Player ID="145" name="Joe Allen" number="7" position="MF" birthDate="14 Mar 1990" caps="25" goals="0" countryID="WLS" clubID="069" />
+    <Player ID="146" name="Andy King" number="8" position="MF" birthDate="29 Oct 1988" caps="32" goals="2" countryID="WLS" clubID="005" />
+    <Player ID="147" name="Hal Robson-Kanu" number="9" position="FW" birthDate="21 May 1989" caps="30" goals="2" countryID="WLS" clubID="082" />
+    <Player ID="148" name="Aaron Ramsey" number="10" position="MF" birthDate="26 Dec 1990" caps="38" goals="10" countryID="WLS" clubID="009" />
+    <Player ID="149" name="Gareth Bale" number="11" position="FW" birthDate="16 Jul 1989" caps="54" goals="19" countryID="WLS" clubID="085" />
+    <Player ID="150" name="Owain Fôn Williams" number="12" position="GK" birthDate="17 Mar 1987" caps="1" goals="0" countryID="WLS" clubID="086" />
+    <Player ID="151" name="George Williams" number="13" position="FW" birthDate="7 Sep 1995" caps="7" goals="0" countryID="WLS" clubID="087" />
+    <Player ID="152" name="David Edwards" number="14" position="MF" birthDate="3 Feb 1986" caps="31" goals="3" countryID="WLS" clubID="088" />
+    <Player ID="153" name="Jazz Richards" number="15" position="DF" birthDate="12 Apr 1991" caps="9" goals="0" countryID="WLS" clubID="089" />
+    <Player ID="154" name="Joe Ledley" number="16" position="MF" birthDate="23 Jan 1987" caps="61" goals="4" countryID="WLS" clubID="006" />
+    <Player ID="155" name="David Cotterill" number="17" position="FW" birthDate="4 Dec 1987" caps="23" goals="2" countryID="WLS" clubID="090" />
+    <Player ID="156" name="Sam Vokes" number="18" position="FW" birthDate="21 Oct 1989" caps="39" goals="6" countryID="WLS" clubID="073" />
+    <Player ID="157" name="James Collins" number="19" position="DF" birthDate="23 Aug 1983" caps="46" goals="3" countryID="WLS" clubID="008" />
+    <Player ID="158" name="Jonathan Williams" number="20" position="MF" birthDate="9 Oct 1993" caps="11" goals="0" countryID="WLS" clubID="091" />
+    <Player ID="159" name="Danny Ward" number="21" position="GK" birthDate="22 Jun 1993" caps="1" goals="0" countryID="WLS" clubID="069" />
+    <Player ID="160" name="David Vaughan" number="22" position="MF" birthDate="18 Feb 1983" caps="41" goals="1" countryID="WLS" clubID="092" />
+    <Player ID="161" name="Simon Church" number="23" position="FW" birthDate="10 Dec 1988" caps="35" goals="3" countryID="WLS" clubID="093" />
+    <Player ID="162" name="Ján Mucha" number="1" position="GK" birthDate="5 Dec 1982" caps="45" goals="0" countryID="SVK" clubID="094" />
+    <Player ID="163" name="Peter Pekarík" number="2" position="DF" birthDate="30 Oct 1986" caps="65" goals="2" countryID="SVK" clubID="095" />
+    <Player ID="164" name="Martin Škrtel (captain)" number="3" position="DF" birthDate="15 Dec 1984" caps="79" goals="5" countryID="SVK" clubID="069" />
+    <Player ID="165" name="Ján Ďurica" number="4" position="DF" birthDate="10 Dec 1981" caps="77" goals="4" countryID="SVK" clubID="075" />
+    <Player ID="166" name="Norbert Gyömbér" number="5" position="DF" birthDate="3 Jul 1992" caps="12" goals="0" countryID="SVK" clubID="015" />
+    <Player ID="167" name="Ján Greguš" number="6" position="MF" birthDate="29 Jan 1991" caps="5" goals="0" countryID="SVK" clubID="096" />
+    <Player ID="168" name="Vladimír Weiss" number="7" position="MF" birthDate="30 Nov 1989" caps="50" goals="4" countryID="SVK" clubID="097" />
+    <Player ID="169" name="Ondrej Duda" number="8" position="MF" birthDate="5 Dec 1994" caps="9" goals="1" countryID="SVK" clubID="098" />
+    <Player ID="170" name="Stanislav Šesták" number="9" position="FW" birthDate="16 Dec 1982" caps="63" goals="13" countryID="SVK" clubID="099" />
+    <Player ID="171" name="Miroslav Stoch" number="10" position="MF" birthDate="19 Oct 1989" caps="52" goals="6" countryID="SVK" clubID="100" />
+    <Player ID="172" name="Adam Nemec" number="11" position="FW" birthDate="2 Sep 1985" caps="20" goals="4" countryID="SVK" clubID="101" />
+    <Player ID="173" name="Ján Novota" number="12" position="GK" birthDate="29 Nov 1983" caps="2" goals="0" countryID="SVK" clubID="102" />
+    <Player ID="174" name="Patrik Hrošovský" number="13" position="MF" birthDate="22 Apr 1992" caps="9" goals="0" countryID="SVK" clubID="103" />
+    <Player ID="175" name="Milan Škriniar" number="14" position="DF" birthDate="11 Feb 1995" caps="2" goals="0" countryID="SVK" clubID="104" />
+    <Player ID="176" name="Tomáš Hubočan" number="15" position="DF" birthDate="17 Sep 1985" caps="44" goals="0" countryID="SVK" clubID="078" />
+    <Player ID="177" name="Kornel Saláta" number="16" position="DF" birthDate="24 Jan 1985" caps="36" goals="2" countryID="SVK" clubID="094" />
+    <Player ID="178" name="Marek Hamšík" number="17" position="MF" birthDate="27 Jul 1987" caps="85" goals="17" countryID="SVK" clubID="024" />
+    <Player ID="179" name="Dušan Švento" number="18" position="DF" birthDate="1 Aug 1985" caps="36" goals="1" countryID="SVK" clubID="047" />
+    <Player ID="180" name="Juraj Kucka" number="19" position="MF" birthDate="26 Feb 1987" caps="45" goals="4" countryID="SVK" clubID="105" />
+    <Player ID="181" name="Róbert Mak" number="20" position="MF" birthDate="8 Mar 1991" caps="26" goals="7" countryID="SVK" clubID="051" />
+    <Player ID="182" name="Michal Ďuriš" number="21" position="FW" birthDate="1 Jun 1988" caps="23" goals="3" countryID="SVK" clubID="103" />
+    <Player ID="183" name="Viktor Pečovský" number="22" position="MF" birthDate="24 May 1983" caps="30" goals="1" countryID="SVK" clubID="106" />
+    <Player ID="184" name="Matúš Kozáčik" number="23" position="GK" birthDate="27 Dec 1983" caps="15" goals="0" countryID="SVK" clubID="103" />
+    <Player ID="185" name="Manuel Neuer" number="1" position="GK" birthDate="27 Mar 1986" caps="64" goals="0" countryID="GER" clubID="017" />
+    <Player ID="186" name="Shkodran Mustafi" number="2" position="DF" birthDate="17 Apr 1992" caps="10" goals="0" countryID="GER" clubID="107" />
+    <Player ID="187" name="Jonas Hector" number="3" position="DF" birthDate="27 May 1990" caps="13" goals="1" countryID="GER" clubID="047" />
+    <Player ID="188" name="Benedikt Höwedes" number="4" position="DF" birthDate="29 Feb 1988" caps="33" goals="2" countryID="GER" clubID="077" />
+    <Player ID="189" name="Mats Hummels" number="5" position="DF" birthDate="16 Dec 1988" caps="46" goals="4" countryID="GER" clubID="066" />
+    <Player ID="190" name="Sami Khedira" number="6" position="MF" birthDate="4 Apr 1987" caps="59" goals="5" countryID="GER" clubID="003" />
+    <Player ID="191" name="Bastian Schweinsteiger (captain)" number="7" position="MF" birthDate="1 Aug 1984" caps="114" goals="23" countryID="GER" clubID="011" />
+    <Player ID="192" name="Mesut Özil" number="8" position="MF" birthDate="15 Oct 1988" caps="72" goals="19" countryID="GER" clubID="009" />
+    <Player ID="193" name="André Schürrle" number="9" position="MF" birthDate="6 Nov 1990" caps="51" goals="20" countryID="GER" clubID="060" />
+    <Player ID="194" name="Lukas Podolski" number="10" position="FW" birthDate="4 Jun 1985" caps="127" goals="48" countryID="GER" clubID="108" />
+    <Player ID="195" name="Julian Draxler" number="11" position="MF" birthDate="20 Sep 1993" caps="18" goals="1" countryID="GER" clubID="060" />
+    <Player ID="196" name="Bernd Leno" number="12" position="GK" birthDate="4 Mar 1992" caps="1" goals="0" countryID="GER" clubID="063" />
+    <Player ID="197" name="Thomas Müller" number="13" position="FW" birthDate="13 Sep 1989" caps="70" goals="31" countryID="GER" clubID="017" />
+    <Player ID="198" name="Emre Can" number="14" position="MF" birthDate="12 Jan 1994" caps="5" goals="0" countryID="GER" clubID="069" />
+    <Player ID="199" name="Julian Weigl" number="15" position="MF" birthDate="8 Sep 1995" caps="1" goals="0" countryID="GER" clubID="066" />
+    <Player ID="200" name="Antonio Rüdiger" number="16" position="DF" birthDate="3 Mar 1993" caps="10" goals="0" countryID="GER" clubID="015" />
+    <Player ID="201" name="Jérôme Boateng" number="17" position="DF" birthDate="3 Sep 1988" caps="58" goals="0" countryID="GER" clubID="017" />
+    <Player ID="202" name="Toni Kroos" number="18" position="MF" birthDate="4 Jan 1990" caps="64" goals="11" countryID="GER" clubID="085" />
+    <Player ID="203" name="Mario Götze" number="19" position="MF" birthDate="3 Jun 1992" caps="51" goals="17" countryID="GER" clubID="017" />
+    <Player ID="204" name="Leroy Sané" number="20" position="MF" birthDate="11 Jan 1996" caps="2" goals="0" countryID="GER" clubID="077" />
+    <Player ID="205" name="Joshua Kimmich" number="21" position="DF" birthDate="8 Feb 1995" caps="1" goals="0" countryID="GER" clubID="017" />
+    <Player ID="206" name="Marc-André ter Stegen" number="22" position="GK" birthDate="30 Apr 1992" caps="6" goals="0" countryID="GER" clubID="109" />
+    <Player ID="207" name="Mario Gómez" number="23" position="FW" birthDate="10 Jul 1985" caps="63" goals="27" countryID="GER" clubID="110" />
+    <Player ID="208" name="Denys Boyko" number="1" position="GK" birthDate="29 Jan 1988" caps="4" goals="0" countryID="UKR" clubID="110" />
+    <Player ID="209" name="Bohdan Butko" number="2" position="DF" birthDate="13 Jan 1991" caps="16" goals="0" countryID="UKR" clubID="111" />
+    <Player ID="210" name="Yevhen Khacheridi" number="3" position="DF" birthDate="28 Jul 1987" caps="41" goals="3" countryID="UKR" clubID="112" />
+    <Player ID="211" name="Anatoliy Tymoshchuk (captain)" number="4" position="MF" birthDate="30 Mar 1979" caps="142" goals="4" countryID="UKR" clubID="113" />
+    <Player ID="212" name="Oleksandr Kucher" number="5" position="DF" birthDate="22 Oct 1982" caps="50" goals="2" countryID="UKR" clubID="114" />
+    <Player ID="213" name="Taras Stepanenko" number="6" position="MF" birthDate="8 Aug 1989" caps="28" goals="2" countryID="UKR" clubID="114" />
+    <Player ID="214" name="Andriy Yarmolenko" number="7" position="MF" birthDate="23 Oct 1989" caps="58" goals="24" countryID="UKR" clubID="112" />
+    <Player ID="215" name="Roman Zozulya" number="8" position="FW" birthDate="17 Nov 1989" caps="25" goals="4" countryID="UKR" clubID="115" />
+    <Player ID="216" name="Viktor Kovalenko" number="9" position="MF" birthDate="14 Feb 1996" caps="2" goals="0" countryID="UKR" clubID="114" />
+    <Player ID="217" name="Yevhen Konoplyanka" number="10" position="MF" birthDate="29 Sep 1989" caps="52" goals="13" countryID="UKR" clubID="004" />
+    <Player ID="218" name="Yevhen Seleznyov" number="11" position="FW" birthDate="20 Jul 1985" caps="49" goals="11" countryID="UKR" clubID="116" />
+    <Player ID="219" name="Andriy Pyatov" number="12" position="GK" birthDate="28 Jun 1984" caps="63" goals="0" countryID="UKR" clubID="114" />
+    <Player ID="220" name="Vyacheslav Shevchuk" number="13" position="DF" birthDate="13 May 1979" caps="53" goals="0" countryID="UKR" clubID="114" />
+    <Player ID="221" name="Ruslan Rotan" number="14" position="MF" birthDate="29 Oct 1981" caps="87" goals="7" countryID="UKR" clubID="115" />
+    <Player ID="222" name="Pylyp Budkivskyi" number="15" position="FW" birthDate="10 Mar 1992" caps="6" goals="0" countryID="UKR" clubID="117" />
+    <Player ID="223" name="Serhiy Sydorchuk" number="16" position="MF" birthDate="2 May 1991" caps="11" goals="2" countryID="UKR" clubID="112" />
+    <Player ID="224" name="Artem Fedetskyi" number="17" position="DF" birthDate="26 Apr 1985" caps="47" goals="2" countryID="UKR" clubID="115" />
+    <Player ID="225" name="Serhiy Rybalka" number="18" position="MF" birthDate="1 Apr 1990" caps="9" goals="0" countryID="UKR" clubID="112" />
+    <Player ID="226" name="Denys Harmash" number="19" position="MF" birthDate="19 Apr 1990" caps="26" goals="2" countryID="UKR" clubID="112" />
+    <Player ID="227" name="Yaroslav Rakitskiy" number="20" position="DF" birthDate="3 Aug 1989" caps="39" goals="4" countryID="UKR" clubID="114" />
+    <Player ID="228" name="Oleksandr Zinchenko" number="21" position="MF" birthDate="15 Dec 1996" caps="2" goals="1" countryID="UKR" clubID="118" />
+    <Player ID="229" name="Oleksandr Karavayev" number="22" position="MF" birthDate="2 Jun 1992" caps="3" goals="0" countryID="UKR" clubID="117" />
+    <Player ID="230" name="Mykyta Shevchenko" number="23" position="GK" birthDate="26 Jan 1993" caps="0" goals="0" countryID="UKR" clubID="117" />
+    <Player ID="231" name="Wojciech Szczęsny" number="1" position="GK" birthDate="18 Apr 1990" caps="25" goals="0" countryID="POL" clubID="015" />
+    <Player ID="232" name="Michał Pazdan" number="2" position="DF" birthDate="21 Sep 1987" caps="16" goals="0" countryID="POL" clubID="098" />
+    <Player ID="233" name="Artur Jędrzejczyk" number="3" position="DF" birthDate="4 Nov 1987" caps="17" goals="2" countryID="POL" clubID="098" />
+    <Player ID="234" name="Thiago Cionek" number="4" position="DF" birthDate="21 Apr 1986" caps="4" goals="0" countryID="POL" clubID="119" />
+    <Player ID="235" name="Krzysztof Mączyński" number="5" position="MF" birthDate="23 May 1987" caps="14" goals="1" countryID="POL" clubID="120" />
+    <Player ID="236" name="Tomasz Jodłowiec" number="6" position="MF" birthDate="8 Sep 1985" caps="42" goals="1" countryID="POL" clubID="098" />
+    <Player ID="237" name="Arkadiusz Milik" number="7" position="FW" birthDate="28 Feb 1994" caps="24" goals="10" countryID="POL" clubID="121" />
+    <Player ID="238" name="Karol Linetty" number="8" position="MF" birthDate="2 Feb 1995" caps="9" goals="1" countryID="POL" clubID="122" />
+    <Player ID="239" name="Robert Lewandowski (captain)" number="9" position="FW" birthDate="21 Aug 1988" caps="75" goals="34" countryID="POL" clubID="017" />
+    <Player ID="240" name="Grzegorz Krychowiak" number="10" position="MF" birthDate="29 Jan 1990" caps="33" goals="2" countryID="POL" clubID="004" />
+    <Player ID="241" name="Kamil Grosicki" number="11" position="MF" birthDate="8 Jun 1988" caps="37" goals="8" countryID="POL" clubID="018" />
+    <Player ID="242" name="Artur Boruc" number="12" position="GK" birthDate="20 Feb 1980" caps="62" goals="0" countryID="POL" clubID="123" />
+    <Player ID="243" name="Mariusz Stępiński" number="13" position="FW" birthDate="12 May 1995" caps="2" goals="0" countryID="POL" clubID="124" />
+    <Player ID="244" name="Jakub Wawrzyniak" number="14" position="DF" birthDate="7 Jul 1983" caps="48" goals="1" countryID="POL" clubID="125" />
+    <Player ID="245" name="Kamil Glik" number="15" position="DF" birthDate="3 Feb 1988" caps="39" goals="3" countryID="POL" clubID="126" />
+    <Player ID="246" name="Jakub Błaszczykowski" number="16" position="MF" birthDate="14 Dec 1985" caps="77" goals="16" countryID="POL" clubID="028" />
+    <Player ID="247" name="Sławomir Peszko" number="17" position="MF" birthDate="19 Feb 1985" caps="35" goals="2" countryID="POL" clubID="125" />
+    <Player ID="248" name="Bartosz Salamon" number="18" position="DF" birthDate="1 May 1991" caps="7" goals="0" countryID="POL" clubID="127" />
+    <Player ID="249" name="Piotr Zieliński" number="19" position="MF" birthDate="20 May 1994" caps="13" goals="3" countryID="POL" clubID="128" />
+    <Player ID="250" name="Łukasz Piszczek" number="20" position="DF" birthDate="3 Jun 1985" caps="45" goals="2" countryID="POL" clubID="066" />
+    <Player ID="251" name="Bartosz Kapustka" number="21" position="MF" birthDate="23 Dec 1996" caps="5" goals="2" countryID="POL" clubID="129" />
+    <Player ID="252" name="Łukasz Fabiański" number="22" position="GK" birthDate="18 Apr 1985" caps="29" goals="0" countryID="POL" clubID="083" />
+    <Player ID="253" name="Filip Starzyński" number="23" position="MF" birthDate="27 May 1991" caps="2" goals="1" countryID="POL" clubID="130" />
+    <Player ID="254" name="Michael McGovern" number="1" position="GK" birthDate="12 Jul 1984" caps="10" goals="0" countryID="NIR" clubID="131" />
+    <Player ID="255" name="Conor McLaughlin" number="2" position="DF" birthDate="26 Jul 1991" caps="17" goals="0" countryID="NIR" clubID="132" />
+    <Player ID="256" name="Shane Ferguson" number="3" position="MF" birthDate="12 Jul 1991" caps="24" goals="1" countryID="NIR" clubID="133" />
+    <Player ID="257" name="Gareth McAuley" number="4" position="DF" birthDate="5 Dec 1979" caps="60" goals="7" countryID="NIR" clubID="084" />
+    <Player ID="258" name="Jonny Evans" number="5" position="DF" birthDate="3 Jan 1988" caps="48" goals="1" countryID="NIR" clubID="084" />
+    <Player ID="259" name="Chris Baird" number="6" position="DF" birthDate="25 Feb 1982" caps="77" goals="0" countryID="NIR" clubID="134" />
+    <Player ID="260" name="Niall McGinn" number="7" position="FW" birthDate="20 Jul 1987" caps="41" goals="2" countryID="NIR" clubID="093" />
+    <Player ID="261" name="Steven Davis (captain)" number="8" position="MF" birthDate="1 Jan 1985" caps="82" goals="8" countryID="NIR" clubID="071" />
+    <Player ID="262" name="Will Grigg" number="9" position="FW" birthDate="3 Jul 1991" caps="8" goals="1" countryID="NIR" clubID="135" />
+    <Player ID="263" name="Kyle Lafferty" number="10" position="FW" birthDate="16 Sep 1987" caps="50" goals="17" countryID="NIR" clubID="090" />
+    <Player ID="264" name="Conor Washington" number="11" position="FW" birthDate="18 May 1992" caps="3" goals="2" countryID="NIR" clubID="136" />
+    <Player ID="265" name="Roy Carroll" number="12" position="GK" birthDate="30 Sep 1977" caps="43" goals="0" countryID="NIR" clubID="137" />
+    <Player ID="266" name="Corry Evans" number="13" position="MF" birthDate="17 Jul 1990" caps="33" goals="1" countryID="NIR" clubID="138" />
+    <Player ID="267" name="Stuart Dallas" number="14" position="MF" birthDate="19 Apr 1991" caps="13" goals="1" countryID="NIR" clubID="139" />
+    <Player ID="268" name="Luke McCullough" number="15" position="DF" birthDate="15 Feb 1994" caps="5" goals="0" countryID="NIR" clubID="140" />
+    <Player ID="269" name="Oliver Norwood" number="16" position="MF" birthDate="12 Apr 1991" caps="33" goals="0" countryID="NIR" clubID="082" />
+    <Player ID="270" name="Paddy McNair" number="17" position="DF" birthDate="27 Apr 1995" caps="8" goals="0" countryID="NIR" clubID="011" />
+    <Player ID="271" name="Aaron Hughes" number="18" position="DF" birthDate="8 Nov 1979" caps="99" goals="1" countryID="NIR" clubID="141" />
+    <Player ID="272" name="Jamie Ward" number="19" position="MF" birthDate="12 May 1986" caps="21" goals="2" countryID="NIR" clubID="092" />
+    <Player ID="273" name="Craig Cathcart" number="20" position="DF" birthDate="6 Feb 1989" caps="27" goals="2" countryID="NIR" clubID="019" />
+    <Player ID="274" name="Josh Magennis" number="21" position="MF" birthDate="15 May 1990" caps="18" goals="1" countryID="NIR" clubID="142" />
+    <Player ID="275" name="Lee Hodson" number="22" position="DF" birthDate="2 Oct 1991" caps="15" goals="0" countryID="NIR" clubID="091" />
+    <Player ID="276" name="Alan Mannus" number="23" position="GK" birthDate="19 May 1982" caps="8" goals="0" countryID="NIR" clubID="143" />
+    <Player ID="277" name="Iker Casillas (captain)" number="1" position="GK" birthDate="20 May 1981" caps="166" goals="0" countryID="ESP" clubID="144" />
+    <Player ID="278" name="César Azpilicueta" number="2" position="DF" birthDate="28 Aug 1989" caps="13" goals="0" countryID="ESP" clubID="070" />
+    <Player ID="279" name="Gerard Piqué" number="3" position="DF" birthDate="2 Feb 1987" caps="75" goals="4" countryID="ESP" clubID="109" />
+    <Player ID="280" name="Marc Bartra" number="4" position="DF" birthDate="15 Jan 1991" caps="8" goals="0" countryID="ESP" clubID="109" />
+    <Player ID="281" name="Sergio Busquets" number="5" position="MF" birthDate="16 Jul 1988" caps="82" goals="2" countryID="ESP" clubID="109" />
+    <Player ID="282" name="Andrés Iniesta" number="6" position="MF" birthDate="11 May 1984" caps="107" goals="13" countryID="ESP" clubID="109" />
+    <Player ID="283" name="Álvaro Morata" number="7" position="FW" birthDate="23 Oct 1992" caps="8" goals="1" countryID="ESP" clubID="003" />
+    <Player ID="284" name="Koke" number="8" position="MF" birthDate="8 Jan 1992" caps="22" goals="0" countryID="ESP" clubID="007" />
+    <Player ID="285" name="Lucas Vázquez" number="9" position="FW" birthDate="1 Jul 1991" caps="0" goals="0" countryID="ESP" clubID="085" />
+    <Player ID="286" name="Cesc Fàbregas" number="10" position="MF" birthDate="4 May 1987" caps="103" goals="14" countryID="ESP" clubID="070" />
+    <Player ID="287" name="Pedro" number="11" position="FW" birthDate="28 Jul 1987" caps="55" goals="16" countryID="ESP" clubID="070" />
+    <Player ID="288" name="Héctor Bellerín" number="12" position="DF" birthDate="19 Mar 1995" caps="1" goals="0" countryID="ESP" clubID="009" />
+    <Player ID="289" name="David de Gea" number="13" position="GK" birthDate="7 Nov 1990" caps="8" goals="0" countryID="ESP" clubID="011" />
+    <Player ID="290" name="Thiago" number="14" position="MF" birthDate="11 Apr 1991" caps="8" goals="0" countryID="ESP" clubID="017" />
+    <Player ID="291" name="Sergio Ramos" number="15" position="DF" birthDate="30 Mar 1986" caps="131" goals="10" countryID="ESP" clubID="085" />
+    <Player ID="292" name="Juanfran" number="16" position="DF" birthDate="9 Jan 1985" caps="17" goals="0" countryID="ESP" clubID="007" />
+    <Player ID="293" name="Mikel San José" number="17" position="DF" birthDate="30 May 1989" caps="5" goals="0" countryID="ESP" clubID="145" />
+    <Player ID="294" name="Jordi Alba" number="18" position="DF" birthDate="21 Mar 1989" caps="41" goals="6" countryID="ESP" clubID="109" />
+    <Player ID="295" name="Bruno Soriano" number="19" position="MF" birthDate="12 Jun 1984" caps="6" goals="0" countryID="ESP" clubID="146" />
+    <Player ID="296" name="Aritz Aduriz" number="20" position="FW" birthDate="11 Feb 1981" caps="3" goals="1" countryID="ESP" clubID="145" />
+    <Player ID="297" name="David Silva" number="21" position="MF" birthDate="8 Jan 1986" caps="96" goals="23" countryID="ESP" clubID="012" />
+    <Player ID="298" name="Nolito" number="22" position="FW" birthDate="15 Oct 1986" caps="7" goals="2" countryID="ESP" clubID="147" />
+    <Player ID="299" name="Sergio Rico" number="23" position="GK" birthDate="1 Sep 1993" caps="0" goals="0" countryID="ESP" clubID="004" />
+    <Player ID="300" name="Petr Čech" number="1" position="GK" birthDate="20 May 1982" caps="118" goals="0" countryID="CZE" clubID="009" />
+    <Player ID="301" name="Pavel Kadeřábek" number="2" position="DF" birthDate="25 Apr 1992" caps="15" goals="2" countryID="CZE" clubID="067" />
+    <Player ID="302" name="Michal Kadlec" number="3" position="DF" birthDate="13 Dec 1984" caps="63" goals="8" countryID="CZE" clubID="148" />
+    <Player ID="303" name="Theodor Gebre Selassie" number="4" position="DF" birthDate="24 Dec 1986" caps="33" goals="1" countryID="CZE" clubID="149" />
+    <Player ID="304" name="Roman Hubník" number="5" position="DF" birthDate="6 Jun 1984" caps="24" goals="2" countryID="CZE" clubID="103" />
+    <Player ID="305" name="Tomáš Sivok" number="6" position="DF" birthDate="15 Sep 1983" caps="52" goals="5" countryID="CZE" clubID="100" />
+    <Player ID="306" name="Tomáš Necid" number="7" position="FW" birthDate="13 Aug 1989" caps="36" goals="9" countryID="CZE" clubID="100" />
+    <Player ID="307" name="David Limberský" number="8" position="DF" birthDate="6 Oct 1983" caps="35" goals="1" countryID="CZE" clubID="103" />
+    <Player ID="308" name="Bořek Dočkal" number="9" position="MF" birthDate="30 Sep 1988" caps="23" goals="6" countryID="CZE" clubID="150" />
+    <Player ID="309" name="Tomáš Rosický (captain)" number="10" position="MF" birthDate="4 Oct 1980" caps="100" goals="22" countryID="CZE" clubID="009" />
+    <Player ID="310" name="Daniel Pudil" number="11" position="MF" birthDate="27 Sep 1985" caps="31" goals="2" countryID="CZE" clubID="151" />
+    <Player ID="311" name="Milan Škoda" number="12" position="FW" birthDate="16 Jan 1986" caps="7" goals="2" countryID="CZE" clubID="152" />
+    <Player ID="312" name="Jaroslav Plašil" number="13" position="MF" birthDate="5 Jan 1982" caps="97" goals="6" countryID="CZE" clubID="153" />
+    <Player ID="313" name="Daniel Kolář" number="14" position="MF" birthDate="27 Oct 1985" caps="26" goals="2" countryID="CZE" clubID="103" />
+    <Player ID="314" name="David Pavelka" number="15" position="MF" birthDate="18 May 1991" caps="5" goals="0" countryID="CZE" clubID="064" />
+    <Player ID="315" name="Tomáš Vaclík" number="16" position="GK" birthDate="29 Mar 1989" caps="6" goals="0" countryID="CZE" clubID="046" />
+    <Player ID="316" name="Marek Suchý" number="17" position="DF" birthDate="29 Mar 1988" caps="26" goals="0" countryID="CZE" clubID="046" />
+    <Player ID="317" name="Josef Šural" number="18" position="MF" birthDate="30 May 1990" caps="9" goals="1" countryID="CZE" clubID="150" />
+    <Player ID="318" name="Ladislav Krejčí" number="19" position="MF" birthDate="5 Jul 1992" caps="20" goals="4" countryID="CZE" clubID="150" />
+    <Player ID="319" name="Jiří Skalák" number="20" position="MF" birthDate="12 Mar 1992" caps="7" goals="0" countryID="CZE" clubID="154" />
+    <Player ID="320" name="David Lafata" number="21" position="FW" birthDate="18 Sep 1981" caps="37" goals="8" countryID="CZE" clubID="150" />
+    <Player ID="321" name="Vladimír Darida" number="22" position="MF" birthDate="8 Aug 1990" caps="33" goals="1" countryID="CZE" clubID="095" />
+    <Player ID="322" name="Tomáš Koubek" number="23" position="GK" birthDate="26 Aug 1992" caps="1" goals="0" countryID="CZE" clubID="155" />
+    <Player ID="323" name="Volkan Babacan" number="1" position="GK" birthDate="12 Aug 1988" caps="16" goals="0" countryID="TUR" clubID="048" />
+    <Player ID="324" name="Semih Kaya" number="2" position="DF" birthDate="24 Feb 1991" caps="23" goals="0" countryID="TUR" clubID="108" />
+    <Player ID="325" name="Hakan Balta" number="3" position="DF" birthDate="23 Mar 1983" caps="45" goals="2" countryID="TUR" clubID="108" />
+    <Player ID="326" name="Ahmet Yılmaz Çalık" number="4" position="DF" birthDate="22 Jun 1994" caps="4" goals="0" countryID="TUR" clubID="032" />
+    <Player ID="327" name="Nuri Şahin" number="5" position="MF" birthDate="5 Sep 1988" caps="48" goals="2" countryID="TUR" clubID="066" />
+    <Player ID="328" name="Hakan Çalhanoğlu" number="6" position="MF" birthDate="8 Feb 1994" caps="18" goals="6" countryID="TUR" clubID="063" />
+    <Player ID="329" name="Gökhan Gönül" number="7" position="DF" birthDate="4 Jan 1985" caps="55" goals="1" countryID="TUR" clubID="148" />
+    <Player ID="330" name="Selçuk İnan" number="8" position="MF" birthDate="10 Feb 1985" caps="51" goals="8" countryID="TUR" clubID="108" />
+    <Player ID="331" name="Cenk Tosun" number="9" position="FW" birthDate="7 Jun 1991" caps="9" goals="3" countryID="TUR" clubID="110" />
+    <Player ID="332" name="Arda Turan (captain)" number="10" position="MF" birthDate="30 Jan 1987" caps="90" goals="17" countryID="TUR" clubID="109" />
+    <Player ID="333" name="Olcay Şahan" number="11" position="MF" birthDate="26 May 1987" caps="23" goals="2" countryID="TUR" clubID="110" />
+    <Player ID="334" name="Onur Kıvrak" number="12" position="GK" birthDate="1 Jan 1988" caps="12" goals="0" countryID="TUR" clubID="156" />
+    <Player ID="335" name="İsmail Köybaşı" number="13" position="DF" birthDate="10 Jul 1989" caps="18" goals="0" countryID="TUR" clubID="110" />
+    <Player ID="336" name="Oğuzhan Özyakup" number="14" position="MF" birthDate="23 Sep 1992" caps="19" goals="1" countryID="TUR" clubID="110" />
+    <Player ID="337" name="Mehmet Topal" number="15" position="MF" birthDate="3 Mar 1986" caps="58" goals="1" countryID="TUR" clubID="148" />
+    <Player ID="338" name="Ozan Tufan" number="16" position="MF" birthDate="23 Mar 1995" caps="23" goals="1" countryID="TUR" clubID="148" />
+    <Player ID="339" name="Burak Yılmaz" number="17" position="FW" birthDate="15 Jul 1985" caps="43" goals="19" countryID="TUR" clubID="157" />
+    <Player ID="340" name="Caner Erkin" number="18" position="MF" birthDate="4 Oct 1988" caps="46" goals="2" countryID="TUR" clubID="148" />
+    <Player ID="341" name="Yunus Mallı" number="19" position="MF" birthDate="24 Feb 1992" caps="5" goals="0" countryID="TUR" clubID="158" />
+    <Player ID="342" name="Volkan Şen" number="20" position="MF" birthDate="7 Jul 1987" caps="16" goals="0" countryID="TUR" clubID="148" />
+    <Player ID="343" name="Emre Mor" number="21" position="FW" birthDate="24 Jul 1997" caps="1" goals="0" countryID="TUR" clubID="159" />
+    <Player ID="344" name="Şener Özbayraklı" number="22" position="DF" birthDate="23 Jan 1990" caps="8" goals="0" countryID="TUR" clubID="148" />
+    <Player ID="345" name="Harun Tekin" number="23" position="GK" birthDate="17 Jun 1989" caps="0" goals="0" countryID="TUR" clubID="100" />
+    <Player ID="346" name="Ivan Vargić" number="1" position="GK" birthDate="15 Mar 1987" caps="2" goals="0" countryID="HRV" clubID="050" />
+    <Player ID="347" name="Šime Vrsaljko" number="2" position="DF" birthDate="10 Jan 1992" caps="18" goals="0" countryID="HRV" clubID="160" />
+    <Player ID="348" name="Ivan Strinić" number="3" position="DF" birthDate="17 Jul 1987" caps="34" goals="0" countryID="HRV" clubID="024" />
+    <Player ID="349" name="Ivan Perišić" number="4" position="MF" birthDate="2 Feb 1989" caps="46" goals="12" countryID="HRV" clubID="161" />
+    <Player ID="350" name="Vedran Ćorluka" number="5" position="DF" birthDate="5 Feb 1986" caps="88" goals="4" countryID="HRV" clubID="075" />
+    <Player ID="351" name="Tin Jedvaj" number="6" position="DF" birthDate="28 Nov 1995" caps="3" goals="0" countryID="HRV" clubID="063" />
+    <Player ID="352" name="Ivan Rakitić" number="7" position="MF" birthDate="10 Mar 1988" caps="75" goals="10" countryID="HRV" clubID="109" />
+    <Player ID="353" name="Mateo Kovačić" number="8" position="MF" birthDate="6 May 1994" caps="26" goals="1" countryID="HRV" clubID="085" />
+    <Player ID="354" name="Andrej Kramarić" number="9" position="FW" birthDate="19 Jun 1991" caps="10" goals="4" countryID="HRV" clubID="067" />
+    <Player ID="355" name="Luka Modrić" number="10" position="MF" birthDate="9 Sep 1985" caps="89" goals="10" countryID="HRV" clubID="085" />
+    <Player ID="356" name="Darijo Srna (captain)" number="11" position="DF" birthDate="1 May 1982" caps="129" goals="21" countryID="HRV" clubID="114" />
+    <Player ID="357" name="Lovre Kalinić" number="12" position="GK" birthDate="3 Apr 1990" caps="4" goals="0" countryID="HRV" clubID="162" />
+    <Player ID="358" name="Gordon Schildenfeld" number="13" position="DF" birthDate="18 Mar 1985" caps="26" goals="1" countryID="HRV" clubID="020" />
+    <Player ID="359" name="Marcelo Brozović" number="14" position="MF" birthDate="16 Nov 1992" caps="17" goals="4" countryID="HRV" clubID="161" />
+    <Player ID="360" name="Ante Ćorić" number="15" position="MF" birthDate="14 Apr 1997" caps="1" goals="0" countryID="HRV" clubID="020" />
+    <Player ID="361" name="Nikola Kalinić" number="16" position="FW" birthDate="5 Jan 1988" caps="28" goals="8" countryID="HRV" clubID="028" />
+    <Player ID="362" name="Mario Mandžukić" number="17" position="FW" birthDate="21 May 1986" caps="65" goals="21" countryID="HRV" clubID="003" />
+    <Player ID="363" name="Marko Rog" number="18" position="MF" birthDate="19 Jul 1995" caps="2" goals="0" countryID="HRV" clubID="020" />
+    <Player ID="364" name="Milan Badelj" number="19" position="MF" birthDate="25 Feb 1989" caps="19" goals="1" countryID="HRV" clubID="028" />
+    <Player ID="365" name="Marko Pjaca" number="20" position="FW" birthDate="6 May 1995" caps="7" goals="0" countryID="HRV" clubID="020" />
+    <Player ID="366" name="Domagoj Vida" number="21" position="DF" birthDate="29 Apr 1989" caps="37" goals="1" countryID="HRV" clubID="112" />
+    <Player ID="367" name="Duje Čop" number="22" position="FW" birthDate="1 Feb 1990" caps="4" goals="0" countryID="HRV" clubID="163" />
+    <Player ID="368" name="Danijel Subašić" number="23" position="GK" birthDate="27 Oct 1984" caps="20" goals="0" countryID="HRV" clubID="164" />
+    <Player ID="369" name="Thibaut Courtois" number="1" position="GK" birthDate="11 May 1992" caps="36" goals="0" countryID="BEL" clubID="070" />
+    <Player ID="370" name="Toby Alderweireld" number="2" position="DF" birthDate="2 Mar 1989" caps="54" goals="1" countryID="BEL" clubID="001" />
+    <Player ID="371" name="Thomas Vermaelen" number="3" position="DF" birthDate="14 Nov 1985" caps="52" goals="1" countryID="BEL" clubID="109" />
+    <Player ID="372" name="Radja Nainggolan" number="4" position="MF" birthDate="4 May 1988" caps="18" goals="4" countryID="BEL" clubID="015" />
+    <Player ID="373" name="Jan Vertonghen" number="5" position="DF" birthDate="24 Apr 1987" caps="76" goals="6" countryID="BEL" clubID="001" />
+    <Player ID="374" name="Axel Witsel" number="6" position="MF" birthDate="12 Jan 1989" caps="66" goals="6" countryID="BEL" clubID="076" />
+    <Player ID="375" name="Kevin De Bruyne" number="7" position="MF" birthDate="28 Jun 1991" caps="38" goals="12" countryID="BEL" clubID="012" />
+    <Player ID="376" name="Marouane Fellaini" number="8" position="MF" birthDate="22 Nov 1987" caps="67" goals="15" countryID="BEL" clubID="011" />
+    <Player ID="377" name="Romelu Lukaku" number="9" position="FW" birthDate="13 May 1993" caps="43" goals="11" countryID="BEL" clubID="072" />
+    <Player ID="378" name="Eden Hazard (captain)" number="10" position="MF" birthDate="7 Jan 1991" caps="64" goals="12" countryID="BEL" clubID="070" />
+    <Player ID="379" name="Yannick Ferreira Carrasco" number="11" position="MF" birthDate="4 Sep 1993" caps="4" goals="0" countryID="BEL" clubID="007" />
+    <Player ID="380" name="Simon Mignolet" number="12" position="GK" birthDate="6 Mar 1988" caps="16" goals="0" countryID="BEL" clubID="069" />
+    <Player ID="381" name="Jean-François Gillet" number="13" position="GK" birthDate="31 May 1979" caps="9" goals="0" countryID="BEL" clubID="165" />
+    <Player ID="382" name="Dries Mertens" number="14" position="FW" birthDate="6 May 1987" caps="44" goals="8" countryID="BEL" clubID="024" />
+    <Player ID="383" name="Jason Denayer" number="15" position="DF" birthDate="28 Jun 1995" caps="6" goals="0" countryID="BEL" clubID="108" />
+    <Player ID="384" name="Thomas Meunier" number="16" position="DF" birthDate="12 Sep 1991" caps="5" goals="0" countryID="BEL" clubID="166" />
+    <Player ID="385" name="Divock Origi" number="17" position="FW" birthDate="18 Apr 1995" caps="18" goals="3" countryID="BEL" clubID="069" />
+    <Player ID="386" name="Christian Kabasele" number="18" position="DF" birthDate="24 Feb 1991" caps="0" goals="0" countryID="BEL" clubID="167" />
+    <Player ID="387" name="Mousa Dembélé" number="19" position="MF" birthDate="16 Jul 1987" caps="64" goals="5" countryID="BEL" clubID="001" />
+    <Player ID="388" name="Christian Benteke" number="20" position="FW" birthDate="3 Dec 1990" caps="26" goals="6" countryID="BEL" clubID="069" />
+    <Player ID="389" name="Jordan Lukaku" number="21" position="DF" birthDate="25 Jul 1994" caps="3" goals="0" countryID="BEL" clubID="168" />
+    <Player ID="390" name="Michy Batshuayi" number="22" position="FW" birthDate="2 Oct 1993" caps="5" goals="2" countryID="BEL" clubID="014" />
+    <Player ID="391" name="Laurent Ciman" number="23" position="DF" birthDate="5 Aug 1985" caps="9" goals="0" countryID="BEL" clubID="169" />
+    <Player ID="392" name="Gianluigi Buffon (captain)" number="1" position="GK" birthDate="28 Jan 1978" caps="157" goals="0" countryID="ITA" clubID="003" />
+    <Player ID="393" name="Mattia De Sciglio" number="2" position="DF" birthDate="20 Oct 1992" caps="22" goals="0" countryID="ITA" clubID="105" />
+    <Player ID="394" name="Giorgio Chiellini" number="3" position="DF" birthDate="14 Aug 1984" caps="83" goals="6" countryID="ITA" clubID="003" />
+    <Player ID="395" name="Matteo Darmian" number="4" position="DF" birthDate="2 Dec 1989" caps="22" goals="1" countryID="ITA" clubID="011" />
+    <Player ID="396" name="Angelo Ogbonna" number="5" position="DF" birthDate="23 May 1988" caps="10" goals="0" countryID="ITA" clubID="008" />
+    <Player ID="397" name="Antonio Candreva" number="6" position="MF" birthDate="28 Feb 1987" caps="37" goals="3" countryID="ITA" clubID="035" />
+    <Player ID="398" name="Simone Zaza" number="7" position="FW" birthDate="25 Jun 1991" caps="10" goals="1" countryID="ITA" clubID="003" />
+    <Player ID="399" name="Alessandro Florenzi" number="8" position="MF" birthDate="11 Mar 1991" caps="16" goals="2" countryID="ITA" clubID="015" />
+    <Player ID="400" name="Graziano Pellè" number="9" position="FW" birthDate="15 Jul 1985" caps="12" goals="5" countryID="ITA" clubID="071" />
+    <Player ID="401" name="Thiago Motta" number="10" position="MF" birthDate="28 Aug 1982" caps="25" goals="1" countryID="ITA" clubID="013" />
+    <Player ID="402" name="Ciro Immobile" number="11" position="FW" birthDate="20 Feb 1990" caps="12" goals="1" countryID="ITA" clubID="126" />
+    <Player ID="403" name="Salvatore Sirigu" number="12" position="GK" birthDate="12 Jan 1987" caps="15" goals="0" countryID="ITA" clubID="013" />
+    <Player ID="404" name="Federico Marchetti" number="13" position="GK" birthDate="7 Feb 1983" caps="11" goals="0" countryID="ITA" clubID="035" />
+    <Player ID="405" name="Stefano Sturaro" number="14" position="MF" birthDate="9 Mar 1993" caps="0" goals="0" countryID="ITA" clubID="003" />
+    <Player ID="406" name="Andrea Barzagli" number="15" position="DF" birthDate="8 May 1981" caps="55" goals="0" countryID="ITA" clubID="003" />
+    <Player ID="407" name="Daniele De Rossi" number="16" position="MF" birthDate="24 Jul 1983" caps="102" goals="17" countryID="ITA" clubID="015" />
+    <Player ID="408" name="Éder" number="17" position="FW" birthDate="15 Nov 1986" caps="10" goals="2" countryID="ITA" clubID="161" />
+    <Player ID="409" name="Marco Parolo" number="18" position="MF" birthDate="25 Jan 1985" caps="19" goals="0" countryID="ITA" clubID="035" />
+    <Player ID="410" name="Leonardo Bonucci" number="19" position="DF" birthDate="1 May 1987" caps="56" goals="3" countryID="ITA" clubID="003" />
+    <Player ID="411" name="Lorenzo Insigne" number="20" position="FW" birthDate="4 Jun 1991" caps="9" goals="2" countryID="ITA" clubID="024" />
+    <Player ID="412" name="Federico Bernardeschi" number="21" position="MF" birthDate="16 Feb 1994" caps="3" goals="0" countryID="ITA" clubID="028" />
+    <Player ID="413" name="Stephan El Shaarawy" number="22" position="FW" birthDate="27 Oct 1992" caps="18" goals="3" countryID="ITA" clubID="015" />
+    <Player ID="414" name="Emanuele Giaccherini" number="23" position="MF" birthDate="5 May 1985" caps="24" goals="3" countryID="ITA" clubID="170" />
+    <Player ID="415" name="Keiren Westwood" number="1" position="GK" birthDate="23 Oct 1984" caps="18" goals="0" countryID="IRL" clubID="151" />
+    <Player ID="416" name="Séamus Coleman" number="2" position="DF" birthDate="11 Oct 1988" caps="33" goals="0" countryID="IRL" clubID="072" />
+    <Player ID="417" name="Ciaran Clark" number="3" position="DF" birthDate="26 Sep 1989" caps="17" goals="2" countryID="IRL" clubID="171" />
+    <Player ID="418" name="John O'Shea" number="4" position="DF" birthDate="30 Apr 1981" caps="111" goals="3" countryID="IRL" clubID="172" />
+    <Player ID="419" name="Richard Keogh" number="5" position="DF" birthDate="11 Aug 1986" caps="12" goals="1" countryID="IRL" clubID="134" />
+    <Player ID="420" name="Glenn Whelan" number="6" position="MF" birthDate="13 Jan 1984" caps="71" goals="2" countryID="IRL" clubID="068" />
+    <Player ID="421" name="Aiden McGeady" number="7" position="MF" birthDate="4 Apr 1986" caps="82" goals="5" countryID="IRL" clubID="072" />
+    <Player ID="422" name="James McCarthy" number="8" position="MF" birthDate="12 Nov 1990" caps="35" goals="0" countryID="IRL" clubID="072" />
+    <Player ID="423" name="Shane Long" number="9" position="FW" birthDate="22 Jan 1987" caps="63" goals="16" countryID="IRL" clubID="071" />
+    <Player ID="424" name="Robbie Keane (captain)" number="10" position="FW" birthDate="8 Jul 1980" caps="143" goals="67" countryID="IRL" clubID="173" />
+    <Player ID="425" name="James McClean" number="11" position="MF" birthDate="22 Apr 1989" caps="38" goals="5" countryID="IRL" clubID="084" />
+    <Player ID="426" name="Shane Duffy" number="12" position="DF" birthDate="1 Jan 1992" caps="3" goals="0" countryID="IRL" clubID="138" />
+    <Player ID="427" name="Jeff Hendrick" number="13" position="MF" birthDate="31 Jan 1992" caps="22" goals="0" countryID="IRL" clubID="134" />
+    <Player ID="428" name="Jonathan Walters" number="14" position="FW" birthDate="20 Sep 1983" caps="39" goals="10" countryID="IRL" clubID="068" />
+    <Player ID="429" name="Cyrus Christie" number="15" position="DF" birthDate="30 Sep 1992" caps="5" goals="1" countryID="IRL" clubID="134" />
+    <Player ID="430" name="Shay Given" number="16" position="GK" birthDate="20 Apr 1976" caps="134" goals="0" countryID="IRL" clubID="068" />
+    <Player ID="431" name="Stephen Ward" number="17" position="DF" birthDate="20 Aug 1985" caps="33" goals="3" countryID="IRL" clubID="073" />
+    <Player ID="432" name="David Meyler" number="18" position="MF" birthDate="29 May 1989" caps="15" goals="0" countryID="IRL" clubID="174" />
+    <Player ID="433" name="Robbie Brady" number="19" position="MF" birthDate="14 Jan 1992" caps="24" goals="4" countryID="IRL" clubID="175" />
+    <Player ID="434" name="Wes Hoolahan" number="20" position="MF" birthDate="20 May 1982" caps="31" goals="2" countryID="IRL" clubID="175" />
+    <Player ID="435" name="Daryl Murphy" number="21" position="FW" birthDate="15 Mar 1983" caps="21" goals="0" countryID="IRL" clubID="176" />
+    <Player ID="436" name="Stephen Quinn" number="22" position="MF" birthDate="4 Apr 1986" caps="14" goals="0" countryID="IRL" clubID="082" />
+    <Player ID="437" name="Darren Randolph" number="23" position="GK" birthDate="12 May 1987" caps="9" goals="0" countryID="IRL" clubID="008" />
+    <Player ID="438" name="Andreas Isaksson" number="1" position="GK" birthDate="3 Oct 1981" caps="129" goals="0" countryID="SWE" clubID="064" />
+    <Player ID="439" name="Mikael Lustig" number="2" position="DF" birthDate="13 Dec 1986" caps="51" goals="2" countryID="SWE" clubID="177" />
+    <Player ID="440" name="Erik Johansson" number="3" position="DF" birthDate="30 Dec 1988" caps="8" goals="0" countryID="SWE" clubID="178" />
+    <Player ID="441" name="Andreas Granqvist" number="4" position="DF" birthDate="16 Apr 1985" caps="51" goals="3" countryID="SWE" clubID="080" />
+    <Player ID="442" name="Martin Olsson" number="5" position="DF" birthDate="17 May 1988" caps="34" goals="5" countryID="SWE" clubID="175" />
+    <Player ID="443" name="Emil Forsberg" number="6" position="MF" birthDate="23 Oct 1991" caps="16" goals="1" countryID="SWE" clubID="179" />
+    <Player ID="444" name="Sebastian Larsson" number="7" position="MF" birthDate="6 Jun 1985" caps="83" goals="6" countryID="SWE" clubID="172" />
+    <Player ID="445" name="Albin Ekdal" number="8" position="MF" birthDate="28 Jul 1989" caps="21" goals="0" countryID="SWE" clubID="065" />
+    <Player ID="446" name="Kim Källström" number="9" position="MF" birthDate="24 Aug 1982" caps="127" goals="16" countryID="SWE" clubID="180" />
+    <Player ID="447" name="Zlatan Ibrahimović (captain)" number="10" position="FW" birthDate="3 Oct 1981" caps="112" goals="62" countryID="SWE" clubID="013" />
+    <Player ID="448" name="Marcus Berg" number="11" position="FW" birthDate="17 Aug 1986" caps="37" goals="10" countryID="SWE" clubID="181" />
+    <Player ID="449" name="Robin Olsen" number="12" position="GK" birthDate="8 Jan 1990" caps="3" goals="0" countryID="SWE" clubID="178" />
+    <Player ID="450" name="Pontus Jansson" number="13" position="DF" birthDate="13 Feb 1991" caps="8" goals="0" countryID="SWE" clubID="126" />
+    <Player ID="451" name="Victor Lindelöf" number="14" position="DF" birthDate="17 Jul 1994" caps="3" goals="0" countryID="SWE" clubID="182" />
+    <Player ID="452" name="Oscar Hiljemark" number="15" position="MF" birthDate="28 Jun 1992" caps="10" goals="1" countryID="SWE" clubID="119" />
+    <Player ID="453" name="Pontus Wernbloom" number="16" position="MF" birthDate="25 Jun 1986" caps="51" goals="2" countryID="SWE" clubID="074" />
+    <Player ID="454" name="Ludwig Augustinsson" number="17" position="DF" birthDate="21 Apr 1994" caps="3" goals="0" countryID="SWE" clubID="178" />
+    <Player ID="455" name="Oscar Lewicki" number="18" position="MF" birthDate="14 Jul 1992" caps="9" goals="0" countryID="SWE" clubID="183" />
+    <Player ID="456" name="Emir Kujović" number="19" position="FW" birthDate="22 Jun 1988" caps="3" goals="1" countryID="SWE" clubID="184" />
+    <Player ID="457" name="John Guidetti" number="20" position="FW" birthDate="15 Apr 1992" caps="8" goals="0" countryID="SWE" clubID="147" />
+    <Player ID="458" name="Jimmy Durmaz" number="21" position="MF" birthDate="22 Mar 1989" caps="31" goals="2" countryID="SWE" clubID="185" />
+    <Player ID="459" name="Erkan Zengin" number="22" position="MF" birthDate="5 Aug 1985" caps="20" goals="3" countryID="SWE" clubID="156" />
+    <Player ID="460" name="Patrik Carlgren" number="23" position="GK" birthDate="8 Jan 1992" caps="1" goals="0" countryID="SWE" clubID="186" />
+    <Player ID="461" name="Rui Patrício" number="1" position="GK" birthDate="15 Feb 1988" caps="43" goals="0" countryID="POR" clubID="187" />
+    <Player ID="462" name="Bruno Alves" number="2" position="DF" birthDate="27 Nov 1981" caps="84" goals="10" countryID="POR" clubID="148" />
+    <Player ID="463" name="Pepe" number="3" position="DF" birthDate="26 Feb 1983" caps="70" goals="3" countryID="POR" clubID="085" />
+    <Player ID="464" name="José Fonte" number="4" position="DF" birthDate="22 Dec 1983" caps="10" goals="0" countryID="POR" clubID="071" />
+    <Player ID="465" name="Raphaël Guerreiro" number="5" position="DF" birthDate="22 Dec 1993" caps="6" goals="2" countryID="POR" clubID="188" />
+    <Player ID="466" name="Ricardo Carvalho" number="6" position="DF" birthDate="18 May 1978" caps="84" goals="5" countryID="POR" clubID="164" />
+    <Player ID="467" name="Cristiano Ronaldo (captain)" number="7" position="FW" birthDate="5 Feb 1985" caps="125" goals="56" countryID="POR" clubID="085" />
+    <Player ID="468" name="João Moutinho" number="8" position="MF" birthDate="8 Sep 1986" caps="82" goals="4" countryID="POR" clubID="164" />
+    <Player ID="469" name="Éder" number="9" position="FW" birthDate="22 Dec 1987" caps="24" goals="2" countryID="POR" clubID="189" />
+    <Player ID="470" name="João Mário" number="10" position="MF" birthDate="19 Jan 1993" caps="9" goals="0" countryID="POR" clubID="187" />
+    <Player ID="471" name="Vieirinha" number="11" position="MF" birthDate="24 Jan 1986" caps="20" goals="1" countryID="POR" clubID="190" />
+    <Player ID="472" name="Anthony Lopes" number="12" position="GK" birthDate="1 Oct 1990" caps="4" goals="0" countryID="POR" clubID="002" />
+    <Player ID="473" name="Danilo" number="13" position="MF" birthDate="9 Sep 1991" caps="10" goals="0" countryID="POR" clubID="144" />
+    <Player ID="474" name="William Carvalho" number="14" position="MF" birthDate="7 Apr 1992" caps="18" goals="0" countryID="POR" clubID="187" />
+    <Player ID="475" name="André Gomes" number="15" position="MF" birthDate="30 Jul 1993" caps="6" goals="0" countryID="POR" clubID="107" />
+    <Player ID="476" name="Renato Sanches" number="16" position="MF" birthDate="18 Aug 1997" caps="3" goals="0" countryID="POR" clubID="182" />
+    <Player ID="477" name="Nani" number="17" position="FW" birthDate="17 Nov 1986" caps="94" goals="18" countryID="POR" clubID="148" />
+    <Player ID="478" name="Rafa Silva" number="18" position="MF" birthDate="17 May 1993" caps="7" goals="0" countryID="POR" clubID="191" />
+    <Player ID="479" name="Eliseu" number="19" position="DF" birthDate="1 Oct 1983" caps="15" goals="1" countryID="POR" clubID="182" />
+    <Player ID="480" name="Ricardo Quaresma" number="20" position="FW" birthDate="26 Sep 1983" caps="48" goals="5" countryID="POR" clubID="110" />
+    <Player ID="481" name="Cédric Soares" number="21" position="DF" birthDate="31 Aug 1991" caps="10" goals="0" countryID="POR" clubID="071" />
+    <Player ID="482" name="Eduardo" number="22" position="GK" birthDate="19 Sep 1982" caps="35" goals="0" countryID="POR" clubID="020" />
+    <Player ID="483" name="Adrien Silva" number="23" position="MF" birthDate="15 Mar 1989" caps="8" goals="0" countryID="POR" clubID="187" />
+    <Player ID="484" name="Hannes Þór Halldórsson" number="1" position="GK" birthDate="28 Apr 1984" caps="32" goals="0" countryID="ISL" clubID="192" />
+    <Player ID="485" name="Birkir Már Sævarsson" number="2" position="DF" birthDate="11 Nov 1984" caps="56" goals="0" countryID="ISL" clubID="193" />
+    <Player ID="486" name="Haukur Heiðar Hauksson" number="3" position="DF" birthDate="1 Sep 1991" caps="6" goals="0" countryID="ISL" clubID="186" />
+    <Player ID="487" name="Hjörtur Hermannsson" number="4" position="DF" birthDate="8 Feb 1995" caps="2" goals="0" countryID="ISL" clubID="194" />
+    <Player ID="488" name="Sverrir Ingi Ingason" number="5" position="DF" birthDate="5 Aug 1993" caps="4" goals="1" countryID="ISL" clubID="195" />
+    <Player ID="489" name="Ragnar Sigurðsson" number="6" position="DF" birthDate="19 Jun 1986" caps="54" goals="1" countryID="ISL" clubID="080" />
+    <Player ID="490" name="Jóhann Berg Guðmundsson" number="7" position="FW" birthDate="27 Oct 1990" caps="45" goals="5" countryID="ISL" clubID="196" />
+    <Player ID="491" name="Birkir Bjarnason" number="8" position="MF" birthDate="27 May 1988" caps="46" goals="6" countryID="ISL" clubID="046" />
+    <Player ID="492" name="Kolbeinn Sigþórsson" number="9" position="FW" birthDate="14 Mar 1990" caps="37" goals="19" countryID="ISL" clubID="037" />
+    <Player ID="493" name="Gylfi Sigurðsson" number="10" position="MF" birthDate="8 Sep 1989" caps="37" goals="12" countryID="ISL" clubID="083" />
+    <Player ID="494" name="Alfreð Finnbogason" number="11" position="FW" birthDate="1 Feb 1989" caps="32" goals="7" countryID="ISL" clubID="197" />
+    <Player ID="495" name="Ögmundur Kristinsson" number="12" position="GK" birthDate="19 Jun 1989" caps="10" goals="0" countryID="ISL" clubID="193" />
+    <Player ID="496" name="Ingvar Jónsson" number="13" position="GK" birthDate="18 Oct 1989" caps="4" goals="0" countryID="ISL" clubID="198" />
+    <Player ID="497" name="Kári Árnason" number="14" position="MF" birthDate="13 Oct 1982" caps="47" goals="2" countryID="ISL" clubID="183" />
+    <Player ID="498" name="Jón Daði Böðvarsson" number="15" position="FW" birthDate="25 May 1992" caps="20" goals="1" countryID="ISL" clubID="199" />
+    <Player ID="499" name="Rúnar Már Sigurjónsson" number="16" position="MF" birthDate="18 Jun 1990" caps="9" goals="1" countryID="ISL" clubID="200" />
+    <Player ID="500" name="Aron Gunnarsson (captain)" number="17" position="MF" birthDate="22 Apr 1989" caps="57" goals="2" countryID="ISL" clubID="201" />
+    <Player ID="501" name="Theódór Elmar Bjarnason" number="18" position="DF" birthDate="4 Mar 1987" caps="25" goals="0" countryID="ISL" clubID="202" />
+    <Player ID="502" name="Hörður Björgvin Magnússon" number="19" position="DF" birthDate="11 Feb 1993" caps="3" goals="0" countryID="ISL" clubID="203" />
+    <Player ID="503" name="Emil Hallfreðsson" number="20" position="MF" birthDate="29 Jun 1984" caps="52" goals="1" countryID="ISL" clubID="204" />
+    <Player ID="504" name="Arnór Ingvi Traustason" number="21" position="DF" birthDate="30 Apr 1993" caps="6" goals="3" countryID="ISL" clubID="184" />
+    <Player ID="505" name="Eiður Guðjohnsen" number="22" position="FW" birthDate="15 Sep 1978" caps="84" goals="25" countryID="ISL" clubID="205" />
+    <Player ID="506" name="Ari Freyr Skúlason" number="23" position="DF" birthDate="14 May 1987" caps="37" goals="0" countryID="ISL" clubID="206" />
+    <Player ID="507" name="Robert Almer" number="1" position="GK" birthDate="20 Mar 1984" caps="27" goals="0" countryID="AUT" clubID="207" />
+    <Player ID="508" name="György Garics" number="2" position="MF" birthDate="8 Mar 1984" caps="41" goals="2" countryID="AUT" clubID="208" />
+    <Player ID="509" name="Aleksandar Dragović" number="3" position="DF" birthDate="6 Mar 1991" caps="46" goals="1" countryID="AUT" clubID="112" />
+    <Player ID="510" name="Martin Hinteregger" number="4" position="DF" birthDate="7 Sep 1992" caps="13" goals="0" countryID="AUT" clubID="054" />
+    <Player ID="511" name="Christian Fuchs (captain)" number="5" position="DF" birthDate="7 Apr 1986" caps="74" goals="1" countryID="AUT" clubID="005" />
+    <Player ID="512" name="Stefan Ilsanker" number="6" position="MF" birthDate="18 May 1989" caps="15" goals="0" countryID="AUT" clubID="179" />
+    <Player ID="513" name="Marko Arnautović" number="7" position="FW" birthDate="19 Apr 1989" caps="51" goals="11" countryID="AUT" clubID="068" />
+    <Player ID="514" name="David Alaba" number="8" position="MF" birthDate="24 Jun 1992" caps="45" goals="11" countryID="AUT" clubID="017" />
+    <Player ID="515" name="Rubin Okotie" number="9" position="FW" birthDate="6 Jun 1987" caps="17" goals="2" countryID="AUT" clubID="209" />
+    <Player ID="516" name="Zlatko Junuzović" number="10" position="MF" birthDate="26 Sep 1987" caps="47" goals="7" countryID="AUT" clubID="149" />
+    <Player ID="517" name="Martin Harnik" number="11" position="MF" birthDate="10 Jun 1987" caps="57" goals="14" countryID="AUT" clubID="210" />
+    <Player ID="518" name="Heinz Lindner" number="12" position="GK" birthDate="17 Jul 1990" caps="8" goals="0" countryID="AUT" clubID="058" />
+    <Player ID="519" name="Markus Suttner" number="13" position="DF" birthDate="16 Apr 1987" caps="16" goals="0" countryID="AUT" clubID="211" />
+    <Player ID="520" name="Julian Baumgartlinger" number="14" position="MF" birthDate="2 Jan 1988" caps="44" goals="1" countryID="AUT" clubID="057" />
+    <Player ID="521" name="Sebastian Prödl" number="15" position="DF" birthDate="21 Jun 1987" caps="56" goals="4" countryID="AUT" clubID="019" />
+    <Player ID="522" name="Kevin Wimmer" number="16" position="DF" birthDate="15 Nov 1992" caps="3" goals="0" countryID="AUT" clubID="001" />
+    <Player ID="523" name="Florian Klein" number="17" position="DF" birthDate="17 Nov 1986" caps="36" goals="0" countryID="AUT" clubID="210" />
+    <Player ID="524" name="Alessandro Schöpf" number="18" position="MF" birthDate="7 Feb 1994" caps="3" goals="1" countryID="AUT" clubID="077" />
+    <Player ID="525" name="Lukas Hinterseer" number="19" position="FW" birthDate="28 Mar 1991" caps="9" goals="0" countryID="AUT" clubID="211" />
+    <Player ID="526" name="Marcel Sabitzer" number="20" position="MF" birthDate="17 Mar 1994" caps="17" goals="3" countryID="AUT" clubID="179" />
+    <Player ID="527" name="Marc Janko" number="21" position="FW" birthDate="25 Jun 1983" caps="53" goals="26" countryID="AUT" clubID="046" />
+    <Player ID="528" name="Jakob Jantscher" number="22" position="MF" birthDate="8 Jan 1989" caps="21" goals="1" countryID="AUT" clubID="212" />
+    <Player ID="529" name="Ramazan Özcan" number="23" position="GK" birthDate="28 Jun 1984" caps="7" goals="0" countryID="AUT" clubID="211" />
+    <Player ID="530" name="Gábor Király" number="1" position="GK" birthDate="1 Apr 1976" caps="102" goals="0" countryID="HUN" clubID="213" />
+    <Player ID="531" name="Ádám Lang" number="2" position="DF" birthDate="17 Jan 1993" caps="10" goals="0" countryID="HUN" clubID="214" />
+    <Player ID="532" name="Mihály Korhut" number="3" position="DF" birthDate="1 Dec 1988" caps="4" goals="0" countryID="HUN" clubID="215" />
+    <Player ID="533" name="Tamás Kádár" number="4" position="DF" birthDate="14 Mar 1990" caps="29" goals="0" countryID="HUN" clubID="122" />
+    <Player ID="534" name="Attila Fiola" number="5" position="DF" birthDate="17 Feb 1990" caps="14" goals="0" countryID="HUN" clubID="216" />
+    <Player ID="535" name="Ákos Elek" number="6" position="MF" birthDate="21 Jul 1988" caps="38" goals="1" countryID="HUN" clubID="217" />
+    <Player ID="536" name="Balázs Dzsudzsák (captain)" number="7" position="FW" birthDate="23 Dec 1986" caps="77" goals="18" countryID="HUN" clubID="100" />
+    <Player ID="537" name="Ádám Nagy" number="8" position="MF" birthDate="17 Jun 1995" caps="7" goals="0" countryID="HUN" clubID="099" />
+    <Player ID="538" name="Ádám Szalai" number="9" position="FW" birthDate="9 Dec 1987" caps="31" goals="8" countryID="HUN" clubID="218" />
+    <Player ID="539" name="Zoltán Gera" number="10" position="FW" birthDate="22 Apr 1979" caps="88" goals="24" countryID="HUN" clubID="099" />
+    <Player ID="540" name="Krisztián Németh" number="11" position="FW" birthDate="5 Jan 1989" caps="24" goals="3" countryID="HUN" clubID="097" />
+    <Player ID="541" name="Dénes Dibusz" number="12" position="GK" birthDate="16 Nov 1990" caps="4" goals="0" countryID="HUN" clubID="099" />
+    <Player ID="542" name="Dániel Böde" number="13" position="FW" birthDate="24 Oct 1986" caps="12" goals="4" countryID="HUN" clubID="099" />
+    <Player ID="543" name="Gergő Lovrencsics" number="14" position="MF" birthDate="1 Sep 1988" caps="11" goals="1" countryID="HUN" clubID="122" />
+    <Player ID="544" name="László Kleinheisler" number="15" position="MF" birthDate="8 Apr 1994" caps="4" goals="1" countryID="HUN" clubID="149" />
+    <Player ID="545" name="Ádám Pintér" number="16" position="DF" birthDate="12 Jun 1988" caps="20" goals="0" countryID="HUN" clubID="099" />
+    <Player ID="546" name="Nemanja Nikolić" number="17" position="FW" birthDate="31 Dec 1987" caps="18" goals="3" countryID="HUN" clubID="098" />
+    <Player ID="547" name="Zoltán Stieber" number="18" position="MF" birthDate="16 Oct 1988" caps="11" goals="2" countryID="HUN" clubID="219" />
+    <Player ID="548" name="Tamás Priskin" number="19" position="FW" birthDate="27 Sep 1986" caps="55" goals="17" countryID="HUN" clubID="094" />
+    <Player ID="549" name="Richárd Guzmics" number="20" position="DF" birthDate="16 Apr 1987" caps="13" goals="1" countryID="HUN" clubID="120" />
+    <Player ID="550" name="Barnabás Bese" number="21" position="DF" birthDate="6 May 1994" caps="0" goals="0" countryID="HUN" clubID="220" />
+    <Player ID="551" name="Péter Gulácsi" number="22" position="GK" birthDate="6 May 1990" caps="3" goals="0" countryID="HUN" clubID="179" />
+    <Player ID="552" name="Roland Juhász" number="23" position="DF" birthDate="1 Jul 1983" caps="91" goals="6" countryID="HUN" clubID="214" />
   </PLAYERS>
 </PLAYER_DATABASE>

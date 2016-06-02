@@ -135,6 +135,13 @@ namespace Euro2016
             return item != null ? this.GetItemByID(item.ID) : null;
         }
 
+        public string GetUniqueNumericID(int startAt, int step, int length)
+        {
+            while (this.GetIndexOfItemByID(string.Format("{0:D" + length + "}", startAt)) != -1)
+                startAt += step;
+            return string.Format("{0:D" + length + "}", startAt);
+        }
+
         /// <summary>Generates and returns a new list with all of this list's items added to it.</summary>
         public ListOfIDObjects<TYPE> GetDeepCopy()
         {
@@ -475,6 +482,15 @@ namespace Euro2016
             return -1;
         }
 
+        /// <summary>Searches this list of clubs for the club with the given name and in the given country, and returns it if it is found, or null otherwise.</summary>
+        public static Club GetClubByNameAndCountry(this ListOfIDObjects<Club> clubs, string name, Country country)
+        {
+            foreach (Club club in clubs)
+                if (club.Name.Equals(name) && club.Country.Equals(country))
+                    return club;
+            return null;
+        }
+
         /// <summary>Searches this list of matches and returns a sublist containing all items that are relevant to the given parameter. 
         /// The parameter can be an instance of Venue, Team, Group, DateTime, string (category), bool (played) or int (number of halves).</summary>
         public static ListOfIDObjects<Match> GetMatchesBy(this ListOfIDObjects<Match> matches, object whatever)
@@ -646,6 +662,7 @@ namespace Euro2016
 
         public static readonly string DatabaseFile = ProgramFilesFolder + "database.xml";
         public static readonly string DatabasePlayersFile = ProgramFilesFolder + "database_players.xml";
+        public static readonly string DatabasePlayersInputFile = ProgramFilesFolder + "players_input.txt";
         public static readonly string LogoImageFile = ResourcesFolder + "logo.png";
         public static readonly string UnknownTeamImageFile = ResourcesFolder + "unknownTeam.png";
         public static readonly string KnockoutImageFile = ResourcesFolder + "knockout.png";

@@ -31,6 +31,7 @@ namespace Euro2016
         {
             this.countryMSP = new MyScrollPanel(this.countriesP, MyScrollBar.ScrollBarPosition.Right, 2, 80);
             this.MouseWheel += this.countryMSP.MouseWheelScroll_EventHandler;
+            this.infoViewDetail2.TextText = this.mainForm.Database.Matches[0].When.ToString(MatchHeader.DateFormat);
             string[] countryNames = new string[this.mainForm.Database.Countries.Count];
             for (int index = 0; index < this.mainForm.Database.Countries.Count; index++)
                 countryNames[index] = this.mainForm.Database.Countries[index].Names[this.mainForm.Database.Settings.ShowCountryNamesInNativeLanguage];
@@ -74,7 +75,7 @@ namespace Euro2016
         {
 
         }
-        
+
         /// <summary>Refreshes the information for the given Country object.</summary>
         /// <param name="item">the Country object to display information for</param>
         public override void RefreshInformation(object item)

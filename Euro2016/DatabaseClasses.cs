@@ -329,7 +329,7 @@ namespace Euro2016
         /// <summary>Gets or privately sets the map coordinates for the flag. It is used to position a 32x20 FlagView control over the fixed-size map of Europe loaded from the SVG resource file.</summary>
         public Point MapCoords { get; private set; }
         /// <summary>Gets or privately sets the nationality and name of the coach of the team.</summary>
-        public KeyValuePair<Country, string> Coach { get; private set; }
+        public KeyValuePair<Country, string> Coach { get; internal set; }
         /// <summary>Gets or privately sets the list of players of the team.</summary>
         public ListOfIDObjects<Player> Players { get; private set; }
 

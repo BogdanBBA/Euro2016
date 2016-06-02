@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -332,6 +333,86 @@ namespace Euro2016
         public string TournamentResultOfTeam(Team team)
         {
             return this.Matches.GetMatchesBy(team).Last().Category;
+        }
+
+        /// <summary>Takes the text from https://en.wikipedia.org/wiki/UEFA_Euro_2016_squads (copied in <code>Paths.DatabasePlayersInputFile</code>) and parses the player data. Existing clubs and players will be erased.
+        /// Countries will not be affected at all. Remember to manually set the nationality of the coaches.</summary>
+        internal void ParseDatabasePlayers(string inputFilePath)
+        {
+            string[] lines = File.ReadAllLines(inputFilePath);
+            Team lastTeam = null;
+            string managerName = null;
+
+            this.Clubs.Clear();
+            this.Players.Clear();
+
+            for (int iLine = 0; iLine < lines.Length; iLine++)
+            {
+                string line = lines[iLine].Replace("Republic of", "");
+
+                // exit cases
+                if (line.Trim().Equals("") || line.Contains("Group ") || line.StartsWith("#"))
+                    continue;
+
+                // manager
+                if (line.StartsWith("Manager"))
+                {
+                    managerName = line.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries)[1].Trim();
+                    lastTeam.Coach = new KeyValuePair<Country, string>(this.Countries.GetItemByID("ROU"), managerName);
+                    continue;
+                }
+
+                // new country
+                Team isTeam = this.Teams.FirstOrDefault(t => t.Country.Names.Away.Equals(line.Trim()));
+                if (isTeam != null)
+                {
+                    lastTeam = isTeam;
+                    continue;
+                }
+
+                // player row
+                if (line[0] >= '1' && line[0] <= '9')
+                {
+                    string[] cols = line.Split(new string[] { "\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    string id = this.Players.GetUniqueNumericID(1, 1, 3);
+                    string name = cols[2].Trim();
+                    int number = Int32.Parse(cols[0].Trim());
+                    Player.PlayingPosition position = (Player.PlayingPosition) Enum.Parse(typeof(Player.PlayingPosition), cols[1].Trim());
+                    DateTime birth = DateTime.Parse(cols[3].Substring(0, cols[3].IndexOf('(')).Trim());
+                    int caps = Int32.Parse(cols[4].Trim());
+                    int goals = Int32.Parse(cols[5].Trim());
+                    Club club = this.GetClub(cols[6].Trim());
+                    Player player = new Player(id, name, number, position, birth, caps, goals, lastTeam, club);
+                    this.Players.Add(player);
+                    continue;
+                }
+            }
+
+            string saveResult = this.SaveDatabase(Paths.DatabaseFile, Paths.DatabasePlayersFile);
+            if (!saveResult.Equals(string.Empty))
+                MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal Club GetClub(string s)
+        {
+            // it exists
+            foreach (Club club in this.Clubs)
+                if (s.Equals(club.Country.Names.Away + " " + club.Name))
+                    return club;
+
+            // make new
+            Country clubCountry = null;
+            foreach (Country country in this.Countries)
+                if (s.StartsWith(country.Names.Away))
+                { clubCountry = country; break; }
+            if (clubCountry == null)
+                throw new ApplicationException("country in '" + s + "' does not exist");
+            else
+            {
+                Club club = new Club(this.Clubs.GetUniqueNumericID(1, 1, 3), s.Replace(clubCountry.Names.Away, "").Trim(), clubCountry);
+                this.Clubs.Add(club);
+                return club;
+            }
         }
     }
 }

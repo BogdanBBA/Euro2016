@@ -1,6 +1,4 @@
-﻿using DotSpatial.Data;
-using DotSpatial.Projections;
-using Euro2016.VisualComponents;
+﻿using Euro2016.VisualComponents;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
