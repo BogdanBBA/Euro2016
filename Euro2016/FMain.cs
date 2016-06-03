@@ -64,9 +64,10 @@ namespace Euro2016
             {
                 winnerFlagPB.Image = final.Scoreboard.FullScore.HomeWin ? final.Teams.Home.Country.FlagOriginal : final.Teams.Away.Country.FlagOriginal;
                 winnerFlagPB.Location = new Point(this.Width / 2 - winnerFlagPB.Width / 2, this.Height / 2 - winnerFlagPB.Height / 2);
+                winnerFlagPB.Show();
             }
 
-            this.Database.ParseDatabasePlayers(Paths.DatabasePlayersInputFile);
+            //this.Database.ParseDatabasePlayers(Paths.DatabasePlayersInputFile);
         }
 
         private void winnerFlagPB_Click(object sender, EventArgs e)

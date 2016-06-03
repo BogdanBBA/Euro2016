@@ -194,7 +194,7 @@
     <Compile Include="VisualComponents\MyToolStripMenu.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VisualComponents\PlayerView.cs">
+    <Compile Include="VisualComponents\PlayerViews.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="VisualComponents\SmoothLabel.cs">

@@ -265,6 +265,7 @@
             this.winnerFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.winnerFlagPB.TabIndex = 9;
             this.winnerFlagPB.TabStop = false;
+            this.winnerFlagPB.Visible = false;
             this.winnerFlagPB.Click += new System.EventHandler(this.winnerFlagPB_Click);
             // 
             // FMain

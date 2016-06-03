@@ -66,7 +66,7 @@ namespace Euro2016
             Match match = sender is MatchRow ? (sender as MatchRow).Match : sender as Match;
             this.lastMatch = match;
             phaseL.Text = match.FormatCategory;
-            whenL.Text = match.When.ToString("dddd, d MMMM yyyy, 'at' HH:mm");
+            whenL.Text = match.WhenOffset.ToString("dddd, d MMMM yyyy, 'at' HH:mm");
             whereL.Text = match.Where.Name + ", " + match.Where.City;
             this.RefreshTeamInfo(match.TeamReferences.Home, match.Teams.Home, homeFlagPB, homeTeamL, homeNicknameL);
             this.RefreshTeamInfo(match.TeamReferences.Away, match.Teams.Away, awayFlagPB, awayTeamL, awayNicknameL);
@@ -99,7 +99,7 @@ namespace Euro2016
 
         private void whenL_Click(object sender, EventArgs e)
         {
-            this.mainForm.ShowForm<FMatchDays, DateTime>(this.lastMatch.When.Date);
+            this.mainForm.ShowForm<FMatchDays, DateTime>(this.lastMatch.WhenOffset.Date);
         }
 
         private void homeFlagPB_Click(object sender, EventArgs e)

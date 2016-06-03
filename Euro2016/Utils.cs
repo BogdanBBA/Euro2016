@@ -390,6 +390,69 @@ namespace Euro2016
             return sb.ToString();
         }
 
+        /// <summary>Calculates the (approximate) average age of the players within this list.</summary>
+        public static double GetAverageAge(this ListOfIDObjects<Player> players)
+        {
+            double totalYears = 0;
+            foreach (Player player in players)
+                totalYears += player.Age;
+            return totalYears / players.Count;
+        }
+
+        /// <summary>Sorts the players in this list in the given order and by the given criteria (the column index parameter corresponds to the columns in PlayerViewBase.ColumnCaptions).</summary>
+        public static void SortPlayers(this ListOfIDObjects<Player> players, int sortByColumn, bool descending)
+        {
+            for (int i = 0; i < players.Count - 1; i++)
+                for (int j = i + 1; j < players.Count; j++)
+                {
+                    Player iP = players[i], jP = players[j];
+                    bool shouldSwapForDescending = false;
+
+                    switch (sortByColumn)
+                    {
+                        case 0: // number
+                            shouldSwapForDescending = iP.Number < jP.Number;
+                            break;
+                        case 1: // player name flag, but should never come in with this value
+                        case 2: // player name
+                            shouldSwapForDescending = iP.Name.CompareTo(jP.Name) < 0;
+                            break;
+                        case 3: // playing position
+                            shouldSwapForDescending = iP.PlayerPosition < jP.PlayerPosition;
+                            break;
+                        case 4: // date of birth
+                            shouldSwapForDescending = iP.BirthDate.CompareTo(jP.BirthDate) > 0;
+                            break;
+                        case 5: // age, should still sort by exact birth date rather than more approximate year age
+                            shouldSwapForDescending = iP.BirthDate.CompareTo(jP.BirthDate) < 0;
+                            break;
+                        case 6: // caps
+                            shouldSwapForDescending = iP.Caps < jP.Caps;
+                            break;
+                        case 7: // goals
+                            shouldSwapForDescending = iP.Goals < jP.Goals;
+                            break;
+                        case 8: // club flag, but should never come in with this value
+                        case 9: // club, sort by club country name first and then by club name
+                            int clubCountryNameCompare = iP.Club.Country.Names.Away.CompareTo(jP.Club.Country.Names.Away);
+                            shouldSwapForDescending = clubCountryNameCompare == 0 ? (iP.Club.Name.CompareTo(jP.Club.Name) < 0) : clubCountryNameCompare < 0;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (shouldSwapForDescending == descending)
+                        players.SwapItemsAtPositions(i, j);
+                }
+        }
+
+        /// <summary>Sets the time offset value for each of the matches in this list.</summary>
+        public static void SetTimeOffset(this ListOfIDObjects<Match> matches, double timeOffset)
+        {
+            foreach (Match match in matches)
+                match.WhenOffset = match.When.AddHours(timeOffset);
+        }
+
         /// <summary>Sorts the matches in this list in chronological order.</summary>
         public static void SortMatchesChronologically(this ListOfIDObjects<Match> matches)
         {

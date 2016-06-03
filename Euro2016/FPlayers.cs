@@ -17,7 +17,7 @@ namespace Euro2016
 
         private FMain mainForm;
         private MyScrollPanel countryMSP;
-        private List<CountryView> countryViews;
+        internal List<CountryView> countryViews;
         private PlayersView playersView;
         private Team team = null;
 
@@ -45,7 +45,7 @@ namespace Euro2016
                 this.countryMSP.AddControl(this.countryViews[index], new Point(0, index * CountryView.DefaultHeight), false);
             }
             this.countryMSP.UpdatePanelSize();
-            this.playersView = new PlayersView(playerP, this.PlayerViewRow_MouseEnter, this.PlayerView_Click, this.mainForm.Database.Settings);
+            this.playersView = new PlayersView(playerP, this, this.PlayerViewRow_MouseEnter, this.PlayerView_Click, this.mainForm.Database.Settings);
             this.RegisterControlsToMoveForm(this.titleLabel1);
         }
 
@@ -64,6 +64,12 @@ namespace Euro2016
         private void CountryView_Click(object sender, EventArgs e)
         {
             this.RefreshInformation((sender as CountryView).Country);
+        }
+
+        private void flagPB_Click(object sender, EventArgs e)
+        {
+            if (this.team != null)
+                this.mainForm.ShowForm<FTeam, Team>(this.team);
         }
 
         private void PlayerView_Click(object sender, EventArgs e)
@@ -92,15 +98,25 @@ namespace Euro2016
             {
                 this.team = this.mainForm.Database.Teams.First(t => t.Country.Equals(country));
                 coachFlagPB.Image = team.Coach.Key.Flag40px;
+                coachIVD.TextDescription = "Manager";
                 coachIVD.TextText = team.Coach.Value;
-                this.playersView.SetPlayers(team.Players);
+                averageAgeIVD.Show();
+                averageAgeIVD.TextText = team.Players.GetAverageAge().ToString("N2");
+                playersOwnCountryL.Show();
+                playersOwnCountryPB.Show();
+                playersOwnCountryPB.SetValues(0, team.Players.Count, team.Players.Count(p => p.Club.Country.Equals(p.Nationality.Country)));
+                this.playersView.SetPlayers(team.Players, this.playersView.header.SortByColumn, this.playersView.header.Descending);
             }
             else
             {
                 this.team = null;
                 coachFlagPB.Image = null;
+                coachIVD.TextDescription = "";
                 coachIVD.TextText = "";
-                this.playersView.SetPlayers(new ListOfIDObjects<Player>());
+                averageAgeIVD.Hide();
+                playersOwnCountryL.Hide();
+                playersOwnCountryPB.Hide();
+                this.playersView.SetPlayers(new ListOfIDObjects<Player>(), 0, false);
             }
         }
     }

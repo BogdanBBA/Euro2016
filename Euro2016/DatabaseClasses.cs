@@ -247,6 +247,8 @@ namespace Euro2016
         public PlayingPosition PlayerPosition { get; private set; }
         /// <summary>Gets or privately sets the birth date of the player.</summary>
         public DateTime BirthDate { get; private set; }
+        /// <summary>Gets or privately sets the age of the player, at the date of the first match of the competition.</summary>
+        public int Age { get; private set; }
         /// <summary>Gets or privately sets the caps (number of selections in the national team) of the player.</summary>
         public int Caps { get; private set; }
         /// <summary>Gets or privately sets the number of goals for the national team of the player.</summary>
@@ -262,17 +264,19 @@ namespace Euro2016
         /// <param name="number">the shirt number of the player</param>
         /// <param name="position">the playing position of the player</param>
         /// <param name="birth">the birth date of the player</param>
+        /// <param name="age">the age of the player, at the date of the first match of the competition</param>
         /// <param name="caps">the caps of the player</param>
         /// <param name="goals">the number of goals of the player</param>
         /// <param name="nationality">the nationality of the player</param>
         /// <param name="club">the club where the player is registered</param>
-        public Player(string id, string name, int number, PlayingPosition position, DateTime birth, int caps, int goals, Team nationality, Club club)
+        public Player(string id, string name, int number, PlayingPosition position, DateTime birth, int age, int caps, int goals, Team nationality, Club club)
             : base(id)
         {
             this.Name = name;
             this.Number = number;
             this.PlayerPosition = position;
             this.BirthDate = birth;
+            this.Age = age;
             this.Caps = caps;
             this.Goals = goals;
             this.Nationality = nationality;
@@ -286,12 +290,14 @@ namespace Euro2016
             string name = node.Attributes["name"].Value;
             int number = Int32.Parse(node.Attributes["number"].Value);
             PlayingPosition position = (PlayingPosition) Enum.Parse(typeof(PlayingPosition), node.Attributes["position"].Value);
-            DateTime birth = DateTime.Parse(node.Attributes["birthDate"].Value);
+            string[] birthDateParts = node.Attributes["birthDate"].Value.Split('-');
+            DateTime birth = new DateTime(Int32.Parse(birthDateParts[0]), Int32.Parse(birthDateParts[1]), Int32.Parse(birthDateParts[2]));
+            int age = Int32.Parse(node.Attributes["age"].Value);
             int caps = Int32.Parse(node.Attributes["caps"].Value);
             int goals = Int32.Parse(node.Attributes["goals"].Value);
             Team nationality = teams.First(t => t.Country.ID.Equals(node.Attributes["countryID"].Value));
             Club club = clubs.GetItemByID(node.Attributes["clubID"].Value);
-            return new Player(id, name, number, position, birth, caps, goals, nationality, club);
+            return new Player(id, name, number, position, birth, age, caps, goals, nationality, club);
         }
 
         /// <summary>Generates an XmlNode from this object.</summary>
@@ -303,8 +309,9 @@ namespace Euro2016
             node.AddAttribute(doc, "name", this.Name);
             node.AddAttribute(doc, "number", this.Number);
             node.AddAttribute(doc, "position", this.PlayerPosition.ToString());
-            node.AddAttribute(doc, "birthDate", this.BirthDate.ToShortDateString());
+            node.AddAttribute(doc, "birthDate", this.BirthDate.ToString("yyyy-MM-dd"));
             node.AddAttribute(doc, "caps", this.Caps);
+            node.AddAttribute(doc, "age", this.Age);
             node.AddAttribute(doc, "goals", this.Goals);
             node.AddAttribute(doc, "countryID", this.Nationality.Country.ID);
             node.AddAttribute(doc, "clubID", this.Club.ID);
@@ -858,6 +865,8 @@ namespace Euro2016
         public PairT<Team> Teams { get; private set; }
         /// <summary>Gets or privately sets the date and time when the match is played.</summary>
         public DateTime When { get; private set; }
+        /// <summary>Gets or sets the date and time when the match is played, offset by the amount specified in the settings.</summary>
+        public DateTime WhenOffset { get; set; }
         /// <summary>Gets or privately sets the venue where the match is played.</summary>
         public Venue Where { get; private set; }
         /// <summary>Gets or privately sets the scoreboard of the match.</summary>
@@ -870,13 +879,14 @@ namespace Euro2016
         /// <param name="when">the date and time when the match is played</param>
         /// <param name="where">the venue where the match is played</param>
         /// <param name="scoreboard">the scoreboard of the match</param>
-        public Match(string id, string category, PairT<string> teamReferences, DateTime when, Venue where, MatchScoreboard scoreboard)
+        public Match(string id, string category, PairT<string> teamReferences, DateTime when, DateTime whenOffset, Venue where, MatchScoreboard scoreboard)
             : base(id)
         {
             this.Category = category;
             this.TeamReferences = teamReferences;
             this.Teams = new PairT<Team>(null, null);
             this.When = when;
+            this.WhenOffset = whenOffset;
             this.Where = where;
             this.Scoreboard = scoreboard;
         }
@@ -911,7 +921,7 @@ namespace Euro2016
                     halves.Add(HalfScoreboard.Parse(score));
             }
             MatchScoreboard scoreboard = new MatchScoreboard(halves);
-            return new Match(id, category, teamReferences, when, where, scoreboard);
+            return new Match(id, category, teamReferences, when, when, where, scoreboard);
         }
 
         /// <summary>Generates an XmlNode from this object.</summary>

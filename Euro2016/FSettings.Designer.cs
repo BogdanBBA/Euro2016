@@ -36,6 +36,9 @@
             this.showCountryNamesInNativeLanguageChB = new System.Windows.Forms.CheckBox();
             this.showFlagsOnMapChB = new System.Windows.Forms.CheckBox();
             this.spamWithWinnerOnStartupChB = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timeOffsetNUD = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.timeOffsetNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel1
@@ -94,7 +97,7 @@
             this.okB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.okB.DrawBar = true;
             this.okB.Image = null;
-            this.okB.Location = new System.Drawing.Point(165, 305);
+            this.okB.Location = new System.Drawing.Point(174, 359);
             this.okB.Name = "okB";
             this.okB.Size = new System.Drawing.Size(200, 50);
             this.okB.TabIndex = 4;
@@ -125,21 +128,53 @@
             this.showFlagsOnMapChB.Text = "Show flags on map";
             this.showFlagsOnMapChB.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // spamWithWinnerOnStartupChB
             // 
             this.spamWithWinnerOnStartupChB.AutoSize = true;
             this.spamWithWinnerOnStartupChB.BackColor = System.Drawing.Color.Transparent;
             this.spamWithWinnerOnStartupChB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.spamWithWinnerOnStartupChB.Location = new System.Drawing.Point(68, 233);
-            this.spamWithWinnerOnStartupChB.Name = "checkBox1";
+            this.spamWithWinnerOnStartupChB.Name = "spamWithWinnerOnStartupChB";
             this.spamWithWinnerOnStartupChB.Size = new System.Drawing.Size(434, 25);
             this.spamWithWinnerOnStartupChB.TabIndex = 7;
             this.spamWithWinnerOnStartupChB.Text = "Flash winner flag on main form on start-up (if final played)";
             this.spamWithWinnerOnStartupChB.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(64, 292);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(294, 21);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Time offset to local match time (in hours)";
+            // 
+            // timeOffsetNUD
+            // 
+            this.timeOffsetNUD.DecimalPlaces = 2;
+            this.timeOffsetNUD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeOffsetNUD.Location = new System.Drawing.Point(68, 316);
+            this.timeOffsetNUD.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.timeOffsetNUD.Minimum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            -2147483648});
+            this.timeOffsetNUD.Name = "timeOffsetNUD";
+            this.timeOffsetNUD.Size = new System.Drawing.Size(83, 29);
+            this.timeOffsetNUD.TabIndex = 9;
+            this.timeOffsetNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FSettings
             // 
-            this.ClientSize = new System.Drawing.Size(544, 376);
+            this.ClientSize = new System.Drawing.Size(544, 426);
+            this.Controls.Add(this.timeOffsetNUD);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.spamWithWinnerOnStartupChB);
             this.Controls.Add(this.showFlagsOnMapChB);
             this.Controls.Add(this.showCountryNamesInNativeLanguageChB);
@@ -150,6 +185,7 @@
             this.Controls.Add(this.titleLabel1);
             this.Name = "FSettings";
             this.Load += new System.EventHandler(this.FSettings_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.timeOffsetNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +201,8 @@
         private System.Windows.Forms.CheckBox showCountryNamesInNativeLanguageChB;
         private System.Windows.Forms.CheckBox showFlagsOnMapChB;
         private System.Windows.Forms.CheckBox spamWithWinnerOnStartupChB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown timeOffsetNUD;
 
 
     }

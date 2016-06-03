@@ -49,6 +49,7 @@ namespace Euro2016
             showKnockoutPhaseOnStartupChB.Checked = sett.ShowKnockoutStageOnStartup;
             spamWithWinnerOnStartupChB.Checked = sett.SpamWithWinnerOnStartup;
             showFlagsOnMapChB.Checked = sett.ShowFlagsOnMap;
+            timeOffsetNUD.Value = (decimal) sett.TimeOffset;
         }
 
         private void okB_Click(object sender, EventArgs e)
@@ -59,11 +60,13 @@ namespace Euro2016
             sett.ShowKnockoutStageOnStartup = showKnockoutPhaseOnStartupChB.Checked;
             sett.SpamWithWinnerOnStartup = spamWithWinnerOnStartupChB.Checked;
             sett.ShowFlagsOnMap = showFlagsOnMapChB.Checked;
+            sett.TimeOffset = (double) timeOffsetNUD.Value;
 
             string saveResult = this.mainForm.Database.SaveDatabase(Paths.DatabaseFile);
             if (!saveResult.Equals(""))
                 MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            this.mainForm.Database.Matches.SetTimeOffset(sett.TimeOffset);
             this.mainForm.RefreshInformation(null);
             this.mainForm.ShowForm<FSettings, object>(null, true);
         }

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -21,6 +22,7 @@ namespace Euro2016
         public bool ShowKnockoutStageOnStartup { get; set; }
         public bool SpamWithWinnerOnStartup { get; set; }
         public bool ShowFlagsOnMap { get; set; }
+        public double TimeOffset { get; set; }
 
         /// <summary>Parses the settings from a XmlNode object.</summary>
         /// <param name="teams">the reference to the full list of teams participating in the competition</param>
@@ -43,6 +45,9 @@ namespace Euro2016
 
                 try { this.ShowFlagsOnMap = bool.Parse(settingsNode.SelectSingleNode("ShowFlagsOnMap").Attributes["value"].Value); }
                 catch (Exception) { this.ShowFlagsOnMap = true; }
+
+                try { this.TimeOffset = Int32.Parse(settingsNode.SelectSingleNode("TimeOffset").Attributes["value"].Value); }
+                catch (Exception) { this.TimeOffset = 0.0; }
 
                 return "";
             }
@@ -73,6 +78,9 @@ namespace Euro2016
 
                 node = result.AppendChild(doc.CreateElement("ShowFlagsOnMap"));
                 node.AddAttribute(doc, "value", this.ShowFlagsOnMap.ToString());
+
+                node = result.AppendChild(doc.CreateElement("TimeOffset"));
+                node.AddAttribute(doc, "value", this.TimeOffset.ToString());
 
                 resultNode = result;
                 return "";
@@ -167,6 +175,7 @@ namespace Euro2016
                     this.Players.Add(player);
                 }
 
+                this.Matches.SetTimeOffset(this.Settings.TimeOffset);
                 this.Calculate(true, true, true);
 
                 return "";
@@ -335,8 +344,8 @@ namespace Euro2016
             return this.Matches.GetMatchesBy(team).Last().Category;
         }
 
-        /// <summary>Takes the text from https://en.wikipedia.org/wiki/UEFA_Euro_2016_squads (copied in <code>Paths.DatabasePlayersInputFile</code>) and parses the player data. Existing clubs and players will be erased.
-        /// Countries will not be affected at all. Remember to manually set the nationality of the coaches.</summary>
+        /// <summary>Takes the text from https://en.wikipedia.org/wiki/UEFA_Euro_2016_squads (copied in <code>Paths.DatabasePlayersInputFile</code>) and parses the player data. 
+        /// Existing clubs and players will be erased. Countries will not be affected at all.</summary>
         internal void ParseDatabasePlayers(string inputFilePath)
         {
             string[] lines = File.ReadAllLines(inputFilePath);
@@ -358,7 +367,14 @@ namespace Euro2016
                 if (line.StartsWith("Manager"))
                 {
                     managerName = line.Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries)[1].Trim();
-                    lastTeam.Coach = new KeyValuePair<Country, string>(this.Countries.GetItemByID("ROU"), managerName);
+                    Country managerCountry = lastTeam.Country;
+                    foreach (Country country in this.Countries)
+                        if (managerName.StartsWith(country.Names.Away))
+                        {
+                            managerCountry = country;
+                            managerName = managerName.Replace(country.Names.Away, "").Trim();
+                        }
+                    lastTeam.Coach = new KeyValuePair<Country, string>(managerCountry, managerName);
                     continue;
                 }
 
@@ -375,14 +391,16 @@ namespace Euro2016
                 {
                     string[] cols = line.Split(new string[] { "\t" }, StringSplitOptions.RemoveEmptyEntries);
                     string id = this.Players.GetUniqueNumericID(1, 1, 3);
-                    string name = cols[2].Trim();
+                    string name = cols[2].Replace("(captain)", "(C)").Trim();
                     int number = Int32.Parse(cols[0].Trim());
                     Player.PlayingPosition position = (Player.PlayingPosition) Enum.Parse(typeof(Player.PlayingPosition), cols[1].Trim());
                     DateTime birth = DateTime.Parse(cols[3].Substring(0, cols[3].IndexOf('(')).Trim());
+                    string ageS = Regex.Match(cols[3], @" \d\d\)").Value;
+                    int age = Int32.Parse(ageS.Substring(0, ageS.Length - 1));
                     int caps = Int32.Parse(cols[4].Trim());
                     int goals = Int32.Parse(cols[5].Trim());
                     Club club = this.GetClub(cols[6].Trim());
-                    Player player = new Player(id, name, number, position, birth, caps, goals, lastTeam, club);
+                    Player player = new Player(id, name, number, position, birth, age, caps, goals, lastTeam, club);
                     this.Players.Add(player);
                     continue;
                 }
