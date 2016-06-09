@@ -38,12 +38,12 @@
             this.spamWithWinnerOnStartupChB = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timeOffsetNUD = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.timeOffsetNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timeOffsetNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel1
             // 
-            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (29)))), ((int) (((byte) (50)))), ((int) (((byte) (74)))));
             this.titleLabel1.BigBar = false;
             this.titleLabel1.Checked = false;
             this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
@@ -91,7 +91,7 @@
             // 
             // okB
             // 
-            this.okB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.okB.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (29)))), ((int) (((byte) (50)))), ((int) (((byte) (74)))));
             this.okB.BigBar = true;
             this.okB.Checked = false;
             this.okB.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -153,8 +153,9 @@
             // timeOffsetNUD
             // 
             this.timeOffsetNUD.DecimalPlaces = 2;
-            this.timeOffsetNUD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeOffsetNUD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.timeOffsetNUD.Location = new System.Drawing.Point(68, 316);
+            this.timeOffsetNUD.Increment = (decimal) 0.5;
             this.timeOffsetNUD.Maximum = new decimal(new int[] {
             24,
             0,
@@ -185,7 +186,7 @@
             this.Controls.Add(this.titleLabel1);
             this.Name = "FSettings";
             this.Load += new System.EventHandler(this.FSettings_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.timeOffsetNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.timeOffsetNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

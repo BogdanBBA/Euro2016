@@ -12,7 +12,18 @@ namespace Euro2016.VisualComponents
     public abstract class MyEuroBaseControl : Control
     {
         protected bool mouseIsOver = false;
+        public bool MouseIsOver
+        {
+            get { return this.mouseIsOver; }
+            set { this.mouseIsOver = value; this.Invalidate(); }
+        }
+
         protected bool mouseIsClicked = false;
+        public bool MouseIsClicked
+        {
+            get { return this.mouseIsClicked; }
+            set { this.mouseIsClicked = value; this.Invalidate(); }
+        }
 
         public MyEuroBaseControl()
             : base()
@@ -131,6 +142,7 @@ namespace Euro2016.VisualComponents
         public static Pair<ColorResource> Text;
         public static Pair<ColorResource> Accent;
         public static Pair<ColorResource> Category;
+        public static Pair<ColorResource> Star;
 
         static MyGUIs()
         {
@@ -144,6 +156,7 @@ namespace Euro2016.VisualComponents
             MyGUIs.Text = new Pair<ColorResource>(new ColorResource(Color.WhiteSmoke), new ColorResource(Color.OrangeRed));
             MyGUIs.Accent = new Pair<ColorResource>(new ColorResource(ColorTranslator.FromHtml("#FFFFFF")), new ColorResource(Color.OrangeRed));
             MyGUIs.Category = new Pair<ColorResource>(new ColorResource(ColorTranslator.FromHtml("#A0A0A0")), new ColorResource(ColorTranslator.FromHtml("#C0C0C0")));
+            MyGUIs.Star = new Pair<ColorResource>(new ColorResource(ColorTranslator.FromHtml("#444d57")), new ColorResource(ColorTranslator.FromHtml("#f9d246")));
         }
     }
 }

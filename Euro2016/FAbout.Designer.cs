@@ -33,6 +33,7 @@
             this.goTeamIV = new Euro2016.VisualComponents.InfoView();
             this.flagPB = new System.Windows.Forms.PictureBox();
             this.infoViewDetail2 = new Euro2016.VisualComponents.InfoViewDetail();
+            this.infoViewDetail3 = new Euro2016.VisualComponents.InfoViewDetail();
             ((System.ComponentModel.ISupportInitialize)(this.flagPB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,13 +44,15 @@
             this.infoViewDetail1.Checked = false;
             this.infoViewDetail1.DrawBar = false;
             this.infoViewDetail1.Location = new System.Drawing.Point(29, 187);
+            this.infoViewDetail1.MouseIsClicked = false;
+            this.infoViewDetail1.MouseIsOver = false;
             this.infoViewDetail1.Name = "infoViewDetail1";
             this.infoViewDetail1.Size = new System.Drawing.Size(352, 35);
             this.infoViewDetail1.TabIndex = 1;
             this.infoViewDetail1.Text = "infoViewDetail1";
             this.infoViewDetail1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.infoViewDetail1.TextDescription = "March 9th - April 1st, 2016";
-            this.infoViewDetail1.TextText = "1.0 alpha";
+            this.infoViewDetail1.TextText = "v1.0 alpha";
             this.infoViewDetail1.Click += new System.EventHandler(this.FAbout_Click);
             // 
             // titleLabel1
@@ -60,6 +63,8 @@
             this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel1.MouseIsClicked = false;
+            this.titleLabel1.MouseIsOver = false;
             this.titleLabel1.Name = "titleLabel1";
             this.titleLabel1.Size = new System.Drawing.Size(384, 87);
             this.titleLabel1.TabIndex = 0;
@@ -75,6 +80,8 @@
             this.goTeamIV.Checked = false;
             this.goTeamIV.DrawBar = false;
             this.goTeamIV.Location = new System.Drawing.Point(12, 119);
+            this.goTeamIV.MouseIsClicked = false;
+            this.goTeamIV.MouseIsOver = false;
             this.goTeamIV.Name = "goTeamIV";
             this.goTeamIV.Size = new System.Drawing.Size(283, 50);
             this.goTeamIV.TabIndex = 2;
@@ -102,18 +109,39 @@
             this.infoViewDetail2.Checked = false;
             this.infoViewDetail2.DrawBar = false;
             this.infoViewDetail2.Location = new System.Drawing.Point(29, 237);
+            this.infoViewDetail2.MouseIsClicked = false;
+            this.infoViewDetail2.MouseIsOver = false;
             this.infoViewDetail2.Name = "infoViewDetail2";
             this.infoViewDetail2.Size = new System.Drawing.Size(352, 35);
             this.infoViewDetail2.TabIndex = 4;
             this.infoViewDetail2.Text = "infoViewDetail2";
             this.infoViewDetail2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.infoViewDetail2.TextDescription = "April 4th - April 22nd, 2016";
-            this.infoViewDetail2.TextText = "1.0 beta";
+            this.infoViewDetail2.TextText = "v1.0 beta";
             this.infoViewDetail2.Click += new System.EventHandler(this.FAbout_Click);
+            // 
+            // infoViewDetail3
+            // 
+            this.infoViewDetail3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.infoViewDetail3.BigBar = false;
+            this.infoViewDetail3.Checked = false;
+            this.infoViewDetail3.DrawBar = false;
+            this.infoViewDetail3.Location = new System.Drawing.Point(29, 287);
+            this.infoViewDetail3.MouseIsClicked = false;
+            this.infoViewDetail3.MouseIsOver = false;
+            this.infoViewDetail3.Name = "infoViewDetail3";
+            this.infoViewDetail3.Size = new System.Drawing.Size(352, 35);
+            this.infoViewDetail3.TabIndex = 5;
+            this.infoViewDetail3.Text = "infoViewDetail3";
+            this.infoViewDetail3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.infoViewDetail3.TextDescription = "May - June, 2016";
+            this.infoViewDetail3.TextText = "v1.0";
+            this.infoViewDetail3.Click += new System.EventHandler(this.FAbout_Click);
             // 
             // FAbout
             // 
-            this.ClientSize = new System.Drawing.Size(408, 302);
+            this.ClientSize = new System.Drawing.Size(408, 349);
+            this.Controls.Add(this.infoViewDetail3);
             this.Controls.Add(this.infoViewDetail2);
             this.Controls.Add(this.flagPB);
             this.Controls.Add(this.goTeamIV);
@@ -134,5 +162,6 @@
         private VisualComponents.InfoView goTeamIV;
         private System.Windows.Forms.PictureBox flagPB;
         private VisualComponents.InfoViewDetail infoViewDetail2;
+        private VisualComponents.InfoViewDetail infoViewDetail3;
     }
 }

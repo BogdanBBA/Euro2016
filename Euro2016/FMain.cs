@@ -17,7 +17,7 @@ namespace Euro2016
 
         public Database Database { get; private set; }
         protected GroupView[] GroupViews { get; private set; }
-        protected MatchesView MatchesView { get; private set; }
+        internal MatchesView MatchesView { get; private set; }
         protected KeyValuePair<MyForm, object> OpenFormAndItem { get; set; }
 
         public FMain(Database database)

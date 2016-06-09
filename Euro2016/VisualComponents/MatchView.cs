@@ -200,7 +200,7 @@ namespace Euro2016.VisualComponents
             if (this.match.Scoreboard.Played)
                 this.DrawText(e.Graphics, MatchRow.ScoreFont, MyGUIs.Text[this.mouseIsOver].Brush, this.match.Scoreboard.FormatScore(false), HorizontalAlignment.Center, 0.53f, 0.63f);
             else
-                this.DrawText(e.Graphics, MatchRow.CategoryFont, MyGUIs.Category[this.mouseIsOver].Brush, this.match.WhenOffset.ToString("HH:mm"), HorizontalAlignment.Center, 0.53f, 0.63f);
+                this.DrawText(e.Graphics, MatchRow.CategoryFont, this.match.MustWatch ? MyGUIs.Star.Highlighted.Brush : MyGUIs.Category[this.mouseIsOver].Brush, this.match.WhenOffset.ToString("HH:mm"), HorizontalAlignment.Center, 0.53f, 0.63f);
 
             image = this.match.Teams.Away != null ? this.match.Teams.Away.Country.Flag20px : (Bitmap) Utils.ScaleImage(StaticData.Images[Paths.UnknownTeamImageFile], 32, 20, InterpolationMode.NearestNeighbor, false);
             this.DrawImage(e.Graphics, image, HorizontalAlignment.Center, 0.63f, 0.73f);

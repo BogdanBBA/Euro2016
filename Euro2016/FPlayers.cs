@@ -51,14 +51,14 @@ namespace Euro2016
 
         private void CountryView_MouseEnter(object sender, EventArgs e)
         {
-            this.RemoveAllClickEvents();
-            this.MouseWheel += this.countryMSP.MouseWheelScroll_EventHandler;
+            //this.RemoveAllClickEvents();
+            //this.MouseWheel += this.countryMSP.MouseWheelScroll_EventHandler;
         }
 
         private void PlayerViewRow_MouseEnter(object sender, EventArgs e)
         {
-            this.RemoveAllClickEvents();
-            this.MouseWheel += this.playersView.myScrollPanel.MouseWheelScroll_EventHandler;
+            //this.RemoveAllClickEvents();
+            //this.MouseWheel += this.playersView.myScrollPanel.MouseWheelScroll_EventHandler;
         }
 
         private void CountryView_Click(object sender, EventArgs e)
@@ -75,11 +75,6 @@ namespace Euro2016
         private void PlayerView_Click(object sender, EventArgs e)
         {
             //
-        }
-
-        private void countryIV_Click(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>Refreshes the information for the given Country object.</summary>

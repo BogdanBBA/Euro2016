@@ -53,7 +53,7 @@ namespace Euro2016
 
         private void infoViewDetail1_Click(object sender, EventArgs e)
         {
-            this.mainForm.ShowForm<FStats, object>(null);
+            this.mainForm.ShowForm<FTeamStats, object>(null);
         }
 
         private void infoViewDetail3_Click(object sender, EventArgs e)

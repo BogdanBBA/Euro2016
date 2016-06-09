@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.awayFlagPB = new System.Windows.Forms.PictureBox();
-            this.homeFlagPB = new System.Windows.Forms.PictureBox();
-            this.whenL = new Euro2016.VisualComponents.SmoothLabel();
             this.halvesL = new Euro2016.VisualComponents.SmoothLabel();
+            this.mustWatchStV = new Euro2016.VisualComponents.StarView();
+            this.whenL = new Euro2016.VisualComponents.SmoothLabel();
             this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
             this.matchesP = new Euro2016.VisualComponents.MyPanel();
             this.awayNicknameL = new Euro2016.VisualComponents.SmoothLabel();
             this.homeNicknameL = new Euro2016.VisualComponents.SmoothLabel();
             this.awayTeamL = new Euro2016.VisualComponents.SmoothLabel();
+            this.awayFlagPB = new System.Windows.Forms.PictureBox();
             this.scoreL = new Euro2016.VisualComponents.SmoothLabel();
             this.phaseL = new Euro2016.VisualComponents.SmoothLabel();
             this.homeTeamL = new Euro2016.VisualComponents.SmoothLabel();
             this.whereL = new Euro2016.VisualComponents.SmoothLabel();
-            this.editB = new Euro2016.VisualComponents.MyButton();
+            this.homeFlagPB = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.awayFlagPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeFlagPB)).BeginInit();
             this.SuspendLayout();
             // 
-            // awayFlagPB
+            // halvesL
             // 
-            this.awayFlagPB.BackColor = System.Drawing.Color.Transparent;
-            this.awayFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.awayFlagPB.Location = new System.Drawing.Point(479, 168);
-            this.awayFlagPB.Name = "awayFlagPB";
-            this.awayFlagPB.Size = new System.Drawing.Size(160, 100);
-            this.awayFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.awayFlagPB.TabIndex = 6;
-            this.awayFlagPB.TabStop = false;
-            this.awayFlagPB.Click += new System.EventHandler(this.awayFlagPB_Click);
+            this.halvesL.BackColor = System.Drawing.Color.Transparent;
+            this.halvesL.Font = new System.Drawing.Font("Segoe UI Semilight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.halvesL.ForeColor = System.Drawing.Color.White;
+            this.halvesL.Location = new System.Drawing.Point(314, 258);
+            this.halvesL.Name = "halvesL";
+            this.halvesL.Size = new System.Drawing.Size(159, 60);
+            this.halvesL.TabIndex = 13;
+            this.halvesL.Text = "10-0";
+            this.halvesL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // homeFlagPB
+            // mustWatchStV
             // 
-            this.homeFlagPB.BackColor = System.Drawing.Color.Transparent;
-            this.homeFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homeFlagPB.Location = new System.Drawing.Point(151, 168);
-            this.homeFlagPB.Name = "homeFlagPB";
-            this.homeFlagPB.Size = new System.Drawing.Size(160, 100);
-            this.homeFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.homeFlagPB.TabIndex = 0;
-            this.homeFlagPB.TabStop = false;
-            this.homeFlagPB.Click += new System.EventHandler(this.homeFlagPB_Click);
+            this.mustWatchStV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.mustWatchStV.Checked = false;
+            this.mustWatchStV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mustWatchStV.Location = new System.Drawing.Point(374, 321);
+            this.mustWatchStV.MouseIsClicked = false;
+            this.mustWatchStV.MouseIsOver = false;
+            this.mustWatchStV.Name = "mustWatchStV";
+            this.mustWatchStV.Size = new System.Drawing.Size(40, 40);
+            this.mustWatchStV.TabIndex = 16;
+            this.mustWatchStV.Text = "starView1";
+            this.mustWatchStV.Click += new System.EventHandler(this.mustWatchStV_Click);
             // 
             // whenL
             // 
@@ -84,18 +86,6 @@
             this.whenL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.whenL.Click += new System.EventHandler(this.whenL_Click);
             // 
-            // halvesL
-            // 
-            this.halvesL.BackColor = System.Drawing.Color.Transparent;
-            this.halvesL.Font = new System.Drawing.Font("Segoe UI Semilight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.halvesL.ForeColor = System.Drawing.Color.White;
-            this.halvesL.Location = new System.Drawing.Point(314, 271);
-            this.halvesL.Name = "halvesL";
-            this.halvesL.Size = new System.Drawing.Size(159, 93);
-            this.halvesL.TabIndex = 13;
-            this.halvesL.Text = "10-0";
-            this.halvesL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // titleLabel1
             // 
             this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
@@ -104,8 +94,10 @@
             this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel1.MouseIsClicked = false;
+            this.titleLabel1.MouseIsOver = false;
             this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(621, 78);
+            this.titleLabel1.Size = new System.Drawing.Size(761, 78);
             this.titleLabel1.TabIndex = 12;
             this.titleLabel1.Text = "titleLabel1";
             this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -160,9 +152,22 @@
             this.awayTeamL.Text = "Tuaisceart Éireann";
             this.awayTeamL.Click += new System.EventHandler(this.awayFlagPB_Click);
             // 
+            // awayFlagPB
+            // 
+            this.awayFlagPB.BackColor = System.Drawing.Color.Transparent;
+            this.awayFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.awayFlagPB.Location = new System.Drawing.Point(479, 168);
+            this.awayFlagPB.Name = "awayFlagPB";
+            this.awayFlagPB.Size = new System.Drawing.Size(160, 100);
+            this.awayFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.awayFlagPB.TabIndex = 6;
+            this.awayFlagPB.TabStop = false;
+            this.awayFlagPB.Click += new System.EventHandler(this.awayFlagPB_Click);
+            // 
             // scoreL
             // 
             this.scoreL.BackColor = System.Drawing.Color.Transparent;
+            this.scoreL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.scoreL.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreL.ForeColor = System.Drawing.Color.White;
             this.scoreL.Location = new System.Drawing.Point(317, 168);
@@ -171,6 +176,7 @@
             this.scoreL.TabIndex = 5;
             this.scoreL.Text = "10-0";
             this.scoreL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.scoreL.Click += new System.EventHandler(this.scoreL_Click);
             // 
             // phaseL
             // 
@@ -214,27 +220,24 @@
             this.whereL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.whereL.Click += new System.EventHandler(this.whereL_Click);
             // 
-            // editB
+            // homeFlagPB
             // 
-            this.editB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.editB.BigBar = false;
-            this.editB.Checked = false;
-            this.editB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editB.DrawBar = true;
-            this.editB.Image = null;
-            this.editB.Location = new System.Drawing.Point(639, 12);
-            this.editB.Name = "editB";
-            this.editB.Size = new System.Drawing.Size(134, 78);
-            this.editB.TabIndex = 15;
-            this.editB.Text = "EDIT";
-            this.editB.Click += new System.EventHandler(this.editB_Click);
+            this.homeFlagPB.BackColor = System.Drawing.Color.Transparent;
+            this.homeFlagPB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeFlagPB.Location = new System.Drawing.Point(151, 168);
+            this.homeFlagPB.Name = "homeFlagPB";
+            this.homeFlagPB.Size = new System.Drawing.Size(160, 100);
+            this.homeFlagPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.homeFlagPB.TabIndex = 0;
+            this.homeFlagPB.TabStop = false;
+            this.homeFlagPB.Click += new System.EventHandler(this.homeFlagPB_Click);
             // 
             // FMatch
             // 
             this.ClientSize = new System.Drawing.Size(1270, 373);
-            this.Controls.Add(this.editB);
-            this.Controls.Add(this.whenL);
+            this.Controls.Add(this.mustWatchStV);
             this.Controls.Add(this.halvesL);
+            this.Controls.Add(this.whenL);
             this.Controls.Add(this.titleLabel1);
             this.Controls.Add(this.matchesP);
             this.Controls.Add(this.awayNicknameL);
@@ -269,6 +272,6 @@
         private VisualComponents.TitleLabel titleLabel1;
         private VisualComponents.SmoothLabel halvesL;
         private VisualComponents.SmoothLabel whenL;
-        private VisualComponents.MyButton editB;
+        private VisualComponents.StarView mustWatchStV;
     }
 }

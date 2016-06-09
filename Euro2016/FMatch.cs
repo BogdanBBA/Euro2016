@@ -66,17 +66,19 @@ namespace Euro2016
             Match match = sender is MatchRow ? (sender as MatchRow).Match : sender as Match;
             this.lastMatch = match;
             phaseL.Text = match.FormatCategory;
-            whenL.Text = match.WhenOffset.ToString("dddd, d MMMM yyyy, 'at' HH:mm");
+            whenL.Text = string.Format("{0} (CET{1})", match.WhenOffset.ToString("dddd, d MMMM yyyy, 'at' HH:mm"),
+                this.mainForm.Database.Settings.TimeOffset == 0 ? "" : "+" + this.mainForm.Database.Settings.TimeOffset);
             whereL.Text = match.Where.Name + ", " + match.Where.City;
             this.RefreshTeamInfo(match.TeamReferences.Home, match.Teams.Home, homeFlagPB, homeTeamL, homeNicknameL);
             this.RefreshTeamInfo(match.TeamReferences.Away, match.Teams.Away, awayFlagPB, awayTeamL, awayNicknameL);
             scoreL.Text = match.Scoreboard.FormatScore(false);
             halvesL.Text = match.Scoreboard.ScoreDescription(false);
+            mustWatchStV.Checked = match.MustWatch;
 
             MatchRow row = sender is MatchRow ? sender as MatchRow : this.matchesView.GetRowByMatch(match);
             this.matchesView.myScrollPanel.ScrollToViewControl(row);
         }
-        
+
         /// <summary>Refreshes the information for the given Match object.</summary>
         /// <param name="item">the Match object to display information for</param>
         public override void RefreshInformation(object item)
@@ -114,7 +116,20 @@ namespace Euro2016
                 this.mainForm.ShowForm<FTeam, Team>(this.lastMatch.Teams.Away);
         }
 
-        private void editB_Click(object sender, EventArgs e)
+        private void mustWatchStV_Click(object sender, EventArgs e)
+        {
+            if (this.lastMatch == null)
+                return;
+
+            this.lastMatch.MustWatch = !this.lastMatch.MustWatch;
+            string saveResult = this.mainForm.Database.SaveDatabase(Paths.DatabaseFile);
+            if (!saveResult.Equals(string.Empty))
+                MessageBox.Show(saveResult, "Database save ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.matchesView.GetRowByMatch(this.lastMatch).Invalidate();
+            this.mainForm.MatchesView.GetRowByMatch(this.lastMatch).Invalidate();
+        }
+
+        private void scoreL_Click(object sender, EventArgs e)
         {
             if (this.lastMatch.Teams.Home == null || this.lastMatch.Teams.Away == null)
             {

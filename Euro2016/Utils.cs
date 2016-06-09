@@ -406,43 +406,86 @@ namespace Euro2016
                 for (int j = i + 1; j < players.Count; j++)
                 {
                     Player iP = players[i], jP = players[j];
-                    bool shouldSwapForDescending = false;
+                    bool isAscending = false;
 
                     switch (sortByColumn)
                     {
                         case 0: // number
-                            shouldSwapForDescending = iP.Number < jP.Number;
+                            isAscending = iP.Number < jP.Number;
                             break;
                         case 1: // player name flag, but should never come in with this value
                         case 2: // player name
-                            shouldSwapForDescending = iP.Name.CompareTo(jP.Name) < 0;
+                            isAscending = iP.Name.CompareTo(jP.Name) < 0;
                             break;
                         case 3: // playing position
-                            shouldSwapForDescending = iP.PlayerPosition < jP.PlayerPosition;
+                            isAscending = iP.PlayerPosition < jP.PlayerPosition;
                             break;
                         case 4: // date of birth
-                            shouldSwapForDescending = iP.BirthDate.CompareTo(jP.BirthDate) > 0;
+                            isAscending = iP.BirthDate.CompareTo(jP.BirthDate) > 0;
                             break;
                         case 5: // age, should still sort by exact birth date rather than more approximate year age
-                            shouldSwapForDescending = iP.BirthDate.CompareTo(jP.BirthDate) < 0;
+                            isAscending = iP.BirthDate.CompareTo(jP.BirthDate) < 0;
                             break;
                         case 6: // caps
-                            shouldSwapForDescending = iP.Caps < jP.Caps;
+                            isAscending = iP.Caps < jP.Caps;
                             break;
                         case 7: // goals
-                            shouldSwapForDescending = iP.Goals < jP.Goals;
+                            isAscending = iP.Goals < jP.Goals;
                             break;
                         case 8: // club flag, but should never come in with this value
                         case 9: // club, sort by club country name first and then by club name
                             int clubCountryNameCompare = iP.Club.Country.Names.Away.CompareTo(jP.Club.Country.Names.Away);
-                            shouldSwapForDescending = clubCountryNameCompare == 0 ? (iP.Club.Name.CompareTo(jP.Club.Name) < 0) : clubCountryNameCompare < 0;
+                            isAscending = clubCountryNameCompare == 0 ? (iP.Club.Name.CompareTo(jP.Club.Name) < 0) : clubCountryNameCompare < 0;
                             break;
                         default:
                             break;
                     }
 
-                    if (shouldSwapForDescending == descending)
+                    if (isAscending == descending)
                         players.SwapItemsAtPositions(i, j);
+                }
+        }
+
+        /// <summary>Sorts the teams in this list in the given order and by the given criteria (the column index parameter corresponds to the columns in TeamStatsViewBase.ColumnCaptions).</summary>
+        public static void SortTeams(this List<Team> teams, int sortByColumn, bool descending)
+        {
+            for (int i = 0; i < teams.Count - 1; i++)
+                for (int j = i + 1; j < teams.Count; j++)
+                {
+                    Team iT = teams[i], jT = teams[j];
+                    bool isAscending = false;
+
+                    switch (sortByColumn)
+                    {
+                        case 2: // name
+                            isAscending = iT.Country.Names.Away.CompareTo(jT.Country.Names.Away) < 0;
+                            break;
+                        case 3: // age
+                            isAscending = iT.Players.GetAverageAge() < jT.Players.GetAverageAge();
+                            break;
+                        case 4: // time
+                            //isAscending = 
+                            break;
+                        case 5: // duration
+                            break;
+                        case 6: // goals
+                            break;
+                        case 7: // attendance
+                            break;
+                        case 8: // phase
+                            break;
+                        case 9: // clubs
+                            break;
+                        case 10: // leagues
+                            break;
+                        case 11: // home play
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (isAscending == descending)
+                        teams.SwapItemsAtPositions(i, j);
                 }
         }
 
@@ -473,6 +516,47 @@ namespace Euro2016
                     else if (match.Teams.Home.Equals(teamB) && match.Teams.Away.Equals(teamA))
                         return match.Scoreboard.Played ? -match.Scoreboard.FullScore.WhichTeamWon : -2;
             return -2;
+        }
+
+        /// <summary>Calculates the average start time for this collection of matches.</summary>
+        public static TimeSpan GetAverageStartTime(this ListOfIDObjects<Match> matches)
+        {
+            TimeSpan result = new TimeSpan();
+            foreach (Match match in matches)
+                result = result.Add(match.When.TimeOfDay);
+            return new TimeSpan((long) ((double) result.Ticks / matches.Count));
+        }
+
+        /// <summary>Calculates the average start time for this collection of matches.</summary>
+        public static TimeSpan GetAverageDuration(this ListOfIDObjects<Match> matches)
+        {
+            TimeSpan result = new TimeSpan();
+            foreach (Match match in matches)
+                result = result.Add(match.MatchDuration);
+            return new TimeSpan((long) ((double) result.Ticks / matches.Count));
+        }
+
+        /// <summary>Calculates the maximum attendance for this collection of matches.</summary>
+        public static int GetAttendance(this ListOfIDObjects<Match> matches)
+        {
+            int result = 0;
+            foreach (Match match in matches)
+                result += match.Where.Capacity;
+            return result;
+        }
+
+        /// <summary>Calculates the number of clubs and leagues respectively that the players of this team play in.</summary>
+        public static Tuple<int, int> GetClubAndLeagueCount(this Team team)
+        {
+            List<string> clubs = new List<string>(), leagues = new List<string>();
+            foreach (Player player in team.Players)
+            {
+                if (!clubs.Contains(player.Club.Name + ":" + player.Club.Country.Names.Away))
+                    clubs.Add(player.Club.Name + ":" + player.Club.Country.Names.Away);
+                if (!leagues.Contains(player.Club.Country.Names.Away))
+                    leagues.Add(player.Club.Country.Names.Away);
+            }
+            return new Tuple<int, int>(clubs.Count, leagues.Count);
         }
 
         /// <summary>Generates a quasi-random match scoreboard.</summary>

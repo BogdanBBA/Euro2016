@@ -125,7 +125,7 @@ namespace Euro2016
     {
         /// <summary>Gets and privately sets the name pair (native and english languages) of the country.</summary>
         public PairT<string> Names { get; private set; }
-        /// <summary>Gets and privately sets whether the country is part of UEFA.</summary>
+        /// <summary>Gets and privately sets whether the country's football association is part of UEFA.</summary>
         public bool UefaCountry { get; private set; }
         /// <summary>Gets and privately sets the full-size flag image for this country.</summary>
         public Bitmap FlagOriginal { get; private set; }
@@ -869,6 +869,8 @@ namespace Euro2016
         public DateTime WhenOffset { get; set; }
         /// <summary>Gets or privately sets the venue where the match is played.</summary>
         public Venue Where { get; private set; }
+        /// <summary>Gets or sets whether this match is marked as a 'must watch'.</summary>
+        public bool MustWatch { get; set; }
         /// <summary>Gets or privately sets the scoreboard of the match.</summary>
         public MatchScoreboard Scoreboard { get; internal set; }
 
@@ -877,9 +879,11 @@ namespace Euro2016
         /// <param name="category">the category of the match</param>
         /// <param name="teamReferences">the team reference pair for the match</param>
         /// <param name="when">the date and time when the match is played</param>
+        /// <param name="whenOffset">the date and time when the match is played, offset by the amount specified in the settings</param>
         /// <param name="where">the venue where the match is played</param>
+        /// <param name="mustWatch">whether this match is marked as a 'must watch'</param>
         /// <param name="scoreboard">the scoreboard of the match</param>
-        public Match(string id, string category, PairT<string> teamReferences, DateTime when, DateTime whenOffset, Venue where, MatchScoreboard scoreboard)
+        public Match(string id, string category, PairT<string> teamReferences, DateTime when, DateTime whenOffset, Venue where, bool mustWatch, MatchScoreboard scoreboard)
             : base(id)
         {
             this.Category = category;
@@ -888,6 +892,7 @@ namespace Euro2016
             this.When = when;
             this.WhenOffset = whenOffset;
             this.Where = where;
+            this.MustWatch = mustWatch;
             this.Scoreboard = scoreboard;
         }
 
@@ -898,6 +903,9 @@ namespace Euro2016
         /// <summary>Formats the category of the match to make it look nice and clear.</summary>
         public string FormatCategory
         { get { return Utils.FormatMatchCategory(this.Category); } }
+
+        public TimeSpan MatchDuration
+        { get { return new TimeSpan(0, this.Scoreboard.Halves.Count == 0 ? 0 : (this.Scoreboard.Halves.Count == 2 ? 90 : 120), 0); } }
 
         /// <summary>Parses the given XmlNode into a new Match object.</summary>
         public static Match Parse(XmlNode node, Database database)
@@ -912,6 +920,7 @@ namespace Euro2016
                 Int32.Parse(whenStr.Substring(0, whenStr.IndexOf('/'))),
                 Int32.Parse(whenStr.Substring(whenStr.IndexOf('@') + 1)), 0, 0);
             Venue where = database.Venues.GetItemByID(node.Attributes["where"].Value);
+            bool mustWatch = bool.Parse(node.Attributes["mustWatch"].Value);
             List<HalfScoreboard> halves = new List<HalfScoreboard>();
             string scoreboardStr = node.Attributes["scoreboard"].Value;
             if (scoreboardStr.Trim().Length > 0)
@@ -921,7 +930,7 @@ namespace Euro2016
                     halves.Add(HalfScoreboard.Parse(score));
             }
             MatchScoreboard scoreboard = new MatchScoreboard(halves);
-            return new Match(id, category, teamReferences, when, when, where, scoreboard);
+            return new Match(id, category, teamReferences, when, when, where, mustWatch, scoreboard);
         }
 
         /// <summary>Generates an XmlNode from this object.</summary>
@@ -934,6 +943,7 @@ namespace Euro2016
             node.AddAttribute(doc, "who", string.Format("{0},{1}", this.TeamReferences.Home, this.TeamReferences.Away));
             node.AddAttribute(doc, "when", string.Format("{0}/{1}@{2}", this.When.Day, this.When.Month, this.When.Hour));
             node.AddAttribute(doc, "where", this.Where.ID);
+            node.AddAttribute(doc, "mustWatch", this.MustWatch.ToString());
             List<string> scores = new List<string>();
             foreach (HalfScoreboard score in this.Scoreboard.Halves)
                 scores.Add(score.Home + "-" + score.Away);

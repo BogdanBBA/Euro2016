@@ -33,7 +33,7 @@ namespace Euro2016.VisualComponents
             this.myScrollPanel.UpdatePanelSize();
 
             this.header = new PlayerViewHeader(playersForm);
-            this.header.Size = new Size(this.myScrollPanel.VisibleSize.Width, PlayerViewBase.DefaultHeight);
+            this.header.Size = new Size(this.myScrollPanel.VisibleSize.Width, PlayerViewBase.DefaultHeight + 12);
             this.myScrollPanel.AddControl(this.header, Point.Empty, false);
             this.rows = new PlayerViewRow[0];
 
@@ -57,7 +57,7 @@ namespace Euro2016.VisualComponents
                     temp[i].Size = new Size(this.myScrollPanel.VisibleSize.Width, PlayerViewBase.DefaultHeight);
                     temp[i].MouseEnter += this.onPlayerViewMouseEnterDelegate;
                     temp[i].Click += this.onPlayerViewClickDelegate;
-                    this.myScrollPanel.AddControl(temp[i], new Point(0, (i + 1) * PlayerViewBase.DefaultHeight), false);
+                    this.myScrollPanel.AddControl(temp[i], new Point(0, (i + 1) * PlayerViewBase.DefaultHeight + 12), false);
                 }
                 this.rows = temp;
             }
@@ -140,8 +140,8 @@ namespace Euro2016.VisualComponents
             double lastLeft = 0.0;
             for (int iCol = 0; iCol < PlayerViewBase.ColumnWidths.Length; iCol++)
             {
-                double width = iCol == 2 || iCol == 9 ? PlayerViewBase.ColumnWidths[iCol] + PlayerViewBase.ColumnWidths[iCol - 1] : PlayerViewBase.ColumnWidths[iCol];
-                if (iCol != 1 && iCol != 8)
+                double width = iCol > 1 && PlayerViewBase.ColumnCaptions[iCol - 1].Equals("") ? PlayerViewBase.ColumnWidths[iCol] + PlayerViewBase.ColumnWidths[iCol - 1] : PlayerViewBase.ColumnWidths[iCol];
+                if (!PlayerViewBase.ColumnCaptions[iCol].Equals(""))
                 {
                     string text = PlayerViewBase.ColumnCaptions[iCol] + (this.SortByColumn == iCol ? (this.Descending ? "▼" : "▲") : "");
                     this.DrawTextCell(e.Graphics, this.Font, text, HorizontalAlignment.Center, lastLeft, lastLeft + width);
@@ -169,7 +169,7 @@ namespace Euro2016.VisualComponents
         {
             this.Font = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 13, FontStyle.Regular) : new Font("Arial", 11, FontStyle.Regular);
             this.playerPositionFont = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 10, FontStyle.Bold) : new Font("Arial", 11, FontStyle.Regular);
-            this.Size = new Size(500, PlayerViewBase.DefaultHeight);
+            this.Size = new Size(500, PlayerViewBase.DefaultHeight + 12);
         }
 
         protected void DrawPlayerPosition(Graphics g, double left, double width, Player player)

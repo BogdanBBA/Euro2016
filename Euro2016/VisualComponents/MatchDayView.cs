@@ -46,6 +46,18 @@ namespace Euro2016.VisualComponents
     public class MatchDayView : MyEuroBaseControl
     {
         public const int DefaultHeight = 90;
+        public const int MustWatchStarSize = 20;
+        public static Pair<Bitmap> StarImage;
+
+        static MatchDayView()
+        {
+            StarView star = new StarView() { Size = new Size(MatchDayView.MustWatchStarSize, MatchDayView.MustWatchStarSize), Checked = true };
+            Bitmap bmpN = new Bitmap(star.Width, star.Height), bmpH = new Bitmap(star.Width, star.Height);
+            star.DrawToBitmap(bmpN, new Rectangle(Point.Empty, bmpN.Size));
+            star.MouseIsOver = true;
+            star.DrawToBitmap(bmpH, new Rectangle(Point.Empty, bmpH.Size));
+            MatchDayView.StarImage = new Pair<Bitmap>(bmpN, bmpH);
+        }
 
         private DateTime date;
         public DateTime Date
@@ -100,14 +112,17 @@ namespace Euro2016.VisualComponents
             {
                 string text = this.matches.Count + (this.matches.Count > 1 ? " matches" : " match");
                 size = e.Graphics.MeasureString(text, this.matchCountFont);
-                float left = this.Width / 2f - size.Width / 2f;
-                if (this.matches.FirstOrDefault(m => m.Teams.Home != null && m.Teams.Home.Equals(this.settings.FavoriteTeam) || m.Teams.Away != null && m.Teams.Away.Equals(this.settings.FavoriteTeam)) != null)
-                {
-                    left -= this.settings.FavoriteTeam.Country.Flag20px.Width / 2f;
-                    e.Graphics.DrawImage(this.settings.FavoriteTeam.Country.Flag20px, left, this.Height - this.settings.FavoriteTeam.Country.Flag20px.Height - 8);
-                    left += this.settings.FavoriteTeam.Country.Flag20px.Width + 4f;
-                }
-                e.Graphics.DrawString(text, this.matchCountFont, MyGUIs.Text.Normal.Brush, left, this.Height - size.Height - 8);
+                e.Graphics.DrawString(text, this.matchCountFont, MyGUIs.Text.Normal.Brush, this.Width / 2f - size.Width / 2f, this.Height - size.Height - 8);
+
+                int mustWatchMatchCount = this.matches.Count(m => m.MustWatch), starsW = MatchDayView.MustWatchStarSize * mustWatchMatchCount;
+                bool favTeam = this.matches.Count(m => this.settings.FavoriteTeam.Equals(m.Teams.Home) || this.settings.FavoriteTeam.Equals(m.Teams.Away)) > 0;
+                float left = this.Width / 2 - (mustWatchMatchCount > 0 ? mustWatchMatchCount * MatchDayView.StarImage.Normal.Width / 2f : 0) - (favTeam ? this.settings.FavoriteTeam.Country.Flag20px.Width / 2f : 0);
+
+                if (mustWatchMatchCount > 0)
+                    for (int i = 0; i < mustWatchMatchCount; i++, left += MatchDayView.MustWatchStarSize)
+                        e.Graphics.DrawImage(MatchDayView.StarImage[this.mouseIsOver], new PointF(left, 4));
+                if (favTeam)
+                    e.Graphics.DrawImage(this.settings.FavoriteTeam.Country.Flag20px, new PointF(left, 4));
             }
         }
     }

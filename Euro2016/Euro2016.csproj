@@ -147,6 +147,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FTeamStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTeamStats.Designer.cs">
+      <DependentUpon>FTeamStats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="VisualComponents\CountryView.cs">
       <SubType>Component</SubType>
@@ -198,6 +204,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="VisualComponents\SmoothLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VisualComponents\StarView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VisualComponents\TeamStatsViews.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="VisualComponents\TitleLabel.cs">
@@ -261,6 +273,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FTeamStats.resx">
+      <DependentUpon>FTeamStats.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisualComponents\MyForm.resx">
       <DependentUpon>MyForm.cs</DependentUpon>
     </EmbeddedResource>

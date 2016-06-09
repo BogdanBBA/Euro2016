@@ -70,6 +70,8 @@
             this.infoViewDetail2.Checked = false;
             this.infoViewDetail2.DrawBar = false;
             this.infoViewDetail2.Location = new System.Drawing.Point(973, 96);
+            this.infoViewDetail2.MouseIsClicked = false;
+            this.infoViewDetail2.MouseIsOver = false;
             this.infoViewDetail2.Name = "infoViewDetail2";
             this.infoViewDetail2.Size = new System.Drawing.Size(215, 35);
             this.infoViewDetail2.TabIndex = 6;
@@ -85,6 +87,8 @@
             this.coachIVD.Checked = false;
             this.coachIVD.DrawBar = false;
             this.coachIVD.Location = new System.Drawing.Point(454, 161);
+            this.coachIVD.MouseIsClicked = false;
+            this.coachIVD.MouseIsOver = false;
             this.coachIVD.Name = "coachIVD";
             this.coachIVD.Size = new System.Drawing.Size(398, 35);
             this.coachIVD.TabIndex = 5;
@@ -101,6 +105,8 @@
             this.titleLabel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.titleLabel1.DrawBar = true;
             this.titleLabel1.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel1.MouseIsClicked = false;
+            this.titleLabel1.MouseIsOver = false;
             this.titleLabel1.Name = "titleLabel1";
             this.titleLabel1.Size = new System.Drawing.Size(1176, 78);
             this.titleLabel1.TabIndex = 4;
@@ -117,6 +123,8 @@
             this.countryIV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.countryIV.DrawBar = false;
             this.countryIV.Location = new System.Drawing.Point(384, 96);
+            this.countryIV.MouseIsClicked = false;
+            this.countryIV.MouseIsOver = false;
             this.countryIV.Name = "countryIV";
             this.countryIV.Size = new System.Drawing.Size(583, 52);
             this.countryIV.TabIndex = 3;
@@ -124,7 +132,7 @@
             this.countryIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.countryIV.TextDescription = "Players of";
             this.countryIV.TextText = "#text";
-            this.countryIV.Click += new System.EventHandler(this.countryIV_Click);
+            this.countryIV.Click += new System.EventHandler(this.flagPB_Click);
             // 
             // flagPB
             // 
@@ -143,7 +151,7 @@
             this.countriesP.DrawPanelAccent = false;
             this.countriesP.Location = new System.Drawing.Point(12, 96);
             this.countriesP.Name = "countriesP";
-            this.countriesP.Size = new System.Drawing.Size(200, 682);
+            this.countriesP.Size = new System.Drawing.Size(200, 694);
             this.countriesP.TabIndex = 1;
             // 
             // playerP
@@ -151,7 +159,7 @@
             this.playerP.DrawPanelAccent = false;
             this.playerP.Location = new System.Drawing.Point(218, 202);
             this.playerP.Name = "playerP";
-            this.playerP.Size = new System.Drawing.Size(970, 576);
+            this.playerP.Size = new System.Drawing.Size(970, 588);
             this.playerP.TabIndex = 0;
             // 
             // playersOwnCountryPB
@@ -166,6 +174,8 @@
             this.playersOwnCountryPB.Maximum = 100;
             this.playersOwnCountryPB.Minimum = 0;
             this.playersOwnCountryPB.MinimumSize = new System.Drawing.Size(74, 13);
+            this.playersOwnCountryPB.MouseIsClicked = false;
+            this.playersOwnCountryPB.MouseIsOver = false;
             this.playersOwnCountryPB.Name = "playersOwnCountryPB";
             this.playersOwnCountryPB.Size = new System.Drawing.Size(215, 35);
             this.playersOwnCountryPB.TabIndex = 10;
@@ -181,6 +191,8 @@
             this.averageAgeIVD.Checked = false;
             this.averageAgeIVD.DrawBar = false;
             this.averageAgeIVD.Location = new System.Drawing.Point(858, 161);
+            this.averageAgeIVD.MouseIsClicked = false;
+            this.averageAgeIVD.MouseIsOver = false;
             this.averageAgeIVD.Name = "averageAgeIVD";
             this.averageAgeIVD.Size = new System.Drawing.Size(96, 35);
             this.averageAgeIVD.TabIndex = 11;
@@ -191,7 +203,7 @@
             // 
             // FPlayers
             // 
-            this.ClientSize = new System.Drawing.Size(1200, 789);
+            this.ClientSize = new System.Drawing.Size(1200, 802);
             this.Controls.Add(this.averageAgeIVD);
             this.Controls.Add(this.playersOwnCountryPB);
             this.Controls.Add(this.playersOwnCountryL);
