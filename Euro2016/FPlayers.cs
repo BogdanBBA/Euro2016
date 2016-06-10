@@ -96,7 +96,7 @@ namespace Euro2016
                 coachIVD.TextDescription = "Manager";
                 coachIVD.TextText = team.Coach.Value;
                 averageAgeIVD.Show();
-                averageAgeIVD.TextText = team.Players.GetAverageAge().ToString("N2");
+                averageAgeIVD.TextText = team.Players.GetAverageAge().FormatAge(true);
                 playersOwnCountryL.Show();
                 playersOwnCountryPB.Show();
                 playersOwnCountryPB.SetValues(0, team.Players.Count, team.Players.Count(p => p.Club.Country.Equals(p.Nationality.Country)));

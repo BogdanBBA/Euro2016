@@ -58,11 +58,13 @@ namespace Euro2016
             string checkResult = Paths.CheckPaths(true);
             if (!checkResult.Equals(""))
                 throw new ApplicationException("Failed to initialize because there were errors with the folder and file check.");
-            (sender as BackgroundWorker).ReportProgress(0, "Reading database (hold on, it takes a while)...");
+            (sender as BackgroundWorker).ReportProgress(0, "Reading database...");
 
             checkResult = StaticData.LoadData();
             if (!checkResult.Equals(""))
                 throw new ApplicationException(checkResult);
+
+            (sender as BackgroundWorker).ReportProgress(0, -1);
 
             Database database = new Database();
             checkResult = database.LoadDatabase(Paths.DatabaseFile, Paths.DatabasePlayersFile);
@@ -76,7 +78,15 @@ namespace Euro2016
 
         private void bgW_Initialize_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            titleLabel1.TextSubtitle = e.UserState as string;
+            if (e.UserState is string)
+                statusTL.TextSubtitle = e.UserState as string;
+            else
+            {
+                Pair<Font> font = e.UserState as Pair<Font>;
+                statusTL.TitleFormatting = new Tuple<Font, Brush, string>(new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 27, FontStyle.Bold), statusTL.TitleFormatting.Item2, statusTL.TitleFormatting.Item3);
+                statusTL.SubtitleFormatting = new Tuple<Font, Brush, string>(new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 20, FontStyle.Regular), statusTL.SubtitleFormatting.Item2, statusTL.SubtitleFormatting.Item3);
+                statusTL.Invalidate();
+            }
         }
 
         private void bgW_Initialize_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

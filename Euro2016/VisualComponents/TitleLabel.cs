@@ -17,10 +17,10 @@ namespace Euro2016.VisualComponents
         public TitleLabel()
             : base()
         {
-            this.title = new Tuple<Font, Brush, string>(
+            this.TitleFormatting = new Tuple<Font, Brush, string>(
                 StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 27, FontStyle.Bold) : new Font("Arial", 32, FontStyle.Bold),
                 MyGUIs.Text.Normal.Brush, "[Title text]");
-            this.subtitle = new Tuple<Font, Brush, string>(
+            this.SubtitleFormatting = new Tuple<Font, Brush, string>(
                 StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 14, FontStyle.Regular) : new Font("Arial", 15, FontStyle.Bold),
                 MyGUIs.Text.Highlighted.Brush, "[Subtitle text]");
             this.Size = new Size(400, TitleLabel.TitleLabelHeight);
@@ -41,19 +41,19 @@ namespace Euro2016.VisualComponents
             set { this.bigBar = value; this.Invalidate(); }
         }
 
-        private Tuple<Font, Brush, string> title;
-        private Tuple<Font, Brush, string> subtitle;
+        public Tuple<Font, Brush, string> TitleFormatting { get; internal set; }
+        public Tuple<Font, Brush, string> SubtitleFormatting { get; internal set; }
 
         public string TextTitle
         {
-            get { return this.title.Item3; }
-            set { this.title = new Tuple<Font, Brush, string>(this.title.Item1, this.title.Item2, value); this.Invalidate(); }
+            get { return this.TitleFormatting.Item3; }
+            set { this.TitleFormatting = new Tuple<Font, Brush, string>(this.TitleFormatting.Item1, this.TitleFormatting.Item2, value); this.Invalidate(); }
         }
 
         public string TextSubtitle
         {
-            get { return this.subtitle.Item3; }
-            set { this.subtitle = new Tuple<Font, Brush, string>(this.subtitle.Item1, this.subtitle.Item2, value); this.Invalidate(); }
+            get { return this.SubtitleFormatting.Item3; }
+            set { this.SubtitleFormatting = new Tuple<Font, Brush, string>(this.SubtitleFormatting.Item1, this.SubtitleFormatting.Item2, value); this.Invalidate(); }
         }
 
         private HorizontalAlignment textAlign;
@@ -68,16 +68,16 @@ namespace Euro2016.VisualComponents
             e.Graphics.Clear(MyGUIs.Background.Normal.Color);
             e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
-            SizeF size = e.Graphics.MeasureString(this.title.Item3, this.title.Item1);
+            SizeF size = e.Graphics.MeasureString(this.TitleFormatting.Item3, this.TitleFormatting.Item1);
             PointF location = new PointF(this.textAlign == HorizontalAlignment.Left
                 ? 0 : (this.textAlign == HorizontalAlignment.Center ? this.Width / 2 - size.Width / 2 : this.Width - size.Width), 0);
-            e.Graphics.DrawString(this.title.Item3, this.title.Item1, this.title.Item2, location);
+            e.Graphics.DrawString(this.TitleFormatting.Item3, this.TitleFormatting.Item1, this.TitleFormatting.Item2, location);
 
             float lastBottom = location.Y + size.Height;
-            size = e.Graphics.MeasureString(this.subtitle.Item3, this.subtitle.Item1);
+            size = e.Graphics.MeasureString(this.SubtitleFormatting.Item3, this.SubtitleFormatting.Item1);
             location = new PointF(this.textAlign == HorizontalAlignment.Left
                 ? 4 : (this.textAlign == HorizontalAlignment.Center ? this.Width / 2 - size.Width / 2 : this.Width - size.Width - 4), lastBottom - 8);
-            e.Graphics.DrawString(this.subtitle.Item3, this.subtitle.Item1, this.subtitle.Item2, location);
+            e.Graphics.DrawString(this.SubtitleFormatting.Item3, this.SubtitleFormatting.Item1, this.SubtitleFormatting.Item2, location);
 
             if (this.drawBar)
                 e.Graphics.FillRectangle(MyGUIs.Accent.Normal.Brush, 1, this.Height - BarHeight.GetValue(this.bigBar), this.Width - 2, BarHeight.GetValue(this.bigBar));

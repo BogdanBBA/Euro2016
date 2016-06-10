@@ -4,6 +4,7 @@ C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Euro2016.pdb
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Svg.dll
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Svg.pdb
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Svg.xml
+C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.csprojResolveAssemblyReference.cache
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FAbout.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FGroup.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FKnockOut.resources
@@ -20,9 +21,8 @@ C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FTeam.resource
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FVenue.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FWorking.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.Properties.Resources.resources
+C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FTeamStats.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.VisualComponents.MyForm.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.csproj.GenerateResource.Cache
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.exe
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.pdb
-C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.csprojResolveAssemblyReference.cache
-C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FTeamStats.resources

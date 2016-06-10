@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.startT = new System.Windows.Forms.Timer(this.components);
             this.closeT = new System.Windows.Forms.Timer(this.components);
-            this.titleLabel1 = new Euro2016.VisualComponents.TitleLabel();
+            this.statusTL = new Euro2016.VisualComponents.TitleLabel();
             this.SuspendLayout();
             // 
             // startT
@@ -42,24 +42,28 @@
             // 
             this.closeT.Tick += new System.EventHandler(this.closeT_Tick);
             // 
-            // titleLabel1
+            // statusTL
             // 
-            this.titleLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
-            this.titleLabel1.BigBar = false;
-            this.titleLabel1.DrawBar = true;
-            this.titleLabel1.Location = new System.Drawing.Point(12, 12);
-            this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(439, 78);
-            this.titleLabel1.TabIndex = 0;
-            this.titleLabel1.Text = "titleLabel1";
-            this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.titleLabel1.TextSubtitle = "Status";
-            this.titleLabel1.TextTitle = "Working...";
+            this.statusTL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
+            this.statusTL.BigBar = false;
+            this.statusTL.Checked = false;
+            this.statusTL.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.statusTL.DrawBar = true;
+            this.statusTL.Location = new System.Drawing.Point(12, 12);
+            this.statusTL.MouseIsClicked = false;
+            this.statusTL.MouseIsOver = false;
+            this.statusTL.Name = "statusTL";
+            this.statusTL.Size = new System.Drawing.Size(459, 80);
+            this.statusTL.TabIndex = 0;
+            this.statusTL.Text = "titleLabel1";
+            this.statusTL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.statusTL.TextSubtitle = "Status";
+            this.statusTL.TextTitle = "Working...";
             // 
             // FWorking
             // 
-            this.ClientSize = new System.Drawing.Size(463, 102);
-            this.Controls.Add(this.titleLabel1);
+            this.ClientSize = new System.Drawing.Size(483, 104);
+            this.Controls.Add(this.statusTL);
             this.Name = "FWorking";
             this.Load += new System.EventHandler(this.FWorking_Load);
             this.ResumeLayout(false);
@@ -70,7 +74,7 @@
 
         private System.Windows.Forms.Timer startT;
         private System.Windows.Forms.Timer closeT;
-        private VisualComponents.TitleLabel titleLabel1;
+        private VisualComponents.TitleLabel statusTL;
 
     }
 }

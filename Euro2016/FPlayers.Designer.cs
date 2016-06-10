@@ -90,7 +90,7 @@
             this.coachIVD.MouseIsClicked = false;
             this.coachIVD.MouseIsOver = false;
             this.coachIVD.Name = "coachIVD";
-            this.coachIVD.Size = new System.Drawing.Size(398, 35);
+            this.coachIVD.Size = new System.Drawing.Size(343, 35);
             this.coachIVD.TabIndex = 5;
             this.coachIVD.Text = "infoViewDetail1";
             this.coachIVD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -190,11 +190,11 @@
             this.averageAgeIVD.BigBar = false;
             this.averageAgeIVD.Checked = false;
             this.averageAgeIVD.DrawBar = false;
-            this.averageAgeIVD.Location = new System.Drawing.Point(858, 161);
+            this.averageAgeIVD.Location = new System.Drawing.Point(803, 161);
             this.averageAgeIVD.MouseIsClicked = false;
             this.averageAgeIVD.MouseIsOver = false;
             this.averageAgeIVD.Name = "averageAgeIVD";
-            this.averageAgeIVD.Size = new System.Drawing.Size(96, 35);
+            this.averageAgeIVD.Size = new System.Drawing.Size(151, 35);
             this.averageAgeIVD.TabIndex = 11;
             this.averageAgeIVD.Text = "infoViewDetail1";
             this.averageAgeIVD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

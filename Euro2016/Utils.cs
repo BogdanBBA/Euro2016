@@ -221,6 +221,13 @@ namespace Euro2016
             return includeQuantity ? Utils.FormatNumber(quantity) + " " + form : form;
         }
 
+        public static string PluralIfNotZero(string singularForm, long quantity, bool includeQuantity)
+        {
+            if (quantity == 0)
+                return "";
+            return Utils.Plural(singularForm, quantity, includeQuantity);
+        }
+
         public static Size ScaleRectangle(int width, int height, int maxWidth, int maxHeight)
         {
             var ratioX = (double) maxWidth / width;
@@ -390,13 +397,35 @@ namespace Euro2016
             return sb.ToString();
         }
 
-        /// <summary>Calculates the (approximate) average age of the players within this list.</summary>
-        public static double GetAverageAge(this ListOfIDObjects<Player> players)
+        /// <summary>Calculates duration between two dates in the typical format for player's ages, in years and additional days.</summary>
+        public static Tuple<int, int> CalculateAgeInYearsAndDays(DateTime birthDate, DateTime nowDate)
         {
-            double totalYears = 0;
+            int years = nowDate.Year - birthDate.Year;
+            if (birthDate > nowDate.AddYears(-years))
+                years--;
+            int days = (int) nowDate.Subtract(birthDate.AddYears(years)).TotalDays;
+            return new Tuple<int, int>(years, days);
+        }
+
+        /// <summary>Calculates the (approximate) average age of the players within this list.</summary>
+        public static Tuple<int, int> GetAverageAge(this ListOfIDObjects<Player> players)
+        {
+            double totalDays = 0;
             foreach (Player player in players)
-                totalYears += player.Age;
-            return totalYears / players.Count;
+                totalDays += player.Age.Item1 * 365.25 + player.Age.Item2;
+            totalDays /= players.Count;
+            return new Tuple<int, int>((int) (totalDays / 365.25), (int) (totalDays % 365.25));
+        }
+
+        /// <summary>Formats the age in years and days to be nice and clear, with either short-form ('y' and 'd') or long-form ('years' and 'days') descriptors.</summary>
+        public static string FormatAge(this Tuple<int, int> age, bool longFormDescriptors)
+        {
+            StringBuilder result = new StringBuilder();
+            if (!longFormDescriptors)
+                result.Append(age.Item1 > 0 ? age.Item1 + "y" : "").Append(' ').Append(age.Item2 > 0 ? age.Item2 + "d" : "");
+            else
+                result.Append(Utils.PluralIfNotZero("year", age.Item1, true)).Append(' ').Append(Utils.PluralIfNotZero("day", age.Item2, true));
+            return result.ToString().Trim();
         }
 
         /// <summary>Sorts the players in this list in the given order and by the given criteria (the column index parameter corresponds to the columns in PlayerViewBase.ColumnCaptions).</summary>
@@ -447,45 +476,87 @@ namespace Euro2016
         }
 
         /// <summary>Sorts the teams in this list in the given order and by the given criteria (the column index parameter corresponds to the columns in TeamStatsViewBase.ColumnCaptions).</summary>
-        public static void SortTeams(this List<Team> teams, int sortByColumn, bool descending)
+        public static void SortTeams(this List<Team> teams, Database database, int sortByColumn, bool descending)
         {
-            for (int i = 0; i < teams.Count - 1; i++)
-                for (int j = i + 1; j < teams.Count; j++)
+            if (teams.Count < 2)
+                return;
+
+            // teams, matches, playedMatches, matchesScoreboard, averageStartTime, averageDuration, clubsAndLeagues, homePlay            
+            List<Tuple<Team, ListOfIDObjects<Match>, ListOfIDObjects<Match>, MatchScoreboard, TimeSpan, TimeSpan, Tuple<int, int>, Tuple<int>>> list =
+                new List<Tuple<Team, ListOfIDObjects<Match>, ListOfIDObjects<Match>, MatchScoreboard, TimeSpan, TimeSpan, Tuple<int, int>, Tuple<int>>>();
+
+            for (int i = 0; i < teams.Count; i++)
+            {
+                ListOfIDObjects<Match> matches = database.Matches.GetMatchesBy(teams[i]);
+                ListOfIDObjects<Match> playedMatches = matches.GetMatchesBy(true);
+                MatchScoreboard matchesScoreboard = playedMatches.GetAllGoals(teams[i]);
+                TimeSpan averageStartTime = playedMatches.GetAverageStartTime();
+                TimeSpan averageDuration = playedMatches.GetAverageDuration();
+                Tuple<int, int> clubsAndLeagues = teams[i].GetClubAndLeagueCount();
+                int homePlay = teams[i].Players.Count(p => p.Club.Country.Equals(p.Nationality.Country));
+
+                list.Add(new Tuple<Team, ListOfIDObjects<Match>, ListOfIDObjects<Match>, MatchScoreboard, TimeSpan, TimeSpan, Tuple<int, int>, Tuple<int>>(
+                    teams[i], matches, playedMatches, matchesScoreboard, averageStartTime, averageDuration, clubsAndLeagues, new Tuple<int>(homePlay)));
+            }
+
+            for (int i = 0; i < list.Count - 1; i++)
+                for (int j = i + 1; j < list.Count; j++)
                 {
-                    Team iT = teams[i], jT = teams[j];
+                    Tuple<Team, ListOfIDObjects<Match>, ListOfIDObjects<Match>, MatchScoreboard, TimeSpan, TimeSpan, Tuple<int, int>, Tuple<int>> A = list[i], B = list[j];
                     bool isAscending = false;
 
                     switch (sortByColumn)
                     {
                         case 2: // name
-                            isAscending = iT.Country.Names.Away.CompareTo(jT.Country.Names.Away) < 0;
+                            isAscending = A.Item1.Country.Names.Away.CompareTo(B.Item1.Country.Names.Away) < 0;
                             break;
                         case 3: // age
-                            isAscending = iT.Players.GetAverageAge() < jT.Players.GetAverageAge();
+                            isAscending = A.Item1.Players.GetAverageAge().Item1 < B.Item1.Players.GetAverageAge().Item1
+                                ? true
+                                : A.Item1.Players.GetAverageAge().Item1 == B.Item1.Players.GetAverageAge().Item1 && A.Item1.Players.GetAverageAge().Item2 < B.Item1.Players.GetAverageAge().Item2;
                             break;
                         case 4: // time
-                            //isAscending = 
+                            isAscending = A.Item5.CompareTo(B.Item5) < 0;
                             break;
                         case 5: // duration
+                            isAscending = A.Item6.CompareTo(B.Item6) < 0;
                             break;
                         case 6: // goals
+                            isAscending = A.Item4.FinalScoreWithoutPenalties.GoalDifference < B.Item4.FinalScoreWithoutPenalties.GoalDifference
+                                ? true
+                                : (A.Item4.FinalScoreWithoutPenalties.GoalDifference == B.Item4.FinalScoreWithoutPenalties.GoalDifference && A.Item4.FinalScoreWithoutPenalties.Home < B.Item4.FinalScoreWithoutPenalties.Home
+                                    ? true
+                                    : A.Item4.FinalScoreWithoutPenalties.GoalDifference == B.Item4.FinalScoreWithoutPenalties.GoalDifference && A.Item4.FinalScoreWithoutPenalties.Home == B.Item4.FinalScoreWithoutPenalties.Home && A.Item4.FinalScoreWithoutPenalties.Away > B.Item4.FinalScoreWithoutPenalties.Away);
                             break;
                         case 7: // attendance
+                            isAscending = A.Item3.GetAttendance() < B.Item3.GetAttendance();
                             break;
                         case 8: // phase
+                            int compared = database.CompareCategoryTo(database.TournamentResultOfTeam(A.Item1), database.TournamentResultOfTeam(B.Item1));
+                            isAscending = compared > 0
+                                ? true : (compared == 0 && A.Item4.FinalScoreWithoutPenalties.GoalDifference < B.Item4.FinalScoreWithoutPenalties.GoalDifference
+                                    ? true : (A.Item4.FinalScoreWithoutPenalties.GoalDifference == B.Item4.FinalScoreWithoutPenalties.GoalDifference && A.Item4.FinalScoreWithoutPenalties.Home < B.Item4.FinalScoreWithoutPenalties.Home
+                                        ? true
+                                        : A.Item4.FinalScoreWithoutPenalties.GoalDifference == B.Item4.FinalScoreWithoutPenalties.GoalDifference && A.Item4.FinalScoreWithoutPenalties.Home == B.Item4.FinalScoreWithoutPenalties.Home && A.Item4.FinalScoreWithoutPenalties.Away > B.Item4.FinalScoreWithoutPenalties.Away));
                             break;
                         case 9: // clubs
+                            isAscending = A.Item7.Item1 < B.Item7.Item1;
                             break;
                         case 10: // leagues
+                            isAscending = A.Item7.Item2 < B.Item7.Item2;
                             break;
                         case 11: // home play
+                            isAscending = A.Rest.Item1 < B.Rest.Item1;
                             break;
                         default:
                             break;
                     }
 
                     if (isAscending == descending)
+                    {
+                        list.SwapItemsAtPositions(i, j);
                         teams.SwapItemsAtPositions(i, j);
+                    }
                 }
         }
 
@@ -522,6 +593,8 @@ namespace Euro2016
         public static TimeSpan GetAverageStartTime(this ListOfIDObjects<Match> matches)
         {
             TimeSpan result = new TimeSpan();
+            if (matches.Count == 0)
+                return result;
             foreach (Match match in matches)
                 result = result.Add(match.When.TimeOfDay);
             return new TimeSpan((long) ((double) result.Ticks / matches.Count));
@@ -530,7 +603,9 @@ namespace Euro2016
         /// <summary>Calculates the average start time for this collection of matches.</summary>
         public static TimeSpan GetAverageDuration(this ListOfIDObjects<Match> matches)
         {
-            TimeSpan result = new TimeSpan();
+            TimeSpan result = new TimeSpan(0);
+            if (matches.Count == 0)
+                return result;
             foreach (Match match in matches)
                 result = result.Add(match.MatchDuration);
             return new TimeSpan((long) ((double) result.Ticks / matches.Count));
@@ -731,23 +806,33 @@ namespace Euro2016
             switch (matchCategoryParts[0])
             {
                 case "G":
-                    return ColorTranslator.FromHtml("#5D4773");
+                    return ColorTranslator.FromHtml("#27A39D");
                 case "KO":
                     switch (matchCategoryParts[1])
                     {
                         case "8":
-                            return ColorTranslator.FromHtml("#1F5491");
+                            return ColorTranslator.FromHtml("#46A327");
                         case "4":
-                            return ColorTranslator.FromHtml("#4C911F");
+                            return ColorTranslator.FromHtml("#D1E61C");
                         case "2":
-                            return ColorTranslator.FromHtml("#FAB411");
+                            return ColorTranslator.FromHtml("#F59611");
                         case "1":
-                            return ColorTranslator.FromHtml("#B32064");
+                            return ColorTranslator.FromHtml("#F51111");
                         default:
                             return Color.White;
                     }
                 default:
-                    return Color.White;
+                    switch (matchCategory)
+                    {
+                        case "unknownCountry":
+                            return ColorTranslator.FromHtml("#000000");
+                        case "notUEFA":
+                            return ColorTranslator.FromHtml("#C4C4C4");
+                        case "notQualified":
+                            return ColorTranslator.FromHtml("#707070");
+                        default:
+                            return Color.White;
+                    }
             }
         }
     }

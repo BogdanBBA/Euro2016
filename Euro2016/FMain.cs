@@ -48,6 +48,8 @@ namespace Euro2016
                 this.GroupViews[index].SetGroup(this.Database.Groups.GetItemByID(((char) (65 + index)).ToString()));
             }
             Utils.SizeAndPositionControlsInPanel(menuP, new Control[] { venuesB, teamsB, groupsB, matchesB, knockoutB, settingsB, moreB, exitB }, true, 0);
+
+            //this.Database.ParseDatabasePlayers(Paths.DatabasePlayersInputFile);
         }
 
         private void FMain_Shown(object sender, EventArgs e)

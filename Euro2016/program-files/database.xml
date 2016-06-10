@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Thursday, 9 June 2016, 16:41:57">
+<DATABASE lastSaved="Friday, 10 June 2016, 17:41:12">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -36,24 +36,24 @@
     <Country ID="ISL" names="Ísland|Iceland" uefa="True" />
     <Country ID="AUT" names="Österreich|Austria" uefa="True" />
     <Country ID="HUN" names="Magyarország|Hungary" uefa="True" />
-    <Country ID="TKM" names="-|Turkmenistan" uefa="False" />
-    <Country ID="IRN" names="-|Iran" uefa="False" />
-    <Country ID="IRQ" names="-|Iraq" uefa="False" />
-    <Country ID="SYR" names="-|Syria" uefa="False" />
-    <Country ID="LEB" names="-|Lebanon" uefa="False" />
-    <Country ID="JOR" names="-|Jordan" uefa="False" />
-    <Country ID="SAU" names="-|Saudi Arabia" uefa="False" />
-    <Country ID="TUN" names="-|Tunisia" uefa="False" />
-    <Country ID="ALG" names="-|Algeria" uefa="False" />
-    <Country ID="MRC" names="-|Morocco" uefa="False" />
-    <Country ID="KAZ" names="-|Kazakhstan" uefa="True" />
-    <Country ID="GEO" names="-|Georgia" uefa="True" />
-    <Country ID="AZE" names="-|Azerbaijan" uefa="True" />
-    <Country ID="ARM" names="-|Armenia" uefa="True" />
-    <Country ID="ISR" names="-|Israel" uefa="True" />
-    <Country ID="CYP" names="-|Cyprus" uefa="True" />
-    <Country ID="GRE" names="-|Greece" uefa="True" />
-    <Country ID="BUL" names="-|Bulgaria" uefa="True" />
+    <Country ID="TKM" names="Түркменистан/تۆركمنيستآن|Turkmenistan" uefa="False" />
+    <Country ID="IRN" names="ایران|Iran" uefa="False" />
+    <Country ID="IRQ" names="العراق|Iraq" uefa="False" />
+    <Country ID="SYR" names="سوريا‎‎|Syria" uefa="False" />
+    <Country ID="LEB" names="لبنان‎‎|Lebanon" uefa="False" />
+    <Country ID="JOR" names="الأردن‎‎|Jordan" uefa="False" />
+    <Country ID="SAU" names="المملكة العربية السعودية|Saudi Arabia" uefa="False" />
+    <Country ID="TUN" names="تونس‎‎|Tunisia" uefa="False" />
+    <Country ID="ALG" names="الجزائر/ⵍⵣⵣⴰⵢⴻⵔ|Algeria" uefa="False" />
+    <Country ID="MRC" names="المغرب/ⵍⵎⴰⵖⵔⵉⴱ/Maroc|Morocco" uefa="False" />
+    <Country ID="KAZ" names="Қазақстан|Kazakhstan" uefa="True" />
+    <Country ID="GEO" names="საქართველო|Georgia" uefa="True" />
+    <Country ID="AZE" names="Azərbaycan|Azerbaijan" uefa="True" />
+    <Country ID="ARM" names="Հայաստան|Armenia" uefa="True" />
+    <Country ID="ISR" names="יִשְׂרָאֵל|Israel" uefa="True" />
+    <Country ID="CYP" names="Κύπρος/Kıbrıs|Cyprus" uefa="True" />
+    <Country ID="GRE" names="Ελλάδα|Greece" uefa="True" />
+    <Country ID="BUL" names="България|Bulgaria" uefa="True" />
     <Country ID="FYR" names="-|FYR Macedonia" uefa="True" />
     <Country ID="SER" names="-|Serbia" uefa="True" />
     <Country ID="MNE" names="-|Montenegro" uefa="True" />
@@ -84,30 +84,30 @@
     <Country ID="CHI" names="-|China" uefa="False" />
   </COUNTRIES>
   <TEAMS>
-    <Team countryID="ALB" nicknames="Kuq e Zinjtë (Red and Blacks);Shqiponjat (Eagles)" coach="ITA:Gianni De Biasi" mapCoords="490,124" />
-    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" coach="SUI:Marcel Koller" mapCoords="391,257" />
+    <Team countryID="ENG" nicknames="The Three Lions" coach="ENG:Roy Hodgson" mapCoords="179,369" />
+    <Team countryID="GER" nicknames="Die Mannschaft (Team);Nationalelf (National Eleven);DFB-Elf (DFV Eleven)" coach="GER:Joachim Löw" mapCoords="330,331" />
+    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" coach="BIH:Vladimir Petković" mapCoords="295,240" />
     <Team countryID="BEL" nicknames="De Rode Duivels (Red Devils);Les Diables Rouges (Red Devils);Die Roten Teufel (Red Devils)" coach="BEL:Marc Wilmots" mapCoords="251,324" />
     <Team countryID="HRV" nicknames="Vatreni (Blazers)" coach="HRV:Ante Čačić" mapCoords="416,213" />
-    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" coach="CZE:Pavel Vrba" mapCoords="391,305" />
-    <Team countryID="ENG" nicknames="The Three Lions" coach="ENG:Roy Hodgson" mapCoords="179,369" />
-    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" coach="FRA:Didier Deschamps" mapCoords="218,262" />
-    <Team countryID="GER" nicknames="Die Mannschaft (Team);Nationalelf (National Eleven);DFB-Elf (DFV Eleven)" coach="GER:Joachim Löw" mapCoords="330,331" />
-    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" coach="GER:Bernd Storck" mapCoords="462,253" />
-    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" coach="ISL:Heimir Hallgrímsson &amp; Sweden Lars Lagerbäck" mapCoords="75,679" />
-    <Team countryID="IRL" nicknames="The Boys in Green;The Green Army" coach="NIR:Martin O'Neill" mapCoords="97,403" />
-    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" coach="ITA:Antonio Conte" mapCoords="366,153" />
-    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" coach="NIR:Michael O'Neill" mapCoords="122,433" />
-    <Team countryID="POL" nicknames="Biało-czerwoni (White and Reds);Białe Orły (White Eagles)" coach="POL:Adam Nawałka" mapCoords="447,359" />
-    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" coach="POR:Fernando Santos" mapCoords="24,129" />
-    <Team countryID="ROU" nicknames="Tricolorii" coach="ROU:Anghel Iordănescu" mapCoords="547,240" />
-    <Team countryID="RUS" nicknames="Национа́льная Сбо́рная (National Team)" coach="RUS:Leonid Slutsky" mapCoords="679,526" />
-    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" coach="SVK:Ján Kozák" mapCoords="461,291" />
-    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" coach="ESP:Vicente del Bosque" mapCoords="100,118" />
-    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" coach="SWE:Erik Hamrén" mapCoords="378,538" />
-    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" coach="SUI:Vladimir Petković" mapCoords="295,240" />
     <Team countryID="TUR" nicknames="Ay Yıldızlılar (Crescent-Stars)" coach="TUR:Fatih Terim" mapCoords="720,134" />
-    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" coach="UKR:Mykhaylo Fomenko" mapCoords="612,337" />
     <Team countryID="WLS" nicknames="Y Dreigiau (Dragons)" coach="WLS:Chris Coleman" mapCoords="141,379" />
+    <Team countryID="POL" nicknames="Biało-czerwoni (White and Reds);Białe Orły (White Eagles)" coach="POL:Adam Nawałka" mapCoords="447,359" />
+    <Team countryID="ALB" nicknames="Kuq e Zinjtë (Red and Blacks);Shqiponjat (Eagles)" coach="ITA:Gianni De Biasi" mapCoords="490,124" />
+    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" coach="ISL:Heimir Hallgrímsson &amp; Sweden Lars Lagerbäck" mapCoords="75,679" />
+    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" coach="SUI:Marcel Koller" mapCoords="391,257" />
+    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" coach="FRA:Didier Deschamps" mapCoords="218,262" />
+    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" coach="SWE:Erik Hamrén" mapCoords="378,538" />
+    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" coach="UKR:Mykhaylo Fomenko" mapCoords="612,337" />
+    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" coach="GER:Bernd Storck" mapCoords="462,253" />
+    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" coach="ESP:Vicente del Bosque" mapCoords="100,118" />
+    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" coach="POR:Fernando Santos" mapCoords="24,129" />
+    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" coach="NIR:Michael O'Neill" mapCoords="122,433" />
+    <Team countryID="ROU" nicknames="Tricolorii" coach="ROU:Anghel Iordănescu" mapCoords="547,240" />
+    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" coach="ITA:Antonio Conte" mapCoords="366,153" />
+    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" coach="SVK:Ján Kozák" mapCoords="461,291" />
+    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" coach="CZE:Pavel Vrba" mapCoords="391,305" />
+    <Team countryID="RUS" nicknames="Национа́льная Сбо́рная (National Team)" coach="RUS:Leonid Slutsky" mapCoords="679,526" />
+    <Team countryID="IRL" nicknames="The Boys in Green;The Green Army" coach="NIR:Martin O'Neill" mapCoords="97,403" />
   </TEAMS>
   <GROUPS>
     <Group ID="A" name="Group A" teams="ALB,FRA,ROU,SUI" />
@@ -118,43 +118,43 @@
     <Group ID="F" name="Group F" teams="AUT,HUN,ISL,POR" />
   </GROUPS>
   <MATCHES>
-    <Match ID="1" category="G:A" who="FRA,ROU" when="10/6@21" where="STD" mustWatch="False" scoreboard="" />
+    <Match ID="1" category="G:A" who="FRA,ROU" when="10/6@21" where="STD" mustWatch="True" scoreboard="" />
     <Match ID="2" category="G:A" who="ALB,SUI" when="11/6@15" where="LEN" mustWatch="False" scoreboard="" />
     <Match ID="3" category="G:B" who="WLS,SVK" when="11/6@18" where="BOR" mustWatch="False" scoreboard="" />
-    <Match ID="4" category="G:B" who="ENG,RUS" when="11/6@21" where="MAR" mustWatch="False" scoreboard="" />
-    <Match ID="5" category="G:D" who="TUR,HRV" when="12/6@15" where="PAR" mustWatch="True" scoreboard="" />
-    <Match ID="6" category="G:C" who="POL,NIR" when="12/6@18" where="NIC" mustWatch="True" scoreboard="" />
+    <Match ID="4" category="G:B" who="ENG,RUS" when="11/6@21" where="MAR" mustWatch="True" scoreboard="" />
+    <Match ID="5" category="G:D" who="TUR,HRV" when="12/6@15" where="PAR" mustWatch="False" scoreboard="" />
+    <Match ID="6" category="G:C" who="POL,NIR" when="12/6@18" where="NIC" mustWatch="False" scoreboard="" />
     <Match ID="7" category="G:C" who="GER,UKR" when="12/6@21" where="LIL" mustWatch="True" scoreboard="" />
-    <Match ID="8" category="G:D" who="ESP,CZE" when="13/6@15" where="TOU" mustWatch="False" scoreboard="" />
+    <Match ID="8" category="G:D" who="ESP,CZE" when="13/6@15" where="TOU" mustWatch="True" scoreboard="" />
     <Match ID="9" category="G:E" who="IRL,SWE" when="13/6@18" where="STD" mustWatch="False" scoreboard="" />
-    <Match ID="10" category="G:E" who="BEL,ITA" when="13/6@21" where="LYO" mustWatch="False" scoreboard="" />
+    <Match ID="10" category="G:E" who="BEL,ITA" when="13/6@21" where="LYO" mustWatch="True" scoreboard="" />
     <Match ID="11" category="G:F" who="AUT,HUN" when="14/6@18" where="BOR" mustWatch="True" scoreboard="" />
     <Match ID="12" category="G:F" who="POR,ISL" when="14/6@21" where="STE" mustWatch="True" scoreboard="" />
     <Match ID="13" category="G:B" who="RUS,SVK" when="15/6@15" where="LIL" mustWatch="False" scoreboard="" />
     <Match ID="14" category="G:A" who="ROU,SUI" when="15/6@18" where="PAR" mustWatch="True" scoreboard="" />
     <Match ID="15" category="G:A" who="FRA,ALB" when="15/6@21" where="MAR" mustWatch="True" scoreboard="" />
-    <Match ID="16" category="G:B" who="ENG,WLS" when="16/6@15" where="LEN" mustWatch="False" scoreboard="" />
+    <Match ID="16" category="G:B" who="ENG,WLS" when="16/6@15" where="LEN" mustWatch="True" scoreboard="" />
     <Match ID="17" category="G:C" who="UKR,NIR" when="16/6@18" where="LYO" mustWatch="False" scoreboard="" />
-    <Match ID="18" category="G:C" who="GER,POL" when="16/6@21" where="STD" mustWatch="False" scoreboard="" />
-    <Match ID="19" category="G:E" who="ITA,SWE" when="17/6@15" where="TOU" mustWatch="False" scoreboard="" />
-    <Match ID="20" category="G:D" who="CZE,HRV" when="17/6@18" where="STE" mustWatch="False" scoreboard="" />
-    <Match ID="21" category="G:D" who="ESP,TUR" when="17/6@21" where="NIC" mustWatch="False" scoreboard="" />
+    <Match ID="18" category="G:C" who="GER,POL" when="16/6@21" where="STD" mustWatch="True" scoreboard="" />
+    <Match ID="19" category="G:E" who="ITA,SWE" when="17/6@15" where="TOU" mustWatch="True" scoreboard="" />
+    <Match ID="20" category="G:D" who="CZE,HRV" when="17/6@18" where="STE" mustWatch="True" scoreboard="" />
+    <Match ID="21" category="G:D" who="ESP,TUR" when="17/6@21" where="NIC" mustWatch="True" scoreboard="" />
     <Match ID="22" category="G:E" who="BEL,IRL" when="18/6@15" where="BOR" mustWatch="False" scoreboard="" />
-    <Match ID="23" category="G:F" who="ISL,HUN" when="18/6@18" where="MAR" mustWatch="False" scoreboard="" />
-    <Match ID="24" category="G:F" who="POR,AUT" when="18/6@21" where="PAR" mustWatch="False" scoreboard="" />
-    <Match ID="26" category="G:A" who="SUI,FRA" when="19/6@21" where="LIL" mustWatch="False" scoreboard="" />
-    <Match ID="25" category="G:A" who="ROU,ALB" when="19/6@21" where="LYO" mustWatch="False" scoreboard="" />
+    <Match ID="23" category="G:F" who="ISL,HUN" when="18/6@18" where="MAR" mustWatch="True" scoreboard="" />
+    <Match ID="24" category="G:F" who="POR,AUT" when="18/6@21" where="PAR" mustWatch="True" scoreboard="" />
+    <Match ID="26" category="G:A" who="SUI,FRA" when="19/6@21" where="LIL" mustWatch="True" scoreboard="" />
+    <Match ID="25" category="G:A" who="ROU,ALB" when="19/6@21" where="LYO" mustWatch="True" scoreboard="" />
     <Match ID="28" category="G:B" who="SVK,ENG" when="20/6@21" where="STE" mustWatch="False" scoreboard="" />
     <Match ID="27" category="G:B" who="RUS,WLS" when="20/6@21" where="TOU" mustWatch="False" scoreboard="" />
-    <Match ID="30" category="G:C" who="NIR,GER" when="21/6@18" where="PAR" mustWatch="False" scoreboard="" />
+    <Match ID="30" category="G:C" who="NIR,GER" when="21/6@18" where="PAR" mustWatch="True" scoreboard="" />
     <Match ID="29" category="G:C" who="UKR,POL" when="21/6@18" where="MAR" mustWatch="False" scoreboard="" />
     <Match ID="32" category="G:D" who="HRV,ESP" when="21/6@21" where="BOR" mustWatch="False" scoreboard="" />
     <Match ID="31" category="G:D" who="CZE,TUR" when="21/6@21" where="LEN" mustWatch="False" scoreboard="" />
     <Match ID="33" category="G:F" who="ISL,AUT" when="22/6@18" where="STD" mustWatch="False" scoreboard="" />
     <Match ID="34" category="G:F" who="HUN,POR" when="22/6@18" where="LYO" mustWatch="True" scoreboard="" />
-    <Match ID="36" category="G:E" who="SWE,BEL" when="22/6@21" where="NIC" mustWatch="False" scoreboard="" />
+    <Match ID="36" category="G:E" who="SWE,BEL" when="22/6@21" where="NIC" mustWatch="True" scoreboard="" />
     <Match ID="35" category="G:E" who="ITA,IRL" when="22/6@21" where="LIL" mustWatch="False" scoreboard="" />
-    <Match ID="37" category="KO:8" who="A:2,C:2" when="25/6@15" where="STE" mustWatch="True" scoreboard="" />
+    <Match ID="37" category="KO:8" who="A:2,C:2" when="25/6@15" where="STE" mustWatch="False" scoreboard="" />
     <Match ID="38" category="KO:8" who="B:1,T:A/C/D" when="25/6@18" where="PAR" mustWatch="False" scoreboard="" />
     <Match ID="39" category="KO:8" who="D:1,T:B/E/F" when="25/6@21" where="LEN" mustWatch="False" scoreboard="" />
     <Match ID="40" category="KO:8" who="A:1,T:C/D/E" when="26/6@15" where="LYO" mustWatch="False" scoreboard="" />
@@ -163,12 +163,12 @@
     <Match ID="43" category="KO:8" who="E:1,D:2" when="27/6@18" where="STD" mustWatch="False" scoreboard="" />
     <Match ID="44" category="KO:8" who="B:2,F:2" when="27/6@21" where="NIC" mustWatch="False" scoreboard="" />
     <Match ID="45" category="KO:4" who="37,39" when="30/6@21" where="MAR" mustWatch="False" scoreboard="" />
-    <Match ID="46" category="KO:4" who="38,42" when="1/7@21" where="LIL" mustWatch="True" scoreboard="" />
+    <Match ID="46" category="KO:4" who="38,42" when="1/7@21" where="LIL" mustWatch="False" scoreboard="" />
     <Match ID="47" category="KO:4" who="41,43" when="2/7@21" where="BOR" mustWatch="False" scoreboard="" />
     <Match ID="48" category="KO:4" who="40,44" when="3/7@21" where="STD" mustWatch="False" scoreboard="" />
-    <Match ID="49" category="KO:2" who="45,46" when="6/7@21" where="LYO" mustWatch="False" scoreboard="" />
-    <Match ID="50" category="KO:2" who="47,48" when="7/7@21" where="MAR" mustWatch="False" scoreboard="" />
-    <Match ID="51" category="KO:1" who="49,50" when="10/7@21" where="STD" mustWatch="False" scoreboard="" />
+    <Match ID="49" category="KO:2" who="45,46" when="6/7@21" where="LYO" mustWatch="True" scoreboard="" />
+    <Match ID="50" category="KO:2" who="47,48" when="7/7@21" where="MAR" mustWatch="True" scoreboard="" />
+    <Match ID="51" category="KO:1" who="49,50" when="10/7@21" where="STD" mustWatch="True" scoreboard="" />
   </MATCHES>
   <SETTINGS>
     <FavoriteTeam value="ROU" />

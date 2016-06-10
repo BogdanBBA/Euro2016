@@ -344,6 +344,19 @@ namespace Euro2016
             return this.Matches.GetMatchesBy(team).Last().Category;
         }
 
+        /// <summary>Compares the category string of a match to another category string, returning -1, 0 or 1 to mark which is the greater achievement.</summary>
+        public int CompareCategoryTo(string categoryA, string categoryB)
+        {
+            if (categoryA.Equals(categoryB))
+                return 0;
+            string[] thisParts = categoryA.Split(':'), otherParts = categoryB.Split(':');
+            if (thisParts[0].CompareTo(otherParts[0]) != 0)
+                return thisParts[0].CompareTo(otherParts[0]) > 0 ? -1 : 1;
+            if (thisParts[0].Equals("G"))
+                return thisParts[1].CompareTo(otherParts[1]) > 0 ? -1 : 1;
+            return thisParts[1].CompareTo(otherParts[1]) > 0 ? 1 : -1;
+        }
+
         /// <summary>Takes the text from https://en.wikipedia.org/wiki/UEFA_Euro_2016_squads (copied in <code>Paths.DatabasePlayersInputFile</code>) and parses the player data. 
         /// Existing clubs and players will be erased. Countries will not be affected at all.</summary>
         internal void ParseDatabasePlayers(string inputFilePath)
@@ -357,7 +370,7 @@ namespace Euro2016
 
             for (int iLine = 0; iLine < lines.Length; iLine++)
             {
-                string line = lines[iLine].Replace("Republic of", "");
+                string line = lines[iLine].Replace("  ", " ").Replace(" \t", "\t").Replace("Republic of", "");
 
                 // exit cases
                 if (line.Trim().Equals("") || line.Contains("Group ") || line.StartsWith("#"))
@@ -395,8 +408,7 @@ namespace Euro2016
                     int number = Int32.Parse(cols[0].Trim());
                     Player.PlayingPosition position = (Player.PlayingPosition) Enum.Parse(typeof(Player.PlayingPosition), cols[1].Trim());
                     DateTime birth = DateTime.Parse(cols[3].Substring(0, cols[3].IndexOf('(')).Trim());
-                    string ageS = Regex.Match(cols[3], @" \d\d\)").Value;
-                    int age = Int32.Parse(ageS.Substring(0, ageS.Length - 1));
+                    Tuple<int, int> age = Utils.CalculateAgeInYearsAndDays(new DateTime(2016, 6, 10), birth);
                     int caps = Int32.Parse(cols[4].Trim());
                     int goals = Int32.Parse(cols[5].Trim());
                     Club club = this.GetClub(cols[6].Trim());

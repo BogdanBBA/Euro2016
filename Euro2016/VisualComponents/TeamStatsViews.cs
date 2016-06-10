@@ -39,7 +39,7 @@ namespace Euro2016.VisualComponents
 
         public void SetTeams(List<Team> teams, int sortByColumn, bool descending)
         {
-            teams.SortTeams(sortByColumn, descending);
+            teams.SortTeams(this.database, sortByColumn, descending);
 
             if (this.rows.Length > teams.Count)
                 for (int i = teams.Count; i < this.rows.Length; i++)
@@ -74,7 +74,7 @@ namespace Euro2016.VisualComponents
     /// </summary>
     public class TeamStatsViewBase : MyEuroBaseControl
     {
-        protected static readonly double[] ColumnWidths = { 0.05, 0.04, 0.13, 0.08, 0.08, 0.08, 0.1, 0.1, 0.1, 0.07, 0.07, 0.1 };
+        protected static readonly double[] ColumnWidths = { 0.05, 0.04, 0.13, 0.12, 0.07, 0.07, 0.1, 0.09, 0.09, 0.07, 0.07, 0.1 };
         protected static readonly string[] ColumnCaptions = { "No.", "", "Team", "Age", "Time", "Duration", "Goals", "Attendance", "Phase", "Clubs", "Leagues", "Home play" };
         public const int DefaultHeight = 24;
 
@@ -187,6 +187,7 @@ namespace Euro2016.VisualComponents
             ListOfIDObjects<Match> teamMatches = this.database.Matches.GetMatchesBy(this.team);
             ListOfIDObjects<Match> playedTeamMatches = teamMatches.GetMatchesBy(true);
             MatchScoreboard matchesScoreboard = playedTeamMatches.GetAllGoals(this.team);
+            TimeSpan averageStartTime = playedTeamMatches.GetAverageStartTime(), averageDuration = playedTeamMatches.GetAverageDuration();
             Tuple<int, int> clubsAndLeagues = this.team.GetClubAndLeagueCount();
 
             double lastLeft = 0.0;
@@ -196,15 +197,15 @@ namespace Euro2016.VisualComponents
             lastLeft += TeamStatsViewBase.ColumnWidths[1];
             this.DrawTextCell(e.Graphics, this.FontBold, this.team.Country.Names[this.database.Settings.ShowCountryNamesInNativeLanguage], HorizontalAlignment.Left, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[2]);
             lastLeft += TeamStatsViewBase.ColumnWidths[2];
-            this.DrawTextCell(e.Graphics, this.Font, this.team.Players.GetAverageAge().ToString("N2"), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[3]);
+            this.DrawTextCell(e.Graphics, this.Font, this.team.Players.GetAverageAge().FormatAge(true), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[3]);
             lastLeft += TeamStatsViewBase.ColumnWidths[3];
-            this.DrawTextCell(e.Graphics, this.Font, playedTeamMatches.GetAverageStartTime().ToString("h\\:mm"), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[4]);
+            this.DrawTextCell(e.Graphics, this.Font, averageStartTime.Ticks == 0 ? "-" : averageStartTime.ToString("h\\:mm"), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[4]);
             lastLeft += TeamStatsViewBase.ColumnWidths[4];
-            this.DrawTextCell(e.Graphics, this.Font, playedTeamMatches.GetAverageDuration().TotalMinutes.ToString("N0") + " min", HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[5]);
+            this.DrawTextCell(e.Graphics, this.Font, averageDuration.Ticks == 0 ? "-" : averageDuration.TotalMinutes.ToString("N0") + " min", HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[5]);
             lastLeft += TeamStatsViewBase.ColumnWidths[5];
-            this.DrawTextCell(e.Graphics, this.Font, string.Format("{0:N2}-{1:N2}", (double) matchesScoreboard.FinalScoreWithoutPenalties.Home / playedTeamMatches.Count, (double) matchesScoreboard.FinalScoreWithoutPenalties.Away / playedTeamMatches.Count), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[6]);
+            this.DrawTextCell(e.Graphics, this.FontBold, string.Format("{0}-{1} ({2}{3})", matchesScoreboard.FinalScoreWithoutPenalties.Home, matchesScoreboard.FinalScoreWithoutPenalties.Away, matchesScoreboard.FinalScoreWithoutPenalties.GoalDifference > 0 ? "+" : "", matchesScoreboard.FinalScoreWithoutPenalties.GoalDifference), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[6]);
             lastLeft += TeamStatsViewBase.ColumnWidths[6];
-            this.DrawTextCell(e.Graphics, this.Font, Utils.FormatNumber(playedTeamMatches.GetAttendance()), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[7]);
+            this.DrawTextCell(e.Graphics, this.Font, "~" + Utils.FormatNumber(playedTeamMatches.GetAttendance()), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[7]);
             lastLeft += TeamStatsViewBase.ColumnWidths[7];
             this.DrawTextCell(e.Graphics, this.FontBold, Utils.FormatMatchCategory(this.database.TournamentResultOfTeam(this.team)), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[8]);
             lastLeft += TeamStatsViewBase.ColumnWidths[8];
@@ -212,7 +213,7 @@ namespace Euro2016.VisualComponents
             lastLeft += TeamStatsViewBase.ColumnWidths[9];
             this.DrawTextCell(e.Graphics, this.Font, clubsAndLeagues.Item2.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[10]);
             lastLeft += TeamStatsViewBase.ColumnWidths[10];
-            this.DrawTextCell(e.Graphics, this.Font, this.team.Players.Count(p => p.Club.Country.Equals(p.Nationality)) + " / " + this.team.Players.Count, HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[11]);
+            this.DrawTextCell(e.Graphics, this.Font, this.team.Players.Count(p => p.Club.Country.Equals(p.Nationality.Country)) + " / " + this.team.Players.Count, HorizontalAlignment.Center, lastLeft, lastLeft + TeamStatsViewBase.ColumnWidths[11]);
         }
     }
 }

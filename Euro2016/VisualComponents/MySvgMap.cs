@@ -14,10 +14,6 @@ namespace Euro2016.VisualComponents
 {
     public class MySvgMap : Control
     {
-        protected static readonly Color unknown = ColorTranslator.FromHtml("#000000");
-        protected static readonly Color notUefa = ColorTranslator.FromHtml("#C4C4C4");
-        protected static readonly Color notQualified = ColorTranslator.FromHtml("#707070");
-
         public enum MySvgMapStatus { NotInitialized, Working, Done };
 
         public MySvgMapStatus Status { get; private set; }
@@ -51,6 +47,14 @@ namespace Euro2016.VisualComponents
                 fileStream.Read(memoryStream.GetBuffer(), 0, (int) fileStream.Length);
 
                 this.svgDoc = SvgDocument.Open<SvgDocument>(memoryStream);
+                
+                svgDoc.GetElementById("rect4210-0-1-1").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("notUEFA"));
+                svgDoc.GetElementById("rect4210").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("notQualified"));
+                svgDoc.GetElementById("rect4210-0").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("G:X"));
+                svgDoc.GetElementById("rect4210-6").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("KO:8"));
+                svgDoc.GetElementById("rect4210-0-1").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("KO:4"));
+                svgDoc.GetElementById("rect4210-5").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("KO:2"));
+                svgDoc.GetElementById("rect4210-0-4").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("KO:1"));
 
                 foreach (SvgElement element in this.svgDoc.Children)
                 {
@@ -68,7 +72,7 @@ namespace Euro2016.VisualComponents
         private void SetSvgElementAttributes(SvgElement element, Country country, Team team)
         {
             if (element is SvgPath || element is SvgEllipse)
-                element.Fill = new SvgColourServer(country == null ? unknown : (country.UefaCountry ? (team != null ? Utils.TournamentResultColorForTeam(this.database.TournamentResultOfTeam(team)) : notQualified) : notUefa));
+                element.Fill = new SvgColourServer(Utils.TournamentResultColorForTeam(country == null ? "XXX" : (country.UefaCountry ? (team != null ? this.database.TournamentResultOfTeam(team) : "notQualified") : "notUEFA")));
             else if (element is SvgGroup)
                 foreach (SvgElement subElement in element.Children)
                     SetSvgElementAttributes(subElement, country, team);

@@ -63,11 +63,11 @@
             this.mustWatchStV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(50)))), ((int)(((byte)(74)))));
             this.mustWatchStV.Checked = false;
             this.mustWatchStV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mustWatchStV.Location = new System.Drawing.Point(374, 321);
+            this.mustWatchStV.Location = new System.Drawing.Point(695, 12);
             this.mustWatchStV.MouseIsClicked = false;
             this.mustWatchStV.MouseIsOver = false;
             this.mustWatchStV.Name = "mustWatchStV";
-            this.mustWatchStV.Size = new System.Drawing.Size(40, 40);
+            this.mustWatchStV.Size = new System.Drawing.Size(78, 78);
             this.mustWatchStV.TabIndex = 16;
             this.mustWatchStV.Text = "starView1";
             this.mustWatchStV.Click += new System.EventHandler(this.mustWatchStV_Click);
@@ -97,7 +97,7 @@
             this.titleLabel1.MouseIsClicked = false;
             this.titleLabel1.MouseIsOver = false;
             this.titleLabel1.Name = "titleLabel1";
-            this.titleLabel1.Size = new System.Drawing.Size(761, 78);
+            this.titleLabel1.Size = new System.Drawing.Size(677, 78);
             this.titleLabel1.TabIndex = 12;
             this.titleLabel1.Text = "titleLabel1";
             this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

@@ -76,7 +76,7 @@ namespace Euro2016.VisualComponents
     /// </summary>
     public class PlayerViewBase : MyEuroBaseControl
     {
-        protected static readonly double[] ColumnWidths = { 0.06, 0.04, 0.24, 0.05, 0.09, 0.13, 0.07, 0.07, 0.04, 0.2 };
+        protected static readonly double[] ColumnWidths = { 0.06, 0.04, 0.24, 0.05, 0.1, 0.12, 0.07, 0.07, 0.04, 0.2 };
         protected static readonly string[] ColumnCaptions = { "No.", "", "Name", "Position", "Age", "Born", "Caps", "Goals", "", "Club" };
         public const int DefaultHeight = 24;
 
@@ -156,6 +156,7 @@ namespace Euro2016.VisualComponents
     /// </summary>
     public class PlayerViewRow : PlayerViewBase
     {
+        private Font FontBold;
         private Font playerPositionFont;
 
         private Player player = null;
@@ -168,6 +169,7 @@ namespace Euro2016.VisualComponents
         public PlayerViewRow()
         {
             this.Font = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExo_Index], 13, FontStyle.Regular) : new Font("Arial", 11, FontStyle.Regular);
+            this.FontBold = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 13, FontStyle.Bold) : new Font("Arial", 11, FontStyle.Regular);
             this.playerPositionFont = StaticData.PVC != null ? new Font(StaticData.PVC.Families[StaticData.FontExoBold_Index], 10, FontStyle.Bold) : new Font("Arial", 11, FontStyle.Regular);
             this.Size = new Size(500, PlayerViewBase.DefaultHeight + 12);
         }
@@ -189,21 +191,21 @@ namespace Euro2016.VisualComponents
                 return;
 
             double lastLeft = 0.0;
-            this.DrawTextCell(e.Graphics, this.Font, "#" + this.player.Number, HorizontalAlignment.Center, lastLeft, PlayerViewBase.ColumnWidths[0]);
+            this.DrawTextCell(e.Graphics, this.FontBold, "#" + this.player.Number, HorizontalAlignment.Center, lastLeft, PlayerViewBase.ColumnWidths[0]);
             lastLeft += PlayerViewBase.ColumnWidths[0];
             this.DrawImageCell(e.Graphics, this.player.Nationality.Country.Flag20px, HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[1]);
             lastLeft += PlayerViewBase.ColumnWidths[1];
-            this.DrawTextCell(e.Graphics, this.Font, this.player.Name, HorizontalAlignment.Left, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[2]);
+            this.DrawTextCell(e.Graphics, this.FontBold, this.player.Name, HorizontalAlignment.Left, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[2]);
             lastLeft += PlayerViewBase.ColumnWidths[2];
             this.DrawPlayerPosition(e.Graphics, lastLeft, PlayerViewBase.ColumnWidths[3], this.player);
             lastLeft += PlayerViewBase.ColumnWidths[3];
-            this.DrawTextCell(e.Graphics, this.Font, this.player.Age.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[4]);
+            this.DrawTextCell(e.Graphics, this.Font, this.player.Age.FormatAge(false), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[4]);
             lastLeft += PlayerViewBase.ColumnWidths[4];
             this.DrawTextCell(e.Graphics, this.Font, this.player.BirthDate.ToString("d MMM yyyy"), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[5]);
             lastLeft += PlayerViewBase.ColumnWidths[5];
-            this.DrawTextCell(e.Graphics, this.Font, this.player.Caps.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[6]);
+            this.DrawTextCell(e.Graphics, this.FontBold, this.player.Caps.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[6]);
             lastLeft += PlayerViewBase.ColumnWidths[6];
-            this.DrawTextCell(e.Graphics, this.Font, this.player.Goals.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[7]);
+            this.DrawTextCell(e.Graphics, this.FontBold, this.player.Goals.ToString(), HorizontalAlignment.Center, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[7]);
             lastLeft += PlayerViewBase.ColumnWidths[7];
             this.DrawImageCell(e.Graphics, this.player.Club.Country.Flag20px, HorizontalAlignment.Right, lastLeft, lastLeft + PlayerViewBase.ColumnWidths[8]);
             lastLeft += PlayerViewBase.ColumnWidths[8];
