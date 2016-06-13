@@ -1,4 +1,4 @@
-<DATABASE lastSaved="Friday, 10 June 2016, 17:41:12">
+<DATABASE lastSaved="Monday, 13 June 2016, 08:05:27">
   <VENUES>
     <Venue ID="PAR" name="Parc des Princes" city="Paris" location="48.84139,2.253056" year="1897" capacity="47000" />
     <Venue ID="STD" name="Stade de France" city="Saint-Denis" location="48.92444,2.36" year="1998" capacity="81338" />
@@ -84,30 +84,30 @@
     <Country ID="CHI" names="-|China" uefa="False" />
   </COUNTRIES>
   <TEAMS>
-    <Team countryID="ENG" nicknames="The Three Lions" coach="ENG:Roy Hodgson" mapCoords="179,369" />
     <Team countryID="GER" nicknames="Die Mannschaft (Team);Nationalelf (National Eleven);DFB-Elf (DFV Eleven)" coach="GER:Joachim Löw" mapCoords="330,331" />
-    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" coach="BIH:Vladimir Petković" mapCoords="295,240" />
-    <Team countryID="BEL" nicknames="De Rode Duivels (Red Devils);Les Diables Rouges (Red Devils);Die Roten Teufel (Red Devils)" coach="BEL:Marc Wilmots" mapCoords="251,324" />
-    <Team countryID="HRV" nicknames="Vatreni (Blazers)" coach="HRV:Ante Čačić" mapCoords="416,213" />
-    <Team countryID="TUR" nicknames="Ay Yıldızlılar (Crescent-Stars)" coach="TUR:Fatih Terim" mapCoords="720,134" />
+    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" coach="FRA:Didier Deschamps" mapCoords="218,262" />
     <Team countryID="WLS" nicknames="Y Dreigiau (Dragons)" coach="WLS:Chris Coleman" mapCoords="141,379" />
     <Team countryID="POL" nicknames="Biało-czerwoni (White and Reds);Białe Orły (White Eagles)" coach="POL:Adam Nawałka" mapCoords="447,359" />
+    <Team countryID="HRV" nicknames="Vatreni (Blazers)" coach="HRV:Ante Čačić" mapCoords="416,213" />
     <Team countryID="ALB" nicknames="Kuq e Zinjtë (Red and Blacks);Shqiponjat (Eagles)" coach="ITA:Gianni De Biasi" mapCoords="490,124" />
-    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" coach="ISL:Heimir Hallgrímsson &amp; Sweden Lars Lagerbäck" mapCoords="75,679" />
-    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" coach="SUI:Marcel Koller" mapCoords="391,257" />
-    <Team countryID="FRA" nicknames="Les Bleus (Blues);Les Tricolores (Tri-colors)" coach="FRA:Didier Deschamps" mapCoords="218,262" />
-    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" coach="SWE:Erik Hamrén" mapCoords="378,538" />
-    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" coach="UKR:Mykhaylo Fomenko" mapCoords="612,337" />
-    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" coach="GER:Bernd Storck" mapCoords="462,253" />
-    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" coach="ESP:Vicente del Bosque" mapCoords="100,118" />
-    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" coach="POR:Fernando Santos" mapCoords="24,129" />
-    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" coach="NIR:Michael O'Neill" mapCoords="122,433" />
-    <Team countryID="ROU" nicknames="Tricolorii" coach="ROU:Anghel Iordănescu" mapCoords="547,240" />
-    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" coach="ITA:Antonio Conte" mapCoords="366,153" />
-    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" coach="SVK:Ján Kozák" mapCoords="461,291" />
-    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" coach="CZE:Pavel Vrba" mapCoords="391,305" />
+    <Team countryID="ENG" nicknames="The Three Lions" coach="ENG:Roy Hodgson" mapCoords="179,369" />
     <Team countryID="RUS" nicknames="Национа́льная Сбо́рная (National Team)" coach="RUS:Leonid Slutsky" mapCoords="679,526" />
+    <Team countryID="ESP" nicknames="La Furia Roja (Red Fury);La Roja (Red One)" coach="ESP:Vicente del Bosque" mapCoords="100,118" />
+    <Team countryID="HUN" nicknames="Nemzeti Tizenegy (National Eleven)" coach="GER:Bernd Storck" mapCoords="462,253" />
+    <Team countryID="SWE" nicknames="Blågult;(Blue-Yellow)" coach="SWE:Erik Hamrén" mapCoords="378,538" />
+    <Team countryID="AUT" nicknames="Das Team (Team);Burschen (Boys);Unsere Burschen (Our Boys)" coach="SUI:Marcel Koller" mapCoords="391,257" />
+    <Team countryID="ISL" nicknames="Strákarnir okkar (Our boys)" coach="ISL:Heimir Hallgrímsson &amp; Sweden Lars Lagerbäck" mapCoords="75,679" />
+    <Team countryID="BEL" nicknames="De Rode Duivels (Red Devils);Les Diables Rouges (Red Devils);Die Roten Teufel (Red Devils)" coach="BEL:Marc Wilmots" mapCoords="251,324" />
     <Team countryID="IRL" nicknames="The Boys in Green;The Green Army" coach="NIR:Martin O'Neill" mapCoords="97,403" />
+    <Team countryID="CZE" nicknames="Česká Reprezentace (Czech Representative)" coach="CZE:Pavel Vrba" mapCoords="391,305" />
+    <Team countryID="ITA" nicknames="Gli Azzurri (Blues)" coach="ITA:Antonio Conte" mapCoords="366,153" />
+    <Team countryID="POR" nicknames="A Selecção (Selection);A Selecção das Quinas (Selection of the Escutcheons)" coach="POR:Fernando Santos" mapCoords="24,129" />
+    <Team countryID="ROU" nicknames="Tricolorii" coach="ROU:Anghel Iordănescu" mapCoords="547,240" />
+    <Team countryID="SVK" nicknames="Národné Mužstvo (National Team)" coach="SVK:Ján Kozák" mapCoords="461,291" />
+    <Team countryID="NIR" nicknames="Green and White Army;Norn Iron" coach="NIR:Michael O'Neill" mapCoords="122,433" />
+    <Team countryID="TUR" nicknames="Ay Yıldızlılar (Crescent-Stars)" coach="TUR:Fatih Terim" mapCoords="720,134" />
+    <Team countryID="SUI" nicknames="Schweizer pati;La Nati;Rossocrociati" coach="BIH:Vladimir Petković" mapCoords="295,240" />
+    <Team countryID="UKR" nicknames="Збірна (Team);Жовто-Сині (Yellow-Blue)" coach="UKR:Mykhaylo Fomenko" mapCoords="612,337" />
   </TEAMS>
   <GROUPS>
     <Group ID="A" name="Group A" teams="ALB,FRA,ROU,SUI" />
@@ -118,13 +118,13 @@
     <Group ID="F" name="Group F" teams="AUT,HUN,ISL,POR" />
   </GROUPS>
   <MATCHES>
-    <Match ID="1" category="G:A" who="FRA,ROU" when="10/6@21" where="STD" mustWatch="True" scoreboard="" />
-    <Match ID="2" category="G:A" who="ALB,SUI" when="11/6@15" where="LEN" mustWatch="False" scoreboard="" />
-    <Match ID="3" category="G:B" who="WLS,SVK" when="11/6@18" where="BOR" mustWatch="False" scoreboard="" />
-    <Match ID="4" category="G:B" who="ENG,RUS" when="11/6@21" where="MAR" mustWatch="True" scoreboard="" />
-    <Match ID="5" category="G:D" who="TUR,HRV" when="12/6@15" where="PAR" mustWatch="False" scoreboard="" />
-    <Match ID="6" category="G:C" who="POL,NIR" when="12/6@18" where="NIC" mustWatch="False" scoreboard="" />
-    <Match ID="7" category="G:C" who="GER,UKR" when="12/6@21" where="LIL" mustWatch="True" scoreboard="" />
+    <Match ID="1" category="G:A" who="FRA,ROU" when="10/6@21" where="STD" mustWatch="True" scoreboard="0-0,2-1" />
+    <Match ID="2" category="G:A" who="ALB,SUI" when="11/6@15" where="LEN" mustWatch="False" scoreboard="1-0,0-0" />
+    <Match ID="3" category="G:B" who="WLS,SVK" when="11/6@18" where="BOR" mustWatch="False" scoreboard="1-0,1-1" />
+    <Match ID="4" category="G:B" who="ENG,RUS" when="11/6@21" where="MAR" mustWatch="True" scoreboard="0-0,1-1" />
+    <Match ID="5" category="G:D" who="TUR,HRV" when="12/6@15" where="PAR" mustWatch="False" scoreboard="0-1,0-0" />
+    <Match ID="6" category="G:C" who="POL,NIR" when="12/6@18" where="NIC" mustWatch="False" scoreboard="0-0,1-0" />
+    <Match ID="7" category="G:C" who="GER,UKR" when="12/6@21" where="LIL" mustWatch="True" scoreboard="1-0,1-0" />
     <Match ID="8" category="G:D" who="ESP,CZE" when="13/6@15" where="TOU" mustWatch="True" scoreboard="" />
     <Match ID="9" category="G:E" who="IRL,SWE" when="13/6@18" where="STD" mustWatch="False" scoreboard="" />
     <Match ID="10" category="G:E" who="BEL,ITA" when="13/6@21" where="LYO" mustWatch="True" scoreboard="" />
@@ -172,8 +172,8 @@
   </MATCHES>
   <SETTINGS>
     <FavoriteTeam value="ROU" />
-    <ShowCountryNamesInNativeLanguage value="False" />
-    <ShowKnockoutStageOnStartup value="False" />
+    <ShowCountryNamesInNativeLanguage value="True" />
+    <ShowKnockoutStageOnStartup value="True" />
     <SpamWithWinnerOnStartup value="False" />
     <ShowFlagsOnMap value="True" />
     <TimeOffset value="1" />
