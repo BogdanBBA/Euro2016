@@ -4,7 +4,6 @@ C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Euro2016.pdb
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Svg.dll
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Svg.pdb
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\bin\Debug\Svg.xml
-C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.csprojResolveAssemblyReference.cache
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FAbout.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FGroup.resources
 C:\Users\bobl395\Downloads\c\Euro2016\Euro2016\obj\Debug\Euro2016.FKnockOut.resources

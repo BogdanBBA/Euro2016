@@ -12,6 +12,11 @@ using System.Windows.Forms;
 
 namespace Euro2016.VisualComponents
 {
+    /// <summary>
+    /// Generates an Euro 2016-specific map of participating teams' countries. 
+    /// Note: fonts that are not installed on the machine cannot be used because the SVG class only knows the name of the desired fonts (I'm looking at you, text labels) and generates the map by itself. 
+    /// Therefore, fonts like 'Exo 2' which are loaded only in app-memory will be unknown to the SVG renderer.
+    /// </summary>
     public class MySvgMap : Control
     {
         public enum MySvgMapStatus { NotInitialized, Working, Done };
@@ -47,7 +52,7 @@ namespace Euro2016.VisualComponents
                 fileStream.Read(memoryStream.GetBuffer(), 0, (int) fileStream.Length);
 
                 this.svgDoc = SvgDocument.Open<SvgDocument>(memoryStream);
-                
+
                 svgDoc.GetElementById("rect4210-0-1-1").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("notUEFA"));
                 svgDoc.GetElementById("rect4210").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("notQualified"));
                 svgDoc.GetElementById("rect4210-0").Fill = new SvgColourServer(Utils.TournamentResultColorForTeam("G:X"));

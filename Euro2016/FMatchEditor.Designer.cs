@@ -52,10 +52,12 @@
             this.awayTeamCV.Country = null;
             this.awayTeamCV.Cursor = System.Windows.Forms.Cursors.Default;
             this.awayTeamCV.InverseFlag = false;
-            this.awayTeamCV.Location = new System.Drawing.Point(267, 70);
+            this.awayTeamCV.Location = new System.Drawing.Point(277, 70);
+            this.awayTeamCV.MouseIsClicked = false;
+            this.awayTeamCV.MouseIsOver = false;
             this.awayTeamCV.Name = "awayTeamCV";
             this.awayTeamCV.Settings = null;
-            this.awayTeamCV.Size = new System.Drawing.Size(200, 28);
+            this.awayTeamCV.Size = new System.Drawing.Size(190, 28);
             this.awayTeamCV.TabIndex = 3;
             this.awayTeamCV.Text = "countryView2";
             // 
@@ -67,9 +69,11 @@
             this.homeTeamCV.Cursor = System.Windows.Forms.Cursors.Default;
             this.homeTeamCV.InverseFlag = true;
             this.homeTeamCV.Location = new System.Drawing.Point(12, 70);
+            this.homeTeamCV.MouseIsClicked = false;
+            this.homeTeamCV.MouseIsOver = false;
             this.homeTeamCV.Name = "homeTeamCV";
             this.homeTeamCV.Settings = null;
-            this.homeTeamCV.Size = new System.Drawing.Size(200, 28);
+            this.homeTeamCV.Size = new System.Drawing.Size(190, 28);
             this.homeTeamCV.TabIndex = 2;
             this.homeTeamCV.Text = "countryView1";
             // 
@@ -80,6 +84,8 @@
             this.titleIV.Checked = false;
             this.titleIV.DrawBar = true;
             this.titleIV.Location = new System.Drawing.Point(12, 12);
+            this.titleIV.MouseIsClicked = false;
+            this.titleIV.MouseIsOver = false;
             this.titleIV.Name = "titleIV";
             this.titleIV.Size = new System.Drawing.Size(455, 52);
             this.titleIV.TabIndex = 1;
@@ -97,6 +103,8 @@
             this.okB.DrawBar = true;
             this.okB.Image = null;
             this.okB.Location = new System.Drawing.Point(12, 384);
+            this.okB.MouseIsClicked = false;
+            this.okB.MouseIsOver = false;
             this.okB.Name = "okB";
             this.okB.Size = new System.Drawing.Size(223, 50);
             this.okB.TabIndex = 0;
@@ -207,12 +215,12 @@
             this.matchPenaltiesChB.UseVisualStyleBackColor = false;
             this.matchPenaltiesChB.CheckedChanged += new System.EventHandler(this.matchPenaltiesChB_CheckedChanged);
             // 
-            // dashBetweenTeamsL
+            // scoreL
             // 
             this.scoreL.BackColor = System.Drawing.Color.Transparent;
-            this.scoreL.Location = new System.Drawing.Point(218, 70);
-            this.scoreL.Name = "dashBetweenTeamsL";
-            this.scoreL.Size = new System.Drawing.Size(43, 28);
+            this.scoreL.Location = new System.Drawing.Point(208, 70);
+            this.scoreL.Name = "scoreL";
+            this.scoreL.Size = new System.Drawing.Size(63, 28);
             this.scoreL.TabIndex = 14;
             this.scoreL.Text = "-";
             this.scoreL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,6 +246,8 @@
             this.cancelB.DrawBar = true;
             this.cancelB.Image = null;
             this.cancelB.Location = new System.Drawing.Point(241, 384);
+            this.cancelB.MouseIsClicked = false;
+            this.cancelB.MouseIsOver = false;
             this.cancelB.Name = "cancelB";
             this.cancelB.Size = new System.Drawing.Size(226, 50);
             this.cancelB.TabIndex = 16;
