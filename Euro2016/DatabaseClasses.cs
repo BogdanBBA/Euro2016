@@ -546,6 +546,24 @@ namespace Euro2016
             }
         }
 
+        /// <summary>Determines whether this group contains the given team.</summary>
+        public bool ContainsTeam(Team team)
+        {
+            foreach (TableLine tableLine in this.TableLines)
+                if (tableLine.Team.Equals(team))
+                    return true;
+            return false;
+        }
+
+        /// <summary>Searches the table lines of the current group and returns the one associated with the given team if found, null otherwise.</summary>
+        public TableLine GetTableLineForTeam(Team team)
+        {
+            foreach (TableLine tableLine in this.TableLines)
+                if (tableLine.Team.Equals(team))
+                    return tableLine;
+            return null;
+        }
+
         /// <summary>Sorts the table lines in this group.</summary>
         /// <param name="thirdPlacedTeamGroup">whether to apply the ruleset for sorting third-placed teams</param>
         /// <param name="matches">the reference to the full match list of the database</param>
@@ -580,7 +598,7 @@ namespace Euro2016
                 // if more than one team, sort by appropriate criteria
                 if (tempLines.Count > 1)
                 {
-                    if (!thirdPlacedTeamGroup) // normal group, involves direct matches and more complicated criteria (and risk of incorrect output, given combination of results, and lack of certain types of input data)
+                    if (!thirdPlacedTeamGroup) // normal group, involves direct matches and more complicated criteria (and risk of incorrect output, given lack of certain types of input data and certain combinations of results)
                     {
                         for (int iIndex = 0; iIndex < tempLines.Count - 1; iIndex++)
                             for (int jIndex = iIndex + 1; jIndex < tempLines.Count; jIndex++)
@@ -640,6 +658,9 @@ namespace Euro2016
                                 if (needToSwap)
                                     tempLines.SwapItemsAtPositions(iIndex, jIndex);
                             }
+
+                        for (int iTL = iStart; iTL <= iEnd; iTL++)
+                            this.TableLines[iTL] = tempLines[iTL - iStart];
                     }
                 }
 
@@ -681,7 +702,13 @@ namespace Euro2016
 
         public override string ToString()
         {
-            return string.Format("{0} ({1} teams)", this.Name, this.TableLines.Count);
+            StringBuilder result = new StringBuilder(string.Format("{0} ({1} teams): ", this.Name, this.TableLines.Count));
+            if (this.TableLines.Count > 0)
+            {
+                foreach (TableLine line in this.TableLines)
+                    result.Append(line.Team.Country.ID).Append(", ");
+            }
+            return result.ToString().Substring(0, result.Length - 2);
         }
     }
 

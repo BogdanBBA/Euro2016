@@ -109,6 +109,8 @@ namespace Euro2016
         public List<Team> Teams { get; private set; }
         /// <summary>Gets or privately sets the list of ranking groups of Euro 2016.</summary>
         public ListOfIDObjects<Group> Groups { get; private set; }
+        /// <summary>Gets or privately sets the group for the third-placed teams of Euro 2016.</summary>
+        public Group ThirdPlacedTeamsGroup { get; private set; }
         /// <summary>Gets or privately sets the list of matches of Euro 2016.</summary>
         public ListOfIDObjects<Match> Matches { get; private set; }
         /// <summary>Gets or privately sets the user settings for the application.</summary>
@@ -123,6 +125,7 @@ namespace Euro2016
             this.Players = new ListOfIDObjects<Player>();
             this.Teams = new List<Team>();
             this.Groups = new ListOfIDObjects<Group>();
+            this.ThirdPlacedTeamsGroup = new Group(Database.ThirdPlacedTeamsID, "Third-placed teams", new List<TableLine>());
             this.Matches = new ListOfIDObjects<Match>();
             this.Settings = new Settings();
         }
@@ -246,12 +249,15 @@ namespace Euro2016
         }
 
         /// <summary>Utility method. Calls the respective 'calculate' methods for the parameter values that are set to true</summary>
-        public void Calculate(bool groupMatchTeams, bool groups, bool knockoutMatches)
+        public void Calculate(bool groupMatchTeams, bool groups = false, bool knockoutMatches = false)
         {
             if (groupMatchTeams)
                 this.CalculateGroupMatchTeams();
             if (groups)
+            {
                 this.CalculateGroups();
+                this.CalculateThirdPlacedTeamsGroup();
+            }
             if (knockoutMatches)
                 this.CalculateKnockoutMatches();
         }
@@ -282,8 +288,18 @@ namespace Euro2016
             }
         }
 
-        /// <summary>Parses a team reference (in the format 'refGroup:refTeam'; for example, "B:1" or "T:A/C/D") and, if valid, returns the correctly corresponding Team object, or null otherwise</summary>
-        private Team ParseTeamReference(string reference)
+        /// <summary>Calculates the group rankings (resets rankings, adds all valid match results, then sorts) for the third-placed teams.</summary>
+        public void CalculateThirdPlacedTeamsGroup()
+        {
+            this.ThirdPlacedTeamsGroup.TableLines.Clear();
+            foreach (Group group in this.Groups)
+                this.ThirdPlacedTeamsGroup.TableLines.Add(new TableLine(group.TableLines[2]));
+            this.ThirdPlacedTeamsGroup.SortTableLines(true, this.Matches);
+        }
+
+        /// <summary>Parses a team reference (in the format 'refGroup:refTeam'; for example, "B:1" or "T:A/C/D") and, if valid, returns the correctly corresponding Team object, or null otherwise.
+        /// Note: the parameter 'firstTeam' is necessary only for eight-finals involving third-placed teams (normally at Euro 2016, the first team is the winner of one of groups A-D, and the second is the third-placed team).</summary>
+        private Team ParseTeamReference(string reference, string firstTeam = null)
         {
             if (reference.Contains(':')) // table line reference
             {
@@ -296,21 +312,48 @@ namespace Euro2016
                         return group.TableLines[Int32.Parse(refTeam) - 1].Team;
                     return null;
                 }
-                else // third-place group (also, certainly an eight-final)
+                else // third-place group (also, certainly an eight-final - but can be eighth-final between two non-third-placed teams)
                 {
-                    Group tempGroup = new Group("temp", refTeam, new List<TableLine>());
-                    foreach (string groupID in refTeam.Split('/'))
+                    string qualifiedTeamsGroups = "", resultReference = "";
+                    for (char groupID = 'A'; groupID <= 'F'; groupID++)
+                        if (this.ThirdPlacedTeamsGroup.GetTableLineForTeam(this.Groups.GetItemByID(groupID.ToString()).TableLines[2].Team).Position <= 4)
+                            qualifiedTeamsGroups += groupID;
+                    switch (firstTeam)
                     {
-                        Group group = this.Groups.GetItemByID(groupID);
-                        if (!group.AllMatchesPlayed)
-                            return null;
-                        tempGroup.TableLines.Add(new TableLine(group.TableLines[2]));
+                        case "A:1":
+                            if (new string[] { "ABCD", "ABCE", "ABCF", "ACDE", "ACDF", "ACEF", "BCDE", "BCDF", "CDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "C:3";
+                            if (new string[] { "ABDE", "ABDF", "ADEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "D:3";
+                            if (new string[] { "ABEF", "BCEF", "BDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "E:3";
+                            break;
+                        case "B:1":
+                            if (new string[] { "ABCE", "ABCF", "ABDE", "ABDF", "ABEF", "ACEF", "ADEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "A:3";
+                            if (new string[] { "BCEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "C:3";
+                            if (new string[] { "ABCD", "ACDE", "ACDF", "BCDE", "BCDF", "BDEF", "CDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "D:3";
+                            break;
+                        case "C:1":
+                            if (new string[] { "ABCD", "ACDE", "ACDF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "A:3";
+                            if (new string[] { "ABCE", "ABCF", "ABDE", "ABDF", "ABEF", "BCDE", "BCDF", "BCEF", "BDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "B:3";
+                            if (new string[] { "ACEF", "ADEF", "CDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "F:3";
+                            break;
+                        case "D:1":
+                            if (new string[] { "ABCD" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "B:3";
+                            if (new string[] { "ABCE", "ABDE", "ACDE", "ACEF", "ADEF", "BCDE", "CDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "E:3";
+                            if (new string[] { "ABCF", "ABDF", "ABEF", "ACDF", "BCDF", "BCEF", "BDEF" }.Contains(qualifiedTeamsGroups))
+                                resultReference = "F:3";
+                            break;
                     }
-                    tempGroup.SortTableLines(true, this.Matches);
-                    for (int index = 0; index < tempGroup.TableLines.Count; index++)
-                        if (this.Matches.GetMatchesBy("KO:8").GetMatchesBy(tempGroup.TableLines[index].Team).Count == 0)
-                            return tempGroup.TableLines[index].Team;
-                    return null;
+                    return resultReference.Equals("") ? null : this.ParseTeamReference(resultReference);
                 }
             }
             else // match winner reference
@@ -334,7 +377,7 @@ namespace Euro2016
             foreach (Match match in matches)
             {
                 match.Teams.Home = this.ParseTeamReference(match.TeamReferences.Home);
-                match.Teams.Away = this.ParseTeamReference(match.TeamReferences.Away);
+                match.Teams.Away = this.ParseTeamReference(match.TeamReferences.Away, match.TeamReferences.Home);
             }
         }
 

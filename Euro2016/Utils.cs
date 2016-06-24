@@ -704,6 +704,16 @@ namespace Euro2016
             return -1;
         }
 
+        /// <summary>Searches this list of groups for the one that contains in its table lines the given team.</summary>
+        public static Group GetGroupContainingTeam(this ListOfIDObjects<Group> groups, Team team)
+        {
+            foreach (Group group in groups)
+                foreach (TableLine tableLine in group.TableLines)
+                    if (tableLine.Team.Equals(team))
+                        return group;
+            return null;
+        }
+
         /// <summary>Searches this list of clubs for the club with the given name and in the given country, and returns it if it is found, or null otherwise.</summary>
         public static Club GetClubByNameAndCountry(this ListOfIDObjects<Club> clubs, string name, Country country)
         {

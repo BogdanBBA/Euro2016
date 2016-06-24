@@ -47,8 +47,7 @@
             this.titleLabel1.TabIndex = 7;
             this.titleLabel1.Text = "titleLabel1";
             this.titleLabel1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.titleLabel1.TextSubtitle = "A stats overview of the participating teams // note: finish team stats sorting, a" +
-    "nd add description for columns somewhere here";
+            this.titleLabel1.TextSubtitle = "A stats overview of the participating teams";
             this.titleLabel1.TextTitle = "Team stats";
             // 
             // teamP
